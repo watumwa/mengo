@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowRight, ArrowUpRight, MapPin, Menu, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Menu, Search, X } from "lucide-react";
 
 export const nav = [
+  ["Home", "/"],
   ["About Us", "/about"],
   ["Membership", "/membership"],
   ["Commercial Centres", "/centres"],
@@ -29,7 +30,9 @@ export function Header() {
           <Link className="mobile-nav-cta btn navy" href="/join" onClick={closeMenu}>Become a Member <ArrowUpRight size={15} /></Link>
         </nav>
         <div className="navactions">
-          <Link className="btn navy" href="/join">Become a Member <ArrowUpRight size={15} /></Link>
+          <Link className="nav-search" href="/directory" aria-label="Search the Chamber directory"><Search size={18} /></Link>
+          <Link className="header-login" href="/login">Login</Link>
+          <Link className="btn navy" href="/join">Join Now <ArrowUpRight size={15} /></Link>
           <button className="menubutton" type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-controls="primary-navigation" aria-expanded={open}>{open ? <X /> : <Menu />}</button>
         </div>
       </div>
