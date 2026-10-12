@@ -1,6 +1,6 @@
 import {NextRequest,NextResponse} from "next/server";
 export async function POST(request:NextRequest){
- const base=process.env.CHAMBER_API_URL;
+ const base=process.env.CHAMBER_BACKEND_URL;
  if(!base)return NextResponse.json({error:"Authentication service not configured"},{status:503});
  let credentials:{username?:string;password?:string};
  try{credentials=await request.json();}catch{return NextResponse.json({error:"Invalid request"},{status:400});}
