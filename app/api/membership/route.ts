@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 export async function POST(request:NextRequest){
- const base=process.env.CHAMBER_API_URL;
+ const base=process.env.CHAMBER_BACKEND_URL;
  if(!base)return NextResponse.json({error:"Membership service is not configured yet."},{status:503});
  let payload:Record<string,unknown>;
  try{payload=await request.json();}catch{return NextResponse.json({error:"Invalid JSON."},{status:400});}
