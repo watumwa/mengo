@@ -3,7 +3,7 @@ const allowed=new Set(["centres","businesses","opportunities","events","articles
 export async function GET(request:NextRequest,{params}:{params:Promise<{resource:string}>}){
  const {resource}=await params;
  if(!allowed.has(resource))return NextResponse.json({error:"Unknown resource"},{status:404});
- const base=process.env.CHAMBER_API_URL;
+ const base=process.env.CHAMBER_BACKEND_URL;
  if(!base)return NextResponse.json({error:"Backend not configured"},{status:503});
  try{
   const url=new URL(`/api/v1/${resource}/`,base);
