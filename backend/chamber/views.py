@@ -113,14 +113,15 @@ class ReviewApplication(APIView):
   application.save(update_fields=["status","reviewed_by","reviewed_at","internal_notes","updated_at"])
   return Response({"reference":str(application.reference),"status":application.status})
 
+class MyBusinessSerializer(serializers.ModelSerializer):
+ class Meta:
+  model=Business
+  fields=("id","name","centre","sector","district","description","contact_email","published","verified")
+  read_only_fields=("id","published","verified")
+
 class MyBusinesses(generics.ListCreateAPIView):
  permission_classes=[permissions.IsAuthenticated]
  serializer_class=MyBusinessSerializer
  def get_queryset(self):return Business.objects.filter(owner=self.request.user).order_by("-created_at")
  def perform_create(self,serializer):serializer.save(owner=self.request.user,published=False,verified=False)
 
-class MyBusinessSerializer(serializers.ModelSerializer):
- class Meta:
-  model=Business
-  fields=("id","name","centre","sector","district","description","contact_email","published","verified")
-  read_only_fields=("id","published","verified")
