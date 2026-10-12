@@ -2,7 +2,7 @@ import {cookies} from "next/headers";
 import {NextResponse} from "next/server";
 export async function GET(){
  const token=(await cookies()).get("mengo_session")?.value;
- const base=process.env.CHAMBER_API_URL;
+ const base=process.env.CHAMBER_BACKEND_URL;
  if(!token)return NextResponse.json({error:"Not authenticated"},{status:401});
  if(!base)return NextResponse.json({error:"Service unavailable"},{status:503});
  try{
