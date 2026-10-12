@@ -125,3 +125,9 @@ class MyBusinesses(generics.ListCreateAPIView):
  def get_queryset(self):return Business.objects.filter(owner=self.request.user).order_by("-created_at")
  def perform_create(self,serializer):serializer.save(owner=self.request.user,published=False,verified=False)
 
+
+class MyBusinessDetail(generics.RetrieveUpdateAPIView):
+ permission_classes=[permissions.IsAuthenticated]
+ serializer_class=MyBusinessSerializer
+ def get_queryset(self):return Business.objects.filter(owner=self.request.user)
+ def perform_update(self,serializer):serializer.save(published=False,verified=False)
