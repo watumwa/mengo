@@ -26,3 +26,8 @@
 @media(max-width:1000px){.mcc-journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.mcc-journeys{padding:45px 0}.mcc-journeys-header{display:block}.mcc-journeys-header>a{margin-top:18px}.mcc-journey-grid{grid-template-columns:1fr}.mcc-journey-grid>a{min-height:190px}.editorial-home .editorial-hero{background-position:63% center}.editorial-home .editorial-hero .content{padding:60px 0 90px}.editorial-home .editorial-hero h1{font-size:clamp(35px,9vw,52px)}}
 @media(prefers-reduced-motion:reduce){.mcc-journey-grid>a{transition:none}.mcc-journey-grid>a:hover{transform:none}}
+/* Progressive disclosure for the homepage search. */
+.ecosystem-show-more{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:45px;margin:14px 0 4px;padding:11px 16px;border:1px solid #bed5c4;border-radius:8px;background:#eff6ee;color:#14553a;font-size:12px;font-weight:800;cursor:pointer;transition:background .2s ease,border-color .2s ease}
+.ecosystem-show-more:hover{background:#e0eee0;border-color:#a4c5ab}
+.ecosystem-show-more:focus-visible{outline:3px solid #c4a35b;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.ecosystem-show-more{transition:none}}
