@@ -60,6 +60,19 @@ const pages: Record<string, Detail> = {
     ],
     cta: "Explore Strategic Partnerships",
   },
+  "strategic-propositions": {
+    title: "Five Strategic Propositions",
+    description: "Connect. Develop. Advocate. Promote. Transform.",
+    intro: "The strategic plan positions the Chamber as a business ecosystem platform for Buganda, extending beyond conventional membership services.",
+    items: [
+      {title:"Connect",text:"Connect businesses to markets, investors, finance, technology and strategic partners."},
+      {title:"Develop",text:"Build the capacity, productivity and competitiveness of enterprises."},
+      {title:"Advocate",text:"Represent business interests and promote a conducive business environment."},
+      {title:"Promote",text:"Promote Buganda as a destination for trade, investment, tourism and enterprise."},
+      {title:"Transform",text:"Drive value addition, digitalisation, innovation and inclusive enterprise growth."}
+    ],
+    cta: "Explore Our Strategy",
+  },
   membership: {
     title: "Membership",
     description: "Belong to a network built to connect, represent and grow businesses.",
