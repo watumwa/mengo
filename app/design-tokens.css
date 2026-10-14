@@ -28,3 +28,8 @@ html{scroll-padding-top:90px}body{min-width:320px;-webkit-font-smoothing:antiali
 .site-index-note{color:#68788a;font-size:12px;line-height:1.7;margin:26px 0 0}
 @media(max-width:960px){.site-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.site-index-grid{grid-template-columns:1fr}.site-index-card{padding:20px}}
+
+/* Footer policy navigation */
+.footbottom>span:last-child{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.footbottom>span:last-child a{display:inline;color:#c9d4de;font-size:12px;line-height:1.5}
+.footbottom>span:last-child a:hover{color:#e4bd6b}
