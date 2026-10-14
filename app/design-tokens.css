@@ -1,0 +1,7 @@
+/* Frontend-only phase 1: premium design foundations */
+:root{--navy:#102844;--navy2:#0b2037;--gold:#cba558;--cream:#f8f6f1;--ink:#182b3d;--muted:#68788a;--line:#e5e9ed;color-scheme:light}
+html{scroll-padding-top:90px}body{min-width:320px;-webkit-font-smoothing:antialiased}
+:where(a,button,input,select,textarea):focus-visible{outline:3px solid #b98a24;outline-offset:3px}
+::selection{background:#cba558;color:#0b2037}img{max-width:100%}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(max-width:420px){.container{width:calc(100% - 32px)}.editorial-hero h1{overflow-wrap:break-word}}
