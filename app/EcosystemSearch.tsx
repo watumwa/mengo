@@ -12,7 +12,11 @@ const entries=[
  {title:"Regional Clusters",desc:"Explore six proposed regional business clusters",href:"/economic-map",type:"Regional Clusters",icon:MapPinned},
  {title:"Membership",desc:"Membership pathways and benefits",href:"/membership",type:"Members",icon:UsersRound},
  {title:"Training & Capacity Building",desc:"Enterprise learning and support",href:"/training",type:"Services",icon:GraduationCap},
- {title:"Events & Programmes",desc:"Networking, training and trade missions",href:"/events-calendar",type:"Events",icon:CalendarDays}
+ {title:"Events & Programmes",desc:"Networking, training and trade missions",href:"/events-calendar",type:"Events",icon:CalendarDays},
+ {title:"Opportunity Navigator",desc:"Find your next business pathway",href:"/opportunity-navigator",type:"Services",icon:Handshake},
+ {title:"Interactive Data Explorer",desc:"Explore illustrative economic charts",href:"/data-explorer",type:"Reports",icon:BookOpen},
+ {title:"Calendar Preview",desc:"Interactive programme calendar concept",href:"/calendar-preview",type:"Events",icon:CalendarDays},
+ {title:"English / Luganda Preview",desc:"Bilingual website experience",href:"/language-preview",type:"Services",icon:UsersRound}
 ];
 export default function EcosystemSearch({compact=false}:{compact?:boolean}){
  const [query,setQuery]=useState("");const [category,setCategory]=useState("All");const [expanded,setExpanded]=useState(false);
