@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight, ArrowUpRight, MapPin, Menu, Search, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Menu, Search, X, House } from "lucide-react";
 
 export const nav = [
  ["Explore", "/businesses"],["Connect", "/connect"],["Grow", "/business-advisory"],["Influence", "/policy-advocacy"],["About", "/about"]
@@ -30,7 +30,7 @@ export function Header() {
       <div className="container navinner">
         <Link href="/" className="brand" onClick={closeMenu}><span className="brandmark">M</span><span><strong>Mengo Chamber</strong><small>of Commerce</small></span></Link>
         <nav id="primary-navigation" className={`navlinks ${open ? "open" : ""}`} aria-label="Primary navigation">
-          {menus.map(group=><div className="ecosystem-nav-group" key={group.title}><button type="button" aria-expanded={expanded===group.title} aria-controls={`nav-${group.title.toLowerCase()}`} onClick={()=>setExpanded(expanded===group.title?null:group.title)}>{group.title}<span aria-hidden="true">⌄</span></button><div id={`nav-${group.title.toLowerCase()}`} className={`ecosystem-nav-dropdown ${expanded===group.title?"visible":""}`}>{group.links.map(([label,url])=><Link key={url} href={url} onClick={closeMenu} aria-current={pathname===url?"page":undefined}>{label}</Link>)}</div></div>)}
+          <Link href="/" className="mcc-home-link" onClick={closeMenu} aria-current={pathname==="/"?"page":undefined}><House size={16}/> Home</Link>{menus.map(group=><div className="ecosystem-nav-group" key={group.title}><button type="button" aria-expanded={expanded===group.title} aria-controls={`nav-${group.title.toLowerCase()}`} onClick={()=>setExpanded(expanded===group.title?null:group.title)}>{group.title}<span aria-hidden="true">⌄</span></button><div id={`nav-${group.title.toLowerCase()}`} className={`ecosystem-nav-dropdown ${expanded===group.title?"visible":""}`}>{group.links.map(([label,url])=><Link key={url} href={url} onClick={closeMenu} aria-current={pathname===url?"page":undefined}>{label}</Link>)}</div></div>)}
           <Link className="mobile-nav-cta btn navy" href="/join" onClick={closeMenu}>Become a Member <ArrowUpRight size={15} /></Link>
         </nav>
         <div className="navactions">
