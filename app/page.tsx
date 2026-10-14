@@ -7,6 +7,11 @@ import {
   Landmark,
   TrendingUp,
   UsersRound,
+  BarChart3,
+  ShieldCheck,
+  CalendarDays,
+  CreditCard,
+  BookOpen,
 } from "lucide-react";
 import { Shell } from "./components";
 import EcosystemSearch from "./EcosystemSearch";
@@ -103,6 +108,30 @@ export default function Home() {
     </Link><Link href="/about" className="editorial-feature editorial-feature-heritage">
       <div><span>Our heritage, our strength</span><h2>Commerce for<br />A Prosperous Buganda</h2><p>Rooted in cultural confidence, we imagine a dynamic and inclusive commercial ecosystem.</p><b>About the Chamber <ArrowRight size={15} /></b></div>
     </Link></section>
+
+    <section className="mcc-platform" aria-labelledby="mcc-platform-heading"><div className="container">
+      <div className="mcc-platform-head"><div><span className="eyebrow">One connected ecosystem</span><h2 id="mcc-platform-heading">Built for every part of the business journey.</h2><p>Explore the three connected experiences envisioned for Mengo Chamber. These are frontend previews; live accounts, payments and approvals will be enabled in a later phase.</p></div><Link href="/explore">Explore the platform <ArrowUpRight size={17}/></Link></div>
+      <div className="mcc-platform-grid">
+        <article className="mcc-platform-card"><span className="mcc-platform-number">01 / DISCOVER</span><div className="mcc-platform-symbol"><Building2 size={30}/></div><h3>Public business gateway</h3><p>Find enterprises, commercial centres, programmes and investment opportunities across Buganda.</p><div className="mcc-platform-tags"><span>Directory</span><span>Investment</span><span>Events</span></div><Link href="/businesses">Explore businesses <ArrowRight size={16}/></Link></article>
+        <article className="mcc-platform-card"><span className="mcc-platform-number">02 / BELONG</span><div className="mcc-platform-symbol"><UsersRound size={30}/></div><h3>Membership experience</h3><p>Discover membership categories, benefits and the proposed digital member journey.</p><div className="mcc-platform-tags"><span>Applications</span><span>Member portal</span><span>Services</span></div><Link href="/join">Explore membership <ArrowRight size={16}/></Link></article>
+        <article className="mcc-platform-card"><span className="mcc-platform-number">03 / LEAD</span><div className="mcc-platform-symbol"><BarChart3 size={30}/></div><h3>Chamber command centre</h3><p>Preview the operational and strategic tools for membership, finance, programmes and performance.</p><div className="mcc-platform-tags"><span>CRM</span><span>Reporting</span><span>KPIs</span></div><Link href="/strategy">View strategic framework <ArrowRight size={16}/></Link></article>
+      </div>
+    </div></section>
+
+    <section className="mcc-strategy" aria-labelledby="mcc-strategy-heading"><div className="container">
+      <div className="mcc-strategy-intro"><span className="eyebrow">2026–2029 · Twezimbe</span><h2 id="mcc-strategy-heading">Six priorities. One stronger business ecosystem.</h2><p>Our digital vision follows the Chamber's six strategic pillars. Select a priority to explore its related experience.</p></div>
+      <div className="mcc-strategy-grid">
+        {[
+          {icon:CreditCard,title:"Revenue sustainability",desc:"Membership, programmes and sustainable services.",href:"/membership"},
+          {icon:UsersRound,title:"Membership growth",desc:"Welcoming and connecting enterprises of every size.",href:"/join"},
+          {icon:ShieldCheck,title:"Institutional capacity",desc:"Governance, service delivery and operational excellence.",href:"/governance"},
+          {icon:Handshake,title:"Trade & investment",desc:"Business linkages, partnerships and market access.",href:"/exchange"},
+          {icon:Landmark,title:"Policy & advocacy",desc:"Research and a stronger voice for business.",href:"/policy-advocacy"},
+          {icon:BookOpen,title:"Market intelligence",desc:"Evidence, insight and informed commercial decisions.",href:"/intelligence"}
+        ].map(({icon:Icon,title,desc,href},i)=><Link className="mcc-strategy-item" href={href} key={title}><span className="mcc-strategy-index">0{i+1}</span><Icon size={24} strokeWidth={1.7}/><strong>{title}</strong><span>{desc}</span><ArrowUpRight className="mcc-strategy-arrow" size={17}/></Link>)}
+      </div>
+      <div className="mcc-strategy-foot"><span><CalendarDays size={17}/> Inspired by the MCCL Three-Year Strategic Plan, 2026–2029</span><Link href="/strategy">Explore the strategic plan <ArrowRight size={16}/></Link></div>
+    </div></section>
 
     <section className="editorial-join"><div className="container"><div><h2>Connect with Traders and Businesses Across Buganda</h2><p>Be part of a stronger network driving trade, opportunity and inclusive economic transformation.</p></div><Link className="btn gold" href="/join">Become a Member <ArrowRight size={16} /></Link></div></section>
 
