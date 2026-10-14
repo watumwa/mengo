@@ -25,8 +25,8 @@ const areas = [
     description: "Discover trading centres, markets and business hubs across Buganda.",
     href: "/centres",
     action: "Explore Centres",
-    image: "/images/kampala-market.jpg",
-    alt: "Commerce at a Kampala market",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Fruits_stall_in_Kasubi_market.jpg?width=960",
+    alt: "Real fruit stall photographed at Kasubi market in Kampala",
   },
   {
     title: "Business Directory",
@@ -94,7 +94,7 @@ export default function Home() {
       <div className="editorial-heading"><div className="eyebrow">Explore our key areas</div><h2>Building A Thriving Commercial Community</h2></div>
       <div className="editorial-area-grid">{areas.map(({ title, description, href, action, image, alt }) => <article className="editorial-area-card" key={title}>
         {image?<img src={image} alt={alt}/>:<div className="mcc-illustration" aria-hidden="true"><span>{title==="Business Directory"?<Building2 size={48}/>:title==="Market Opportunities"?<TrendingUp size={48}/>:<Handshake size={48}/>}</span><i>{title==="Business Directory"?"DISCOVER ENTERPRISES":title==="Market Opportunities"?"CONNECT TO MARKETS":"BUILD BUSINESS CAPACITY"}</i></div>}
-        <div><h3>{title}</h3><p>{description}</p><Link href={href}>{action} <span aria-hidden="true">→</span></Link></div>
+        <div>{title==="Commercial Centres"&&<a className="mcc-photo-credit" href="https://commons.wikimedia.org/wiki/File:Fruits_stall_in_Kasubi_market.jpg" target="_blank" rel="noopener noreferrer">Photo: Bruno ashimwe winks · CC BY-SA 4.0</a>}<h3>{title}</h3><p>{description}</p><Link href={href}>{action} <span aria-hidden="true">→</span></Link></div>
       </article>)}</div>
     </div></section>
 
