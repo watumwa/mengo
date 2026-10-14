@@ -29,8 +29,8 @@ export function Header() {
         </nav>
         <div className="navactions">
           <Link className="nav-search" href="/businesses" aria-label="Search the Chamber directory"><Search size={18} /></Link>
-          <Link className="header-login" href="/login">Login</Link>
-          <Link className="btn navy" href="/join">Join Now <ArrowUpRight size={15} /></Link>
+          <Link className="header-login" href="/login">Member Login</Link>
+          <Link className="btn navy" href="/join">Join the Chamber <ArrowUpRight size={15} /></Link>
           <button className="menubutton" type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-controls="primary-navigation" aria-expanded={open}>{open ? <X /> : <Menu />}</button>
         </div>
       </div>
