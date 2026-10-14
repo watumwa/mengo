@@ -35,7 +35,17 @@ const pages: Record<string, Detail> = {
   "international-trade":{title:"International Trade & Diaspora",description:"International markets, export readiness and diaspora connections.",intro:"International markets, export readiness and diaspora connections.",items:[{title:"Overview",text:"International markets, export readiness and diaspora connections."},{title:"Programmes and resources",text:"Published information is subject to institutional review and confirmation."}],cta:"Enquire About Services"},
   "trade-missions":{title:"Trade Missions & B2B Networking",description:"Trade fairs, delegations, networking sessions and commercial introductions.",intro:"Trade fairs, delegations, networking sessions and commercial introductions.",items:[{title:"Overview",text:"Trade fairs, delegations, networking sessions and commercial introductions."},{title:"Programmes and resources",text:"Published information is subject to institutional review and confirmation."}],cta:"Enquire About Services"},
   "research":{title:"Research & Publications",description:"Approved reports, sector research and publication downloads.",intro:"Approved reports, sector research and publication downloads.",items:[{title:"Overview",text:"Approved reports, sector research and publication downloads."},{title:"Programmes and resources",text:"Published information is subject to institutional review and confirmation."}],cta:"Enquire About Services"},
-  "market-intelligence":{title:"Market Intelligence",description:"Sector trends, market briefs and a future business data platform.",intro:"Sector trends, market briefs and a future business data platform.",items:[{title:"Overview",text:"Sector trends, market briefs and a future business data platform."},{title:"Programmes and resources",text:"Published information is subject to institutional review and confirmation."}],cta:"Enquire About Services"},
+  "market-intelligence":{
+    title:"Market Intelligence & Data Systems",
+    description:"Reliable information for better business decisions.",
+    intro:"The strategic plan proposes systems to collect, analyse, manage and disseminate timely business and market information. The intention is to identify trends, investment opportunities and business risks while informing advocacy and planning.",
+    items:[
+      {title:"Quarterly Market Intelligence Reports",text:"Planned periodic reporting on business and market developments."},
+      {title:"Market Surveys",text:"Proposed surveys and trend analysis across relevant commercial sectors."},
+      {title:"Integrated Data Systems",text:"Planned data management systems for business information and analysis."},
+      {title:"Annual Economic and Sector Reports",text:"Proposed evidence-based reporting on sector performance and the business environment."}
+    ],cta:"Research Enquiry"
+  },
   "vision-mission-values": {
     title:"Vision, Mission & Values",
     description:"A strategic direction rooted in enterprise and Buganda's development aspirations.",
