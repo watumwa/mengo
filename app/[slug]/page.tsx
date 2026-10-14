@@ -33,7 +33,19 @@ const pages: Record<string, Detail> = {
       {title:"Governance and Accountability",text:"Emphasise collective leadership, integrity, conflict-of-interest management and reporting."}
     ],cta:"Regional Network Enquiry"
   },
-  "faq":{title:"Help Centre & FAQs",description:"Membership, services, applications and directory guidance.",intro:"Membership, services, applications and directory guidance.",items:[{title:"Overview",text:"Membership, services, applications and directory guidance."},{title:"Further information",text:"Verified details will be added after formal institutional review."}],cta:"Contact the Chamber"},
+  "faq":{
+    title:"Help Centre & FAQs",
+    description:"Guidance on Chamber membership, programmes and digital services.",
+    intro:"Answers to common questions about the Chamber's proposed services and current website development status.",
+    items:[
+      {title:"Who can join?",text:"The plan sets out seven categories for businesses, institutions and individuals."},
+      {title:"Are fees approved?",text:"The strategic plan contains recommended figures. Final charges require institutional approval."},
+      {title:"Are directory listings verified?",text:"Demonstration records are not verified business endorsements."},
+      {title:"Can I register for events?",text:"Schedules and registration procedures will be published after confirmation."},
+      {title:"Where is the Chamber based?",text:"Bulange – Mengo, P.O. Box 4951, Kampala, Uganda."},
+      {title:"Are portal services live?",text:"The portal designs are previews. Live workflows require backend integration and verification."}
+    ],cta:"Contact the Chamber"
+  },
   "privacy":{title:"Privacy Policy",description:"Final privacy terms require legal approval before personal data is collected.",intro:"Final privacy terms require legal approval before personal data is collected.",items:[{title:"Overview",text:"Final privacy terms require legal approval before personal data is collected."},{title:"Further information",text:"Verified details will be added after formal institutional review."}],cta:"Contact the Chamber"},
   "terms":{title:"Terms & Conditions",description:"Platform terms require legal and institutional approval before publication.",intro:"Platform terms require legal and institutional approval before publication.",items:[{title:"Overview",text:"Platform terms require legal and institutional approval before publication."},{title:"Further information",text:"Verified details will be added after formal institutional review."}],cta:"Contact the Chamber"},
   "business-advisory":{
