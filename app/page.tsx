@@ -9,6 +9,7 @@ import {
   UsersRound,
 } from "lucide-react";
 import { Shell } from "./components";
+import EcosystemSearch from "./EcosystemSearch";
 
 const pillars = [
   { icon: UsersRound, title: "Business Connectivity", text: "Linking traders to markets and opportunities." },
@@ -82,6 +83,8 @@ export default function Home() {
       </div>
       <p className="editorial-note">Five strategic propositions: Connect, Develop, Advocate, Promote and Transform. These describe priorities, not completed outcomes.</p>
     </div></section>
+
+    <section className="ecosystem-home-gateway"><div className="container"><div className="ecosystem-home-heading"><span className="eyebrow">MCCL CONNECT · The Business Ecosystem of Buganda</span><h2>Where Buganda's businesses connect, grow and trade.</h2><p>Explore the Chamber through practical pathways to enterprise, investment, markets and knowledge.</p></div><div className="ecosystem-home-links"><Link href="/connect"><Handshake size={21}/> Find a business partner <ArrowUpRight size={16}/></Link><Link href="/economic-map"><Landmark size={21}/> Explore regional clusters <ArrowUpRight size={16}/></Link><Link href="/opportunities"><TrendingUp size={21}/> Discover opportunities <ArrowUpRight size={16}/></Link></div><EcosystemSearch compact/></div></section>
 
     <section className="editorial-areas"><div className="container">
       <div className="editorial-heading"><div className="eyebrow">Explore our key areas</div><h2>Building A Thriving Commercial Community</h2></div>
