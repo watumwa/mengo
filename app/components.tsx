@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowRight, ArrowUpRight, MapPin, Menu, Search, X } from "lucide-react";
 
@@ -21,6 +21,7 @@ export function Header() {
   const [expanded, setExpanded] = useState<string | null>(null);
   const pathname = usePathname();
   const closeMenu = () => {setOpen(false);setExpanded(null);};
+  useEffect(()=>{const onEscape=(event:KeyboardEvent)=>{if(event.key==="Escape")closeMenu()};window.addEventListener("keydown",onEscape);return ()=>window.removeEventListener("keydown",onEscape)},[]);
 
   return <>
     <div className="topline"><div className="container"><span>Rooted in heritage. Advancing commerce and prosperity.</span><span>Buganda, Uganda · Connecting enterprise to opportunity</span></div></div>
