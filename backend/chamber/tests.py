@@ -58,3 +58,20 @@ class AccessControlTests(TestCase):
   self.assertIn("token",response.data)
   self.client.credentials(HTTP_AUTHORIZATION="Token "+response.data["token"])
   self.assertEqual(self.client.get("/api/v1/auth/me/").status_code,200)
+
+ def test_member_cannot_edit_another_business(self):
+  other=get_user_model().objects.create_user(username="othermember",password="test-secure-pass-456")
+  business=Business.objects.create(name="Other",sector="Retail",district="Wakiso",owner=other)
+  self.client.force_authenticate(user=self.member)
+  response=self.client.patch(f"/api/v1/me/businesses/{business.pk}/",{"name":"Changed"},format="json")
+  self.assertEqual(response.status_code,404)
+
+ def test_member_edit_requires_reverification(self):
+  business=Business.objects.create(name="My Shop",sector="Retail",district="Wakiso",owner=self.member,published=True,verified=True)
+  self.client.force_authenticate(user=self.member)
+  response=self.client.patch(f"/api/v1/me/businesses/{business.pk}/",{"name":"Updated Shop"},format="json")
+  self.assertEqual(response.status_code,200)
+  business.refresh_from_db()
+  self.assertEqual(business.name,"Updated Shop")
+  self.assertFalse(business.published)
+  self.assertFalse(business.verified)
