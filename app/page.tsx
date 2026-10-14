@@ -18,13 +18,6 @@ const pillars = [
   { icon: Landmark, title: "Guided by Tradition", text: "Inspired by Buganda’s heritage and future." },
 ];
 
-const impact = [
-  { value: "200+", label: "Registered Businesses" },
-  { value: "50+", label: "Commercial Centres" },
-  { value: "10,000+", label: "Traders & Entrepreneurs" },
-  { value: "25+", label: "Events & Programmes" },
-];
-
 const areas = [
   {
     title: "Commercial Centres",
@@ -66,7 +59,7 @@ export default function Home() {
       <div className="container"><div className="content">
         <div className="kicker">Uniting traders. Building opportunities.</div>
         <h1>A Stronger<br />Commercial Future<br />for <em>Buganda</em></h1>
-        <p>The Mengo Chamber of Commerce concept brings together businesses, traders and commercial centres to promote trade, create opportunity and build a more connected enterprise ecosystem.</p>
+        <p>Mengo Chamber of Commerce brings together businesses, traders and commercial centres to promote trade, create opportunity and build a connected enterprise ecosystem.</p>
         <div className="heroactions">
           <Link className="btn gold" href="/join">Join the Chamber <ArrowRight size={16} /></Link>
           <Link className="btn outline" href="/about">Explore our vision <ArrowUpRight size={16} /></Link>
@@ -81,8 +74,13 @@ export default function Home() {
     </div></section>
 
     <section className="editorial-impact"><div className="container">
-      <div className="editorial-impact-grid">{impact.map(({ value, label }) => <div className="editorial-stat" key={label}><b>{value}</b><span>{label}</span></div>)}</div>
-      <p className="editorial-note">Preview figures illustrate the intended Chamber ecosystem and are not verified live totals.</p>
+      <div className="editorial-impact-grid">
+        <div className="editorial-stat"><b>Connect</b><span>Businesses and markets</span></div>
+        <div className="editorial-stat"><b>Develop</b><span>Enterprise capability</span></div>
+        <div className="editorial-stat"><b>Advocate</b><span>Business interests</span></div>
+        <div className="editorial-stat"><b>Transform</b><span>Inclusive economic growth</span></div>
+      </div>
+      <p className="editorial-note">Strategic priorities, not claims about current membership or programme totals.</p>
     </div></section>
 
     <section className="editorial-areas"><div className="container">
