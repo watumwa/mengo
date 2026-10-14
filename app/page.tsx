@@ -86,6 +86,8 @@ export default function Home() {
 
     <section className="ecosystem-home-gateway"><div className="container"><div className="ecosystem-home-heading"><span className="eyebrow">MCCL CONNECT · The Business Ecosystem of Buganda</span><h2>Where Buganda's businesses connect, grow and trade.</h2><p>Explore the Chamber through practical pathways to enterprise, investment, markets and knowledge.</p></div><div className="ecosystem-home-links"><Link href="/connect"><Handshake size={21}/> Find a business partner <ArrowUpRight size={16}/></Link><Link href="/economic-map"><Landmark size={21}/> Explore regional clusters <ArrowUpRight size={16}/></Link><Link href="/exchange"><TrendingUp size={21}/> Discover opportunities <ArrowUpRight size={16}/></Link></div><EcosystemSearch compact/></div></section>
 
+    <section className="ecosystem-home-gateway"><div className="container"><div className="ecosystem-home-heading"><span className="eyebrow">Explore the strategic ecosystem</span><h2>More ways to connect, grow and influence.</h2><p>Discover value chains, the diaspora network, advocacy and the Chamber's 2026–2029 strategic framework.</p></div><div className="ecosystem-home-links"><Link href="/value-chains"><TrendingUp size={21}/> Value Chain Explorer <ArrowUpRight size={16}/></Link><Link href="/diaspora-network"><UsersRound size={21}/> Diaspora Network <ArrowUpRight size={16}/></Link><Link href="/business-issues"><Landmark size={21}/> Business Issue Tracker <ArrowUpRight size={16}/></Link><Link href="/strategy"><Building2 size={21}/> Strategic Framework <ArrowUpRight size={16}/></Link></div></div></section>
+
     <section className="editorial-areas"><div className="container">
       <div className="editorial-heading"><div className="eyebrow">Explore our key areas</div><h2>Building A Thriving Commercial Community</h2></div>
       <div className="editorial-area-grid">{areas.map(({ title, description, href, action, image, alt }) => <article className="editorial-area-card" key={title}>
@@ -94,7 +96,7 @@ export default function Home() {
       </article>)}</div>
     </div></section>
 
-    <section className="editorial-feature-row" aria-label="Investment and heritage"><Link href="/opportunities" className="editorial-feature editorial-feature-invest">
+    <section className="editorial-feature-row" aria-label="Investment and heritage"><Link href="/exchange" className="editorial-feature editorial-feature-invest">
       <div><span>Opportunity in view</span><h2>Invest in<br />Buganda’s Future</h2><p>Discover commercial opportunity across trade, tourism, agriculture and enterprise.</p><b>Explore Opportunities <ArrowRight size={15} /></b></div>
     </Link><Link href="/about" className="editorial-feature editorial-feature-heritage">
       <div><span>Our heritage, our strength</span><h2>Commerce for<br />A Prosperous Buganda</h2><p>Rooted in cultural confidence, we imagine a dynamic and inclusive commercial ecosystem.</p><b>About the Chamber <ArrowRight size={15} /></b></div>
