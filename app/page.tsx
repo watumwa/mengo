@@ -33,24 +33,24 @@ const areas = [
     description: "Explore illustrative listings while business verification is being developed.",
     href: "/businesses",
     action: "Search Businesses",
-    image: "",
-    alt: "Illustrated business directory",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kampala_skyline.jpg?width=960",
+    alt: "Documentary photograph of the Kampala commercial skyline",
   },
   {
     title: "Market Opportunities",
     description: "Explore prospective local and regional trade and supply linkages.",
     href: "/exchange",
     action: "View Opportunities",
-    image: "",
-    alt: "Illustrated market opportunities",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Street_Scene_in_Rubaga%2C_Kampala_01.jpg?width=960",
+    alt: "Documentary photograph of roadside commercial activity in Rubaga Kampala",
   },
   {
     title: "Business Development",
     description: "Training, membership and advisory services for growth.",
     href: "/business-development",
     action: "Learn More",
-    image: "",
-    alt: "Illustrated enterprise development",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kampala_sky.jpg?width=960",
+    alt: "Documentary photograph of Kampala urban development",
   },
 ];
 
@@ -94,7 +94,7 @@ export default function Home() {
       <div className="editorial-heading"><div className="eyebrow">Explore our key areas</div><h2>Building A Thriving Commercial Community</h2></div>
       <div className="editorial-area-grid">{areas.map(({ title, description, href, action, image, alt }) => <article className="editorial-area-card" key={title}>
         {image?<img src={image} alt={alt}/>:<div className="mcc-illustration" aria-hidden="true"><span>{title==="Business Directory"?<Building2 size={48}/>:title==="Market Opportunities"?<TrendingUp size={48}/>:<Handshake size={48}/>}</span><i>{title==="Business Directory"?"DISCOVER ENTERPRISES":title==="Market Opportunities"?"CONNECT TO MARKETS":"BUILD BUSINESS CAPACITY"}</i></div>}
-        <div>{title==="Commercial Centres"&&<a className="mcc-photo-credit" href="https://commons.wikimedia.org/wiki/File:Fruits_stall_in_Kasubi_market.jpg" target="_blank" rel="noopener noreferrer">Photo: Bruno ashimwe winks · CC BY-SA 4.0</a>}<h3>{title}</h3><p>{description}</p><Link href={href}>{action} <span aria-hidden="true">→</span></Link></div>
+        <div>{<a className="mcc-photo-credit" href={title==="Commercial Centres"?"https://commons.wikimedia.org/wiki/File:Fruits_stall_in_Kasubi_market.jpg":title==="Business Directory"?"https://commons.wikimedia.org/wiki/File:Kampala_skyline.jpg":title==="Market Opportunities"?"https://commons.wikimedia.org/wiki/File:Street_Scene_in_Rubaga,_Kampala_01.jpg":"https://commons.wikimedia.org/wiki/File:Kampala_sky.jpg"} target="_blank" rel="noopener noreferrer">Photo: Wikimedia Commons · View author &amp; licence</a>}<h3>{title}</h3><p>{description}</p><Link href={href}>{action} <span aria-hidden="true">→</span></Link></div>
       </article>)}</div>
     </div></section>
 
