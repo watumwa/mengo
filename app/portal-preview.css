@@ -15,3 +15,9 @@
 .portal-preview-features p{color:#68788a;font-size:12px;line-height:1.65;margin:0}
 @media(max-width:900px){.portal-preview-grid{grid-template-columns:1fr}.portal-preview-features{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.portal-preview-list{grid-template-columns:1fr}.portal-preview-features{grid-template-columns:1fr}.portal-preview-head{padding:20px}}
+
+.portal-preview-launch{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:24px;background:#fff;border:1px solid #e5e9ed;border-radius:8px;margin-top:24px}
+.portal-preview-launch h2{font:700 24px Georgia,serif;color:#102844;margin:0 0 9px}
+.portal-preview-launch p{font-size:12px;color:#68788a;line-height:1.7;margin:0}
+.portal-preview-launch>div{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){.portal-preview-launch{display:block}.portal-preview-launch>div{margin-top:20px}}
