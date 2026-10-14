@@ -29,7 +29,7 @@ const areas = [
   },
   {
     title: "Business Directory",
-    description: "Find and connect with verified businesses and traders.",
+    description: "Explore illustrative listings while business verification is being developed.",
     href: "/businesses",
     action: "Search Businesses",
     image: "/images/buganda-traditional-wear.jpg",
@@ -37,7 +37,7 @@ const areas = [
   },
   {
     title: "Market Opportunities",
-    description: "Access local and regional trade and supply opportunities.",
+    description: "Explore prospective local and regional trade and supply linkages.",
     href: "/opportunities",
     action: "View Opportunities",
     image: "/images/buganda-royal-palace.jpg",
@@ -59,7 +59,7 @@ export default function Home() {
       <div className="container"><div className="content">
         <div className="kicker">Uniting traders. Building opportunities.</div>
         <h1>A Stronger<br />Commercial Future<br />for <em>Buganda</em></h1>
-        <p>Mengo Chamber of Commerce brings together businesses, traders and commercial centres to promote trade, create opportunity and build a connected enterprise ecosystem.</p>
+        <p>Mengo Chamber of Commerce Limited, established by the Kingdom of Buganda, aims to connect businesses, traders and commercial centres, promote trade and investment, and strengthen enterprise development.</p>
         <div className="heroactions">
           <Link className="btn gold" href="/join">Join the Chamber <ArrowRight size={16} /></Link>
           <Link className="btn outline" href="/about">Explore our vision <ArrowUpRight size={16} /></Link>
@@ -97,7 +97,7 @@ export default function Home() {
       <div><span>Our heritage, our strength</span><h2>Commerce for<br />A Prosperous Buganda</h2><p>Rooted in cultural confidence, we imagine a dynamic and inclusive commercial ecosystem.</p><b>About the Chamber <ArrowRight size={15} /></b></div>
     </Link></section>
 
-    <section className="editorial-join"><div className="container"><div><h2>Join a Growing Community of Traders and Businesses</h2><p>Be part of a stronger network driving trade, opportunity and inclusive economic transformation.</p></div><Link className="btn gold" href="/join">Become a Member <ArrowRight size={16} /></Link></div></section>
+    <section className="editorial-join"><div className="container"><div><h2>Connect with Traders and Businesses Across Buganda</h2><p>Be part of a stronger network driving trade, opportunity and inclusive economic transformation.</p></div><Link className="btn gold" href="/join">Become a Member <ArrowRight size={16} /></Link></div></section>
 
     <section className="editorial-disclaimer"><div className="container">Website frontend under development. Content is based on the Mengo Chamber of Commerce Limited 2026–2029 strategic plan; programme details require institutional confirmation.</div></section>
   </main></Shell>;
