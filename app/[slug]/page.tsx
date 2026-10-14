@@ -37,7 +37,17 @@ const pages: Record<string, Detail> = {
       {title:"Governance and Compliance",text:"Guidance on organisational systems and responsible business practices."}
     ],cta:"Enquire About Advisory"
   },
-  "training":{title:"Training & Capacity Building",description:"Workshop catalogue, learning resources and programme enquiries.",intro:"Workshop catalogue, learning resources and programme enquiries.",items:[{title:"Overview",text:"Workshop catalogue, learning resources and programme enquiries."},{title:"Programmes and resources",text:"Published information is subject to institutional review and confirmation."}],cta:"Enquire About Services"},
+  "training":{
+    title:"Training & Capacity Building",
+    description:"Practical skills for enterprise resilience and growth.",
+    intro:"Paid training and capacity-building programmes form part of the Chamber's proposed revenue and member-service model. The annual workplan contains training targets, but no workshop should be advertised as scheduled until officially confirmed.",
+    items:[
+      {title:"Entrepreneurship Skills",text:"Practical business planning, market readiness and business operations."},
+      {title:"Leadership and Governance",text:"Responsible enterprise leadership, organisational systems and governance."},
+      {title:"Digital Transformation",text:"Digital tools, commerce platforms and modern business processes."},
+      {title:"Productivity and Standards",text:"Quality improvement, competitiveness and value addition."}
+    ],cta:"Enquire About Training"
+  },
   "entrepreneurship":{title:"Entrepreneurship & Innovation",description:"Mentorship, startup support and digital commerce readiness.",intro:"Mentorship, startup support and digital commerce readiness.",items:[{title:"Overview",text:"Mentorship, startup support and digital commerce readiness."},{title:"Programmes and resources",text:"Published information is subject to institutional review and confirmation."}],cta:"Enquire About Services"},
   "agriculture":{title:"Agricultural Transformation",description:"Agro-processing, value addition, standards and market access.",intro:"Agro-processing, value addition, standards and market access.",items:[{title:"Overview",text:"Agro-processing, value addition, standards and market access."},{title:"Programmes and resources",text:"Published information is subject to institutional review and confirmation."}],cta:"Enquire About Services"},
   "arbitration":{title:"Arbitration & Business Governance",description:"Proposed dispute-resolution and governance services; not yet operational.",intro:"Proposed dispute-resolution and governance services; not yet operational.",items:[{title:"Overview",text:"Proposed dispute-resolution and governance services; not yet operational."},{title:"Programmes and resources",text:"Published information is subject to institutional review and confirmation."}],cta:"Enquire About Services"},
