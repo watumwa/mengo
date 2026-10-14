@@ -6,7 +6,7 @@ const entries=[
  {title:"Business Directory",desc:"Discover enterprises and suppliers",href:"/businesses",type:"Businesses",icon:Building2},
  {title:"MCCL Connect",desc:"Explore business matching and introductions",href:"/connect",type:"Services",icon:Handshake},
  {title:"Opportunity Exchange",desc:"Trade, investment and partnership opportunities",href:"/exchange",type:"Investment Opportunities",icon:Landmark},
- {title:"Invest in Buganda",desc:"Investment sectors and commercial linkages",href:"/investment",type:"Investment Opportunities",icon:Landmark},
+ {title:"Invest in Buganda",desc:"Investment sectors and commercial linkages",href:"/invest",type:"Investment Opportunities",icon:Landmark},
  {title:"Market Intelligence",desc:"Research, market reports and sector trends",href:"/intelligence",type:"Reports",icon:BookOpen},
  {title:"Policy & Advocacy",desc:"Business environment and policy priorities",href:"/policy-advocacy",type:"Policy Documents",icon:BookOpen},
  {title:"Regional Clusters",desc:"Explore six proposed regional business clusters",href:"/economic-map",type:"Regional Clusters",icon:MapPinned},
