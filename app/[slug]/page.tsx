@@ -72,7 +72,21 @@ const pages: Record<string, Detail> = {
     ],
     cta:"Enquire About Membership",
   },
-  "membership-fees":{title:"Membership Fees & Benefits",description:"Membership value",intro:"Fees in the strategic plan are proposals and will not be presented as approved tariffs.",items:[{title:"Overview",text:"Fees in the strategic plan are proposals and will not be presented as approved tariffs."},{title:"Explore further",text:"Detailed information and verified records will be added following institutional approval."}],cta:"Contact the Chamber"},
+  "membership-fees": {
+    title:"Proposed Membership Fees",
+    description:"Recommended admission and annual subscriptions in the strategic plan.",
+    intro:"The strategic plan includes recommended USD fee figures, but these are proposals rather than confirmed public charges. The Chamber must approve the final fee schedule, classification rules and payment arrangements before collection.",
+    items:[
+      {title:"Corporate Membership",text:"Proposed one-time admission: USD 300; annual subscription: USD 500–1,000 depending on enterprise size."},
+      {title:"International & Bilateral Membership",text:"Proposed one-time admission: USD 1,000; annual subscription: USD 2,500."},
+      {title:"Associate Membership",text:"Proposed one-time admission: USD 200; annual subscription: USD 350."},
+      {title:"SME Membership",text:"Proposed one-time admission: USD 50; annual subscription: USD 100."},
+      {title:"Ambassadors",text:"By invitation; proposed annual contribution USD 500 or waived."},
+      {title:"Ordinary Individual Membership",text:"Proposed one-time admission: USD 40; annual subscription: USD 75."},
+      {title:"Community Membership",text:"Proposed one-time admission: USD 20; annual subscription: USD 40."}
+    ],
+    cta:"Confirm Membership Fees",
+  },
   "special-interest-groups": {
     title:"Special Interest Groups",
     description:"Proposed networks for targeted business support.",
