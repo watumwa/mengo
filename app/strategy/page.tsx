@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {ArrowUpRight,Handshake,GraduationCap,Scale,TrendingUp,Database,Building2,MapPinned} from "lucide-react";
+import {ArrowUpRight,Handshake,Scale,TrendingUp,Database,Building2,MapPinned} from "lucide-react";
 import {Shell} from "../components";
 const goals=[
  {title:"Revenue Generation",detail:"Strengthen sustainable institutional revenue and financial resilience.",href:"/strategic-goals",icon:TrendingUp},
