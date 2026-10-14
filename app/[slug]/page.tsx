@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ArrowUpRight, Building2, GraduationCap, Handshake } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { PageHero, Shell } from "../components";
 
 type Detail = { title: string; description: string; intro: string; items: { title: string; text: string }[]; cta: string };
