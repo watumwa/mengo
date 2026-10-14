@@ -13,7 +13,7 @@ export default function PortalPreview(){
    <PageHero title="Digital Workspace Designs" description="Frontend-only interface blueprint for Chamber members and authorised Secretariat teams."/>
    <section className="section cream"><div className="container">
      <p className="notice">Design preview only. These are proposed screen types, not active member or staff functions. This page contains no private records, real account information or administrative controls.</p>
-     <div className="portal-preview-grid">
+     <div className="portal-preview-launch"><h2>Explore the dashboard designs</h2><p>These are interactive navigation previews with illustrative data, not live accounts.</p><div><Link className="btn navy" href="/portal-preview/member">Member Dashboard <ArrowUpRight size={15}/></Link><Link className="btn gold" href="/portal-preview/secretariat">Secretariat Dashboard <ArrowUpRight size={15}/></Link></div></div><div className="portal-preview-grid">
        {cards.map(({title,icon:Icon,description,items})=><article className="portal-preview-card" key={title}>
          <div className="portal-preview-head"><span className="serviceicon"><Icon size={25}/></span><div><h2>{title}</h2><p>{description}</p></div></div>
          <div className="portal-preview-list">{items.map((item,index)=><div key={item}><span>{String(index+1).padStart(2,"0")}</span><strong>{item}</strong></div>)}</div>
