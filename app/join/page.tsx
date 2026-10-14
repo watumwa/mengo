@@ -5,7 +5,8 @@ import {ArrowRight,ArrowLeft,CheckCircle2,ShieldAlert} from "lucide-react";
 import {Shell} from "../components";
 const categories=["Corporate Membership","International and Bilateral Membership","Associate Membership","SME Membership","Ambassadors of Mengo Chamber","Ordinary (Individual) Membership","Community Membership"];
 const steps=["Membership","Organisation","Location","Contact","Activity","Interests","Services","Declaration","Review"];
-const fields=[
+type WizardField = { key: string; label: string; type?: string; options?: string[] };
+const fields: WizardField[][] = [
  [{key:"category",label:"Select membership category",type:"select",options:categories},{key:"applicantType",label:"Applicant type",type:"select",options:["Company or organisation","Individual","Cooperative or community group"]}],
  [{key:"organisation",label:"Business / organisation / applicant name"},{key:"registration",label:"Registration number (if applicable)"}],
  [{key:"district",label:"District"},{key:"region",label:"Regional cluster",type:"select",options:["Greater Kampala","Greater Mpigi","Greater Masaka","Greater Mityana","Greater Luweero","Greater Mukono","Outside Buganda"]}],
