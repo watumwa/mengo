@@ -9,7 +9,7 @@ export const nav = [
  ["Explore", "/businesses"],["Connect", "/connect"],["Grow", "/business-advisory"],["Influence", "/policy-advocacy"],["About", "/about"]
 ];
 const menus=[
- {title:"Explore",links:[["Business Directory","/businesses"],["Opportunity Exchange","/exchange"],["Invest in Buganda","/invest"],["Market Intelligence","/intelligence"],["Regional Economic Map","/economic-map"],["All Services","/explore"]]},
+ {title:"Explore",links:[["Business Directory","/businesses"],["Opportunity Exchange","/exchange"],["Invest in Buganda","/invest"],["Market Intelligence","/intelligence"],["Regional Economic Map","/economic-map"],["Opportunity Navigator","/opportunity-navigator"],["All Services","/explore"]]},
  {title:"Connect",links:[["MCCL Connect","/connect"],["Membership","/membership"],["Apply to Join","/join"],["Events","/events-calendar"],["Trade Missions","/trade-missions"],["Diaspora Network","/diaspora-network"]]},
  {title:"Grow",links:[["Business Advisory","/business-advisory"],["Training","/training"],["Mentorship","/mentorship"],["Market Access","/market-linkages"],["Value Chain Explorer","/value-chains"]]},
  {title:"Influence",links:[["Policy & Advocacy","/policy-advocacy"],["Research","/intelligence"],["Business Issue Tracker","/business-issues"],["Policy Briefs","/policy-briefs"]]},
