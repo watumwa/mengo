@@ -17,7 +17,8 @@ const menus=[
 ];
 
 export function Header() {
-  const [open, setOpen] = useState(false);\n  const [expanded, setExpanded] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState<string | null>(null);
   const pathname = usePathname();
   const closeMenu = () => {setOpen(false);setExpanded(null);};
 
