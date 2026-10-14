@@ -1,0 +1,17 @@
+/* Frontend phases: shared portal concept presentation */
+.portal-preview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin:35px 0}
+.portal-preview-card{background:#fff;border:1px solid #e2e6e9;border-top:4px solid #cba558;border-radius:9px;overflow:hidden;box-shadow:0 12px 32px #0b20370a}
+.portal-preview-head{display:flex;align-items:flex-start;gap:16px;padding:28px;border-bottom:1px solid #e5e9ed}
+.portal-preview-head h2{margin:0 0 9px;font-family:Georgia,serif;font-size:25px;color:#102844}
+.portal-preview-head p{margin:0;color:#68788a;font-size:13px;line-height:1.65}
+.portal-preview-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:10px 22px 24px}
+.portal-preview-list>div{display:flex;align-items:center;gap:10px;padding:13px 6px;border-bottom:1px solid #edf0f2;font-size:12px}
+.portal-preview-list span{color:#a47c35;font-weight:800;font-size:11px}
+.portal-preview-list strong{font-weight:600}
+.portal-preview-features{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:28px 0}
+.portal-preview-features article{background:#fff;border:1px solid #e5e9ed;border-radius:7px;padding:23px}
+.portal-preview-features svg{color:#a47c35}
+.portal-preview-features h3{font-size:15px;margin:13px 0 6px}
+.portal-preview-features p{color:#68788a;font-size:12px;line-height:1.65;margin:0}
+@media(max-width:900px){.portal-preview-grid{grid-template-columns:1fr}.portal-preview-features{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.portal-preview-list{grid-template-columns:1fr}.portal-preview-features{grid-template-columns:1fr}.portal-preview-head{padding:20px}}
