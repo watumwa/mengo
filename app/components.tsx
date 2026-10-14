@@ -10,8 +10,9 @@ export const nav = [
   ["Explore", "/search"],
   ["MCCL Connect", "/connect"],
   ["Businesses", "/businesses"],
-  ["Opportunities", "/opportunities"],
+  ["Opportunities", "/exchange"],
   ["Regional Clusters", "/economic-map"],
+  ["Intelligence", "/intelligence"],
   ["Membership", "/membership"],
   ["About", "/about"],
 ];
