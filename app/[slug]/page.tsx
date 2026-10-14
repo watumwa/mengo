@@ -60,7 +60,23 @@ const pages: Record<string, Detail> = {
     cta:"Enquire About Membership",
   },
   "membership-fees":{title:"Membership Fees & Benefits",description:"Membership value",intro:"Fees in the strategic plan are proposals and will not be presented as approved tariffs.",items:[{title:"Overview",text:"Fees in the strategic plan are proposals and will not be presented as approved tariffs."},{title:"Explore further",text:"Detailed information and verified records will be added following institutional approval."}],cta:"Contact the Chamber"},
-  "special-interest-groups":{title:"Special Interest Groups",description:"Business communities",intro:"Networks for youth, women, diaspora, agriculture, technology and creative enterprise.",items:[{title:"Overview",text:"Networks for youth, women, diaspora, agriculture, technology and creative enterprise."},{title:"Explore further",text:"Detailed information and verified records will be added following institutional approval."}],cta:"Contact the Chamber"},
+  "special-interest-groups": {
+    title:"Special Interest Groups",
+    description:"Proposed networks for targeted business support.",
+    intro:"The strategic plan envisages targeted networking, mentorship and advocacy for emerging business communities. These groups are proposed and not represented as operational.",
+    items:[
+      {title:"Young Entrepreneurs",text:"Business mentoring and enterprise networks."},
+      {title:"Women Entrepreneurs",text:"Networking, mentorship and enterprise support."},
+      {title:"Entrepreneurs with Disabilities",text:"Inclusive business participation and access."},
+      {title:"Faith-Based Businesses",text:"Enterprise cooperation and sector connections."},
+      {title:"School-Based Enterprises",text:"School entrepreneurship clubs and projects."},
+      {title:"Diaspora Business Network",text:"Business connections beyond Uganda."},
+      {title:"Creative Industries",text:"Creative sector networking and enterprise development."},
+      {title:"Agribusiness Entrepreneurs",text:"Agricultural value addition and market linkages."},
+      {title:"Technology and Innovation",text:"Digital commerce and technology enterprise."}
+    ],
+    cta:"Enquire About Networks",
+  },
   "success-stories":{title:"Member Success Stories",description:"Enterprise achievements",intro:"Verified member stories and case studies will be published after approval.",items:[{title:"Overview",text:"Verified member stories and case studies will be published after approval."},{title:"Explore further",text:"Detailed information and verified records will be added following institutional approval."}],cta:"Contact the Chamber"},
   about: {
     title: "About Mengo Chamber of Commerce Limited",
