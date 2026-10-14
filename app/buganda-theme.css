@@ -1,19 +1,6 @@
-.hero{
-  background-image:linear-gradient(90deg,rgba(8,28,50,.96) 0%,rgba(8,28,50,.84) 42%,rgba(8,28,50,.34) 100%),url('/images/buganda-royal-palace.jpg') !important;
-  background-position:center;
-}
-
-.directoryhero{
-  background-image:linear-gradient(90deg,rgba(8,28,50,.96),rgba(8,28,50,.76),rgba(8,28,50,.34)),url('/images/kampala-market.jpg') !important;
-  background-position:center;
-}
-
-.eventhero{
-  background-image:linear-gradient(90deg,rgba(8,28,50,.95),rgba(8,28,50,.55)),url('/images/buganda-traditional-wear.jpg') !important;
-  background-position:center 42%;
-}
-
-.newshero{
-  background-image:linear-gradient(90deg,rgba(8,28,50,.95),rgba(8,28,50,.58)),url('/images/buganda-gomesi.jpg') !important;
-  background-position:center 32%;
-}
+/* Commerce-led image direction: use business photography only where relevant.
+   Cultural heritage belongs on institutional storytelling pages, not event/news service headers. */
+.hero{background-image:linear-gradient(90deg,rgba(9,49,35,.95),rgba(9,49,35,.60)),url('/images/kampala-market.jpg')!important;background-position:center;background-size:cover}
+.directoryhero{background-image:linear-gradient(90deg,rgba(9,49,35,.96),rgba(9,49,35,.58)),url('/images/kampala-market.jpg')!important;background-position:center;background-size:cover}
+.eventhero{background-image:radial-gradient(circle at 85% 40%,rgba(199,164,81,.24),transparent 40%),linear-gradient(120deg,#0e4934,#0a2d24)!important;background-position:center}
+.newshero{background-image:radial-gradient(circle at 85% 40%,rgba(199,164,81,.20),transparent 40%),linear-gradient(120deg,#0d4433,#0b3025)!important;background-position:center}
