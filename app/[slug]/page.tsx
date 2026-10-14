@@ -6,7 +6,18 @@ import { PageHero, Shell } from "../components";
 type Detail = { title: string; description: string; intro: string; items: { title: string; text: string }[]; cta: string };
 
 const pages: Record<string, Detail> = {
-  "policy-advocacy":{title:"Policy Advocacy",description:"Business environment priorities, consultations and public-private dialogue.",intro:"Business environment priorities, consultations and public-private dialogue.",items:[{title:"Overview",text:"Business environment priorities, consultations and public-private dialogue."},{title:"Further information",text:"Verified details will be added after formal institutional review."}],cta:"Contact the Chamber"},
+  "policy-advocacy":{
+    title:"Policy Advocacy & Research",
+    description:"Evidence-led representation of the business community.",
+    intro:"The strategic plan calls for influencing business-friendly policy through research, stakeholder engagement and effective representation of members' interests. These are intended priorities, not claims of completed policy reforms.",
+    items:[
+      {title:"Public–Private Dialogue",text:"Participate in structured engagement between enterprise and public institutions."},
+      {title:"Sector Policy Briefs",text:"Develop evidence-based briefs on business environment priorities."},
+      {title:"Advocacy Groups",text:"Establish sector-focused working groups for member representation."},
+      {title:"Position Papers",text:"Prepare Chamber positions informed by member concerns and research."},
+      {title:"Research and Policy Analysis",text:"Analyse regulatory and economic issues affecting enterprise."}
+    ],cta:"Discuss Advocacy"
+  },
   "policy-briefs":{title:"Policy Briefs & Position Papers",description:"Approved policy briefs, consultations and position papers.",intro:"Approved policy briefs, consultations and position papers.",items:[{title:"Overview",text:"Approved policy briefs, consultations and position papers."},{title:"Further information",text:"Verified details will be added after formal institutional review."}],cta:"Contact the Chamber"},
   "resources":{title:"Business Resources",description:"Compliance, export readiness, standards and digitalisation guidance.",intro:"Compliance, export readiness, standards and digitalisation guidance.",items:[{title:"Overview",text:"Compliance, export readiness, standards and digitalisation guidance."},{title:"Further information",text:"Verified details will be added after formal institutional review."}],cta:"Contact the Chamber"},
   "news-announcements":{title:"News & Announcements",description:"Verified news releases, updates and enterprise stories.",intro:"Verified news releases, updates and enterprise stories.",items:[{title:"Overview",text:"Verified news releases, updates and enterprise stories."},{title:"Further information",text:"Verified details will be added after formal institutional review."}],cta:"Contact the Chamber"},
