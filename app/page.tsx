@@ -15,7 +15,7 @@ const pillars = [
   { icon: TrendingUp, title: "Enterprise Development", text: "Supporting growth and innovation." },
   { icon: Handshake, title: "Market Linkages", text: "Connecting buyers, suppliers and investors." },
   { icon: Building2, title: "Community Impact", text: "Creating jobs and inclusive economic development." },
-  { icon: Landmark, title: "Guided by Tradition", text: "Inspired by Buganda’s heritage and future." },
+  { icon: Landmark, title: "Agricultural Transformation", text: "Supporting value addition and resilient enterprises." },
 ];
 
 const areas = [
@@ -46,7 +46,7 @@ const areas = [
   {
     title: "Business Development",
     description: "Training, membership and advisory services for growth.",
-    href: "/join",
+    href: "/business-development",
     action: "Learn More",
     image: "/images/buganda-gomesi.jpg",
     alt: "Traditional Buganda gomesi attire",
