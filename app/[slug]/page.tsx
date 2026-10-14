@@ -46,6 +46,20 @@ const pages: Record<string, Detail> = {
     ],
     cta: "Contact the Chamber",
   },
+  "strategic-goals": {
+    title: "Six Strategic Goals",
+    description: "The Chamber's 2026–2029 strategic implementation priorities.",
+    intro: "The six strategic goals are Revenue Generation, Membership Growth and Expansion, Institutional Capacity Development, Trade Promotion and Investment Linkages, Policy Advocacy and Research, and Market Intelligence and Data Systems. The goals set out intended action, not verified delivery.",
+    items: [
+      {title:"Revenue Generation",text:"Diversify income through membership subscriptions, training, advisory services, partnerships and sponsorship."},
+      {title:"Membership Growth and Expansion",text:"Expand membership across sectors and regions through engagement, onboarding and digital recruitment."},
+      {title:"Institutional Capacity Development",text:"Strengthen governance, Secretariat, CRM, service standards, digital systems and monitoring and evaluation."},
+      {title:"Trade Promotion and Investment Linkages",text:"Facilitate B2B engagements, trade missions, sector networking and business dialogue."},
+      {title:"Policy Advocacy and Research",text:"Develop policy briefs, position papers, research and public-private dialogue."},
+      {title:"Market Intelligence and Data Systems",text:"Publish market intelligence, undertake surveys and establish integrated data systems."}
+    ],
+    cta: "Explore Strategic Partnerships",
+  },
   membership: {
     title: "Membership",
     description: "Belong to a network built to connect, represent and grow businesses.",
