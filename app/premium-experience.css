@@ -42,3 +42,8 @@
 .editorial-area-card>img{display:block;width:100%;height:175px;object-fit:cover;object-position:center}
 .editorial-area-card>div .mcc-photo-credit{font-size:10px;line-height:1.5;display:block;margin:0 0 9px;color:#5b755e}
 @media(max-width:1050px){.navlinks .mcc-home-link{display:flex;width:100%;padding:13px 10px;font-size:14px}}
+
+/* Documentary photography for commercial page headers; imagery is contextual, not evidence of MCCL programmes. */
+.directoryhero{background-image:linear-gradient(90deg,rgba(8,48,34,.95),rgba(8,48,34,.64)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Street_Scene_in_Rubaga%2C_Kampala_01.jpg?width=1280')!important;background-size:cover;background-position:center}
+.editorial-feature-invest{background-image:linear-gradient(110deg,rgba(9,53,37,.94),rgba(9,53,37,.57)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Kampala_skyline.jpg?width=1280')!important;background-size:cover;background-position:center}
+@media(max-width:650px){.editorial-area-card>img{height:210px}}
