@@ -26,5 +26,6 @@ import "./premium-experience.css";
 import "./strategic-frontend.css";
 import "./chamber-workspace.css";
 import "./membership-premium.css";
+import "./mobile-home-refinement.css";
 export const metadata: Metadata = { title: "Mengo Chamber of Commerce | Connecting Commerce. Building Prosperity.", description: "Connecting commercial centres, traders, enterprises and market opportunities in Buganda and beyond." };
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) { return <html lang="en"><body>{children}</body></html>; }
