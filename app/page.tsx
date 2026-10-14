@@ -15,7 +15,7 @@ const pillars = [
   { icon: TrendingUp, title: "Enterprise Development", text: "Supporting growth and innovation." },
   { icon: Handshake, title: "Market Linkages", text: "Connecting buyers, suppliers and investors." },
   { icon: Building2, title: "Community Impact", text: "Creating jobs and inclusive economic development." },
-  { icon: Landmark, title: "Agricultural Transformation", text: "Supporting value addition and resilient enterprises." },
+  { icon: Landmark, title: "Trade Promotion", text: "Promoting Buganda as a destination for trade and investment." },
 ];
 
 const areas = [
@@ -78,9 +78,9 @@ export default function Home() {
         <div className="editorial-stat"><b>Connect</b><span>Businesses and markets</span></div>
         <div className="editorial-stat"><b>Develop</b><span>Enterprise capability</span></div>
         <div className="editorial-stat"><b>Advocate</b><span>Business interests</span></div>
-        <div className="editorial-stat"><b>Transform</b><span>Inclusive economic growth</span></div>
+        <div className="editorial-stat"><b>Promote</b><span>Buganda trade and investment</span></div>
       </div>
-      <p className="editorial-note">Strategic priorities, not claims about current membership or programme totals.</p>
+      <p className="editorial-note">Five strategic propositions: Connect, Develop, Advocate, Promote and Transform. These describe priorities, not completed outcomes.</p>
     </div></section>
 
     <section className="editorial-areas"><div className="container">
@@ -99,6 +99,6 @@ export default function Home() {
 
     <section className="editorial-join"><div className="container"><div><h2>Join a Growing Community of Traders and Businesses</h2><p>Be part of a stronger network driving trade, opportunity and inclusive economic transformation.</p></div><Link className="btn gold" href="/join">Become a Member <ArrowRight size={16} /></Link></div></section>
 
-    <section className="editorial-disclaimer"><div className="container">Independent visual concept for a prospective Mengo Chamber of Commerce. It is not an official Buganda Kingdom website or statement.</div></section>
+    <section className="editorial-disclaimer"><div className="container">Website frontend under development. Content is based on the Mengo Chamber of Commerce Limited 2026–2029 strategic plan; programme details require institutional confirmation.</div></section>
   </main></Shell>;
 }
