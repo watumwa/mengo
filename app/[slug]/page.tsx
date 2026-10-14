@@ -40,8 +40,27 @@ const pages: Record<string, Detail> = {
     ],
     cta:"Explore Our Strategic Plan",
   },
-  "leadership":{title:"Leadership & Board",description:"Institutional governance",intro:"Approved leadership profiles and Board responsibilities will appear here once verified.",items:[{title:"Overview",text:"Approved leadership profiles and Board responsibilities will appear here once verified."},{title:"Explore further",text:"Detailed information and verified records will be added following institutional approval."}],cta:"Contact the Chamber"},
-  "secretariat":{title:"Secretariat & Governance",description:"Institutional operations",intro:"Secretariat profiles, committees and governance documents, pending approval.",items:[{title:"Overview",text:"Secretariat profiles, committees and governance documents, pending approval."},{title:"Explore further",text:"Detailed information and verified records will be added following institutional approval."}],cta:"Contact the Chamber"},
+  "leadership":{
+    title:"Leadership & Board",description:"Strategic oversight, institutional accountability and stewardship.",
+    intro:"The strategic plan describes governance through a Governing Council, Secretariat and decentralised cluster structures. Names and portraits of individual office bearers will be published only after official confirmation.",
+    items:[
+      {title:"Governing Council",text:"Provides overall policy direction and strategic oversight for the Chamber."},
+      {title:"Secretariat",text:"Provides professional, technical and administrative coordination and support."},
+      {title:"Regional and Ssaza Clusters",text:"Support local leadership, mobilisation, representation and stakeholder engagement within delegated authority."},
+      {title:"Governance Standards",text:"The plan emphasises confidentiality, conflict-of-interest management, integrity, inclusiveness and accountability."}
+    ],cta:"Governance Enquiry"
+  },
+  "secretariat":{
+    title:"Secretariat & Governance",description:"The institutional systems behind effective service delivery.",
+    intro:"The strategic plan calls for a professional Secretariat, technical committees, service standards, digital infrastructure, a customer relationship management system, and monitoring and evaluation.",
+    items:[
+      {title:"Professional Secretariat",text:"Coordinate administration, programmes, partnerships and member support."},
+      {title:"Technical Committees",text:"Support specialised business development, advocacy and programme functions."},
+      {title:"Service Desk and CRM",text:"Proposed customer relationship management and structured enquiry handling."},
+      {title:"Monitoring and Evaluation",text:"Track programme delivery, results and institutional performance."},
+      {title:"Risk Management",text:"Maintain a reviewed risk register with risk owners, likelihood and impact ratings, mitigation measures and early-warning indicators."}
+    ],cta:"Institutional Enquiry"
+  },
   "strategic-plan": {
     title:"Strategic Plan 2026–2029",
     description:"Twezimbe — Building a Competitive, Connected, and Sustainable Business Ecosystem in Buganda.",
