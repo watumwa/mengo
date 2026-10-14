@@ -58,12 +58,12 @@ export default function Home() {
   return <Shell><main className="editorial-home">
     <section className="hero editorial-hero">
       <div className="container"><div className="content">
-        <div className="kicker">Uniting traders. Building opportunities.</div>
-        <h1>A Stronger<br />Commercial Future<br />for <em>Buganda</em></h1>
-        <p>Mengo Chamber of Commerce Limited, established by the Kingdom of Buganda, aims to connect businesses, traders and commercial centres, promote trade and investment, and strengthen enterprise development.</p>
+        <div className="kicker">MCCL CONNECT · The Business Ecosystem of Buganda</div>
+        <h1>Where Buganda’s<br />Businesses <em>Connect,</em><br />Grow &amp; Trade</h1>
+        <p>Connecting enterprises, investors, markets, knowledge and opportunities across Buganda and beyond. A Chamber established by the Kingdom of Buganda to advance commerce and enterprise growth.</p>
         <div className="heroactions">
-          <Link className="btn gold" href="/join">Join the Chamber <ArrowRight size={16} /></Link>
-          <Link className="btn outline" href="/about">Explore our vision <ArrowUpRight size={16} /></Link>
+          <Link className="btn gold" href="/businesses">Explore Businesses <ArrowRight size={16} /></Link>
+          <Link className="btn outline" href="/exchange">Find Opportunities <ArrowUpRight size={16} /></Link>
         </div>
       </div></div>
     </section>
