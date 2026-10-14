@@ -1,0 +1,23 @@
+/* Premium editorial detail pages */
+.detail-intro-section{padding:76px 0 86px;background:#fff}
+.detail-intro-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}
+.detail-intro-copy h2{font:700 clamp(32px,3.4vw,49px)/1.14 Georgia,"Times New Roman",serif;color:#102844;letter-spacing:-.035em;margin:17px 0 23px}
+.detail-intro-copy>p{font-size:16px;line-height:1.9;color:#46596a;max-width:670px}
+.detail-actions{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:30px}
+.detail-text-link{display:inline-flex;align-items:center;gap:9px;color:#8b631e;font-size:13px;font-weight:800}
+.detail-image{position:relative}
+.detail-image img{display:block;width:100%;height:440px;object-fit:cover;border-radius:6px}
+.detail-image span{position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:#102844ed;color:#fff;font-size:11px;letter-spacing:.04em}
+.detail-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.detail-feature{background:#fff;padding:29px 27px;border:1px solid #e4e8ec;border-top:3px solid #cba558;border-radius:5px;min-height:205px;box-shadow:0 9px 24px #10284409}
+.detail-feature-number{font:700 23px Georgia,serif;color:#b58d41}
+.detail-feature h3{font:700 21px/1.3 Georgia,serif;color:#102844;margin:16px 0 10px}
+.detail-feature p{font-size:13px;line-height:1.8;color:#586c7c;margin:0}
+.detail-related{padding:75px 0;background:#fff}
+.detail-related h2{font:700 clamp(26px,3vw,37px)/1.2 Georgia,serif;color:#102844;margin:12px 0 26px}
+.detail-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.detail-related-grid a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px;border:1px solid #dfe5ea;border-radius:5px;color:#102844;font-weight:700;font-size:13px;transition:background .2s,border-color .2s}
+.detail-related-grid a:hover{background:#fbf6ea;border-color:#cba558}
+.detail-related-grid svg{flex-shrink:0;color:#ae812e}
+@media(max-width:900px){.detail-intro-grid{grid-template-columns:1fr;gap:30px}.detail-image img{height:350px}.detail-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.detail-intro-section{padding:45px 0}.detail-intro-copy>p{font-size:14px}.detail-image img{height:260px}.detail-feature-grid,.detail-related-grid{grid-template-columns:1fr}.detail-related{padding:50px 0}.detail-feature{min-height:0;padding:23px}}
