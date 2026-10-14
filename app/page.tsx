@@ -68,6 +68,8 @@ export default function Home() {
       </div></div>
     </section>
 
+    <section className="ecosystem-shortcuts"><div className="container"><div className="ecosystem-shortcuts-heading"><span className="eyebrow">Explore MCCL CONNECT</span><h2>Your gateway to business and opportunity</h2></div><div className="ecosystem-shortcuts-grid">{[["Business Directory","/businesses"],["Trade & Investment","/invest"],["Market Intelligence","/intelligence"],["Opportunities","/exchange"],["Membership","/join"],["Events & Programmes","/events-calendar"]].map(([label,url])=><Link href={url} key={url}><span>{label}</span><ArrowUpRight size={18}/></Link>)}</div></div></section>
+
     <section className="editorial-pillars" aria-label="Chamber focus areas"><div className="container">
       <div className="editorial-pillar-grid">{pillars.map(({ icon: Icon, title, text }) => <article className="editorial-pillar" key={title}>
         <span className="editorial-icon"><Icon size={24} strokeWidth={1.7} /></span><div><h2>{title}</h2><p>{text}</p></div>
