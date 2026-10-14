@@ -1,0 +1,28 @@
+/* MCCL visual coherence: focused, goal-oriented content and purposeful imagery. */
+:root{--mcc-forest:#103e2c;--mcc-gold:#c4a35b;--mcc-ivory:#f9faf6}
+.editorial-home .editorial-hero{background-image:linear-gradient(90deg,rgba(8,42,31,.98) 0%,rgba(9,48,35,.95) 44%,rgba(10,54,38,.74) 68%,rgba(10,54,38,.28) 100%),url('/images/kampala-market.jpg')!important;background-position:center 47%}
+.editorial-home .editorial-hero .content{max-width:660px}
+.editorial-home .editorial-hero .kicker{color:#e4c982}
+.editorial-home .editorial-hero h1{font-size:clamp(40px,5vw,74px);line-height:1.06;letter-spacing:-.04em}
+.editorial-home .editorial-hero h1 em{color:#edc879}
+.editorial-home .editorial-hero .btn:focus-visible,.mcc-journey-grid a:focus-visible{outline:3px solid #f1d68d;outline-offset:3px}
+.mcc-journeys{padding:70px 0;background:#f4f7f0}
+.mcc-journeys-header{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}
+.mcc-journeys-header h2{font:700 clamp(29px,3.6vw,46px) Georgia,serif;color:#153d2c;margin:10px 0}
+.mcc-journeys-header p{color:#5e7766;line-height:1.7;font-size:14px;margin:0}
+.mcc-journeys-header>a{display:flex;align-items:center;gap:9px;color:#18563b;font-size:13px;font-weight:800;white-space:nowrap}
+.mcc-journey-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.mcc-journey-grid>a{min-height:250px;display:flex;flex-direction:column;align-items:start;gap:17px;padding:26px;background:white;border:1px solid #dce7db;border-radius:12px;color:#175139;transition:transform .2s,box-shadow .2s,border-color .2s}
+.mcc-journey-grid>a:hover{transform:translateY(-5px);box-shadow:0 20px 38px #113b281c;border-color:#c4a35b}
+.mcc-journey-grid>a>svg:first-child{color:#b18b3e}
+.mcc-journey-grid strong{font:700 23px Georgia,serif;line-height:1.17;color:#163e2d}
+.mcc-journey-grid span{font-size:12px;line-height:1.7;color:#61786a}
+.mcc-journey-grid>a>svg:last-child{margin-top:auto}
+.editorial-feature-heritage{background-image:linear-gradient(125deg,#103e2c,#0c3025)!important}
+.editorial-feature-invest{background-image:linear-gradient(115deg,rgba(11,51,38,.91),rgba(11,51,38,.70)),url('/images/kampala-market.jpg')!important}
+.editorial-feature-heritage:after{content:"MCCL";position:absolute;right:7%;bottom:-25px;font:700 clamp(100px,12vw,200px) Georgia,serif;color:#ffffff0d;pointer-events:none}
+.editorial-feature-heritage>div{position:relative;z-index:1}
+.editorial-area-card a:focus-visible,.ecosystem-shortcuts-grid a:focus-visible{outline:3px solid #c4a35b;outline-offset:2px}
+@media(max-width:1000px){.mcc-journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.mcc-journeys{padding:45px 0}.mcc-journeys-header{display:block}.mcc-journeys-header>a{margin-top:18px}.mcc-journey-grid{grid-template-columns:1fr}.mcc-journey-grid>a{min-height:190px}.editorial-home .editorial-hero{background-position:63% center}.editorial-home .editorial-hero .content{padding:60px 0 90px}.editorial-home .editorial-hero h1{font-size:clamp(35px,9vw,52px)}}
+@media(prefers-reduced-motion:reduce){.mcc-journey-grid>a{transition:none}.mcc-journey-grid>a:hover{transform:none}}
