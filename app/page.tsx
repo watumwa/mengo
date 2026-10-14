@@ -34,15 +34,15 @@ const areas = [
     href: "/businesses",
     action: "Search Businesses",
     image: "",
-    alt: "Buganda community members in formal traditional dress",
+    alt: "Illustrated business directory",
   },
   {
     title: "Market Opportunities",
     description: "Explore prospective local and regional trade and supply linkages.",
-    href: "/opportunities",
+    href: "/exchange",
     action: "View Opportunities",
     image: "",
-    alt: "Historic Buganda palace in Mengo, Kampala",
+    alt: "Illustrated market opportunities",
   },
   {
     title: "Business Development",
@@ -50,7 +50,7 @@ const areas = [
     href: "/business-development",
     action: "Learn More",
     image: "",
-    alt: "Traditional Buganda gomesi attire",
+    alt: "Illustrated enterprise development",
   },
 ];
 
@@ -88,9 +88,7 @@ export default function Home() {
       <p className="editorial-note">Five strategic propositions: Connect, Develop, Advocate, Promote and Transform. These describe priorities, not completed outcomes.</p>
     </div></section>
 
-    <section className="ecosystem-home-gateway"><div className="container"><div className="ecosystem-home-heading"><span className="eyebrow">MCCL CONNECT · The Business Ecosystem of Buganda</span><h2>Where Buganda's businesses connect, grow and trade.</h2><p>Explore the Chamber through practical pathways to enterprise, investment, markets and knowledge.</p></div><div className="ecosystem-home-links"><Link href="/connect"><Handshake size={21}/> Find a business partner <ArrowUpRight size={16}/></Link><Link href="/economic-map"><Landmark size={21}/> Explore regional clusters <ArrowUpRight size={16}/></Link><Link href="/exchange"><TrendingUp size={21}/> Discover opportunities <ArrowUpRight size={16}/></Link></div></div></section>
-
-    <section className="ecosystem-home-gateway"><div className="container"><div className="ecosystem-home-heading"><span className="eyebrow">Explore the strategic ecosystem</span><h2>More ways to connect, grow and influence.</h2><p>Discover value chains, the diaspora network, advocacy and the Chamber's 2026–2029 strategic framework.</p></div><div className="ecosystem-home-links"><Link href="/value-chains"><TrendingUp size={21}/> Value Chain Explorer <ArrowUpRight size={16}/></Link><Link href="/diaspora-network"><UsersRound size={21}/> Diaspora Network <ArrowUpRight size={16}/></Link><Link href="/business-issues"><Landmark size={21}/> Business Issue Tracker <ArrowUpRight size={16}/></Link><Link href="/strategy"><Building2 size={21}/> Strategic Framework <ArrowUpRight size={16}/></Link></div></div></section>
+    <section className="mcc-journeys"><div className="container"><div className="mcc-journeys-header"><div><span className="eyebrow">Your business journey</span><h2>What would you like to achieve?</h2><p>Choose a goal and go directly to the right part of the Chamber ecosystem.</p></div><Link href="/explore">Explore all services <ArrowUpRight size={17}/></Link></div><div className="mcc-journey-grid"><Link href="/connect"><Handshake size={29}/><strong>Find business partners</strong><span>Explore introductions and commercial networks.</span><ArrowUpRight size={18}/></Link><Link href="/exchange"><TrendingUp size={29}/><strong>Discover opportunities</strong><span>Explore trade, supply and investment concepts.</span><ArrowUpRight size={18}/></Link><Link href="/value-chains"><Building2 size={29}/><strong>Understand value chains</strong><span>See how enterprises connect across sectors.</span><ArrowUpRight size={18}/></Link><Link href="/business-issues"><Landmark size={29}/><strong>Raise business priorities</strong><span>Explore advocacy and issue-tracking workflows.</span><ArrowUpRight size={18}/></Link></div></div></section>
 
     <section className="editorial-areas"><div className="container">
       <div className="editorial-heading"><div className="eyebrow">Explore our key areas</div><h2>Building A Thriving Commercial Community</h2></div>
