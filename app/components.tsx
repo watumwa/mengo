@@ -6,21 +6,20 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, ArrowUpRight, MapPin, Menu, Search, X } from "lucide-react";
 
 export const nav = [
-  ["Home", "/"],
-  ["Explore", "/search"],
-  ["MCCL Connect", "/connect"],
-  ["Businesses", "/businesses"],
-  ["Opportunities", "/exchange"],
-  ["Regional Clusters", "/economic-map"],
-  ["Intelligence", "/intelligence"],
-  ["Membership", "/membership"],
-  ["About", "/about"],
+ ["Explore", "/businesses"],["Connect", "/connect"],["Grow", "/business-advisory"],["Influence", "/policy-advocacy"],["About", "/about"]
+];
+const menus=[
+ {title:"Explore",links:[["Business Directory","/businesses"],["Opportunity Exchange","/exchange"],["Invest in Buganda","/invest"],["Market Intelligence","/intelligence"],["Regional Economic Map","/economic-map"]]},
+ {title:"Connect",links:[["MCCL Connect","/connect"],["Membership","/membership"],["Apply to Join","/join"],["Events","/events-calendar"],["Trade Missions","/trade-missions"],["Diaspora Network","/diaspora-network"]]},
+ {title:"Grow",links:[["Business Advisory","/business-advisory"],["Training","/training"],["Mentorship","/mentorship"],["Market Access","/market-linkages"],["Value Chain Explorer","/value-chains"]]},
+ {title:"Influence",links:[["Policy & Advocacy","/policy-advocacy"],["Research","/intelligence"],["Business Issue Tracker","/business-issues"],["Policy Briefs","/policy-briefs"]]},
+ {title:"About",links:[["About the Chamber","/about"],["Leadership","/leadership"],["Governance","/governance"],["Strategic Plan","/strategic-plan"],["Regional Clusters","/economic-map"],["Contact","/contact"]]}
 ];
 
 export function Header() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);\n  const [expanded, setExpanded] = useState<string | null>(null);
   const pathname = usePathname();
-  const closeMenu = () => setOpen(false);
+  const closeMenu = () => {setOpen(false);setExpanded(null);};
 
   return <>
     <div className="topline"><div className="container"><span>Rooted in heritage. Advancing commerce and prosperity.</span><span>Buganda, Uganda · Connecting enterprise to opportunity</span></div></div>
@@ -29,7 +28,7 @@ export function Header() {
       <div className="container navinner">
         <Link href="/" className="brand" onClick={closeMenu}><span className="brandmark">M</span><span><strong>Mengo Chamber</strong><small>of Commerce</small></span></Link>
         <nav id="primary-navigation" className={`navlinks ${open ? "open" : ""}`} aria-label="Primary navigation">
-          {nav.map(([label, url]) => <Link key={url} href={url} onClick={closeMenu} aria-current={pathname === url ? "page" : undefined}>{label}</Link>)}
+          {menus.map(group=><div className="ecosystem-nav-group" key={group.title}><button type="button" aria-expanded={expanded===group.title} onClick={()=>setExpanded(expanded===group.title?null:group.title)}>{group.title}<span aria-hidden="true">⌄</span></button><div className={`ecosystem-nav-dropdown ${expanded===group.title?"visible":""}`}>{group.links.map(([label,url])=><Link key={url} href={url} onClick={closeMenu} aria-current={pathname===url?"page":undefined}>{label}</Link>)}</div></div>)}
           <Link className="mobile-nav-cta btn navy" href="/join" onClick={closeMenu}>Become a Member <ArrowUpRight size={15} /></Link>
         </nav>
         <div className="navactions">
