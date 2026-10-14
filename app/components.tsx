@@ -54,5 +54,6 @@ export function Shell({ children }: { children: React.ReactNode }) {
 }
 
 export function PageHero({ title, description }: { title: string; description: string }) {
-  return <section className="pagehero"><div className="container"><div className="breadcrumb"><Link href="/">Home</Link> / {title}</div><h1>{title}</h1><p>{description}</p></div></section>;
+  const category=/about|leadership|governance|chamber|strategy|heritage/i.test(title)?"institution":/agricultur|coffee|value chain|farmer/i.test(title)?"agriculture":/market|trade|opportunit|business|commerce|investment|enterprise/i.test(title)?"commerce":/training|mentorship|learning|capacity/i.test(title)?"learning":"general";
+  return <section className={`pagehero mcc-hero-${category}`}><div className="container"><div className="breadcrumb"><Link href="/">Home</Link> / {title}</div><h1>{title}</h1><p>{description}</p></div></section>;
 }
