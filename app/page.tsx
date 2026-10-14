@@ -33,7 +33,7 @@ const areas = [
     description: "Explore illustrative listings while business verification is being developed.",
     href: "/businesses",
     action: "Search Businesses",
-    image: "/images/buganda-traditional-wear.jpg",
+    image: "",
     alt: "Buganda community members in formal traditional dress",
   },
   {
@@ -41,7 +41,7 @@ const areas = [
     description: "Explore prospective local and regional trade and supply linkages.",
     href: "/opportunities",
     action: "View Opportunities",
-    image: "/images/buganda-royal-palace.jpg",
+    image: "",
     alt: "Historic Buganda palace in Mengo, Kampala",
   },
   {
@@ -49,7 +49,7 @@ const areas = [
     description: "Training, membership and advisory services for growth.",
     href: "/business-development",
     action: "Learn More",
-    image: "/images/buganda-gomesi.jpg",
+    image: "",
     alt: "Traditional Buganda gomesi attire",
   },
 ];
@@ -63,10 +63,12 @@ export default function Home() {
         <p>Connecting enterprises, investors, markets, knowledge and opportunities across Buganda and beyond. A Chamber established by the Kingdom of Buganda to advance commerce and enterprise growth.</p>
         <div className="heroactions">
           <Link className="btn gold" href="/businesses">Explore Businesses <ArrowRight size={16} /></Link>
-          <Link className="btn outline" href="/exchange">Find Opportunities <ArrowUpRight size={16} /></Link>
+          <Link className="btn outline" href="/exchange">Find Opportunities <ArrowUpRight size={16} /></Link><Link className="btn outline" href="/join">Join the Chamber <ArrowUpRight size={16} /></Link>
         </div>
       </div></div>
     </section>
+
+    <section className="container mcc-search-above"><EcosystemSearch compact/></section>
 
     <section className="ecosystem-shortcuts"><div className="container"><div className="ecosystem-shortcuts-heading"><span className="eyebrow">Explore MCCL CONNECT</span><h2>Your gateway to business and opportunity</h2></div><div className="ecosystem-shortcuts-grid">{[["Business Directory","/businesses"],["Trade & Investment","/invest"],["Market Intelligence","/intelligence"],["Opportunities","/exchange"],["Membership","/join"],["Events & Programmes","/events-calendar"]].map(([label,url])=><Link href={url} key={url}><span>{label}</span><ArrowUpRight size={18}/></Link>)}</div></div></section>
 
@@ -86,14 +88,14 @@ export default function Home() {
       <p className="editorial-note">Five strategic propositions: Connect, Develop, Advocate, Promote and Transform. These describe priorities, not completed outcomes.</p>
     </div></section>
 
-    <section className="ecosystem-home-gateway"><div className="container"><div className="ecosystem-home-heading"><span className="eyebrow">MCCL CONNECT · The Business Ecosystem of Buganda</span><h2>Where Buganda's businesses connect, grow and trade.</h2><p>Explore the Chamber through practical pathways to enterprise, investment, markets and knowledge.</p></div><div className="ecosystem-home-links"><Link href="/connect"><Handshake size={21}/> Find a business partner <ArrowUpRight size={16}/></Link><Link href="/economic-map"><Landmark size={21}/> Explore regional clusters <ArrowUpRight size={16}/></Link><Link href="/exchange"><TrendingUp size={21}/> Discover opportunities <ArrowUpRight size={16}/></Link></div><EcosystemSearch compact/></div></section>
+    <section className="ecosystem-home-gateway"><div className="container"><div className="ecosystem-home-heading"><span className="eyebrow">MCCL CONNECT · The Business Ecosystem of Buganda</span><h2>Where Buganda's businesses connect, grow and trade.</h2><p>Explore the Chamber through practical pathways to enterprise, investment, markets and knowledge.</p></div><div className="ecosystem-home-links"><Link href="/connect"><Handshake size={21}/> Find a business partner <ArrowUpRight size={16}/></Link><Link href="/economic-map"><Landmark size={21}/> Explore regional clusters <ArrowUpRight size={16}/></Link><Link href="/exchange"><TrendingUp size={21}/> Discover opportunities <ArrowUpRight size={16}/></Link></div></div></section>
 
     <section className="ecosystem-home-gateway"><div className="container"><div className="ecosystem-home-heading"><span className="eyebrow">Explore the strategic ecosystem</span><h2>More ways to connect, grow and influence.</h2><p>Discover value chains, the diaspora network, advocacy and the Chamber's 2026–2029 strategic framework.</p></div><div className="ecosystem-home-links"><Link href="/value-chains"><TrendingUp size={21}/> Value Chain Explorer <ArrowUpRight size={16}/></Link><Link href="/diaspora-network"><UsersRound size={21}/> Diaspora Network <ArrowUpRight size={16}/></Link><Link href="/business-issues"><Landmark size={21}/> Business Issue Tracker <ArrowUpRight size={16}/></Link><Link href="/strategy"><Building2 size={21}/> Strategic Framework <ArrowUpRight size={16}/></Link></div></div></section>
 
     <section className="editorial-areas"><div className="container">
       <div className="editorial-heading"><div className="eyebrow">Explore our key areas</div><h2>Building A Thriving Commercial Community</h2></div>
       <div className="editorial-area-grid">{areas.map(({ title, description, href, action, image, alt }) => <article className="editorial-area-card" key={title}>
-        <img src={image} alt={alt} />
+        {image?<img src={image} alt={alt}/>:<div className="mcc-illustration" aria-hidden="true"><span>{title==="Business Directory"?<Building2 size={48}/>:title==="Market Opportunities"?<TrendingUp size={48}/>:<Handshake size={48}/>}</span><i>{title==="Business Directory"?"DISCOVER ENTERPRISES":title==="Market Opportunities"?"CONNECT TO MARKETS":"BUILD BUSINESS CAPACITY"}</i></div>}
         <div><h3>{title}</h3><p>{description}</p><Link href={href}>{action} <span aria-hidden="true">→</span></Link></div>
       </article>)}</div>
     </div></section>
