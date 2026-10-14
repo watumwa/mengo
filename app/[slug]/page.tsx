@@ -42,7 +42,20 @@ const pages: Record<string, Detail> = {
   },
   "leadership":{title:"Leadership & Board",description:"Institutional governance",intro:"Approved leadership profiles and Board responsibilities will appear here once verified.",items:[{title:"Overview",text:"Approved leadership profiles and Board responsibilities will appear here once verified."},{title:"Explore further",text:"Detailed information and verified records will be added following institutional approval."}],cta:"Contact the Chamber"},
   "secretariat":{title:"Secretariat & Governance",description:"Institutional operations",intro:"Secretariat profiles, committees and governance documents, pending approval.",items:[{title:"Overview",text:"Secretariat profiles, committees and governance documents, pending approval."},{title:"Explore further",text:"Detailed information and verified records will be added following institutional approval."}],cta:"Contact the Chamber"},
-  "strategic-plan":{title:"Strategic Plan 2026–2029",description:"Twezimbe",intro:"Six pillars: revenue, membership, capacity, trade and investment, advocacy, and market intelligence.",items:[{title:"Overview",text:"Six pillars: revenue, membership, capacity, trade and investment, advocacy, and market intelligence."},{title:"Explore further",text:"Detailed information and verified records will be added following institutional approval."}],cta:"Contact the Chamber"},
+  "strategic-plan": {
+    title:"Strategic Plan 2026–2029",
+    description:"Twezimbe — Building a Competitive, Connected, and Sustainable Business Ecosystem in Buganda.",
+    intro:"The three-year strategy provides the Chamber's direction for institutional sustainability, stronger membership, trade and investment connections, business advocacy and data-driven services. Planned programmes and performance targets are not presented as completed achievements.",
+    items:[
+      {title:"Revenue Sustainability",text:"Strengthen diversified, predictable and sustainable revenue streams."},
+      {title:"Membership Growth and Engagement",text:"Expand membership, improve member value, retention and participation."},
+      {title:"Institutional Capacity Development",text:"Build governance, leadership, human-resource capacity and effective systems."},
+      {title:"Trade, Investment and Networking Promotion",text:"Facilitate business linkages, trade promotion, exhibitions, partnerships and networking."},
+      {title:"Policy Advocacy and Research",text:"Represent members' interests and produce evidence-based recommendations."},
+      {title:"Market Intelligence and Data Systems",text:"Provide reliable business and market information for better decisions."}
+    ],
+    cta:"Discuss the Strategy",
+  },
   "partners":{title:"Partners & Affiliations",description:"Strategic partnerships",intro:"Approved partner profiles and opportunities for collaboration.",items:[{title:"Overview",text:"Approved partner profiles and opportunities for collaboration."},{title:"Explore further",text:"Detailed information and verified records will be added following institutional approval."}],cta:"Contact the Chamber"},
   "membership-categories": {
     title:"Membership Categories",
