@@ -224,15 +224,46 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
   const { slug } = await params;
   const data = pages[slug];
   if (!data) notFound();
-  const visual = visualBySlug[slug] ?? { src: "/images/buganda-gomesi.jpg", alt: "Traditional Buganda gomesi attire" };
+  const visual = visualBySlug[slug] ?? { src: "/images/kampala-market.jpg", alt: "Commercial activity in Kampala" };
+  const membershipPage = slug.startsWith("membership") || slug === "special-interest-groups";
+  const strategyPage = slug.startsWith("strategic") || slug === "vision-mission-values";
+  const governancePage = ["about","leadership","secretariat","partners"].includes(slug);
+  const editorialLabel = strategyPage ? "Strategic direction" : membershipPage ? "Membership pathways" : governancePage ? "Our institution" : "Explore the Chamber";
+  const primaryHref = membershipPage ? "/join" : "/contact";
+  const related = strategyPage ? [
+    {title:"Six Strategic Goals",href:"/strategic-goals"},
+    {title:"Five Strategic Propositions",href:"/strategic-propositions"},
+    {title:"Strategic Plan 2026–2029",href:"/strategic-plan"}
+  ] : membershipPage ? [
+    {title:"Membership Categories",href:"/membership-categories"},
+    {title:"Proposed Fees",href:"/membership-fees"},
+    {title:"Special Interest Groups",href:"/special-interest-groups"}
+  ] : [
+    {title:"Explore All Pages",href:"/explore"},
+    {title:"Business Services",href:"/business-development"},
+    {title:"Contact the Chamber",href:"/contact"}
+  ];
 
-  return <Shell><main>
+  return <Shell><main className="detail-editorial">
     <PageHero title={data.title} description={data.description} />
-    <section className="section"><div className="container"><div className="split">
-      <div className="intro"><div className="eyebrow">Mengo Chamber of Commerce</div><h2>Connecting people, enterprise and opportunity.</h2><p>{data.intro}</p><Link className="btn navy" href="/contact">{data.cta} <ArrowUpRight size={16} /></Link></div>
-      <img src={visual.src} alt={visual.alt} />
-    </div></div></section>
-    <section className="section cream"><div className="container"><div className="sectionhead"><div><div className="eyebrow">Key priorities</div><h2>What this means for you.</h2></div><p>Practical areas where the Chamber aims to connect stakeholders and support the growth of the business community.</p></div><div className="featuregrid">{data.items.map((item, index) => <article className="featurecard" key={item.title}><span className="serviceicon">{index % 3 === 0 ? <Handshake size={24} /> : index % 3 === 1 ? <Building2 size={24} /> : <GraduationCap size={24} />}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></div></section>
-    <section className="cta"><div className="container"><div><div className="kicker">Connect with us</div><h2>Let’s create opportunities together.</h2><p>Get in touch to explore collaboration, membership or commercial development.</p></div><Link className="btn gold" href="/contact">Contact us <ArrowRight size={16} /></Link></div></section>
+    <section className="detail-intro-section"><div className="container detail-intro-grid">
+      <div className="detail-intro-copy"><div className="eyebrow">{editorialLabel}</div>
+        <h2>{data.title}</h2><p>{data.intro}</p>
+        <div className="detail-actions"><Link className="btn navy" href={primaryHref}>{data.cta} <ArrowUpRight size={16}/></Link><Link className="detail-text-link" href="/explore">Explore the Chamber <ArrowRight size={16}/></Link></div>
+      </div>
+      <div className="detail-image"><img src={visual.src} alt={visual.alt}/><span>Mengo Chamber of Commerce Limited · Twezimbe 2026–2029</span></div>
+    </div></section>
+    <section className="detail-priorities section cream"><div className="container">
+      <div className="sectionhead"><div><div className="eyebrow">Explore in detail</div><h2>{strategyPage ? "Our strategic priorities" : membershipPage ? "Membership information" : "Key areas and opportunities"}</h2></div>
+        <p>{strategyPage ? "The priorities below reflect the Chamber's 2026–2029 strategic plan." : "Discover the areas outlined for this section. Future services and programmes remain subject to confirmation."}</p></div>
+      <div className="detail-feature-grid">{data.items.map((item,index)=><article className="detail-feature" key={item.title}>
+        <span className="detail-feature-number">{String(index+1).padStart(2,"0")}</span>
+        <h3>{item.title}</h3><p>{item.text}</p>
+      </article>)}</div>
+    </div></section>
+    <section className="detail-related"><div className="container"><div className="eyebrow">Continue exploring</div><h2>Discover more from the Chamber</h2>
+      <div className="detail-related-grid">{related.map(link=><Link href={link.href} key={link.href}>{link.title}<ArrowUpRight size={18}/></Link>)}</div>
+    </div></section>
+    <section className="cta"><div className="container"><div><div className="kicker">Connect with us</div><h2>Build connections. Create opportunity.</h2><p>Explore membership, enterprise services and partnerships in Buganda and beyond.</p></div><Link className="btn gold" href="/contact">Contact us <ArrowRight size={16}/></Link></div></section>
   </main></Shell>;
 }
