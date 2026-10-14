@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight, ArrowUpRight, MapPin, Menu, Search, X } from "lucide-react";
 
 export const nav = [
@@ -16,15 +17,17 @@ export const nav = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const closeMenu = () => setOpen(false);
 
   return <>
     <div className="topline"><div className="container"><span>Rooted in heritage. Advancing commerce and prosperity.</span><span>Buganda, Uganda · Connecting enterprise to opportunity</span></div></div>
+    <a href="#main-content" className="skip-link">Skip to main content</a>
     <header className="nav">
       <div className="container navinner">
         <Link href="/" className="brand" onClick={closeMenu}><span className="brandmark">M</span><span><strong>Mengo Chamber</strong><small>of Commerce</small></span></Link>
         <nav id="primary-navigation" className={`navlinks ${open ? "open" : ""}`} aria-label="Primary navigation">
-          {nav.map(([label, url]) => <Link key={url} href={url} onClick={closeMenu}>{label}</Link>)}
+          {nav.map(([label, url]) => <Link key={url} href={url} onClick={closeMenu} aria-current={pathname === url ? "page" : undefined}>{label}</Link>)}
           <Link className="mobile-nav-cta btn navy" href="/join" onClick={closeMenu}>Become a Member <ArrowUpRight size={15} /></Link>
         </nav>
         <div className="navactions">
@@ -44,7 +47,7 @@ export function Footer() {
 }
 
 export function Shell({ children }: { children: React.ReactNode }) {
-  return <><Header />{children}<Footer /></>;
+  return <><Header /><div id="main-content">{children}</div><Footer /></>;
 }
 
 export function PageHero({ title, description }: { title: string; description: string }) {
