@@ -55,3 +55,10 @@
 .pagehero .container{position:relative;z-index:1}
 .pagehero{min-height:315px;display:flex;align-items:center}
 @media(max-width:650px){.pagehero{min-height:275px;background-position:57% center}}
+
+/* Real Wikimedia Commons documentary photography. Each hero is editorial context, not a photograph of an MCCL event. */
+.pagehero.mcc-hero-institution{background-image:linear-gradient(90deg,rgba(8,42,31,.96),rgba(8,42,31,.77) 50%,rgba(8,42,31,.27)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Bulange_Mengo.jpg?width=1600')!important}
+.pagehero.mcc-hero-agriculture{background-image:linear-gradient(90deg,rgba(8,42,31,.96),rgba(8,42,31,.77) 50%,rgba(8,42,31,.24)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Harvesting_Ugandan_coffee_1.jpg?width=1600')!important}
+.pagehero.mcc-hero-commerce{background-image:linear-gradient(90deg,rgba(8,42,31,.96),rgba(8,42,31,.77) 50%,rgba(8,42,31,.24)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Kampala_Market.jpg?width=1600')!important}
+.pagehero.mcc-hero-learning{background-image:linear-gradient(90deg,rgba(8,42,31,.96),rgba(8,42,31,.77) 50%,rgba(8,42,31,.24)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Coffee_farmers_harvesting_coffee.jpg?width=1600')!important}
+.pagehero.mcc-hero-general{background-image:linear-gradient(90deg,rgba(8,42,31,.96),rgba(8,42,31,.77) 50%,rgba(8,42,31,.24)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Bulange_Mengo.jpg?width=1600')!important}
