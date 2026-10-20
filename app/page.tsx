@@ -1,58 +1,275 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, BookOpen, BriefcaseBusiness, CalendarDays, GraduationCap, Handshake, HeartPulse, Landmark, MapPinned, Network, Sprout, Store, Users, UsersRound, Camera, Globe2, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BriefcaseBusiness,
+  Building2,
+  CalendarDays,
+  ChevronLeft,
+  ChevronRight,
+  CirclePlay,
+  GraduationCap,
+  Handshake,
+  HeartPulse,
+  Landmark,
+  MapPinned,
+  Network,
+  ShieldCheck,
+  Sprout,
+  TrendingUp,
+  Users,
+  UsersRound,
+} from "lucide-react";
 import { Shell } from "./components";
 import { HomeHero } from "./HomeHero";
 import { realPhotos } from "./realPhotos";
 import { ResponsivePhoto } from "./ResponsivePhoto";
-import "./home-redesign.css";
 
 const shortcuts = [
-  {title:"About MCCL",subtitle:"Our story and mandate",href:"/about",icon:Landmark},
-  {title:"Membership",subtitle:"Join and benefit",href:"/membership",icon:UsersRound},
-  {title:"Explore Buganda",subtitle:"Heritage and regions",href:"/centres",icon:MapPinned},
-  {title:"Investment",subtitle:"Trade and opportunity",href:"/invest",icon:BriefcaseBusiness},
-  {title:"SACCOs & Enterprise",subtitle:"Community growth",href:"/businesses",icon:Network},
-  {title:"News & Events",subtitle:"Latest information",href:"/insights",icon:CalendarDays},
+  { title: "About MCCL", subtitle: "Our story and mandate", href: "/about", icon: Landmark },
+  { title: "Membership", subtitle: "Join and benefit", href: "/membership", icon: UsersRound },
+  { title: "Masaza & Gombolola", subtitle: "Explore all counties", href: "/centres", icon: MapPinned },
+  { title: "Investment Opportunities", subtitle: "Projects and partnerships", href: "/invest", icon: BriefcaseBusiness },
+  { title: "SACCOs & Cooperatives", subtitle: "Grow together", href: "/businesses", icon: Network },
+  { title: "News & Events", subtitle: "Latest updates", href: "/insights", icon: CalendarDays },
 ];
+
+const statistics = [
+  { value: "18", label: "Masaza Counties", icon: Landmark },
+  { value: "200+", label: "Gombolola Sub-counties", icon: MapPinned },
+  { value: "9.8M+", label: "People of Buganda (Estimated)", icon: Users },
+  { value: "1000+", label: "Members, Businesses and Institutions", icon: BriefcaseBusiness },
+  { value: "One Goal", label: "Uplifting Livelihoods", icon: TrendingUp },
+];
+
 const impact = [
-  {title:"Agriculture",detail:"Farming, value addition and market access",icon:Sprout,href:"/services",photo:realPhotos.coffee},
-  {title:"Education",detail:"Skills, learning and enterprise development",icon:GraduationCap,href:"/training",photo:realPhotos.bulange},
-  {title:"Health",detail:"Community wellbeing and productive livelihoods",icon:HeartPulse,href:"/insights",photo:realPhotos.market},
-  {title:"Tourism",detail:"Heritage and visitor opportunities",icon:Camera,href:"/invest",photo:realPhotos.bulange},
-  {title:"Community",detail:"Cooperatives and grassroots enterprise",icon:Users,href:"/membership",photo:realPhotos.market},
-  {title:"Trade",detail:"Business connections and partnerships",icon:Globe2,href:"/exchange",photo:realPhotos.kampala},
+  { title: "Agriculture", detail: "Food security & value addition", icon: Sprout, href: "/services", photo: realPhotos.coffee },
+  { title: "Education", detail: "Skills & human capital", icon: GraduationCap, href: "/training", photo: realPhotos.kampala },
+  { title: "Health", detail: "Stronger communities", icon: HeartPulse, href: "/insights", photo: realPhotos.heritage },
+  { title: "Tourism", detail: "Our heritage, new opportunities", icon: MapPinned, href: "/invest", photo: realPhotos.bulange },
+  { title: "Social Development", detail: "Inclusive local economies", icon: UsersRound, href: "/membership", photo: realPhotos.market },
+  { title: "Youth & Women", detail: "Empowering future leaders", icon: Users, href: "/businesses", photo: realPhotos.kampala },
 ];
+
 const services = [
-  {title:"Business Advisory",icon:Handshake,href:"/business-advisory"},
-  {title:"Trade Facilitation",icon:Globe2,href:"/exchange"},
-  {title:"Investment Promotion",icon:BriefcaseBusiness,href:"/invest"},
-  {title:"Training & Capacity",icon:GraduationCap,href:"/training"},
-  {title:"Enterprise Development",icon:Store,href:"/services"},
-  {title:"Policy & Advocacy",icon:ShieldCheck,href:"/policy-advocacy"},
+  { title: "Business Advisory & Consultancy", icon: UsersRound, href: "/business-advisory" },
+  { title: "Trade Facilitation & Market Access", icon: Network, href: "/exchange" },
+  { title: "Investment Promotion", icon: BriefcaseBusiness, href: "/invest" },
+  { title: "Training & Capacity Building", icon: GraduationCap, href: "/training" },
+  { title: "Enterprise & SACCO Development", icon: Building2, href: "/services" },
+  { title: "Policy Advocacy & Research", icon: ShieldCheck, href: "/policy-advocacy" },
 ];
 
-export default function HomePage(){
- return <Shell><main className="mcc-home">
-   <HomeHero/>
-   <section className="mcc-shortcuts" aria-label="Popular destinations"><div className="container mcc-shortcut-grid">{shortcuts.map(({title,subtitle,href,icon:Icon})=><Link href={href} key={title} className="mcc-shortcut"><Icon size={29} strokeWidth={1.55} aria-hidden="true"/><strong>{title}</strong><span>{subtitle}</span></Link>)}</div></section>
+const news = [
+  { date: "Oct 10, 2025", title: "MCCL Launches New Enterprise Development Programme", photo: realPhotos.bulange },
+  { date: "Sep 28, 2025", title: "Coffee Value Addition Project Targets Greater Farmer Incomes", photo: realPhotos.coffee },
+  { date: "Sep 20, 2025", title: "Kalangala Tourism Investment Opportunities Unveiled", photo: realPhotos.market },
+];
 
-   <section className="mcc-section mcc-intro" aria-labelledby="mcc-intro-heading"><div className="container mcc-intro-grid">
-    <div className="mcc-intro-copy"><span className="mcc-eyebrow">ABOUT US</span><h2 id="mcc-intro-heading">Mengo Chamber of <em>Commerce Limited</em></h2><p>Established by the Kingdom of Buganda, the Chamber is envisioned as a platform connecting enterprises, investors and institutions to strengthen trade, business development and economic opportunity.</p><p>Guided by the <strong>Twezimbe 2026–2029</strong> strategic direction, MCCL aims to support a competitive, connected and sustainable business ecosystem in Buganda and beyond.</p><Link href="/about" className="mcc-gold-btn">Learn more about MCCL <ArrowRight size={17}/></Link></div>
-    <figure className="mcc-intro-visual"><ResponsivePhoto photo={realPhotos.bulange} width={980} height={680} sizes="(max-width:760px) 100vw, 48vw"/><figcaption>Bulange, Mengo — the Kingdom's administrative centre. Official MCCL board inauguration photography will be used once publication rights and a suitable original are available.</figcaption></figure>
-   </div></section>
+const events = [
+  ["OCT", "26", "MCCL Business Forum", "Mengo, Kampala"],
+  ["NOV", "15", "Trade & Investment Expo", "Kampala Serena Hotel"],
+  ["DEC", "05", "SACCOs Leadership Training", "Mengo Conference Centre"],
+];
 
-   <section className="mcc-blue-strip" aria-label="Our strategic priorities"><div className="container mcc-priorities">{[{icon:Landmark,label:"Kingdom heritage"},{icon:UsersRound,label:"Membership growth"},{icon:Handshake,label:"Trade & investment"},{icon:BookOpen,label:"Research & advocacy"}].map(({icon:Icon,label})=><div key={label}><Icon size={27} aria-hidden="true"/><strong>{label}</strong></div>)}</div></section>
+const counties = [
+  ["Bulemeezi", "top"],
+  ["Buyikwe", "top-right"],
+  ["Mityana", "upper-left"],
+  ["Kassanda", "left"],
+  ["Kyadondo", "upper-right"],
+  ["Mawogola", "centre"],
+  ["Mubende", "middle-left"],
+  ["Mukono", "right"],
+  ["Kabula­mali", "lower-left"],
+  ["Gomba", "lower-centre"],
+  ["Busiro", "middle"],
+  ["Masaka", "bottom"],
+  ["Kalangala", "islands"],
+] as const;
 
-   <section className="mcc-section mcc-regions" aria-labelledby="mcc-regions-heading"><div className="container mcc-regions-grid"><div><span className="mcc-eyebrow">OUR KINGDOM</span><h2 id="mcc-regions-heading">Explore <em>Buganda</em></h2><p>Discover the Kingdom's regional heritage and its commercial potential, from community enterprises to wider trade connections.</p><p className="mcc-disclosure">The full Masaza, Gombolola and local-leadership directory is planned for the next page-by-page design phase. We will publish only verified administrative information.</p><Link className="mcc-gold-btn" href="/centres">Explore regional business centres <ArrowRight size={17}/></Link></div><div className="mcc-regions-photo"><ResponsivePhoto photo={realPhotos.kampala} width={1000} height={720} sizes="(max-width:760px) 100vw, 48vw"/><div className="mcc-region-caption"><span>REGIONAL OPPORTUNITY</span><strong>Local roots. Wider markets.</strong><Link href="/exchange">Explore opportunities <ArrowUpRight size={16}/></Link></div></div></div></section>
+export default function HomePage() {
+  return (
+    <Shell>
+      <main className="mcc-home reference-home">
+        <HomeHero />
 
-   <section className="mcc-section mcc-impact" aria-labelledby="mcc-impact-heading"><div className="container"><div className="mcc-heading-row"><div><span className="mcc-eyebrow">DEVELOPMENT & IMPACT</span><h2 id="mcc-impact-heading">Building livelihoods <em>across Buganda</em></h2><p>Explore sectors that shape enterprise, opportunity and community wellbeing.</p></div><Link href="/insights" className="mcc-text-link">Explore insights <ArrowRight size={17}/></Link></div><div className="mcc-impact-grid">{impact.map(({title,detail,icon:Icon,href,photo})=><Link className="mcc-impact-card" href={href} key={title}><div className="mcc-impact-photo"><ResponsivePhoto photo={photo} width={450} height={300} sizes="(max-width:600px) 50vw, 17vw"/></div><div className="mcc-impact-body"><Icon size={20} aria-hidden="true"/><h3>{title}</h3><p>{detail}</p></div></Link>)}</div><p className="mcc-disclosure">These are sector themes, not claims that MCCL directly operates every Kingdom programme. Verified project case studies will be added to the dedicated sector pages.</p></div></section>
+        <section className="reference-shortcuts" aria-label="Explore the Chamber">
+          <div className="container reference-shortcuts-grid">
+            {shortcuts.map(({ title, subtitle, href, icon: Icon }) => (
+              <Link href={href} key={title} className="reference-shortcut">
+                <Icon size={27} strokeWidth={1.55} aria-hidden="true" />
+                <strong>{title}</strong>
+                <span>{subtitle}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
 
-   <section className="mcc-section mcc-services" aria-labelledby="mcc-services-heading"><div className="container"><div className="mcc-heading-row"><div><span className="mcc-eyebrow">THE CHAMBER</span><h2 id="mcc-services-heading">Business support for a <em>thriving Buganda</em></h2><p>Strategic service areas intended to connect and strengthen businesses.</p></div><Link href="/services" className="mcc-text-link">All services <ArrowRight size={17}/></Link></div><div className="mcc-service-grid">{services.map(({title,icon:Icon,href})=><Link href={href} key={title} className="mcc-service"><Icon size={28} strokeWidth={1.6}/><strong>{title}</strong><ArrowUpRight size={16} className="mcc-service-arrow"/></Link>)}</div><p className="mcc-disclosure">Service delivery and programme availability should be confirmed with MCCL before public launch.</p></div></section>
+        <section className="reference-intro section-pad" aria-labelledby="about-mccl">
+          <div className="container reference-intro-grid">
+            <div className="reference-section-copy">
+              <p className="reference-eyebrow">About us</p>
+              <h2 id="about-mccl">Mengo Chamber of Commerce Limited</h2>
+              <p>
+                Established by the Kingdom of Buganda, Mengo Chamber of Commerce
+                Limited is a member-driven institution promoting business growth,
+                trade development, investment opportunities and improved
+                livelihoods across Buganda.
+              </p>
+              <Link href="/about" className="reference-gold-button">
+                Learn More About MCCL <ArrowRight size={16} />
+              </Link>
+            </div>
+            <figure className="reference-board-card">
+              <ResponsivePhoto photo={realPhotos.bulange} width={980} height={620} sizes="(max-width: 760px) 100vw, 51vw" />
+              <div className="reference-play" aria-hidden="true"><CirclePlay size={54} /></div>
+              <figcaption>Discover the Chamber&apos;s leadership and strategic direction</figcaption>
+            </figure>
+          </div>
+        </section>
 
-   <section className="mcc-membership" aria-labelledby="mcc-membership-heading"><div className="mcc-membership-photo"><ResponsivePhoto photo={realPhotos.market} width={1050} height={570} sizes="(max-width:760px) 100vw, 50vw"/></div><div className="mcc-membership-copy"><span className="mcc-eyebrow">MEMBERSHIP</span><h2 id="mcc-membership-heading">Be part of a <em>growing network</em></h2><p>Connect with entrepreneurs, businesses, cooperatives, investors and partners working towards a prosperous Buganda.</p><div className="mcc-membership-actions"><Link href="/membership" className="mcc-gold-btn">Explore membership <ArrowRight size={17}/></Link><Link href="/join" className="mcc-white-link">Application steps <ArrowUpRight size={17}/></Link></div></div></section>
+        <section className="reference-stat-band" aria-label="Buganda at a glance">
+          <div className="container reference-stat-grid">
+            {statistics.map(({ value, label, icon: Icon }) => (
+              <div key={label} className="reference-stat">
+                <Icon size={32} aria-hidden="true" />
+                <div><strong>{value}</strong><span>{label}</span></div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-   <section className="mcc-section mcc-news" aria-labelledby="mcc-news-heading"><div className="container"><div className="mcc-heading-row"><div><span className="mcc-eyebrow">NEWS, EVENTS & KNOWLEDGE</span><h2 id="mcc-news-heading">Stories and <em>opportunities</em></h2></div><Link href="/insights" className="mcc-text-link">All updates <ArrowRight size={17}/></Link></div><div className="mcc-news-grid"><Link href="/strategy" className="mcc-news-card"><ResponsivePhoto photo={realPhotos.bulange} width={700} height={420} sizes="(max-width:760px) 100vw, 33vw"/><span>STRATEGIC DIRECTION</span><h3>Twezimbe: building a connected business ecosystem</h3><p>Explore the Chamber's 2026–2029 priorities.</p></Link><Link href="/businesses" className="mcc-news-card"><ResponsivePhoto photo={realPhotos.market} width={700} height={420} sizes="(max-width:760px) 100vw, 33vw"/><span>ENTERPRISE</span><h3>Discover businesses and community enterprises</h3><p>Explore business profiles and local commercial networks.</p></Link><Link href="/events-calendar" className="mcc-news-card"><ResponsivePhoto photo={realPhotos.kampala} width={700} height={420} sizes="(max-width:760px) 100vw, 33vw"/><span>PROGRAMMES</span><h3>Training, networking and future events</h3><p>Learn about proposed Chamber engagement programmes.</p></Link></div></div></section>
+        <section className="reference-kingdom section-pad" aria-labelledby="explore-buganda">
+          <div className="container">
+            <div className="reference-kingdom-grid">
+              <div className="reference-section-copy">
+                <p className="reference-eyebrow">Our kingdom</p>
+                <h2 id="explore-buganda">Explore Buganda</h2>
+                <p>
+                  Discover the 18 Masaza (counties), their sub-counties,
+                  leaders, economic activities, and development opportunities.
+                </p>
+                <Link href="/centres" className="reference-gold-button">
+                  View All Counties <ArrowRight size={16} />
+                </Link>
+              </div>
+              <div className="reference-map" role="img" aria-label="Illustrative map of Buganda and its counties">
+                {counties.map(([county, position]) => <span key={county} className={"reference-map-label " + position}>{county}</span>)}
+              </div>
+              <Link className="reference-feature-place" href="/centres">
+                <ResponsivePhoto photo={realPhotos.heritage} width={680} height={500} sizes="(max-width: 760px) 100vw, 28vw" />
+                <span className="reference-place-overlay">
+                  <strong>Kalangala</strong>
+                  <small>Beautiful islands, tourism, fisheries, and investment opportunities.</small>
+                  <span><ArrowUpRight size={16} /> <i>01 / 18</i> <ArrowRight size={16} /></span>
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
 
-   <section className="mcc-closing"><div className="container"><div><span className="mcc-eyebrow">TWEZIMBE · BUILDING TOGETHER</span><h2>Let's build a more connected business future.</h2></div><Link href="/contact" className="mcc-gold-btn">Contact the Chamber <ArrowRight size={17}/></Link></div></section>
- </main></Shell>;
+        <section className="reference-impact section-pad" aria-labelledby="impact-title">
+          <div className="container">
+            <div className="reference-title-row">
+              <div>
+                <p className="reference-eyebrow">Our impact</p>
+                <h2 id="impact-title">Transforming Lives Across Buganda</h2>
+                <p>Working with communities, partners and institutions to advance inclusive development and economic growth.</p>
+              </div>
+              <Link href="/insights" className="reference-gold-button">View All Sectors <ArrowRight size={16} /></Link>
+            </div>
+            <div className="reference-impact-grid">
+              {impact.map(({ title, detail, icon: Icon, href, photo }) => (
+                <Link className="reference-impact-card" href={href} key={title}>
+                  <ResponsivePhoto photo={photo} width={380} height={260} sizes="(max-width: 760px) 50vw, 17vw" />
+                  <span className="reference-impact-icon"><Icon size={18} /></span>
+                  <strong>{title}</strong><small>{detail}</small>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="reference-services section-pad" aria-labelledby="services-title">
+          <div className="container">
+            <div className="reference-title-row">
+              <div>
+                <p className="reference-eyebrow">The Chamber</p>
+                <h2 id="services-title">Business Support for a Thriving Buganda</h2>
+                <p>We provide services that help businesses, SACCOs, cooperatives and communities grow and compete.</p>
+              </div>
+              <Link href="/services" className="reference-gold-button">Explore Our Services <ArrowRight size={16} /></Link>
+            </div>
+            <div className="reference-service-grid">
+              {services.map(({ title, icon: Icon, href }) => (
+                <Link href={href} key={title} className="reference-service">
+                  <Icon size={30} strokeWidth={1.55} />
+                  <strong>{title}</strong>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="reference-membership" aria-labelledby="membership-title">
+          <div className="reference-membership-photo">
+            <ResponsivePhoto photo={realPhotos.heritage} width={1100} height={560} sizes="(max-width: 760px) 100vw, 50vw" />
+          </div>
+          <div className="reference-membership-copy">
+            <p className="reference-eyebrow">Membership</p>
+            <h2 id="membership-title">Be Part of a Growing Network</h2>
+            <p>Join a vibrant community of businesses, cooperatives, SACCOs and partners committed to a prosperous Buganda.</p>
+            <div>
+              <Link href="/join" className="reference-gold-button">Join the Chamber <ArrowRight size={16} /></Link>
+              <Link href="/membership" className="reference-membership-link">Membership Benefits <ArrowRight size={16} /></Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="reference-updates section-pad" aria-labelledby="updates-title">
+          <div className="container reference-updates-grid">
+            <div className="reference-news-intro">
+              <p className="reference-eyebrow">Latest news</p>
+              <h2 id="updates-title">Stories from Buganda&apos;s Business Community</h2>
+              <Link href="/insights" className="reference-outline-blue">View All News <ArrowRight size={15} /></Link>
+            </div>
+            <div className="reference-news-grid">
+              {news.map(({ date, title, photo }) => (
+                <Link href="/insights" className="reference-news-card" key={title}>
+                  <ResponsivePhoto photo={photo} width={420} height={240} sizes="(max-width: 760px) 100vw, 20vw" />
+                  <small>{date}</small><strong>{title}</strong><span>Read More <ArrowRight size={14} /></span>
+                </Link>
+              ))}
+            </div>
+            <aside className="reference-events" aria-labelledby="events-title">
+              <div><p className="reference-eyebrow">Upcoming events</p><Link href="/events-calendar">View Calendar <ArrowRight size={14} /></Link></div>
+              <h2 id="events-title" className="sr-only">Upcoming events</h2>
+              {events.map(([month, day, title, venue]) => (
+                <Link href="/events-calendar" className="reference-event" key={title}>
+                  <time><span>{month}</span><strong>{day}</strong></time>
+                  <span><strong>{title}</strong><small>{venue}</small></span>
+                </Link>
+              ))}
+            </aside>
+          </div>
+        </section>
+
+        <section className="reference-partners" aria-labelledby="partners-title">
+          <div className="container">
+            <p className="reference-eyebrow">Our partners</p>
+            <div className="reference-partners-heading">
+              <h2 id="partners-title">Working Together for a Prosperous Buganda</h2>
+              <span><ChevronLeft size={17} /><ChevronRight size={17} /></span>
+            </div>
+            <div className="reference-partner-grid" aria-label="Partner logos">
+              {["MCCL", "UIA", "ITC", "UNDP", "WORLD BANK GROUP", "AFD", "EU", "BUGANDA"].map((partner) => (
+                <span key={partner}>{partner === "MCCL" ? <Landmark size={31} /> : <b>{partner}</b>}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+    </Shell>
+  );
 }
