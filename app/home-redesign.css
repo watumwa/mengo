@@ -66,3 +66,6 @@
 @media(max-width:1200px){.mcc-brand{min-width:220px}.mcc-brand img{width:54px;height:62px}.mcc-brand strong{font-size:18px}.mcc-brand b{font-size:12px}.mcc-primary-nav{gap:9px}.mcc-primary-nav a{font-size:11px}}
 @media(max-width:850px){.mcc-main-nav-inner{min-height:82px}.mcc-brand{min-width:0}.mcc-brand img{width:49px;height:56px}.mcc-brand strong{font-size:18px}.mcc-brand b{font-size:12px}.mcc-primary-nav{top:109px}.mcc-primary-nav a{font-size:15px}}
 @media(max-width:620px){.mcc-main-nav-inner{min-height:76px}.mcc-brand{gap:7px}.mcc-brand img{width:40px;height:46px}.mcc-brand strong{font-size:14px;line-height:1.05}.mcc-brand b{font-size:9px}.mcc-brand small{font-size:8px}.mcc-header-join{font-size:10px;padding:0 8px}.mcc-primary-nav{top:100px}}
+
+/* Verified real Bulange photograph (Alvinategyeka, 2020, CC BY-SA 4.0). */
+.reference-hero{background-image:linear-gradient(90deg,rgba(0,30,70,.96) 0%,rgba(2,37,82,.82) 36%,rgba(2,35,77,.08) 71%),url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Bulange_Mengo.jpg?width=2000')}
