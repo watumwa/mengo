@@ -85,3 +85,54 @@
 .reference-shortcut{min-height:122px}
 @media(max-width:850px){.reference-hero{min-height:540px}.reference-hero h1{font-size:clamp(38px,6vw,60px)}.reference-hero-tagline{font-size:clamp(25px,4vw,38px)}}
 @media(max-width:620px){.reference-hero{min-height:570px;background-position:63% center}.reference-hero-content{padding-top:58px;padding-bottom:66px}.reference-hero h1{font-size:clamp(33px,9vw,45px);line-height:1.04}.reference-hero-tagline{font-size:clamp(24px,7vw,33px)}.reference-hero-copy{font-size:15px;max-width:340px}.reference-hero-actions{flex-wrap:wrap;gap:9px}.reference-hero-actions .reference-gold-button,.reference-hero-actions .reference-outline-button{min-height:45px;padding:0 15px;font-size:13px}.reference-kicker{font-size:11px}.reference-hero-pagination{margin-top:25px}}
+
+
+/* Header refinement: prevent desktop navigation wrapping or clipping. */
+.mcc-main-nav-inner{width:min(100% - 44px,1540px);max-width:1540px;min-height:92px;display:flex;align-items:center;gap:clamp(12px,1.4vw,25px)}
+.mcc-brand{min-width:0;flex:0 0 auto;gap:11px}
+.mcc-brand img{width:56px;height:62px}
+.mcc-brand strong{font-size:clamp(16px,1.16vw,20px);white-space:nowrap}
+.mcc-brand b{font-size:clamp(11px,.82vw,14px);white-space:nowrap}
+.mcc-brand small{font-size:10px}
+.mcc-primary-nav{flex:1 1 auto;min-width:0;display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:clamp(9px,1.05vw,18px)}
+.mcc-primary-nav a{display:inline-flex;align-items:center;white-space:nowrap;font-size:clamp(11px,.76vw,13px);line-height:1.35;flex-shrink:0}
+.mcc-primary-nav em{font-size:11px}
+.mcc-nav-actions{flex:0 0 auto;gap:12px}
+.mcc-header-join{white-space:nowrap;min-height:43px;font-size:12px;padding:0 13px}
+.mcc-search{display:inline-flex;align-items:center;justify-content:center}
+.mcc-topbar .container{width:min(100% - 44px,1540px);max-width:1540px}
+@media(max-width:1450px){
+ .mcc-main-nav-inner{gap:12px}
+ .mcc-brand img{width:48px;height:56px}
+ .mcc-brand strong{font-size:16px}
+ .mcc-brand b{font-size:11px}
+ .mcc-brand small{font-size:9px}
+ .mcc-primary-nav{gap:9px}
+ .mcc-primary-nav a{font-size:11px}
+ .mcc-header-join{font-size:11px;padding:0 10px}
+}
+@media(max-width:1250px){
+ .mcc-main-nav-inner{min-height:82px}
+ .mcc-primary-nav{position:absolute;left:0;right:0;top:100%;display:none;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:14px max(20px,calc((100vw - 1100px)/2));background:#fff;border-top:1px solid #e8edf4;box-shadow:0 15px 25px #001b4430;white-space:normal;z-index:60}
+ .mcc-primary-nav.is-open{display:flex}
+ .mcc-primary-nav a{padding:13px 8px;font-size:15px;width:100%}
+ .mcc-primary-nav a:first-child:after{display:none}
+ .mcc-menu-toggle{display:grid;place-items:center}
+ .mcc-nav-actions{margin-left:auto}
+ .mcc-search{display:inline-flex}
+}
+@media(max-width:620px){
+ .mcc-main-nav-inner,.mcc-topbar .container{width:calc(100% - 26px)}
+ .mcc-main-nav-inner{min-height:74px;gap:8px}
+ .mcc-brand{gap:7px}
+ .mcc-brand img{width:39px;height:45px}
+ .mcc-brand strong{font-size:13px}
+ .mcc-brand b{font-size:9px}
+ .mcc-brand small{font-size:8px}
+ .mcc-nav-actions{gap:7px}
+ .mcc-search{display:none}
+ .mcc-header-join{min-height:34px;font-size:10px;padding:0 8px}
+ .mcc-header-join svg{display:none}
+ .mcc-primary-nav{top:100%;padding:12px 18px}
+}
+@media(max-width:390px){.mcc-header-join{display:none}.mcc-brand strong{font-size:13px}}
