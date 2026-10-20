@@ -10,8 +10,8 @@ export type ChamberPhoto = {
  */
 export const realPhotos = {
   bulange: {
-    src: "/images/buganda-royal-palace.jpg",
-    alt: "A Buganda palace building in Mengo",
+    src: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bulange_Mengo.jpg?width=1600",
+    alt: "Authentic photograph of Bulange, the administrative headquarters of Buganda Kingdom, by Alvinategyeka (2020), CC BY-SA 4.0",
     position: "center",
   },
   coffee: {
@@ -30,8 +30,8 @@ export const realPhotos = {
     position: "center",
   },
   heritage: {
-    src: "/images/mengo-hero-v2.png",
-    alt: "A heritage-inspired view of Mengo and Kampala",
+    src: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Buganda_kingdom_Clan_heads_meeting_in_Bulange_Mmengo%2C_Kampala.09.jpg?width=1600",
+    alt: "Real photograph of a Buganda Kingdom clan heads meeting at Bulange, by Samson Ssemakadde (2025), CC0",
     position: "center",
   },
 } satisfies Record<string, ChamberPhoto>;
