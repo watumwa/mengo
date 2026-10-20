@@ -69,3 +69,19 @@
 
 /* Verified real Bulange photograph (Alvinategyeka, 2020, CC BY-SA 4.0). */
 .reference-hero{background-image:linear-gradient(90deg,rgba(0,30,70,.96) 0%,rgba(2,37,82,.82) 36%,rgba(2,35,77,.08) 71%),url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Bulange_Mengo.jpg?width=2000')}
+
+
+/* Approved hero composition: high-contrast editorial type and authentic photo. */
+.reference-hero{min-height:590px;background-position:center 44%;background-size:cover}
+.reference-hero-content{padding-top:80px;padding-bottom:75px}
+.reference-hero h1{font-size:clamp(46px,5.1vw,78px);max-width:830px;line-height:.98;font-weight:800;text-transform:uppercase;letter-spacing:-.025em;text-shadow:0 2px 15px #00173570}
+.reference-hero-tagline{font-family:Georgia,'Times New Roman',serif;font-weight:800;font-size:clamp(28px,3.4vw,51px);line-height:1.12;letter-spacing:-.025em;color:#f1bf47;margin:12px 0 0;text-shadow:0 2px 12px #00173580}
+.reference-hero-copy{font-size:19px;line-height:1.55;max-width:560px;margin-top:18px}
+.reference-kicker{font-size:14px;letter-spacing:.18em}
+.reference-hero-actions{margin-top:24px}
+.reference-hero-actions .reference-gold-button,.reference-hero-actions .reference-outline-button{font-size:15px;min-height:52px;padding:0 26px}
+.reference-hero-pagination{margin-top:42px}
+.reference-shortcuts{padding:22px 0 28px}
+.reference-shortcut{min-height:122px}
+@media(max-width:850px){.reference-hero{min-height:540px}.reference-hero h1{font-size:clamp(38px,6vw,60px)}.reference-hero-tagline{font-size:clamp(25px,4vw,38px)}}
+@media(max-width:620px){.reference-hero{min-height:570px;background-position:63% center}.reference-hero-content{padding-top:58px;padding-bottom:66px}.reference-hero h1{font-size:clamp(33px,9vw,45px);line-height:1.04}.reference-hero-tagline{font-size:clamp(24px,7vw,33px)}.reference-hero-copy{font-size:15px;max-width:340px}.reference-hero-actions{flex-wrap:wrap;gap:9px}.reference-hero-actions .reference-gold-button,.reference-hero-actions .reference-outline-button{min-height:45px;padding:0 15px;font-size:13px}.reference-kicker{font-size:11px}.reference-hero-pagination{margin-top:25px}}
