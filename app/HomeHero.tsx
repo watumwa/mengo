@@ -7,7 +7,7 @@ export function HomeHero() {
       <div className="container reference-hero-content">
         <p className="reference-kicker">Heritage · Enterprise · Opportunity</p>
         <h1 id="home-hero-title">Mengo Chamber<br />of Commerce Limited</h1>
-        <p className="reference-hero-tagline">Building a Prosperous Buganda Together</p>
+        <p className="reference-hero-tagline">Uplifting the Livelihoods</p>
         <p className="reference-hero-copy">
           The Mengo Chamber of Commerce Limited connects people, businesses,
           and opportunities to drive trade, investment and sustainable
