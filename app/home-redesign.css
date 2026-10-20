@@ -47,3 +47,22 @@
 @media(max-width:1100px){.mcc-primary-nav a,.mcc-primary-nav em{font-size:11px}.reference-stat span{font-size:11px}}
 @media(max-width:850px){.mcc-primary-nav a{font-size:15px;padding:13px 6px}}
 @media(max-width:620px){.mcc-topbar{font-size:9px}.mcc-brand strong{font-size:14px}.mcc-brand b{font-size:10px}.mcc-brand small{font-size:8px}.mcc-header-join{font-size:11px}.reference-hero-copy{font-size:15px}.reference-shortcut strong{font-size:13px}.reference-shortcut span{font-size:11px}.reference-stat span{font-size:12px}.reference-news-grid{grid-template-columns:1fr}.reference-news-card img{height:180px}.reference-news-card strong{min-height:0}.mcc-footer-grid{gap:22px}.mcc-reference-footer a{font-size:12px}}
+
+
+/* MCCL identity: prominent, readable institutional wordmark */
+.mcc-main-nav-inner{min-height:100px;gap:20px}
+.mcc-brand{gap:14px;min-width:270px;align-items:center}
+.mcc-brand img{width:64px;height:70px;object-fit:contain;flex-shrink:0}
+.mcc-brand strong{font-family:Georgia,'Times New Roman',serif;font-size:21px;font-weight:900;line-height:1.06;letter-spacing:-.02em;color:#052b60}
+.mcc-brand b{font-family:Georgia,'Times New Roman',serif;font-size:14px;font-weight:800;line-height:1.2;color:#073e80;letter-spacing:.02em}
+.mcc-brand small{font-size:10px;font-weight:650;color:#987018;line-height:1.4;letter-spacing:.025em}
+.mcc-main-nav{border-bottom:3px solid #e4b936}
+.mcc-primary-nav{gap:12px}
+.mcc-primary-nav a{font-size:12px;line-height:1.5}
+.mcc-header-join{font-size:13px}
+.mcc-reference-footer .mcc-brand strong{color:#fff;font-size:18px}
+.mcc-reference-footer .mcc-brand b{color:#f0d477;font-size:12px}
+.mcc-reference-footer .mcc-brand small{color:#d4e1f5;font-size:10px}
+@media(max-width:1200px){.mcc-brand{min-width:220px}.mcc-brand img{width:54px;height:62px}.mcc-brand strong{font-size:18px}.mcc-brand b{font-size:12px}.mcc-primary-nav{gap:9px}.mcc-primary-nav a{font-size:11px}}
+@media(max-width:850px){.mcc-main-nav-inner{min-height:82px}.mcc-brand{min-width:0}.mcc-brand img{width:49px;height:56px}.mcc-brand strong{font-size:18px}.mcc-brand b{font-size:12px}.mcc-primary-nav{top:109px}.mcc-primary-nav a{font-size:15px}}
+@media(max-width:620px){.mcc-main-nav-inner{min-height:76px}.mcc-brand{gap:7px}.mcc-brand img{width:40px;height:46px}.mcc-brand strong{font-size:14px;line-height:1.05}.mcc-brand b{font-size:9px}.mcc-brand small{font-size:8px}.mcc-header-join{font-size:10px;padding:0 8px}.mcc-primary-nav{top:100px}}
