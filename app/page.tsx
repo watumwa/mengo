@@ -1,111 +1,58 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Building2,
-  Handshake,
-  Landmark,
-  TrendingUp,
-  UsersRound,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, BookOpen, BriefcaseBusiness, CalendarDays, GraduationCap, Handshake, HeartPulse, Landmark, MapPinned, Network, Sprout, Store, Users, UsersRound, Camera, Globe2, ShieldCheck } from "lucide-react";
 import { Shell } from "./components";
-import EcosystemSearch from "./EcosystemSearch";
+import { HomeHero } from "./HomeHero";
+import { realPhotos } from "./realPhotos";
+import { ResponsivePhoto } from "./ResponsivePhoto";
+import "./home-redesign.css";
 
-const pillars = [
-  { icon: UsersRound, title: "Business Connectivity", text: "Linking traders to markets and opportunities." },
-  { icon: TrendingUp, title: "Enterprise Development", text: "Supporting growth and innovation." },
-  { icon: Handshake, title: "Market Linkages", text: "Connecting buyers, suppliers and investors." },
-  { icon: Building2, title: "Community Impact", text: "Creating jobs and inclusive economic development." },
-  { icon: Landmark, title: "Trade Promotion", text: "Promoting Buganda as a destination for trade and investment." },
+const shortcuts = [
+  {title:"About MCCL",subtitle:"Our story and mandate",href:"/about",icon:Landmark},
+  {title:"Membership",subtitle:"Join and benefit",href:"/membership",icon:UsersRound},
+  {title:"Explore Buganda",subtitle:"Heritage and regions",href:"/centres",icon:MapPinned},
+  {title:"Investment",subtitle:"Trade and opportunity",href:"/invest",icon:BriefcaseBusiness},
+  {title:"SACCOs & Enterprise",subtitle:"Community growth",href:"/businesses",icon:Network},
+  {title:"News & Events",subtitle:"Latest information",href:"/insights",icon:CalendarDays},
+];
+const impact = [
+  {title:"Agriculture",detail:"Farming, value addition and market access",icon:Sprout,href:"/services",photo:realPhotos.coffee},
+  {title:"Education",detail:"Skills, learning and enterprise development",icon:GraduationCap,href:"/training",photo:realPhotos.bulange},
+  {title:"Health",detail:"Community wellbeing and productive livelihoods",icon:HeartPulse,href:"/insights",photo:realPhotos.market},
+  {title:"Tourism",detail:"Heritage and visitor opportunities",icon:Camera,href:"/invest",photo:realPhotos.bulange},
+  {title:"Community",detail:"Cooperatives and grassroots enterprise",icon:Users,href:"/membership",photo:realPhotos.market},
+  {title:"Trade",detail:"Business connections and partnerships",icon:Globe2,href:"/exchange",photo:realPhotos.kampala},
+];
+const services = [
+  {title:"Business Advisory",icon:Handshake,href:"/business-advisory"},
+  {title:"Trade Facilitation",icon:Globe2,href:"/exchange"},
+  {title:"Investment Promotion",icon:BriefcaseBusiness,href:"/invest"},
+  {title:"Training & Capacity",icon:GraduationCap,href:"/training"},
+  {title:"Enterprise Development",icon:Store,href:"/services"},
+  {title:"Policy & Advocacy",icon:ShieldCheck,href:"/policy-advocacy"},
 ];
 
-const areas = [
-  {
-    title: "Commercial Centres",
-    description: "Discover trading centres, markets and business hubs across Buganda.",
-    href: "/centres",
-    action: "Explore Centres",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Fruits_stall_in_Kasubi_market.jpg?width=960",
-    alt: "Real fruit stall photographed at Kasubi market in Kampala",
-  },
-  {
-    title: "Business Directory",
-    description: "Explore illustrative listings while business verification is being developed.",
-    href: "/businesses",
-    action: "Search Businesses",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kampala_Market.jpg?width=960",
-    alt: "Real Kampala market photograph",
-  },
-  {
-    title: "Market Opportunities",
-    description: "Explore prospective local and regional trade and supply linkages.",
-    href: "/exchange",
-    action: "View Opportunities",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Harvesting_Ugandan_coffee_1.jpg?width=960",
-    alt: "Real Ugandan coffee farmers harvesting produce",
-  },
-  {
-    title: "Business Development",
-    description: "Training, membership and advisory services for growth.",
-    href: "/business-development",
-    action: "Learn More",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Coffee_farmers_harvesting_coffee.jpg?width=960",
-    alt: "Real photograph of Ugandan farmers at work",
-  },
-];
+export default function HomePage(){
+ return <Shell><main className="mcc-home">
+   <HomeHero/>
+   <section className="mcc-shortcuts" aria-label="Popular destinations"><div className="container mcc-shortcut-grid">{shortcuts.map(({title,subtitle,href,icon:Icon})=><Link href={href} key={title} className="mcc-shortcut"><Icon size={29} strokeWidth={1.55} aria-hidden="true"/><strong>{title}</strong><span>{subtitle}</span></Link>)}</div></section>
 
-export default function Home() {
-  return <Shell><main className="editorial-home">
-    <section className="hero editorial-hero">
-      <div className="container"><div className="content">
-        <div className="kicker">MCCL CONNECT · The Business Ecosystem of Buganda</div>
-        <h1>Where Buganda’s<br />Businesses <em>Connect,</em><br />Grow &amp; Trade</h1>
-        <p>Connecting enterprises, investors, markets, knowledge and opportunities across Buganda and beyond. A Chamber established by the Kingdom of Buganda to advance commerce and enterprise growth.</p>
-        <div className="heroactions">
-          <Link className="btn gold" href="/businesses">Explore Businesses <ArrowRight size={16} /></Link>
-          <Link className="btn outline" href="/exchange">Find Opportunities <ArrowUpRight size={16} /></Link><Link className="btn outline" href="/join">Join the Chamber <ArrowUpRight size={16} /></Link>
-        </div>
-      </div></div>
-    </section>
+   <section className="mcc-section mcc-intro" aria-labelledby="mcc-intro-heading"><div className="container mcc-intro-grid">
+    <div className="mcc-intro-copy"><span className="mcc-eyebrow">ABOUT US</span><h2 id="mcc-intro-heading">Mengo Chamber of <em>Commerce Limited</em></h2><p>Established by the Kingdom of Buganda, the Chamber is envisioned as a platform connecting enterprises, investors and institutions to strengthen trade, business development and economic opportunity.</p><p>Guided by the <strong>Twezimbe 2026–2029</strong> strategic direction, MCCL aims to support a competitive, connected and sustainable business ecosystem in Buganda and beyond.</p><Link href="/about" className="mcc-gold-btn">Learn more about MCCL <ArrowRight size={17}/></Link></div>
+    <figure className="mcc-intro-visual"><ResponsivePhoto photo={realPhotos.bulange} width={980} height={680} sizes="(max-width:760px) 100vw, 48vw"/><figcaption>Bulange, Mengo — the Kingdom's administrative centre. Official MCCL board inauguration photography will be used once publication rights and a suitable original are available.</figcaption></figure>
+   </div></section>
 
-    <section className="container mcc-search-above"><EcosystemSearch compact/></section>
+   <section className="mcc-blue-strip" aria-label="Our strategic priorities"><div className="container mcc-priorities">{[{icon:Landmark,label:"Kingdom heritage"},{icon:UsersRound,label:"Membership growth"},{icon:Handshake,label:"Trade & investment"},{icon:BookOpen,label:"Research & advocacy"}].map(({icon:Icon,label})=><div key={label}><Icon size={27} aria-hidden="true"/><strong>{label}</strong></div>)}</div></section>
 
-    <section className="ecosystem-shortcuts"><div className="container"><div className="ecosystem-shortcuts-heading"><span className="eyebrow">Explore MCCL CONNECT</span><h2>Your gateway to business and opportunity</h2></div><div className="ecosystem-shortcuts-grid">{[["Business Directory","/businesses"],["Trade & Investment","/invest"],["Market Intelligence","/intelligence"],["Opportunities","/exchange"],["Membership","/join"],["Events & Programmes","/events-calendar"]].map(([label,url])=><Link href={url} key={url}><span>{label}</span><ArrowUpRight size={18}/></Link>)}</div></div></section>
+   <section className="mcc-section mcc-regions" aria-labelledby="mcc-regions-heading"><div className="container mcc-regions-grid"><div><span className="mcc-eyebrow">OUR KINGDOM</span><h2 id="mcc-regions-heading">Explore <em>Buganda</em></h2><p>Discover the Kingdom's regional heritage and its commercial potential, from community enterprises to wider trade connections.</p><p className="mcc-disclosure">The full Masaza, Gombolola and local-leadership directory is planned for the next page-by-page design phase. We will publish only verified administrative information.</p><Link className="mcc-gold-btn" href="/centres">Explore regional business centres <ArrowRight size={17}/></Link></div><div className="mcc-regions-photo"><ResponsivePhoto photo={realPhotos.kampala} width={1000} height={720} sizes="(max-width:760px) 100vw, 48vw"/><div className="mcc-region-caption"><span>REGIONAL OPPORTUNITY</span><strong>Local roots. Wider markets.</strong><Link href="/exchange">Explore opportunities <ArrowUpRight size={16}/></Link></div></div></div></section>
 
-    <section className="editorial-pillars" aria-label="Chamber focus areas"><div className="container">
-      <div className="editorial-pillar-grid">{pillars.map(({ icon: Icon, title, text }) => <article className="editorial-pillar" key={title}>
-        <span className="editorial-icon"><Icon size={24} strokeWidth={1.7} /></span><div><h2>{title}</h2><p>{text}</p></div>
-      </article>)}</div>
-    </div></section>
+   <section className="mcc-section mcc-impact" aria-labelledby="mcc-impact-heading"><div className="container"><div className="mcc-heading-row"><div><span className="mcc-eyebrow">DEVELOPMENT & IMPACT</span><h2 id="mcc-impact-heading">Building livelihoods <em>across Buganda</em></h2><p>Explore sectors that shape enterprise, opportunity and community wellbeing.</p></div><Link href="/insights" className="mcc-text-link">Explore insights <ArrowRight size={17}/></Link></div><div className="mcc-impact-grid">{impact.map(({title,detail,icon:Icon,href,photo})=><Link className="mcc-impact-card" href={href} key={title}><div className="mcc-impact-photo"><ResponsivePhoto photo={photo} width={450} height={300} sizes="(max-width:600px) 50vw, 17vw"/></div><div className="mcc-impact-body"><Icon size={20} aria-hidden="true"/><h3>{title}</h3><p>{detail}</p></div></Link>)}</div><p className="mcc-disclosure">These are sector themes, not claims that MCCL directly operates every Kingdom programme. Verified project case studies will be added to the dedicated sector pages.</p></div></section>
 
-    <section className="editorial-impact"><div className="container">
-      <div className="editorial-impact-grid">
-        <div className="editorial-stat"><b>Connect</b><span>Businesses and markets</span></div>
-        <div className="editorial-stat"><b>Develop</b><span>Enterprise capability</span></div>
-        <div className="editorial-stat"><b>Advocate</b><span>Business interests</span></div>
-        <div className="editorial-stat"><b>Promote</b><span>Buganda trade and investment</span></div>
-      </div>
-      <p className="editorial-note">Five strategic propositions: Connect, Develop, Advocate, Promote and Transform. These describe priorities, not completed outcomes.</p>
-    </div></section>
+   <section className="mcc-section mcc-services" aria-labelledby="mcc-services-heading"><div className="container"><div className="mcc-heading-row"><div><span className="mcc-eyebrow">THE CHAMBER</span><h2 id="mcc-services-heading">Business support for a <em>thriving Buganda</em></h2><p>Strategic service areas intended to connect and strengthen businesses.</p></div><Link href="/services" className="mcc-text-link">All services <ArrowRight size={17}/></Link></div><div className="mcc-service-grid">{services.map(({title,icon:Icon,href})=><Link href={href} key={title} className="mcc-service"><Icon size={28} strokeWidth={1.6}/><strong>{title}</strong><ArrowUpRight size={16} className="mcc-service-arrow"/></Link>)}</div><p className="mcc-disclosure">Service delivery and programme availability should be confirmed with MCCL before public launch.</p></div></section>
 
-    <section className="mcc-journeys"><div className="container"><div className="mcc-journeys-header"><div><span className="eyebrow">Your business journey</span><h2>What would you like to achieve?</h2><p>Choose a goal and go directly to the right part of the Chamber ecosystem.</p></div><Link href="/explore">Explore all services <ArrowUpRight size={17}/></Link></div><div className="mcc-journey-grid"><Link href="/connect"><Handshake size={29}/><strong>Find business partners</strong><span>Explore introductions and commercial networks.</span><ArrowUpRight size={18}/></Link><Link href="/exchange"><TrendingUp size={29}/><strong>Discover opportunities</strong><span>Explore trade, supply and investment concepts.</span><ArrowUpRight size={18}/></Link><Link href="/value-chains"><Building2 size={29}/><strong>Understand value chains</strong><span>See how enterprises connect across sectors.</span><ArrowUpRight size={18}/></Link><Link href="/business-issues"><Landmark size={29}/><strong>Raise business priorities</strong><span>Explore advocacy and issue-tracking workflows.</span><ArrowUpRight size={18}/></Link></div></div></section>
+   <section className="mcc-membership" aria-labelledby="mcc-membership-heading"><div className="mcc-membership-photo"><ResponsivePhoto photo={realPhotos.market} width={1050} height={570} sizes="(max-width:760px) 100vw, 50vw"/></div><div className="mcc-membership-copy"><span className="mcc-eyebrow">MEMBERSHIP</span><h2 id="mcc-membership-heading">Be part of a <em>growing network</em></h2><p>Connect with entrepreneurs, businesses, cooperatives, investors and partners working towards a prosperous Buganda.</p><div className="mcc-membership-actions"><Link href="/membership" className="mcc-gold-btn">Explore membership <ArrowRight size={17}/></Link><Link href="/join" className="mcc-white-link">Application steps <ArrowUpRight size={17}/></Link></div></div></section>
 
-    <section className="editorial-areas"><div className="container">
-      <div className="editorial-heading"><div className="eyebrow">Explore our key areas</div><h2>Building A Thriving Commercial Community</h2></div>
-      <div className="editorial-area-grid">{areas.map(({ title, description, href, action, image, alt }) => <article className="editorial-area-card" key={title}>
-        {image?<img src={image} alt={alt}/>:<div className="mcc-illustration" aria-hidden="true"><span>{title==="Business Directory"?<Building2 size={48}/>:title==="Market Opportunities"?<TrendingUp size={48}/>:<Handshake size={48}/>}</span><i>{title==="Business Directory"?"DISCOVER ENTERPRISES":title==="Market Opportunities"?"CONNECT TO MARKETS":"BUILD BUSINESS CAPACITY"}</i></div>}
-        <div>{<a className="mcc-photo-credit" href={title==="Commercial Centres"?"https://commons.wikimedia.org/wiki/File:Fruits_stall_in_Kasubi_market.jpg":title==="Business Directory"?"https://commons.wikimedia.org/wiki/File:Kampala_Market.jpg":title==="Market Opportunities"?"https://commons.wikimedia.org/wiki/File:Harvesting_Ugandan_coffee_1.jpg":"https://commons.wikimedia.org/wiki/File:Coffee_farmers_harvesting_coffee.jpg"} target="_blank" rel="noopener noreferrer">Photo: Wikimedia Commons · View author &amp; licence</a>}<h3>{title}</h3><p>{description}</p><Link href={href}>{action} <span aria-hidden="true">→</span></Link></div>
-      </article>)}</div>
-    </div></section>
+   <section className="mcc-section mcc-news" aria-labelledby="mcc-news-heading"><div className="container"><div className="mcc-heading-row"><div><span className="mcc-eyebrow">NEWS, EVENTS & KNOWLEDGE</span><h2 id="mcc-news-heading">Stories and <em>opportunities</em></h2></div><Link href="/insights" className="mcc-text-link">All updates <ArrowRight size={17}/></Link></div><div className="mcc-news-grid"><Link href="/strategy" className="mcc-news-card"><ResponsivePhoto photo={realPhotos.bulange} width={700} height={420} sizes="(max-width:760px) 100vw, 33vw"/><span>STRATEGIC DIRECTION</span><h3>Twezimbe: building a connected business ecosystem</h3><p>Explore the Chamber's 2026–2029 priorities.</p></Link><Link href="/businesses" className="mcc-news-card"><ResponsivePhoto photo={realPhotos.market} width={700} height={420} sizes="(max-width:760px) 100vw, 33vw"/><span>ENTERPRISE</span><h3>Discover businesses and community enterprises</h3><p>Explore business profiles and local commercial networks.</p></Link><Link href="/events-calendar" className="mcc-news-card"><ResponsivePhoto photo={realPhotos.kampala} width={700} height={420} sizes="(max-width:760px) 100vw, 33vw"/><span>PROGRAMMES</span><h3>Training, networking and future events</h3><p>Learn about proposed Chamber engagement programmes.</p></Link></div></div></section>
 
-    <section className="editorial-feature-row" aria-label="Investment and heritage"><Link href="/exchange" className="editorial-feature editorial-feature-invest">
-      <div><span>Opportunity in view</span><h2>Invest in<br />Buganda’s Future</h2><p>Discover commercial opportunity across trade, tourism, agriculture and enterprise.</p><b>Explore Opportunities <ArrowRight size={15} /></b></div>
-    </Link><Link href="/about" className="editorial-feature editorial-feature-heritage">
-      <div><span>Our heritage, our strength</span><h2>Commerce for<br />A Prosperous Buganda</h2><p>Rooted in cultural confidence, we imagine a dynamic and inclusive commercial ecosystem.</p><b>About the Chamber <ArrowRight size={15} /></b></div>
-    </Link></section>
-
-    <section className="editorial-join"><div className="container"><div><h2>Connect with Traders and Businesses Across Buganda</h2><p>Be part of a stronger network driving trade, opportunity and inclusive economic transformation.</p></div><Link className="btn gold" href="/join">Become a Member <ArrowRight size={16} /></Link></div></section>
-
-    <section className="editorial-disclaimer"><div className="container">Website frontend under development. Content is based on the Mengo Chamber of Commerce Limited 2026–2029 strategic plan; programme details require institutional confirmation.</div></section>
-  </main></Shell>;
+   <section className="mcc-closing"><div className="container"><div><span className="mcc-eyebrow">TWEZIMBE · BUILDING TOGETHER</span><h2>Let's build a more connected business future.</h2></div><Link href="/contact" className="mcc-gold-btn">Contact the Chamber <ArrowRight size={17}/></Link></div></section>
+ </main></Shell>;
 }
