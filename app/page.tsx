@@ -36,9 +36,9 @@ const shortcuts = [
 
 const statistics = [
   { value: "18", label: "Masaza Counties", icon: Landmark },
-  { value: "200+", label: "Gombolola Sub-counties", icon: MapPinned },
-  { value: "9.8M+", label: "People of Buganda (Estimated)", icon: Users },
-  { value: "1000+", label: "Members, Businesses and Institutions", icon: BriefcaseBusiness },
+  { value: "2026–29", label: "Twezimbe Strategic Plan", icon: MapPinned },
+  { value: "7", label: "Membership Categories", icon: Users },
+  { value: "6", label: "Strategic Priorities", icon: BriefcaseBusiness },
   { value: "One Goal", label: "Uplifting Livelihoods", icon: TrendingUp },
 ];
 
@@ -61,15 +61,15 @@ const services = [
 ];
 
 const news = [
-  { date: "Oct 10, 2025", title: "MCCL Launches New Enterprise Development Programme", photo: realPhotos.bulange },
-  { date: "Sep 28, 2025", title: "Coffee Value Addition Project Targets Greater Farmer Incomes", photo: realPhotos.coffee },
-  { date: "Sep 20, 2025", title: "Kalangala Tourism Investment Opportunities Unveiled", photo: realPhotos.market },
+  { date: "STRATEGY", title: "Explore the Twezimbe 2026–2029 Strategic Plan", photo: realPhotos.bulange, href: "/strategy" },
+  { date: "BUSINESS", title: "Discover Trade and Enterprise Opportunities", photo: realPhotos.coffee, href: "/exchange" },
+  { date: "MEMBERSHIP", title: "Understand Chamber Membership and Benefits", photo: realPhotos.market, href: "/membership" },
 ];
 
 const events = [
-  ["OCT", "26", "MCCL Business Forum", "Mengo, Kampala"],
-  ["NOV", "15", "Trade & Investment Expo", "Kampala Serena Hotel"],
-  ["DEC", "05", "SACCOs Leadership Training", "Mengo Conference Centre"],
+  ["01", "—", "Business networking", "Programme details to be confirmed"],
+  ["02", "—", "Trade & investment forums", "Dates to be announced"],
+  ["03", "—", "Enterprise training", "Schedule to be confirmed"],
 ];
 
 const counties = [
@@ -147,14 +147,14 @@ export default function HomePage() {
                 <p className="reference-eyebrow">Our kingdom</p>
                 <h2 id="explore-buganda">Explore Buganda</h2>
                 <p>
-                  Discover the 18 Masaza (counties), their sub-counties,
+                  Discover the Masaza (counties), their sub-counties,
                   leaders, economic activities, and development opportunities.
                 </p>
                 <Link href="/centres" className="reference-gold-button">
-                  View All Counties <ArrowRight size={16} />
+                  Explore Regional Profiles <ArrowRight size={16} />
                 </Link>
               </div>
-              <div className="reference-map" role="img" aria-label="Illustrative map of Buganda and its counties">
+              <div className="reference-map" role="img" aria-label="Conceptual county explorer illustration; not a geographical map">
                 {counties.map(([county, position]) => <span key={county} className={"reference-map-label " + position}>{county}</span>)}
               </div>
               <Link className="reference-feature-place" href="/centres">
@@ -175,7 +175,7 @@ export default function HomePage() {
               <div>
                 <p className="reference-eyebrow">Our impact</p>
                 <h2 id="impact-title">Transforming Lives Across Buganda</h2>
-                <p>Working with communities, partners and institutions to advance inclusive development and economic growth.</p>
+                <p>Explore development priorities and sectors relevant to Buganda. Specific projects and achievements will be published once verified.</p>
               </div>
               <Link href="/insights" className="reference-gold-button">View All Sectors <ArrowRight size={16} /></Link>
             </div>
@@ -197,7 +197,7 @@ export default function HomePage() {
               <div>
                 <p className="reference-eyebrow">The Chamber</p>
                 <h2 id="services-title">Business Support for a Thriving Buganda</h2>
-                <p>We provide services that help businesses, SACCOs, cooperatives and communities grow and compete.</p>
+                <p>Explore Chamber service areas intended to help businesses, SACCOs, cooperatives and communities grow and compete.</p>
               </div>
               <Link href="/services" className="reference-gold-button">Explore Our Services <ArrowRight size={16} /></Link>
             </div>
@@ -232,18 +232,18 @@ export default function HomePage() {
             <div className="reference-news-intro">
               <p className="reference-eyebrow">Latest news</p>
               <h2 id="updates-title">Stories from Buganda&apos;s Business Community</h2>
-              <Link href="/insights" className="reference-outline-blue">View All News <ArrowRight size={15} /></Link>
+              <Link href="/insights" className="reference-outline-blue">Explore Insights <ArrowRight size={15} /></Link>
             </div>
             <div className="reference-news-grid">
-              {news.map(({ date, title, photo }) => (
-                <Link href="/insights" className="reference-news-card" key={title}>
+              {news.map(({ date, title, photo, href }) => (
+                <Link href={href} className="reference-news-card" key={title}>
                   <ResponsivePhoto photo={photo} width={420} height={240} sizes="(max-width: 760px) 100vw, 20vw" />
-                  <small>{date}</small><strong>{title}</strong><span>Read More <ArrowRight size={14} /></span>
+                  <small>{date}</small><strong>{title}</strong><span>Explore <ArrowRight size={14} /></span>
                 </Link>
               ))}
             </div>
             <aside className="reference-events" aria-labelledby="events-title">
-              <div><p className="reference-eyebrow">Upcoming events</p><Link href="/events-calendar">View Calendar <ArrowRight size={14} /></Link></div>
+              <div><p className="reference-eyebrow">Programmes to watch</p><Link href="/events-calendar">Explore programmes <ArrowRight size={14} /></Link></div>
               <h2 id="events-title" className="sr-only">Upcoming events</h2>
               {events.map(([month, day, title, venue]) => (
                 <Link href="/events-calendar" className="reference-event" key={title}>
@@ -257,13 +257,13 @@ export default function HomePage() {
 
         <section className="reference-partners" aria-labelledby="partners-title">
           <div className="container">
-            <p className="reference-eyebrow">Our partners</p>
+            <p className="reference-eyebrow">Strategic collaboration</p>
             <div className="reference-partners-heading">
-              <h2 id="partners-title">Working Together for a Prosperous Buganda</h2>
+              <h2 id="partners-title">Building Partnerships for a Prosperous Buganda</h2>
               <span><ChevronLeft size={17} /><ChevronRight size={17} /></span>
             </div>
-            <div className="reference-partner-grid" aria-label="Partner logos">
-              {["MCCL", "UIA", "ITC", "UNDP", "WORLD BANK GROUP", "AFD", "EU", "BUGANDA"].map((partner) => (
+            <div className="reference-partner-grid" aria-label="Areas for partnership; not a list of confirmed partners">
+              {["Enterprise", "Investment", "Trade", "Research", "Skills", "Agriculture", "Tourism", "Community"].map((partner) => (
                 <span key={partner}>{partner === "MCCL" ? <Landmark size={31} /> : <b>{partner}</b>}</span>
               ))}
             </div>
