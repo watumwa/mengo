@@ -11,6 +11,6 @@ const sectors = [
  {title:"Health & Community",href:"/kingdom#achievements",icon:HeartPulse,photo:documentaryPhoto("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1100&q=85","Real medical practitioner providing healthcare"),note:"Kabaka Birthday Run · HIV awareness · community health"},
  {title:"Finance & Cooperatives",href:"/businesses",icon:Landmark,photo:documentaryPhoto("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1100&q=85","Real payment transaction representing access to finance"),note:"SACCOs · savings · financial inclusion"},
  {title:"Infrastructure & Property",href:"/invest",icon:Building2,photo:realPhotos.bulange,note:"Kingdom institutions · property · investment"},
- {title:"Tourism & Heritage",href:"/kingdom#tourism",icon:Landmark,photo:realPhotos.bulange,note:"Bulange · Kasubi Tombs · royal heritage"},
+ {title:"Tourism & Heritage",href:"/kingdom#tourism",icon:Landmark,photo:documentaryPhoto("https://commons.wikimedia.org/wiki/Special:FilePath/Kasubi_Tombs_20250815_1.jpg?width=1200","Kasubi Royal Tombs, photographed in August 2025 by Z thomas, CC BY 4.0"),note:"Kasubi Royal Tombs · Bulange · royal heritage"},
  {title:"Media & Communications",href:"/kingdom#institutions",icon:Radio,photo:documentaryPhoto("https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1100&q=85","Real professional broadcast microphone in a radio studio"),note:"CBS FM · BBS Terefayina · Luganda-language media"}
 ];
