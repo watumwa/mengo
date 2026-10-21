@@ -14,7 +14,7 @@ const masaza=[
 ["Gomba","Gomba region","Agriculture and community enterprise"],
 ["Butambala","Butambala region","Agriculture and local business"],
 ["Bulemeezi","Luweero region","Agriculture, trade and services"],
-["Buruuli","Nakasongola region","Livestock, farming and commerce"],
+["Singo","Mityana region","Agriculture and local commerce"],
 ["Buweekula","Mubende region","Agriculture and regional trade"],
 ["Kooki","Rakai region","Agriculture, heritage and enterprise"],
 ["Ssese","Kalangala Islands","Fisheries, tourism and lake-based enterprise"],
@@ -22,7 +22,7 @@ const masaza=[
 ["Bugerere","Kayunga region","Agriculture and trading centres"],
 ["Buluuli","Nakasongola region","Regional agriculture and enterprise"],
 ["Kabula","Lyantonde region","Livestock and agricultural enterprise"],
-["Buwekula","Mubende region","Local business and agriculture"]
+["Busujju","Mityana region","Agriculture and community enterprise"]
 ];
 const countyNames=[...new Map(masaza.map(([name,region,focus])=>[name.toLowerCase(),{name,region,focus}])).values()];
 export default function MasazaExplorer(){
