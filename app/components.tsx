@@ -2,96 +2,73 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, Menu, Search, X } from "lucide-react";
+import { Accessibility, ArrowRight, ChevronDown, ChevronRight, Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 
-const mainNavigation = [
-  ["Home", "/"],
-  ["The Kingdom", "/kingdom"],
-  ["Leadership", "/leadership"],
-  ["Our Impact", "/insights"],
-  ["Buganda Economy", "/businesses"],
-  ["The Chamber", "/about"],
-  ["Opportunities", "/exchange"],
-  ["News & Events", "/events-calendar"],
+type NavigationItem = {
+  label: string;
+  href: string;
+  items?: Array<{ label: string; href: string; description: string }>;
+};
+
+const navigation: NavigationItem[] = [
+  { label: "Home", href: "/" },
+  { label: "Our Kingdom", href: "/kingdom", items: [
+    { label: "Kingdom overview", href: "/kingdom", description: "Heritage, institutions and economic identity" },
+    { label: "History & Heritage", href: "/kingdom/history", description: "Context, eras and cultural continuity" },
+    { label: "Kingdom Leadership", href: "/kingdom/leadership", description: "Roles and official reference links" },
+    { label: "Masaza & Gombolola", href: "/kingdom/masaza", description: "Traditional county explorer" },
+    { label: "Kingdom Institutions", href: "/kingdom/institutions", description: "Documented institutional profiles" },
+    { label: "Culture & Tourism", href: "/kingdom/culture-tourism", description: "Places, heritage and visitor context" },
+  ] },
+  { label: "The Chamber", href: "/about", items: [
+    { label: "Our Story & Mandate", href: "/about", description: "MCCL's role and institutional purpose" },
+    { label: "Leadership & Governance", href: "/about/leadership", description: "Approved profiles and accountability" },
+    { label: "Strategic Plan 2026–2029", href: "/about/strategy", description: "Twezimbe priorities and direction" },
+    { label: "Membership", href: "/membership", description: "Who can join and how to participate" },
+    { label: "Services", href: "/services", description: "Confirmed Chamber support pathways" },
+  ] },
+  { label: "Buganda Economy", href: "/economy", items: [
+    { label: "Economic Sectors", href: "/economy/sectors", description: "Sectors, institutions and context" },
+    { label: "Business Directory", href: "/businesses", description: "Clearly labelled demonstration records" },
+    { label: "SACCOs & Cooperatives", href: "/cooperatives", description: "Cooperative enterprise discovery" },
+    { label: "Commercial Centres", href: "/commercial-centres", description: "Markets and trading areas" },
+    { label: "Economic Map", href: "/economic-map", description: "Verified places and mapped context" },
+  ] },
+  { label: "Investment & Opportunities", href: "/invest", items: [
+    { label: "Investment Projects", href: "/invest", description: "Status-labelled editorial project portfolio" },
+    { label: "Trade Opportunities", href: "/opportunities", description: "Verified opportunities when published" },
+    { label: "Investor Enquiries", href: "/contact?subject=investment", description: "Start an investment conversation" },
+  ] },
+  { label: "News & Events", href: "/insights", items: [
+    { label: "Latest News", href: "/insights", description: "Verified stories and source-led updates" },
+    { label: "Events Calendar", href: "/events-calendar", description: "Confirmed events when announced" },
+    { label: "Publications & Reports", href: "/publications", description: "Approved documents and resources" },
+  ] },
+  { label: "Contact", href: "/contact" },
 ];
 
+function Brand({ onClick }: { onClick?: () => void }) {
+  return <Link href="/" className="bp-brand" onClick={onClick} aria-label="Mengo Chamber of Commerce Limited home"><Image src="/icons/mccl-icon.svg" alt="" width={58} height={64} priority /><span><strong>Mengo Chamber</strong><b>of Commerce Limited</b><small>Uplifting Livelihoods</small></span></Link>;
+}
+
 export function Header() {
-  const [open, setOpen] = useState(false);
-  const [kingdomOpen, setKingdomOpen] = useState(false);
-  const close = () => { setOpen(false); setKingdomOpen(false); };
-
-  return (
-    <header className="mcc-site-header">
-      <div className="mcc-topbar">
-        <div className="container">
-          <span>Obwakabaka bwa Buganda <i /> Kingdom of Buganda</span>
-          <span><Link href="/contact">Contact</Link><i /> <Link href="/insights">FAQs</Link><i /> English <i /> Luganda</span>
-        </div>
-      </div>
-      <div className="mcc-main-nav">
-        <div className="container mcc-main-nav-inner">
-          <Link href="/" className="mcc-brand" onClick={close} aria-label="Mengo Chamber of Commerce home">
-            <Image src="/icons/mccl-icon.svg" alt="" width={52} height={52} priority />
-            <span><strong>Mengo Chamber</strong><b>of Commerce Limited</b><small>Building for a Prosperous Buganda</small></span>
-          </Link>
-          <nav className={open ? "mcc-primary-nav is-open" : "mcc-primary-nav"} aria-label="Primary navigation">
-            {mainNavigation.map(([label, href]) => label === "The Kingdom" ? <div key={label} className="kingdom-nav" style={{position:"relative"}}>
-              <span style={{display:"flex",alignItems:"center"}}><Link href="/kingdom" onClick={close}>Our Kingdom</Link><button type="button" aria-label="Toggle Kingdom dropdown" aria-expanded={kingdomOpen} onClick={()=>setKingdomOpen(!kingdomOpen)} style={{border:0,background:"transparent",color:"inherit",cursor:"pointer",padding:9}}><ChevronDown size={17}/></button></span>
-              {kingdomOpen && <div className="kingdom-dropdown" style={{position:"absolute",top:"100%",left:0,zIndex:100,width:"min(460px,90vw)",background:"#103f30",boxShadow:"0 15px 40px #0003",padding:20,borderTop:"3px solid #d7b66c",display:"grid",gap:8}}>
-                <strong style={{color:"#e3c67b",fontSize:12,letterSpacing:2}}>DISCOVER BUGANDA</strong>
-                {[
-                  ["History & Heritage","/kingdom#heritage"],
-                  ["Kingdom Leadership","/kingdom#leadership"],
-                  ["Masaza & Gombolola","/kingdom#regions"],
-                  ["Kingdom Institutions","/kingdom#institutions"],
-                  ["Economic Achievements","/kingdom#achievements"],
-                  ["Culture & Tourism","/kingdom#tourism"]
-                ].map(([name,path])=><Link key={path} href={path} onClick={close} style={{color:"#fff",padding:"10px 8px",borderBottom:"1px solid #ffffff25",fontSize:15}}>{name} ↗</Link>)}
-              </div>}
-            </div> : <Link href={href} key={label} onClick={close}>{label}</Link>)}
-          </nav>
-          <div className="mcc-nav-actions">
-            <Link href="/search" className="mcc-search" aria-label="Search"><Search size={17} /></Link>
-            <Link href="/join" className="mcc-header-join">Join the Chamber <ArrowRight size={14} /></Link>
-            <button type="button" className="mcc-menu-toggle" onClick={() => setOpen(!open)} aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open}>
-              {open ? <X /> : <Menu />}
-            </button>
-          </div>
-        </div>
-      </div>
-    </header>
-  );
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileGroups, setMobileGroups] = useState<string[]>([]);
+  const close = () => { setOpenMenu(null); setMobileOpen(false); };
+  const toggleMobileGroup = (label: string) => setMobileGroups((groups) => groups.includes(label) ? groups.filter((group) => group !== label) : [...groups, label]);
+  return <header className="bp-header"><a className="bp-skip-link" href="#main-content">Skip to content</a><div className="bp-utility-bar"><div className="bp-shell bp-utility-content"><p>Obwakabaka bwa Buganda <span aria-hidden="true">•</span> Kingdom of Buganda</p><div><Link href="/contact">Contact</Link><Link href="/accessibility"><Accessibility size={13}/> Accessibility</Link><Link href="/search"><Search size={13}/> Search</Link><span aria-label="Current language">English</span></div></div></div><div className="bp-nav-wrap"><div className="bp-shell bp-nav"><Brand onClick={close}/><nav className="bp-desktop-nav" aria-label="Primary navigation">{navigation.map((entry) => entry.items ? <div className="bp-nav-group" key={entry.label} onMouseLeave={() => setOpenMenu(null)}><button type="button" className="bp-nav-trigger" onClick={() => setOpenMenu(openMenu === entry.label ? null : entry.label)} aria-haspopup="true" aria-expanded={openMenu === entry.label}>{entry.label} <ChevronDown size={14} aria-hidden="true"/></button><div className={openMenu === entry.label ? "bp-mega-menu is-open" : "bp-mega-menu"}><Link href={entry.href} className="bp-mega-intro" onClick={close}><span>Explore</span><strong>{entry.label}</strong><small>Start with the overview <ArrowRight size={14}/></small></Link><div className="bp-mega-links">{entry.items.map((item) => <Link href={item.href} key={item.href} onClick={close}><strong>{item.label}</strong><small>{item.description}</small></Link>)}</div></div></div> : <Link href={entry.href} className="bp-nav-link" key={entry.label} onClick={close}>{entry.label}</Link>)}</nav><div className="bp-nav-actions"><Link className="bp-search-button" href="/search" aria-label="Search the website"><Search size={19}/></Link><Link className="bp-join-button" href="/membership">Join the Chamber <ArrowRight size={15}/></Link><button type="button" className="bp-menu-button" onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? "Close menu" : "Open menu"} aria-expanded={mobileOpen}>{mobileOpen ? <X/> : <Menu/>}</button></div></div><nav className={mobileOpen ? "bp-mobile-nav is-open" : "bp-mobile-nav"} aria-label="Mobile navigation"><div className="bp-shell">{navigation.map((entry) => entry.items ? <div className="bp-mobile-group" key={entry.label}><div><Link href={entry.href} onClick={close}>{entry.label}</Link><button type="button" onClick={() => toggleMobileGroup(entry.label)} aria-label={`Show ${entry.label} pages`} aria-expanded={mobileGroups.includes(entry.label)}><ChevronDown size={18}/></button></div><div className={mobileGroups.includes(entry.label) ? "bp-mobile-subnav is-open" : "bp-mobile-subnav"}>{entry.items.map((item) => <Link href={item.href} key={item.href} onClick={close}><ChevronRight size={14}/>{item.label}</Link>)}</div></div> : <Link className="bp-mobile-direct" href={entry.href} key={entry.label} onClick={close}>{entry.label}</Link>)}<Link href="/membership" className="bp-mobile-join" onClick={close}>Join the Chamber <ArrowRight size={16}/></Link></div></nav></div></header>;
 }
 
-export function Footer() {
-  return (
-    <footer className="mcc-reference-footer">
-      <div className="container">
-        <div className="mcc-footer-grid">
-          <div className="mcc-footer-brand">
-            <Link href="/" className="mcc-brand">
-              <Image src="/icons/mccl-icon.svg" alt="" width={54} height={54} />
-              <span><strong>Mengo Chamber</strong><b>of Commerce Limited</b><small>Building for a Prosperous Buganda</small></span>
-            </Link>
-            <p>Connecting people, businesses and opportunities for a prosperous, competitive and inclusive Buganda.</p>
-            <div className="mcc-socials"><span>f</span><span>𝕏</span><span>in</span><span>▶</span><span>◎</span></div>
-          </div>
-          <div><h2>Quick Links</h2><Link href="/">Home</Link><Link href="/about">About MCCL</Link><Link href="/kingdom">The Kingdom</Link><Link href="/leadership">Leadership</Link><Link href="/membership">Membership</Link><Link href="/exchange">Opportunities</Link></div>
-          <div><h2>Our Focus</h2><Link href="/services">Agriculture</Link><Link href="/training">Education</Link><Link href="/insights">Health</Link><Link href="/invest">Tourism</Link><Link href="/businesses">SACCOs & Cooperatives</Link><Link href="/exchange">Trade & Investment</Link></div>
-          <div><h2>Support</h2><Link href="/events-calendar">News & Events</Link><Link href="/policy-advocacy">Publications</Link><Link href="/governance">Gallery</Link><Link href="/insights">FAQs</Link><Link href="/contact">Contact Us</Link><Link href="/join">Join the Chamber</Link></div>
-          <div className="mcc-footer-newsletter"><h2>Newsletter</h2><p>Subscribe for the latest updates</p><form action="/contact"><input type="email" name="email" aria-label="Email address" placeholder="Email address" required /><button type="submit">Subscribe <ArrowRight size={14} /></button></form></div>
-        </div>
-        <div className="mcc-footer-bottom"><span>© 2025 Mengo Chamber of Commerce Limited. All rights reserved.</span><span><Link href="/privacy">Privacy Policy</Link><Link href="/terms">Terms of Use</Link><Link href="/accessibility">Accessibility</Link></span></div>
-      </div>
-    </footer>
-  );
-}
+const footerColumns = [
+  { title: "Discover", links: [["Our Kingdom", "/kingdom"], ["Buganda Economy", "/economy"], ["Investment & Opportunities", "/invest"], ["News & Events", "/insights"], ["Economic Map", "/economic-map"]] },
+  { title: "The Chamber", links: [["Our Story & Mandate", "/about"], ["Membership", "/membership"], ["Services", "/services"], ["Strategic Plan", "/about/strategy"], ["Contact", "/contact"]] },
+  { title: "Resources", links: [["Publications", "/publications"], ["Business Directory", "/businesses"], ["Commercial Centres", "/commercial-centres"], ["Accessibility", "/accessibility"], ["Privacy", "/privacy"]] },
+];
 
-export function Shell({ children }: { children: React.ReactNode }) {
-  return <><Header /><div id="main-content">{children}</div><Footer /></>;
-}
+export function Footer() { return <footer className="bp-footer"><div className="bp-shell"><div className="bp-footer-grid"><div className="bp-footer-brand"><Brand/><p>Mengo Chamber of Commerce Limited is a business-facing institution that helps showcase, connect and enable enterprise participation across Buganda.</p><Link href="/contact" className="bp-footer-contact">Get in touch <ArrowRight size={15}/></Link></div>{footerColumns.map((column) => <div key={column.title}><h2>{column.title}</h2>{column.links.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</div>)}<div className="bp-footer-note"><h2>Stay informed</h2><p>Official MCCL updates, events and publications will be shared here as they are confirmed.</p><Link href="/insights">Read the latest updates <ArrowRight size={15}/></Link></div></div><div className="bp-footer-bottom"><span>© 2026 Mengo Chamber of Commerce Limited. All rights reserved.</span><span>Content and imagery are subject to editorial verification and rights clearance.</span></div></div></footer>; }
 
-export function PageHero({ title, description }: { title: string; description: string }) {
-  return <section className="pagehero"><div className="container"><div className="breadcrumb"><Link href="/">Home</Link> / {title}</div><h1>{title}</h1><p>{description}</p></div></section>;
-}
+export function Shell({ children }: { children: React.ReactNode }) { return <><Header/><div id="main-content">{children}</div><Footer/></>; }
+
+export function PageHero({ title, description, eyebrow = "Mengo Chamber of Commerce Limited" }: { title: string; description: string; eyebrow?: string }) { return <section className="bp-page-hero"><div className="bp-shell"><p className="bp-eyebrow">{eyebrow}</p><h1>{title}</h1><p>{description}</p></div></section>; }
