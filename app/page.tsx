@@ -72,22 +72,6 @@ const events = [
   ["03", "—", "Enterprise training", "Schedule to be confirmed"],
 ];
 
-const counties = [
-  ["Bulemeezi", "top"],
-  ["Buyikwe", "top-right"],
-  ["Mityana", "upper-left"],
-  ["Kassanda", "left"],
-  ["Kyadondo", "upper-right"],
-  ["Mawogola", "centre"],
-  ["Mubende", "middle-left"],
-  ["Mukono", "right"],
-  ["Kabula­mali", "lower-left"],
-  ["Gomba", "lower-centre"],
-  ["Busiro", "middle"],
-  ["Masaka", "bottom"],
-  ["Kalangala", "islands"],
-] as const;
-
 export default function HomePage() {
   return (
     <Shell>
@@ -154,9 +138,18 @@ export default function HomePage() {
                   Explore Regional Profiles <ArrowRight size={16} />
                 </Link>
               </div>
-              <div className="reference-map" role="img" aria-label="Conceptual county explorer illustration; not a geographical map">
-                {counties.map(([county, position]) => <span key={county} className={"reference-map-label " + position}>{county}</span>)}
-              </div>
+              <figure className="reference-map">
+                <img
+                  src="/images/buganda-amasaza-map.jpg"
+                  alt="Map of Buganda showing the 18 traditional counties, their boundaries, roads, Lake Victoria, and the Ssese Islands."
+                />
+                <figcaption>
+                  <strong>Buganda&apos;s 18 counties</strong>
+                  <a href="https://bicul.co.ug/wp-content/uploads/2025/04/Manya-e-ssaza-lyo_Final_2.pdf#page=9" target="_blank" rel="noreferrer">
+                    Source: Buganda Statistics Unit / UBOS
+                  </a>
+                </figcaption>
+              </figure>
               <Link className="reference-feature-place" href="/centres">
                 <ResponsivePhoto photo={realPhotos.heritage} width={680} height={500} sizes="(max-width: 760px) 100vw, 28vw" />
                 <span className="reference-place-overlay">
