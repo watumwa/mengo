@@ -78,6 +78,25 @@ export default function HomePage() {
       <main className="mcc-home reference-home">
         <HomeHero />
 
+        <section aria-labelledby="chamber-launch-news" style={{padding:"clamp(42px,6vw,90px) 0",background:"#f7f6f1"}}>
+          <div className="container" style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,360px),1fr))",gap:"clamp(24px,4vw,64px)",alignItems:"center"}}>
+            <div>
+              <p className="reference-eyebrow">Chamber news · Official inauguration</p>
+              <h2 id="chamber-launch-news" style={{fontSize:"clamp(2rem,4vw,3.5rem)",lineHeight:1.12,color:"#064a39",margin:"14px 0 20px"}}>Buganda Kingdom inaugurates Mengo Chamber of Commerce board</h2>
+              <p style={{fontSize:"1.1rem",lineHeight:1.8,color:"#34443d"}}>Buganda Kingdom inaugurated the Chamber’s seven-member board, chaired by John Fred Kiyimba Freeman, to strengthen trade, enterprise skills, mentorship and investment opportunities across Buganda and beyond.</p>
+              <p style={{fontSize:"1.05rem",lineHeight:1.7,color:"#34443d"}}>At the inauguration, Katikkiro Charles Peter Mayiga emphasised practical business knowledge, self-reliance and commerce as pathways to improving livelihoods.</p>
+              <a href="https://www.ugbulletin.co.ug/buganda-kingdom-launches-its-own-chamber-of-commerce-to-boost-trade/" target="_blank" rel="noopener noreferrer" className="reference-gold-button" style={{display:"inline-flex",marginTop:20}}>Read the full story <ArrowUpRight size={18}/></a>
+              <p style={{fontSize:".85rem",marginTop:14,color:"#66756d"}}>Reporting and photograph: UG Bulletin · Michael Kironde</p>
+            </div>
+            <figure style={{margin:0}}>
+              <a href="https://www.ugbulletin.co.ug/buganda-kingdom-launches-its-own-chamber-of-commerce-to-boost-trade/" target="_blank" rel="noopener noreferrer" aria-label="View original Chamber board inauguration photograph and news article">
+                <div style={{aspectRatio:"16 / 9",overflow:"hidden",borderRadius:16,background:"#e6e9e5"}}><ResponsivePhoto photo={realPhotos.bulange} width={980} height={620} sizes="(max-width: 760px) 100vw, 50vw" /></div>
+              </a>
+              <figcaption style={{fontSize:".84rem",lineHeight:1.5,color:"#66756d",marginTop:10}}>Illustrative photograph of Buganda heritage. Open the original news report to view the actual board inauguration photograph.</figcaption>
+            </figure>
+          </div>
+        </section>
+
         <section className="reference-shortcuts" aria-label="Explore the Chamber">
           <div className="container reference-shortcuts-grid">
             {shortcuts.map(({ title, subtitle, href, icon: Icon }) => (
