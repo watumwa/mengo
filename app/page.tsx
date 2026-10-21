@@ -1,34 +1,287 @@
 import Link from "next/link";
-import {ArrowRight,ArrowUpRight,MapPin,Landmark,Leaf,GraduationCap,HeartPulse,Building2,Radio,Trees,Users,Globe2,ShieldCheck} from "lucide-react";
-import {Shell} from "./components";
-import {realPhotos} from "./realPhotos";
-import {ResponsivePhoto} from "./ResponsivePhoto";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BriefcaseBusiness,
+  Building2,
+  CalendarDays,
+  ChevronLeft,
+  ChevronRight,
+  CirclePlay,
+  GraduationCap,
+  Handshake,
+  HeartPulse,
+  Landmark,
+  MapPinned,
+  Network,
+  ShieldCheck,
+  Sprout,
+  TrendingUp,
+  Users,
+  UsersRound,
+} from "lucide-react";
+import { Shell } from "./components";
+import { HomeHero } from "./HomeHero";
+import { realPhotos } from "./realPhotos";
+import { ResponsivePhoto } from "./ResponsivePhoto";
 
-const sectors=[
-{title:"Agriculture & Enterprise",description:"Coffee, farming, cooperatives and agricultural value chains.",image:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1000&q=85",icon:Leaf,href:"/services"},
-{title:"Education & Skills",description:"Learning institutions, technical training and skills development.",image:"https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1000&q=85",icon:GraduationCap,href:"/training"},
-{title:"Healthcare & Wellbeing",description:"Healthcare institutions and community development priorities.",image:"https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1000&q=85",icon:HeartPulse,href:"/insights"},
-{title:"Real Estate & Infrastructure",description:"Urban development, commercial property and infrastructure projects.",image:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000&q=85",icon:Building2,href:"/invest"},
-{title:"Tourism & Heritage",description:"Buganda's cultural identity, landscapes and visitor experiences.",image:"https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&q=85",icon:Trees,href:"/kingdom"},
-{title:"Media & Communication",description:"Broadcasting, creative enterprise and community information.",image:"https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1000&q=85",icon:Radio,href:"/insights"}
+const shortcuts = [
+  { title: "About MCCL", subtitle: "Our story and mandate", href: "/about", icon: Landmark },
+  { title: "Membership", subtitle: "Join and benefit", href: "/membership", icon: UsersRound },
+  { title: "Masaza & Gombolola", subtitle: "Explore all counties", href: "/centres", icon: MapPinned },
+  { title: "Investment Opportunities", subtitle: "Projects and partnerships", href: "/invest", icon: BriefcaseBusiness },
+  { title: "SACCOs & Cooperatives", subtitle: "Grow together", href: "/businesses", icon: Network },
+  { title: "News & Events", subtitle: "Latest updates", href: "/insights", icon: CalendarDays },
 ];
-const stories=[
-{eyebrow:"KINGDOM & COMMERCE",title:"A Chamber dedicated to enterprise and livelihoods",description:"Explore the establishment of Mengo Chamber of Commerce and its mandate to strengthen business development.",href:"https://www.ugbulletin.co.ug/buganda-kingdom-launches-its-own-chamber-of-commerce-to-boost-trade/",external:true},
-{eyebrow:"STRATEGIC DIRECTION",title:"Twezimbe: the 2026–2029 strategic direction",description:"Learn about the Chamber's priorities for enterprise, investment, membership and institutional development.",href:"/strategy",external:false},
-{eyebrow:"PROJECT SHOWCASE",title:"Explore investment project concepts",description:"Discover sectors, locations and proposed developments documented in Buganda's investment profile.",href:"/invest",external:false}
+
+const statistics = [
+  { value: "18", label: "Masaza Counties", icon: Landmark },
+  { value: "2026–29", label: "Twezimbe Strategic Plan", icon: MapPinned },
+  { value: "7", label: "Membership Categories", icon: Users },
+  { value: "6", label: "Strategic Priorities", icon: BriefcaseBusiness },
+  { value: "One Goal", label: "Uplifting Livelihoods", icon: TrendingUp },
 ];
-export default function HomePage(){return <Shell><main className="achievement-home">
-<section className="ah-hero"><div className="ah-hero-media" aria-hidden="true"><ResponsivePhoto photo={realPhotos.bulange} width={1800} height={1000} loading="eager" style={{width:"100%",height:"100%",objectFit:"cover"}}/></div><div className="ah-hero-shade"/><div className="container ah-hero-content"><span className="ah-overline">MENGO CHAMBER OF COMMERCE LIMITED</span><h1>Buganda's progress.<br/><em>Our pride.</em><br/>Our future.</h1><p>Celebrating the institutions, enterprises, people and achievements shaping Buganda — and connecting their potential to the world.</p><div className="ah-actions"><a href="#discover" className="ah-gold">Discover Buganda <ArrowUpRight size={18}/></a><Link href="/membership" className="ah-ghost">Join the Chamber <ArrowRight size={18}/></Link></div></div><div className="ah-hero-foot"><span>HERITAGE · ENTERPRISE · OPPORTUNITY</span><span>UPLIFTING THE LIVELIHOODS</span></div></section>
-<section id="discover" className="ah-intro"><div className="container ah-intro-grid"><div><span className="ah-kicker">A KINGDOM OF POSSIBILITIES</span><h2>More than a place.<br/><em>A story of progress.</em></h2></div><div><p>Across Buganda, institutions, businesses and communities are contributing to economic and social development. Mengo Chamber of Commerce brings these stories into focus — showcasing achievements, promoting enterprise and opening doors to partnerships.</p><Link href="/about" className="ah-textlink">Discover the Chamber <ArrowUpRight size={18}/></Link></div></div></section>
-<section className="ah-sector-section"><div className="container"><div className="ah-section-head"><div><span className="ah-kicker">SECTORS SHAPING BUGANDA</span><h2>Explore our strengths</h2><p>Discover the industries, institutions and economic activities that contribute to Buganda's development. Specific achievements are documented as evidence becomes available.</p></div><Link href="/kingdom" className="ah-textlink">Explore our kingdom <ArrowUpRight size={18}/></Link></div><div className="ah-sector-grid">{sectors.map(({title,description,image,icon:Icon,href},i)=><Link href={href} className="ah-sector-card" key={title}><div className="ah-sector-image" style={{backgroundImage:`linear-gradient(180deg,transparent 30%,rgba(5,29,21,.87)),url("${image}")`}}/><div className="ah-sector-number">0{i+1}</div><div className="ah-sector-info"><Icon size={26}/><h3>{title}</h3><p>{description}</p><span>Explore sector <ArrowUpRight size={17}/></span></div></Link>)}</div><p className="ah-photo-note">Sector photography is illustrative; images do not depict specific Chamber projects or verified achievements.</p></div></section>
-<section className="ah-achievements" aria-labelledby="ah-achievements-heading"><div className="container"><div className="ah-section-head"><div><span className="ah-kicker">DOCUMENTED INSTITUTIONS & ENTERPRISES</span><h2 id="ah-achievements-heading">A legacy you can explore</h2><p>Discover established institutions and enterprises associated with Buganda's development. These examples are institutional profiles, not claims of Chamber-delivered impact.</p></div><Link href="/kingdom" className="ah-textlink">Discover more <ArrowUpRight size={18}/></Link></div><div className="ah-achievement-grid">{[{number:"01",sector:"EDUCATION",name:"Muteesa I Royal University",copy:"A Buganda-linked institution advancing higher education and skills development.",href:"/kingdom"},{number:"02",sector:"MEDIA & COMMUNICATION",name:"CBS FM",copy:"A recognised Buganda broadcasting institution connecting audiences through information and culture.",href:"/kingdom"},{number:"03",sector:"ENTERPRISE",name:"Mwanyi Terimba",copy:"Coffee enterprise and value addition are central themes in Buganda's economic development story.",href:"/invest"}].map(item=><Link href={item.href} className="ah-achievement-card" key={item.name}><span className="ah-achievement-num">{item.number} / {item.sector}</span><h3>{item.name}</h3><p>{item.copy}</p><span className="ah-textlink">Explore context <ArrowUpRight size={17}/></span></Link>)}</div><p className="ah-photo-note">Institutional profiles are starting points. Quantified outcomes, dates and ownership details require confirmation from official sources.</p></div></section>
-<section className="ah-feature"><div className="container ah-feature-grid"><div className="ah-feature-photo"><ResponsivePhoto photo={realPhotos.heritage} width={900} height={850} sizes="(max-width: 760px) 100vw, 50vw" style={{width:"100%",height:"100%",objectFit:"cover"}}/><span>BUGANDA KINGDOM · CULTURE & LEADERSHIP</span></div><div className="ah-feature-copy"><span className="ah-kicker">OUR HERITAGE, OUR STRENGTH</span><h2>Rooted in history.<br/>Building for tomorrow.</h2><p>Buganda's cultural institutions and traditions form a powerful foundation for identity, community and economic opportunity. Discover the Kingdom's story and the sectors shaping its future.</p><Link href="/kingdom" className="ah-gold">Explore the Kingdom <ArrowUpRight size={18}/></Link></div></div></section>
-<section className="ah-projects"><div className="container ah-project-grid"><div><span className="ah-kicker">INVESTMENT & DEVELOPMENT</span><h2>Ideas that can shape the future.</h2><p>Explore a curated reference showcase of proposed developments in agriculture, tourism, real estate, education and other sectors, inspired by the Buganda Kingdom Investment Profile.</p><p className="ah-disclosure">These are magazine-based project concepts, not verified open investment offers from the Chamber.</p><Link href="/invest" className="ah-gold">Explore project concepts <ArrowUpRight size={18}/></Link></div><div className="ah-project-photo" role="img" aria-label="Representative photograph of modern commercial architecture"><span>INVESTMENT · ENTERPRISE · GROWTH</span></div></div></section>
-<section className="ah-map-section"><div className="container"><div className="ah-section-head"><div><span className="ah-kicker">EXPLORE THE REGION</span><h2>Discover Buganda on the map</h2><p>Explore Mengo and the wider Kampala region on a live Google Map. Navigate, zoom, switch map layers and open directions.</p></div><Link href="/centres" className="ah-textlink">Explore regional profiles <ArrowUpRight size={18}/></Link></div><div className="ah-map-layout"><div className="ah-map-frame"><iframe title="Interactive Google Map of Mengo, Kampala, Uganda" src="https://www.google.com/maps?q=Bulange%20Mengo%20Kampala%20Uganda&z=10&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen/></div><div className="ah-map-aside"><MapPin size={31}/><span className="ah-kicker">START EXPLORING</span><h3>Mengo, Kampala</h3><p>Begin at the heart of Buganda's administration and explore the surrounding districts, business centres and communities.</p><a href="https://www.google.com/maps/search/?api=1&query=Bulange+Mengo+Kampala+Uganda" target="_blank" rel="noopener noreferrer" className="ah-textlink">Open in Google Maps <ArrowUpRight size={18}/></a><Link href="/centres" className="ah-textlink">Explore the Masaza <ArrowRight size={18}/></Link><small>Interactive map provided by Google Maps. This map shows geographic locations, not confirmed Chamber offices or project sites.</small></div></div></div></section>
-<section className="ah-news"><div className="container"><div className="ah-section-head"><div><span className="ah-kicker">NEWS & PERSPECTIVES</span><h2>Stories worth sharing</h2></div><Link href="/insights" className="ah-textlink">More insights <ArrowUpRight size={18}/></Link></div><div className="ah-news-grid"><article className="ah-news-main"><div className="ah-news-img"><ResponsivePhoto photo={realPhotos.bulange} width={850} height={520} style={{width:"100%",height:"100%",objectFit:"cover"}}/></div><div><span className="ah-kicker">CHAMBER INAUGURATION</span><h3>Buganda Kingdom launches its Chamber of Commerce to promote trade</h3><p>Read the reporting on the Chamber's inauguration and its ambitions for enterprise development.</p><a href="https://www.ugbulletin.co.ug/buganda-kingdom-launches-its-own-chamber-of-commerce-to-boost-trade/" target="_blank" rel="noopener noreferrer" className="ah-textlink">Read original report <ArrowUpRight size={18}/></a><small>Illustrative Bulange image; view the original inauguration photograph in the linked report.</small></div></article><div className="ah-news-side">{stories.slice(1).map(s=><Link href={s.href} key={s.title} className="ah-story"><span className="ah-kicker">{s.eyebrow}</span><h3>{s.title}</h3><p>{s.description}</p><span className="ah-textlink">Explore story <ArrowUpRight size={18}/></span></Link>)}</div></div></div></section>
-<section className="ah-final"><div className="container"><span className="ah-kicker">BUILD THE NEXT CHAPTER</span><h2>Be part of Buganda's<br/><em>continuing story.</em></h2><p>Join the businesses, entrepreneurs and partners working to uplift livelihoods and expand opportunity.</p><div className="ah-actions"><Link href="/join" className="ah-gold">Become a member <ArrowUpRight size={18}/></Link><Link href="/contact" className="ah-ghost">Connect with us <ArrowRight size={18}/></Link></div></div></section>
-<style dangerouslySetInnerHTML={{__html: `
-.achievement-home{color:#173c2b;background:#fff}.achievement-home *{box-sizing:border-box}.ah-hero{min-height:710px;position:relative;background:#103f2c;color:#fff;display:flex;flex-direction:column;justify-content:center;overflow:hidden}.ah-hero-media,.ah-hero-shade{position:absolute;inset:0}.ah-hero-media img{filter:saturate(.88)}.ah-hero-shade{background:linear-gradient(90deg,rgba(3,29,20,.95) 0%,rgba(4,35,24,.83) 42%,rgba(4,35,24,.23) 100%),linear-gradient(0deg,rgba(4,30,20,.65),transparent 50%)}.ah-hero-content{position:relative;z-index:1;padding-top:115px;padding-bottom:115px;width:100%}.ah-overline,.ah-kicker{font-size:12px;letter-spacing:2px;font-weight:850;color:#aa7f31}.ah-overline{color:#e9cb7c}.ah-hero h1{font-size:clamp(55px,6.6vw,104px);line-height:1.04;letter-spacing:-3px;color:#fff;max-width:900px;margin:24px 0}.ah-hero h1 em,.ah-final h2 em{font-style:normal;color:#e3bf6a}.ah-hero-content>p{font-size:clamp(17px,1.8vw,21px);line-height:1.75;max-width:690px;color:#e9efe9}.ah-actions{display:flex;align-items:center;gap:25px;flex-wrap:wrap;margin-top:32px}.ah-gold{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 23px;background:#e1be6d;color:#153b29;text-decoration:none;font-weight:800;font-size:15px;border-radius:3px}.ah-ghost{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:800;text-decoration:none}.ah-hero-foot{position:relative;z-index:1;display:flex;justify-content:space-between;padding:20px max(25px,calc((100vw - 1200px)/2));border-top:1px solid #ffffff45;color:#e7e9dd;font-size:11px;letter-spacing:1.7px;font-weight:700}.ah-intro{background:#f4f1e9;padding:105px 0}.ah-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}.ah-intro h2,.ah-section-head h2,.ah-feature h2,.ah-projects h2,.ah-final h2{font-size:clamp(36px,4vw,59px);line-height:1.13;letter-spacing:-1.3px;margin:15px 0 0;color:#113c29}.ah-intro h2 em{font-style:normal;color:#967435}.ah-intro-grid p,.ah-section-head p,.ah-feature p,.ah-projects p,.ah-map-aside p,.ah-final p{font-size:17px;line-height:1.85;color:#516459}.ah-textlink{display:inline-flex;align-items:center;gap:10px;color:#0b5d3e;text-decoration:none;font-size:15px;font-weight:850;margin-top:12px}.ah-sector-section,.ah-map-section,.ah-news{padding:100px 0}.ah-section-head{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:38px}.ah-section-head p{max-width:730px;margin-bottom:0}.ah-sector-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.ah-sector-card{height:405px;position:relative;overflow:hidden;color:white;text-decoration:none;background:#17442f;border-radius:5px}.ah-sector-image{position:absolute;inset:0;background-position:center;background-size:cover;transition:transform .45s}.ah-sector-card:hover .ah-sector-image{transform:scale(1.06)}.ah-sector-number{position:absolute;top:22px;left:23px;color:#fff;font-size:13px;font-weight:800;letter-spacing:1px}.ah-sector-info{position:absolute;bottom:25px;left:25px;right:25px}.ah-sector-info h3{font-size:27px;color:#fff;margin:14px 0 9px;line-height:1.2}.ah-sector-info p{font-size:14px;line-height:1.55;color:#e6eee7;margin:0 0 15px}.ah-sector-info span{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:#e9ca7b}.ah-photo-note{color:#758177;font-size:12px;margin-top:16px}.ah-achievements{padding:100px 0;background:#fff}.ah-achievement-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.ah-achievement-card{display:flex;flex-direction:column;align-items:flex-start;min-height:280px;padding:32px;background:#f2f3ec;border-top:4px solid #c5a158;text-decoration:none;transition:transform .2s}.ah-achievement-card:hover{transform:translateY(-5px)}.ah-achievement-num{color:#876d38;font-size:12px;letter-spacing:1px;font-weight:850}.ah-achievement-card h3{font-size:27px;color:#173c2b;line-height:1.2;margin:28px 0 8px}.ah-achievement-card p{font-size:15px;line-height:1.65;color:#5b6d60}.ah-achievement-card .ah-textlink{margin-top:auto}@media(max-width:700px){.ah-achievements{padding:65px 0}.ah-achievement-grid{grid-template-columns:1fr}}.ah-feature{background:#f5f2e9}.ah-feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;padding-top:85px;padding-bottom:85px}.ah-feature-photo{height:520px;position:relative;overflow:hidden}.ah-feature-photo>span{position:absolute;bottom:0;left:0;right:0;background:#0b3427cc;color:#fff;padding:16px;font-size:12px;letter-spacing:1px}.ah-feature-copy p{margin:22px 0}.ah-projects{background:#0a3d2b;color:white;padding:100px 0}.ah-project-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.ah-projects h2{color:#fff}.ah-projects p{color:#dce8df}.ah-projects .ah-disclosure{font-size:13px;color:#bfcfc3}.ah-project-photo{height:440px;background:linear-gradient(0deg,#062b20b5,transparent 60%),url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1300&q=85) center/cover;position:relative}.ah-project-photo span{position:absolute;bottom:22px;left:25px;color:white;font-size:12px;letter-spacing:2px;font-weight:800}.ah-map-section{background:#f6f5ef}.ah-map-layout{display:grid;grid-template-columns:1.55fr 1fr;min-height:480px;background:#fff;box-shadow:0 12px 45px #173c2b15}.ah-map-frame{min-height:480px}.ah-map-frame iframe{border:0;width:100%;height:100%;min-height:480px;display:block}.ah-map-aside{padding:50px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:12px}.ah-map-aside h3{font-size:33px;color:#143c2a;margin:0}.ah-map-aside small{font-size:12px;line-height:1.6;color:#718075;margin-top:20px}.ah-news-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:30px}.ah-news-main{border:1px solid #e3e9e2}.ah-news-img{height:320px}.ah-news-main>div:last-child{padding:30px}.ah-news-main h3,.ah-story h3{font-size:27px;line-height:1.25;color:#153b2a;margin:13px 0}.ah-news-main p,.ah-story p{font-size:15px;line-height:1.7;color:#596b5e}.ah-news-main small{display:block;color:#788478;font-size:12px;margin-top:17px}.ah-news-side{display:grid;gap:20px}.ah-story{padding:32px;background:#f4f5ef;text-decoration:none}.ah-story h3{font-size:25px}.ah-final{background:#093a2a;color:white;text-align:center;padding:100px 0}.ah-final h2{color:white}.ah-final p{color:#dce8df;max-width:630px;margin:22px auto}.ah-final .ah-actions{justify-content:center}
-@media(max-width:950px){.ah-sector-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ah-intro-grid,.ah-feature-grid,.ah-project-grid{gap:35px}.ah-map-aside{padding:30px}}
-@media(max-width:700px){.ah-hero{min-height:650px}.ah-hero h1{font-size:clamp(45px,10vw,66px);letter-spacing:-1.5px}.ah-hero-content{padding-top:95px;padding-bottom:90px}.ah-hero-foot{gap:12px;flex-wrap:wrap;font-size:9px}.ah-intro,.ah-sector-section,.ah-map-section,.ah-news,.ah-projects,.ah-final{padding:65px 0}.ah-intro-grid,.ah-feature-grid,.ah-project-grid,.ah-map-layout,.ah-news-grid{grid-template-columns:1fr}.ah-intro-grid{gap:20px}.ah-section-head{display:block}.ah-sector-grid{grid-template-columns:1fr}.ah-sector-card{height:360px}.ah-feature-grid{padding-top:60px;padding-bottom:60px}.ah-feature-photo{height:340px}.ah-project-photo{height:280px}.ah-map-frame,.ah-map-frame iframe{min-height:350px}.ah-map-aside{padding:30px}.ah-news-img{height:240px}}
-`}} /></main></Shell>}
+
+const impact = [
+  { title: "Agriculture", detail: "Food security & value addition", icon: Sprout, href: "/services", photo: realPhotos.coffee },
+  { title: "Education", detail: "Skills & human capital", icon: GraduationCap, href: "/training", photo: realPhotos.kampala },
+  { title: "Health", detail: "Stronger communities", icon: HeartPulse, href: "/insights", photo: realPhotos.heritage },
+  { title: "Tourism", detail: "Our heritage, new opportunities", icon: MapPinned, href: "/invest", photo: realPhotos.bulange },
+  { title: "Social Development", detail: "Inclusive local economies", icon: UsersRound, href: "/membership", photo: realPhotos.market },
+  { title: "Youth & Women", detail: "Empowering future leaders", icon: Users, href: "/businesses", photo: realPhotos.kampala },
+];
+
+const services = [
+  { title: "Business Advisory & Consultancy", icon: UsersRound, href: "/business-advisory" },
+  { title: "Trade Facilitation & Market Access", icon: Network, href: "/exchange" },
+  { title: "Investment Promotion", icon: BriefcaseBusiness, href: "/invest" },
+  { title: "Training & Capacity Building", icon: GraduationCap, href: "/training" },
+  { title: "Enterprise & SACCO Development", icon: Building2, href: "/services" },
+  { title: "Policy Advocacy & Research", icon: ShieldCheck, href: "/policy-advocacy" },
+];
+
+const news = [
+  { date: "STRATEGY", title: "Explore the Twezimbe 2026–2029 Strategic Plan", photo: realPhotos.bulange, href: "/strategy" },
+  { date: "BUSINESS", title: "Discover Trade and Enterprise Opportunities", photo: realPhotos.coffee, href: "/exchange" },
+  { date: "MEMBERSHIP", title: "Understand Chamber Membership and Benefits", photo: realPhotos.market, href: "/membership" },
+];
+
+const events = [
+  ["01", "—", "Business networking", "Programme details to be confirmed"],
+  ["02", "—", "Trade & investment forums", "Dates to be announced"],
+  ["03", "—", "Enterprise training", "Schedule to be confirmed"],
+];
+
+export default function HomePage() {
+  return (
+    <Shell>
+      <main className="mcc-home reference-home">
+        <HomeHero />
+
+        <section aria-labelledby="chamber-launch-news" style={{padding:"clamp(42px,6vw,90px) 0",background:"#f7f6f1"}}>
+          <div className="container" style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,360px),1fr))",gap:"clamp(24px,4vw,64px)",alignItems:"center"}}>
+            <div>
+              <p className="reference-eyebrow">Chamber news · Official inauguration</p>
+              <h2 id="chamber-launch-news" style={{fontSize:"clamp(2rem,4vw,3.5rem)",lineHeight:1.12,color:"#064a39",margin:"14px 0 20px"}}>Buganda Kingdom inaugurates Mengo Chamber of Commerce board</h2>
+              <p style={{fontSize:"1.1rem",lineHeight:1.8,color:"#34443d"}}>Buganda Kingdom inaugurated the Chamber’s seven-member board, chaired by John Fred Kiyimba Freeman, to strengthen trade, enterprise skills, mentorship and investment opportunities across Buganda and beyond.</p>
+              <p style={{fontSize:"1.05rem",lineHeight:1.7,color:"#34443d"}}>At the inauguration, Katikkiro Charles Peter Mayiga emphasised practical business knowledge, self-reliance and commerce as pathways to improving livelihoods.</p>
+              <a href="https://www.ugbulletin.co.ug/buganda-kingdom-launches-its-own-chamber-of-commerce-to-boost-trade/" target="_blank" rel="noopener noreferrer" className="reference-gold-button" style={{display:"inline-flex",marginTop:20}}>Read the full story <ArrowUpRight size={18}/></a>
+              <p style={{fontSize:".85rem",marginTop:14,color:"#66756d"}}>Reporting and photograph: UG Bulletin · Michael Kironde</p>
+            </div>
+            <figure style={{margin:0}}>
+              <a href="https://www.ugbulletin.co.ug/buganda-kingdom-launches-its-own-chamber-of-commerce-to-boost-trade/" target="_blank" rel="noopener noreferrer" aria-label="View original Chamber board inauguration photograph and news article">
+                <div style={{aspectRatio:"16 / 9",overflow:"hidden",borderRadius:16,background:"#e6e9e5"}}><ResponsivePhoto photo={realPhotos.bulange} width={980} height={620} sizes="(max-width: 760px) 100vw, 50vw" /></div>
+              </a>
+              <figcaption style={{fontSize:".84rem",lineHeight:1.5,color:"#66756d",marginTop:10}}>Illustrative photograph of Buganda heritage. Open the original news report to view the actual board inauguration photograph.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section className="reference-shortcuts" aria-label="Explore the Chamber">
+          <div className="container reference-shortcuts-grid">
+            {shortcuts.map(({ title, subtitle, href, icon: Icon }) => (
+              <Link href={href} key={title} className="reference-shortcut">
+                <Icon size={27} strokeWidth={1.55} aria-hidden="true" />
+                <strong>{title}</strong>
+                <span>{subtitle}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="reference-intro section-pad" aria-labelledby="about-mccl">
+          <div className="container reference-intro-grid">
+            <div className="reference-section-copy">
+              <p className="reference-eyebrow">About us</p>
+              <h2 id="about-mccl">Mengo Chamber of Commerce Limited</h2>
+              <p>
+                Established by the Kingdom of Buganda, Mengo Chamber of Commerce
+                Limited is a member-driven institution promoting business growth,
+                trade development, investment opportunities and improved
+                livelihoods across Buganda.
+              </p>
+              <Link href="/about" className="reference-gold-button">
+                Learn More About MCCL <ArrowRight size={16} />
+              </Link>
+            </div>
+            <figure className="reference-board-card">
+              <ResponsivePhoto photo={realPhotos.bulange} width={980} height={620} sizes="(max-width: 760px) 100vw, 51vw" />
+              <div className="reference-play" aria-hidden="true"><CirclePlay size={54} /></div>
+              <figcaption>Discover the Chamber&apos;s leadership and strategic direction</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section className="reference-stat-band" aria-label="Buganda at a glance">
+          <div className="container reference-stat-grid">
+            {statistics.map(({ value, label, icon: Icon }) => (
+              <div key={label} className="reference-stat">
+                <Icon size={32} aria-hidden="true" />
+                <div><strong>{value}</strong><span>{label}</span></div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="reference-kingdom section-pad" aria-labelledby="explore-buganda">
+          <div className="container">
+            <div className="reference-kingdom-grid">
+              <div className="reference-section-copy">
+                <p className="reference-eyebrow">Our kingdom</p>
+                <h2 id="explore-buganda">Explore Buganda</h2>
+                <p>
+                  Discover the Masaza (counties), their sub-counties,
+                  leaders, economic activities, and development opportunities.
+                </p>
+                <Link href="/centres" className="reference-gold-button">
+                  Explore Regional Profiles <ArrowRight size={16} />
+                </Link>
+              </div>
+              <figure className="reference-map">
+                <img
+                  src="/images/buganda-amasaza-map.jpg"
+                  alt="Map of Buganda showing the 18 traditional counties, their boundaries, roads, Lake Victoria, and the Ssese Islands."
+                />
+                <figcaption>
+                  <strong>Buganda&apos;s 18 counties</strong>
+                  <a href="https://bicul.co.ug/wp-content/uploads/2025/04/Manya-e-ssaza-lyo_Final_2.pdf#page=9" target="_blank" rel="noreferrer">
+                    Source: Buganda Statistics Unit / UBOS
+                  </a>
+                </figcaption>
+              </figure>
+              <Link className="reference-feature-place" href="/centres">
+                <ResponsivePhoto photo={realPhotos.heritage} width={680} height={500} sizes="(max-width: 760px) 100vw, 28vw" />
+                <span className="reference-place-overlay">
+                  <strong>Kalangala</strong>
+                  <small>Beautiful islands, tourism, fisheries, and investment opportunities.</small>
+                  <span><ArrowUpRight size={16} /> <i>01 / 18</i> <ArrowRight size={16} /></span>
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="reference-impact section-pad" aria-labelledby="impact-title">
+          <div className="container">
+            <div className="reference-title-row">
+              <div>
+                <p className="reference-eyebrow">Our impact</p>
+                <h2 id="impact-title">Transforming Lives Across Buganda</h2>
+                <p>Explore development priorities and sectors relevant to Buganda. Specific projects and achievements will be published once verified.</p>
+              </div>
+              <Link href="/insights" className="reference-gold-button">View All Sectors <ArrowRight size={16} /></Link>
+            </div>
+            <div className="reference-impact-grid">
+              {impact.map(({ title, detail, icon: Icon, href, photo }) => (
+                <Link className="reference-impact-card" href={href} key={title}>
+                  <ResponsivePhoto photo={photo} width={380} height={260} sizes="(max-width: 760px) 50vw, 17vw" />
+                  <span className="reference-impact-icon"><Icon size={18} /></span>
+                  <strong>{title}</strong><small>{detail}</small>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="reference-services section-pad" aria-labelledby="services-title">
+          <div className="container">
+            <div className="reference-title-row">
+              <div>
+                <p className="reference-eyebrow">The Chamber</p>
+                <h2 id="services-title">Business Support for a Thriving Buganda</h2>
+                <p>Explore Chamber service areas intended to help businesses, SACCOs, cooperatives and communities grow and compete.</p>
+              </div>
+              <Link href="/services" className="reference-gold-button">Explore Our Services <ArrowRight size={16} /></Link>
+            </div>
+            <div className="reference-service-grid">
+              {services.map(({ title, icon: Icon, href }) => (
+                <Link href={href} key={title} className="reference-service">
+                  <Icon size={30} strokeWidth={1.55} />
+                  <strong>{title}</strong>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="reference-membership" aria-labelledby="membership-title">
+          <div className="reference-membership-photo">
+            <ResponsivePhoto photo={realPhotos.heritage} width={1100} height={560} sizes="(max-width: 760px) 100vw, 50vw" />
+          </div>
+          <div className="reference-membership-copy">
+            <p className="reference-eyebrow">Membership</p>
+            <h2 id="membership-title">Be Part of a Growing Network</h2>
+            <p>Join a vibrant community of businesses, cooperatives, SACCOs and partners committed to a prosperous Buganda.</p>
+            <div>
+              <Link href="/join" className="reference-gold-button">Join the Chamber <ArrowRight size={16} /></Link>
+              <Link href="/membership" className="reference-membership-link">Membership Benefits <ArrowRight size={16} /></Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="reference-updates section-pad" aria-labelledby="updates-title">
+          <div className="container reference-updates-grid">
+            <div className="reference-news-intro">
+              <p className="reference-eyebrow">Latest news</p>
+              <h2 id="updates-title">Stories from Buganda&apos;s Business Community</h2>
+              <Link href="/insights" className="reference-outline-blue">Explore Insights <ArrowRight size={15} /></Link>
+            </div>
+            <div className="reference-news-grid">
+              {news.map(({ date, title, photo, href }) => (
+                <Link href={href} className="reference-news-card" key={title}>
+                  <ResponsivePhoto photo={photo} width={420} height={240} sizes="(max-width: 760px) 100vw, 20vw" />
+                  <small>{date}</small><strong>{title}</strong><span>Explore <ArrowRight size={14} /></span>
+                </Link>
+              ))}
+            </div>
+            <aside className="reference-events" aria-labelledby="events-title">
+              <div><p className="reference-eyebrow">Programmes to watch</p><Link href="/events-calendar">Explore programmes <ArrowRight size={14} /></Link></div>
+              <h2 id="events-title" className="sr-only">Upcoming events</h2>
+              {events.map(([month, day, title, venue]) => (
+                <Link href="/events-calendar" className="reference-event" key={title}>
+                  <time><span>{month}</span><strong>{day}</strong></time>
+                  <span><strong>{title}</strong><small>{venue}</small></span>
+                </Link>
+              ))}
+            </aside>
+          </div>
+        </section>
+
+        <section className="reference-partners" aria-labelledby="partners-title">
+          <div className="container">
+            <p className="reference-eyebrow">Strategic collaboration</p>
+            <div className="reference-partners-heading">
+              <h2 id="partners-title">Building Partnerships for a Prosperous Buganda</h2>
+              <span><ChevronLeft size={17} /><ChevronRight size={17} /></span>
+            </div>
+            <div className="reference-partner-grid" aria-label="Areas for partnership; not a list of confirmed partners">
+              {["Enterprise", "Investment", "Trade", "Research", "Skills", "Agriculture", "Tourism", "Community"].map((partner) => (
+                <span key={partner}>{partner === "MCCL" ? <Landmark size={31} /> : <b>{partner}</b>}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+    </Shell>
+  );
+}
