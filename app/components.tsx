@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const mainNavigation = [
   ["Home", "/"],
-  ["The Kingdom", "/centres"],
+  ["The Kingdom", "/kingdom"],
   ["Leadership", "/leadership"],
   ["Our Impact", "/insights"],
   ["Buganda Economy", "/businesses"],
@@ -65,7 +65,7 @@ export function Footer() {
             <p>Connecting people, businesses and opportunities for a prosperous, competitive and inclusive Buganda.</p>
             <div className="mcc-socials"><span>f</span><span>𝕏</span><span>in</span><span>▶</span><span>◎</span></div>
           </div>
-          <div><h2>Quick Links</h2><Link href="/">Home</Link><Link href="/about">About MCCL</Link><Link href="/centres">The Kingdom</Link><Link href="/leadership">Leadership</Link><Link href="/membership">Membership</Link><Link href="/exchange">Opportunities</Link></div>
+          <div><h2>Quick Links</h2><Link href="/">Home</Link><Link href="/about">About MCCL</Link><Link href="/kingdom">The Kingdom</Link><Link href="/leadership">Leadership</Link><Link href="/membership">Membership</Link><Link href="/exchange">Opportunities</Link></div>
           <div><h2>Our Focus</h2><Link href="/services">Agriculture</Link><Link href="/training">Education</Link><Link href="/insights">Health</Link><Link href="/invest">Tourism</Link><Link href="/businesses">SACCOs & Cooperatives</Link><Link href="/exchange">Trade & Investment</Link></div>
           <div><h2>Support</h2><Link href="/events-calendar">News & Events</Link><Link href="/policy-advocacy">Publications</Link><Link href="/governance">Gallery</Link><Link href="/insights">FAQs</Link><Link href="/contact">Contact Us</Link><Link href="/join">Join the Chamber</Link></div>
           <div className="mcc-footer-newsletter"><h2>Newsletter</h2><p>Subscribe for the latest updates</p><form action="/contact"><input type="email" name="email" aria-label="Email address" placeholder="Email address" required /><button type="submit">Subscribe <ArrowRight size={14} /></button></form></div>
