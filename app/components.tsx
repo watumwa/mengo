@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Menu, Search, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 
 const mainNavigation = [
@@ -18,7 +18,8 @@ const mainNavigation = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const close = () => setOpen(false);
+  const [kingdomOpen, setKingdomOpen] = useState(false);
+  const close = () => { setOpen(false); setKingdomOpen(false); };
 
   return (
     <header className="mcc-site-header">
@@ -35,9 +36,20 @@ export function Header() {
             <span><strong>Mengo Chamber</strong><b>of Commerce Limited</b><small>Building for a Prosperous Buganda</small></span>
           </Link>
           <nav className={open ? "mcc-primary-nav is-open" : "mcc-primary-nav"} aria-label="Primary navigation">
-            {mainNavigation.map(([label, href]) => (
-              <Link href={href} key={label} onClick={close}>{label}{label !== "Home" && label !== "News & Events" ? <em>⌄</em> : null}</Link>
-            ))}
+            {mainNavigation.map(([label, href]) => label === "The Kingdom" ? <div key={label} className="kingdom-nav" style={{position:"relative"}}>
+              <span style={{display:"flex",alignItems:"center"}}><Link href="/kingdom" onClick={close}>Our Kingdom</Link><button type="button" aria-label="Toggle Kingdom dropdown" aria-expanded={kingdomOpen} onClick={()=>setKingdomOpen(!kingdomOpen)} style={{border:0,background:"transparent",color:"inherit",cursor:"pointer",padding:9}}><ChevronDown size={17}/></button></span>
+              {kingdomOpen && <div className="kingdom-dropdown" style={{position:"absolute",top:"100%",left:0,zIndex:100,width:"min(460px,90vw)",background:"#103f30",boxShadow:"0 15px 40px #0003",padding:20,borderTop:"3px solid #d7b66c",display:"grid",gap:8}}>
+                <strong style={{color:"#e3c67b",fontSize:12,letterSpacing:2}}>DISCOVER BUGANDA</strong>
+                {[
+                  ["History & Heritage","/kingdom#heritage"],
+                  ["Kingdom Leadership","/kingdom#leadership"],
+                  ["Masaza & Gombolola","/kingdom#regions"],
+                  ["Kingdom Institutions","/kingdom#institutions"],
+                  ["Economic Achievements","/kingdom#achievements"],
+                  ["Culture & Tourism","/kingdom#tourism"]
+                ].map(([name,path])=><Link key={path} href={path} onClick={close} style={{color:"#fff",padding:"10px 8px",borderBottom:"1px solid #ffffff25",fontSize:15}}>{name} ↗</Link>)}
+              </div>}
+            </div> : <Link href={href} key={label} onClick={close}>{label}</Link>)}
           </nav>
           <div className="mcc-nav-actions">
             <Link href="/search" className="mcc-search" aria-label="Search"><Search size={17} /></Link>
