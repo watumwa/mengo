@@ -1,6 +1,6 @@
 "use client";
 import {useMemo,useState} from "react";
-import Link from "next/link";
+import Link from "next/link";                                                                                                                                                                                                                                                                                                                                                                           
 import {ArrowUpRight,Building2,MapPin,Search,ShieldAlert,SlidersHorizontal,Handshake,Store} from "lucide-react";
 import {Shell} from "../components";
 import {useChamberRecords} from "../hooks/useChamberRecords";
