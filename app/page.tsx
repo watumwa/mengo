@@ -45,8 +45,8 @@ export default function HomePage() {
         <section className="mc-home-hero" aria-labelledby="home-title">
           <div className="bp-shell mc-home-hero-layout">
             <div className="mc-home-hero-copy">
-              <p className="mc-home-kicker"><span /> Mengo Chamber of Commerce Limited</p>
-              <h1 id="home-title">Business moves further <em>when we move together.</em></h1>
+              <p className="mc-home-kicker"><span /> Buganda&apos;s commercial platform</p>
+              <h1 id="home-title">Mengo Chamber <em>of Commerce Limited.</em></h1>
               <p className="mc-home-hero-intro">MCCL connects enterprises, investors and institutions to grow trade, build stronger businesses and create opportunity across Buganda.</p>
               <div className="mc-home-hero-actions">
                 <Link href="/membership">Join the Chamber <ArrowRight size={17} /></Link>
