@@ -1,9 +1,10 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  ArrowUpRight,
   BarChart3,
   BriefcaseBusiness,
+  CalendarDays,
+  FileText,
   Handshake,
   Landmark,
   Scale,
@@ -11,136 +12,100 @@ import {
 } from "lucide-react";
 import { Shell } from "./components";
 
-const strategicPropositions = [
-  { number: "01", verb: "Connect", title: "Markets, investment & partners", detail: "Connect businesses to markets, investors, finance, technology and strategic partners.", href: "/trade-investment", icon: Handshake },
-  { number: "02", verb: "Develop", title: "Competitive enterprises", detail: "Build enterprise capacity, productivity, quality, innovation and value addition.", href: "/services", icon: BriefcaseBusiness },
-  { number: "03", verb: "Advocate", title: "A better business environment", detail: "Represent business interests through research, policy engagement and collective advocacy.", href: "/policy-advocacy", icon: Scale },
-  { number: "04", verb: "Promote", title: "Buganda for opportunity", detail: "Promote Buganda as a destination for trade, investment, tourism and enterprise.", href: "/invest", icon: Landmark },
-  { number: "05", verb: "Transform", title: "Inclusive, digital growth", detail: "Drive value addition, digitalisation, innovation and inclusive enterprise growth.", href: "/intelligence", icon: BarChart3 },
+const quickActions = [
+  { label: "JOIN THE CHAMBER", href: "/membership", icon: UsersRound },
+  { label: "EXPLORE TRADE & INVESTMENT", href: "/trade-investment", icon: Handshake },
+  { label: "SHARE A BUSINESS ISSUE", href: "/policy-advocacy", icon: Scale },
+  { label: "GET MARKET INTELLIGENCE", href: "/intelligence", icon: BarChart3 },
 ];
 
-const audienceLinks = [
-  { number: "01", label: "Grow my enterprise", text: "Access membership, capability support and stronger commercial networks.", href: "/membership", cta: "Explore membership" },
-  { number: "02", label: "Find opportunity", text: "Explore trade, investment and strategic commercial connections.", href: "/invest", cta: "Explore investment" },
-  { number: "03", label: "Strengthen our voice", text: "Share the business conditions, policy issues and ideas that matter.", href: "/policy-advocacy", cta: "Explore advocacy" },
+const strategicRoles = [
+  { title: "Connect", text: "Markets, investors, finance, technology and strategic partners.", href: "/trade-investment", icon: Handshake },
+  { title: "Develop", text: "Capacity, productivity, quality, innovation and value addition.", href: "/services", icon: BriefcaseBusiness },
+  { title: "Advocate", text: "A conducive business environment and a stronger business voice.", href: "/policy-advocacy", icon: Scale },
+  { title: "Promote", text: "Buganda as a destination for trade, investment, tourism and enterprise.", href: "/invest", icon: Landmark },
+  { title: "Transform", text: "Digitalisation, inclusive enterprise growth and new commercial opportunity.", href: "/intelligence", icon: BarChart3 },
 ];
 
-const resources = [
-  { title: "Membership growth & engagement", text: "Build an active, representative business community across sectors and regions.", href: "/membership", icon: UsersRound },
-  { title: "Trade & investment promotion", text: "Create B2B connections, trade missions, investment forums and sector networks.", href: "/trade-investment", icon: Handshake },
-  { title: "Policy advocacy & research", text: "Champion a more conducive business environment through evidence and dialogue.", href: "/policy-advocacy", icon: Scale },
-  { title: "Market intelligence & data", text: "Publish useful market information to support more informed business decisions.", href: "/intelligence", icon: BarChart3 },
+const planPriorities = [
+  { title: "Membership & engagement", text: "A broad, active and representative business community.", href: "/membership" },
+  { title: "Trade & investment", text: "B2B connections, trade missions, investment forums and market linkages.", href: "/trade-investment" },
+  { title: "Policy advocacy & research", text: "Evidence, dialogue and representation for a better business environment.", href: "/policy-advocacy" },
+  { title: "Market intelligence", text: "Useful reports, surveys and data for more informed business decisions.", href: "/intelligence" },
+];
+
+const exploreLinks = [
+  { title: "Strategic Plan 2026–2029", text: "Understand MCCL’s direction, vision and priorities for the next three years.", href: "/strategy", icon: FileText },
+  { title: "Membership information", text: "See how businesses and institutions can participate in the Chamber.", href: "/membership", icon: UsersRound },
+  { title: "Investment & opportunities", text: "Begin a conversation around investment, partnership and trade.", href: "/invest", icon: Handshake },
+  { title: "Events & updates", text: "Follow Chamber activity, forums, publications and announcements.", href: "/events-calendar", icon: CalendarDays },
 ];
 
 export default function HomePage() {
   return (
     <Shell>
-      <main className="mc-home">
-        <section className="mc-home-hero" aria-labelledby="home-title">
-          <div className="bp-shell mc-home-hero-layout">
-            <div className="mc-home-hero-copy">
-              <p className="mc-home-kicker"><span /> Buganda&apos;s commercial platform</p>
-              <h1 id="home-title">Mengo Chamber <em>of Commerce Limited.</em></h1>
-              <p className="mc-home-hero-intro">A business ecosystem platform for Buganda—connecting enterprises to markets, investment, knowledge, finance, technology and strategic opportunity.</p>
-              <div className="mc-home-hero-actions">
-                <Link href="/membership">Join the Chamber <ArrowRight size={17} /></Link>
-                <Link href="/about">What we do <ArrowUpRight size={17} /></Link>
+      <main className="mc-nema-home">
+        <section className="mc-nema-hero" aria-labelledby="home-title">
+          <div className="bp-shell mc-nema-hero-grid">
+            <div className="mc-nema-hero-copy">
+              <p>MENGO CHAMBER OF COMMERCE LIMITED</p>
+              <h1 id="home-title">Mengo Chamber <span>of Commerce Limited</span></h1>
+              <h2>A business ecosystem platform for Buganda.</h2>
+              <div className="mc-nema-hero-rule" />
+              <p className="mc-nema-hero-summary">We facilitate trade, investment, enterprise growth, agricultural transformation and industrial development through quality business services, strategic linkages and advocacy.</p>
+              <Link href="/membership" className="mc-nema-primary-action">JOIN THE CHAMBER <ArrowRight size={17} /></Link>
+            </div>
+
+            <aside className="mc-nema-service-panel" aria-label="MCCL service pathways">
+              <div className="mc-nema-panel-photo" aria-hidden="true" />
+              <div className="mc-nema-panel-heading"><span>WELCOME TO</span><strong>MCCL</strong><p>Your platform for business growth, trade and investment in Buganda.</p></div>
+              <div className="mc-nema-panel-services">
+                <Link href="/membership"><UsersRound size={15} /><span>Membership<small>Participate and grow</small></span></Link>
+                <Link href="/trade-investment"><Handshake size={15} /><span>Trade &amp; investment<small>Connect to opportunity</small></span></Link>
+                <Link href="/services"><BriefcaseBusiness size={15} /><span>Enterprise support<small>Build competitiveness</small></span></Link>
+                <Link href="/intelligence"><BarChart3 size={15} /><span>Market intelligence<small>Make informed decisions</small></span></Link>
               </div>
-              <div className="mc-home-hero-note"><span>2026—2029</span><strong>Twezimbe: building a connected, competitive and sustainable business ecosystem.</strong></div>
-            </div>
-            <div className="mc-home-hero-art" role="img" aria-label="Mengo Chamber of Commerce leadership and business community">
-              <div className="mc-home-art-label"><span>MCCL • TWEZIMBE</span><strong>A stronger future for business in Buganda</strong></div>
-              <div className="mc-home-art-orbit" aria-hidden="true"><i /><i /></div>
-            </div>
+            </aside>
           </div>
+          <div className="mc-nema-slider-dots" aria-hidden="true"><i className="is-active" /><i /><i /><i /><i /></div>
         </section>
 
-        <nav className="mc-home-paths" aria-label="Choose a Chamber pathway">
-          <div className="bp-shell mc-home-paths-grid">
-            {audienceLinks.map(({ number, label, text, href, cta }) => (
-              <Link href={href} key={label}>
-                <span>{number}</span>
-                <div><strong>{label}</strong><small>{text}</small></div>
-                <b>{cta} <ArrowRight size={15} /></b>
-              </Link>
-            ))}
-          </div>
-        </nav>
+        <nav className="mc-nema-topic-nav" aria-label="Featured Chamber topics"><div className="bp-shell">
+          <Link href="/membership">Membership</Link><Link href="/trade-investment">Trade &amp; Investment</Link><Link href="/services">Enterprise Growth</Link><Link href="/policy-advocacy">Advocacy &amp; Research</Link><Link href="/intelligence">Market Intelligence</Link><Link href="/economy">Buganda Economy</Link><Link href="/publications">Resources</Link><Link href="/contact">Contact</Link>
+        </div></nav>
 
-        <section className="mc-home-introduction" aria-labelledby="introduction-title">
-          <div className="bp-shell mc-home-introduction-grid">
-            <div className="mc-home-introduction-mark"><span>2026—2029</span><i aria-hidden="true">3</i></div>
-            <div>
-              <p className="mc-home-kicker"><span /> The Chamber&apos;s role</p>
-              <h2 id="introduction-title">A business ecosystem platform for <em>Buganda.</em></h2>
-              <p>MCCL combines the Kingdom&apos;s institutional reach and networks with professional commercial services. We connect enterprises to the relationships, support and representation they need to grow.</p>
-              <Link className="mc-home-text-link" href="/about">Read our mandate <ArrowRight size={17} /></Link>
-            </div>
-          </div>
-        </section>
+        <section className="mc-nema-quick-actions" aria-label="Quick actions"><div className="bp-shell mc-nema-quick-grid">
+          {quickActions.map(({ label, href, icon: Icon }) => <Link href={href} key={label}><Icon size={24} /><span>{label}</span></Link>)}
+        </div></section>
 
-        <section className="mc-home-services" aria-labelledby="services-title">
-          <div className="bp-shell">
-            <div className="mc-home-section-heading">
-              <div><p className="mc-home-kicker"><span /> What MCCL does</p><h2 id="services-title">Five ways we build a stronger business <em>ecosystem.</em></h2></div>
-              <p>Our 2026–2029 plan centres on the practical roles the Chamber must play for business in Buganda.</p>
-            </div>
-            <div className="mc-home-service-list">
-              {strategicPropositions.map(({ number, verb, title, detail, href, icon: Icon }) => (
-                <Link href={href} key={title} className="mc-home-service">
-                  <span className="mc-home-service-number">{number}</span>
-                  <Icon className="mc-home-service-icon" size={24} />
-                  <strong><i>{verb}</i>{title}</strong>
-                  <small>{detail}</small>
-                  <ArrowUpRight className="mc-home-service-arrow" size={20} />
-                </Link>
-              ))}
-            </div>
+        <section className="mc-nema-mandate" aria-labelledby="mandate-title"><div className="bp-shell mc-nema-mandate-layout">
+          <div className="mc-nema-mandate-intro">
+            <p><Landmark size={25} /> Mandate</p>
+            <h2 id="mandate-title">Building a connected, competitive and sustainable business ecosystem.</h2>
+            <span>MCCL is a Company Limited by Guarantee established by the Kingdom of Buganda to promote business growth, trade development and investment opportunities within Buganda and beyond.</span>
+            <Link href="/about">READ MORE <ArrowRight size={15} /></Link>
+            <Link href="/strategy" className="mc-nema-plan-card"><small>MENGO CHAMBER OF COMMERCE LIMITED</small><strong>3 YEAR<br />STRATEGIC PLAN</strong><span>2026—2029</span><b>“Twezimbe”</b><em>READ THE PLAN <ArrowRight size={13} /></em></Link>
           </div>
-        </section>
+          <div className="mc-nema-role-grid">
+            {strategicRoles.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={25} /><strong>{title}</strong><span>{text}</span><small>MORE <ArrowRight size={12} /></small></Link>)}
+          </div>
+        </div></section>
 
-        <section className="mc-home-story" aria-labelledby="story-title">
-          <div className="bp-shell mc-home-story-grid">
-            <figure className="mc-home-story-photo">
-              <div role="img" aria-label="A view of Mengo Palace in Buganda" />
-              <figcaption><span /> Mengo, Buganda</figcaption>
-            </figure>
-            <div className="mc-home-story-copy">
-              <p className="mc-home-kicker"><span /> A broad business community</p>
-              <h2 id="story-title">A shared platform for enterprise and a <em>stronger voice.</em></h2>
-              <p>The Chamber brings together MSMEs, cooperatives, farmers, manufacturers, traders, professionals, investors and institutions committed to sustainable economic growth.</p>
-              <div className="mc-home-story-links">
-                <Link href="/membership"><UsersRound size={20} /><span><strong>Membership</strong><small>Join a structured business community built for participation and growth.</small></span><ArrowRight size={16} /></Link>
-                <Link href="/trade-investment"><Handshake size={20} /><span><strong>Trade &amp; investment</strong><small>Open a conversation around markets, partnerships and investment.</small></span><ArrowRight size={16} /></Link>
-              </div>
-            </div>
+        <section className="mc-nema-priorities" aria-labelledby="priorities-title"><div className="bp-shell">
+          <div className="mc-nema-section-title"><FileText size={29} /><div><h2 id="priorities-title">MCCL Strategic Priorities</h2><p>2026—2029: the work that turns the plan into value for business.</p></div></div>
+          <div className="mc-nema-priority-grid">
+            {planPriorities.map(({ title, text, href }, index) => <Link href={href} key={title}><span>0{index + 1}</span><strong>{title}</strong><p>{text}</p><small>READ MORE <ArrowRight size={13} /></small></Link>)}
           </div>
-        </section>
+        </div></section>
 
-        <section className="mc-home-resources" aria-labelledby="resources-title">
-          <div className="bp-shell">
-            <div className="mc-home-section-heading mc-home-section-heading-light">
-              <div><p className="mc-home-kicker"><span /> The plan, made practical</p><h2 id="resources-title">What MCCL is building <em>to 2029.</em></h2></div>
-              <Link className="mc-home-text-link" href="/strategy">Read the strategic plan <ArrowRight size={17} /></Link>
-            </div>
-            <div className="mc-home-resource-list">
-              {resources.map(({ title, text, href, icon: Icon }) => (
-                <Link href={href} key={title}>
-                  <Icon size={25} />
-                  <div><strong>{title}</strong><small>{text}</small></div>
-                  <ArrowRight size={19} />
-                </Link>
-              ))}
-            </div>
+        <section className="mc-nema-explore" aria-labelledby="explore-title"><div className="bp-shell">
+          <div className="mc-nema-section-title"><BriefcaseBusiness size={29} /><div><h2 id="explore-title">Explore MCCL</h2><p>Clear starting points for business, investment and participation.</p></div></div>
+          <div className="mc-nema-explore-grid">
+            {exploreLinks.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={23} /><div><strong>{title}</strong><p>{text}</p></div><ArrowRight size={18} /></Link>)}
           </div>
-        </section>
+        </div></section>
 
-        <section className="mc-home-closing" aria-labelledby="closing-title">
-          <div className="bp-shell mc-home-closing-layout">
-            <div><p className="mc-home-kicker"><span /> Our vision</p><h2 id="closing-title">Vibrant, competitive businesses creating <em>better livelihoods.</em></h2></div>
-            <div><p>Whether you are growing a business, exploring an investment or looking to collaborate, MCCL is here to make the right connection.</p><Link href="/contact">Start a conversation <ArrowRight size={17} /></Link></div>
-          </div>
-        </section>
+        <section className="mc-nema-closing"><div className="bp-shell"><div><p>OUR VISION</p><h2>A Buganda where vibrant, competitive and responsible businesses create opportunity, jobs and improved livelihoods.</h2></div><Link href="/contact">START A CONVERSATION <ArrowRight size={17} /></Link></div></section>
       </main>
     </Shell>
   );
