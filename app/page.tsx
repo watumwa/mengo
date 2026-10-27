@@ -67,6 +67,7 @@ export default function HomePage() {
               </div>
             </aside>
           </div>
+          <p className="mc-nema-photo-credit">Bulange Mengo photo: <a href="https://commons.wikimedia.org/wiki/File:Buganda_Court_Building1.jpg" target="_blank" rel="noopener noreferrer">Dixon099</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · cropped and darkened</p>
           <div className="mc-nema-slider-dots" aria-hidden="true"><i className="is-active" /><i /><i /><i /><i /></div>
         </section>
 
