@@ -50,7 +50,7 @@ export default function HomePage() {
             <div className="mc-nema-hero-copy">
               <p>MENGO CHAMBER OF COMMERCE LIMITED</p>
               <h1 id="home-title">Mengo Chamber <span>of Commerce Limited</span></h1>
-              <h2>A business ecosystem platform for Buganda.</h2>
+              <h2>Uplifting Livelihoods.</h2>
               <div className="mc-nema-hero-rule" />
               <p className="mc-nema-hero-summary">We facilitate trade, investment, enterprise growth, agricultural transformation and industrial development through quality business services, strategic linkages and advocacy.</p>
               <Link href="/membership" className="mc-nema-primary-action">JOIN THE CHAMBER <ArrowRight size={17} /></Link>
@@ -78,13 +78,15 @@ export default function HomePage() {
           {quickActions.map(({ label, href, icon: Icon }) => <Link href={href} key={label}><Icon size={24} /><span>{label}</span></Link>)}
         </div></section>
 
-        <section className="mc-nema-mandate" aria-labelledby="mandate-title"><div className="bp-shell mc-nema-mandate-layout">
-          <div className="mc-nema-mandate-intro">
-            <p><Landmark size={25} /> Mandate</p>
-            <h2 id="mandate-title">Building a connected, competitive and sustainable business ecosystem.</h2>
-            <span>MCCL is a Company Limited by Guarantee established by the Kingdom of Buganda to promote business growth, trade development and investment opportunities within Buganda and beyond.</span>
-            <Link href="/about">READ MORE <ArrowRight size={15} /></Link>
-            <Link href="/strategy" className="mc-nema-plan-card"><small>MENGO CHAMBER OF COMMERCE LIMITED</small><strong>3 YEAR<br />STRATEGIC PLAN</strong><span>2026—2029</span><b>“Twezimbe”</b><em>READ THE PLAN <ArrowRight size={13} /></em></Link>
+        <section className="mc-nema-mandate" aria-labelledby="mandate-title"><div className="bp-shell">
+          <div className="mc-nema-mandate-top">
+            <div className="mc-nema-mandate-intro">
+              <p><Landmark size={25} /> Mandate</p>
+              <h2 id="mandate-title">A stronger business ecosystem for Buganda.</h2>
+              <span>MCCL is a Company Limited by Guarantee established by the Kingdom of Buganda to promote business growth, trade development and investment opportunities within Buganda and beyond.</span>
+              <Link href="/about">READ OUR MANDATE <ArrowRight size={15} /></Link>
+            </div>
+            <Link href="/strategy" className="mc-nema-plan-summary"><div><small>MCCL STRATEGIC PLAN</small><strong>“Twezimbe”</strong><span>2026—2029</span></div><p>A connected, competitive and sustainable business ecosystem.</p><em>READ THE PLAN <ArrowRight size={14} /></em></Link>
           </div>
           <div className="mc-nema-role-grid">
             {strategicRoles.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={25} /><strong>{title}</strong><span>{text}</span><small>MORE <ArrowRight size={12} /></small></Link>)}
