@@ -58,38 +58,19 @@ export default function HomePage() {
             </div>
 
             <aside className="mc-nema-service-panel" aria-label="Explore Mengo Chamber services">
-              {/* Retain the Chamber's original inauguration photograph. */}
+              {/* Keep the original MCCL inauguration group photograph. */}
               <div className="mc-nema-panel-photo" role="img" aria-label="Mengo Chamber officials at the Chamber's inauguration" />
               <div className="mc-nema-panel-heading">
                 <span>WELCOME TO MCCL</span>
-                <h3>Connecting business. Creating opportunity.</h3>
-                <p>Your gateway to partnerships, enterprise growth and investment in Buganda.</p>
+                <h3>Connecting business to opportunity.</h3>
+                <p>Discover the services and connections helping enterprises grow across Buganda.</p>
               </div>
               <nav className="mc-nema-panel-services" aria-label="Explore Chamber services">
-                <Link href="/membership">
-                  <span className="mc-nema-service-symbol"><UsersRound size={18} aria-hidden="true" /></span>
-                  <span className="mc-nema-service-copy"><strong>Membership</strong><small>Connect and grow</small></span>
-                  <ArrowUpRight className="mc-nema-service-arrow" size={15} aria-hidden="true" />
-                </Link>
-                <Link href="/trade-investment">
-                  <span className="mc-nema-service-symbol"><Handshake size={18} aria-hidden="true" /></span>
-                  <span className="mc-nema-service-copy"><strong>Trade &amp; investment</strong><small>Explore opportunities</small></span>
-                  <ArrowUpRight className="mc-nema-service-arrow" size={15} aria-hidden="true" />
-                </Link>
-                <Link href="/services">
-                  <span className="mc-nema-service-symbol"><BriefcaseBusiness size={18} aria-hidden="true" /></span>
-                  <span className="mc-nema-service-copy"><strong>Enterprise support</strong><small>Build competitiveness</small></span>
-                  <ArrowUpRight className="mc-nema-service-arrow" size={15} aria-hidden="true" />
-                </Link>
-                <Link href="/intelligence">
-                  <span className="mc-nema-service-symbol"><BarChart3 size={18} aria-hidden="true" /></span>
-                  <span className="mc-nema-service-copy"><strong>Market intelligence</strong><small>Insights and reports</small></span>
-                  <ArrowUpRight className="mc-nema-service-arrow" size={15} aria-hidden="true" />
-                </Link>
+                <Link href="/membership"><UsersRound size={18} aria-hidden="true" /><strong>Membership</strong><ArrowUpRight size={14} aria-hidden="true" /></Link>
+                <Link href="/trade-investment"><Handshake size={18} aria-hidden="true" /><strong>Trade &amp; investment</strong><ArrowUpRight size={14} aria-hidden="true" /></Link>
+                <Link href="/services"><BriefcaseBusiness size={18} aria-hidden="true" /><strong>Enterprise support</strong><ArrowUpRight size={14} aria-hidden="true" /></Link>
+                <Link href="/intelligence"><BarChart3 size={18} aria-hidden="true" /><strong>Market intelligence</strong><ArrowUpRight size={14} aria-hidden="true" /></Link>
               </nav>
-              <div className="mc-nema-panel-footer">
-                <Link href="/about">Discover the Chamber <ArrowRight size={15} aria-hidden="true" /></Link>
-              </div>
             </aside>
           </div>
           <p className="mc-nema-photo-credit">Bulange Mengo photo: <a href="https://commons.wikimedia.org/wiki/File:Buganda_Court_Building1.jpg" target="_blank" rel="noopener noreferrer">Dixon099</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · cropped and darkened</p>
