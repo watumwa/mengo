@@ -23,3 +23,163 @@
 @media(max-width:800px){.mc-nema-hero:before{background-position:center,59% 24%}}
 @media(max-width:560px){.mc-nema-hero-grid{padding-bottom:75px}.mc-nema-photo-credit{right:12px;bottom:10px;font-size:8px}}
 @media(prefers-reduced-motion:reduce){.mc-nema-hero:before{animation:none}}
+
+
+/* Editorial home hero card — authentic photograph, compact service links. */
+.mc-nema-service-panel{
+  width:min(100%,418px);
+  justify-self:end;
+  border:1px solid rgba(255,255,255,.90);
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 20px 54px rgba(9,27,46,.24),0 3px 12px rgba(9,27,46,.08);
+}
+.mc-nema-panel-photo{
+  height:108px;
+  background-image:url("/images/mengo-board-inauguration.jpeg");
+  background-position:center 36%;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.mc-nema-panel-heading{padding:17px 20px 13px}
+.mc-nema-panel-heading span{
+  display:block;
+  color:#9a701a;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.13em;
+}
+.mc-nema-panel-heading h3{
+  max-width:360px;
+  margin:6px 0 0;
+  color:#123d6d;
+  font-size:21px;
+  font-weight:850;
+  letter-spacing:-.045em;
+  line-height:1.18;
+}
+.mc-nema-panel-heading p{
+  margin:7px 0 0;
+  color:#52697f;
+  font-size:11px;
+  line-height:1.48;
+}
+.mc-nema-panel-services{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  padding:0 16px 13px;
+}
+.mc-nema-panel-services a{
+  display:grid;
+  grid-template-columns:27px minmax(0,1fr) 12px;
+  align-items:center;
+  gap:7px;
+  min-width:0;
+  min-height:61px;
+  padding:9px 8px;
+  border:1px solid #e3eaf2;
+  border-radius:10px;
+  background:#f8fafc;
+  color:#17436f;
+  text-decoration:none;
+  transition:background-color .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.mc-nema-panel-services a:hover{
+  border-color:#b3cde2;
+  background:#eef5fb;
+  box-shadow:0 4px 12px rgba(9,53,96,.08);
+  transform:translateY(-2px);
+}
+.mc-nema-panel-services a:focus-visible,
+.mc-nema-panel-footer a:focus-visible{
+  outline:3px solid #d9ad33;
+  outline-offset:2px;
+}
+.mc-nema-service-symbol{
+  display:grid!important;
+  width:27px;
+  height:29px;
+  place-items:center;
+  border-radius:7px;
+  background:#e7f1fb;
+  color:#0a5f9f;
+}
+.mc-nema-panel-services .mc-nema-service-symbol svg{
+  color:#0a5f9f;
+}
+.mc-nema-service-copy{
+  display:block!important;
+  min-width:0;
+  line-height:1.25;
+}
+.mc-nema-service-copy strong{
+  display:block;
+  color:#17436f;
+  font-size:11px;
+  font-weight:850;
+  line-height:1.24;
+}
+.mc-nema-service-copy small{
+  display:block;
+  margin-top:4px;
+  color:#637e94;
+  font-size:9px;
+  font-weight:600;
+  line-height:1.3;
+}
+.mc-nema-service-arrow{
+  align-self:start;
+  justify-self:end;
+  margin-top:2px;
+  color:#7894aa!important;
+  opacity:.75;
+}
+.mc-nema-panel-services a:hover .mc-nema-service-arrow{
+  color:#0a5f9f!important;
+  opacity:1;
+}
+.mc-nema-panel-footer{
+  padding:10px 20px 12px;
+  border-top:1px solid #e8edf3;
+  background:#fcfdff;
+}
+.mc-nema-panel-footer a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  width:100%;
+  color:#0d4f85;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.015em;
+}
+.mc-nema-panel-footer a:hover{color:#9a701a}
+@media(max-width:800px){
+  .mc-nema-service-panel{
+    width:min(100%,418px);
+    justify-self:start;
+  }
+}
+@media(max-width:480px){
+  .mc-nema-service-panel{width:100%;border-radius:15px}
+  .mc-nema-panel-photo{height:112px}
+  .mc-nema-panel-heading{padding:16px 16px 12px}
+  .mc-nema-panel-heading h3{font-size:20px}
+  .mc-nema-panel-services{
+    grid-template-columns:1fr;
+    gap:7px;
+    padding:0 12px 12px;
+  }
+  .mc-nema-panel-services a{
+    grid-template-columns:30px minmax(0,1fr) 15px;
+    min-height:51px;
+    padding:8px 11px;
+  }
+  .mc-nema-panel-footer{padding:11px 16px 13px}
+}
+@media(prefers-reduced-motion:reduce){
+  .mc-nema-panel-services a{transition:none}
+  .mc-nema-panel-services a:hover{transform:none}
+}

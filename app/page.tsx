@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  ArrowUpRight,
   BarChart3,
   BriefcaseBusiness,
   CalendarDays,
@@ -56,14 +57,38 @@ export default function HomePage() {
               <Link href="/membership" className="mc-nema-primary-action">JOIN THE CHAMBER <ArrowRight size={17} /></Link>
             </div>
 
-            <aside className="mc-nema-service-panel" aria-label="MCCL service pathways">
-              <div className="mc-nema-panel-photo" aria-hidden="true" />
-              <div className="mc-nema-panel-heading"><span>WELCOME TO</span><strong>MCCL</strong><p>Your platform for business growth, trade and investment in Buganda.</p></div>
-              <div className="mc-nema-panel-services">
-                <Link href="/membership"><UsersRound size={15} /><span>Membership<small>Participate and grow</small></span></Link>
-                <Link href="/trade-investment"><Handshake size={15} /><span>Trade &amp; investment<small>Connect to opportunity</small></span></Link>
-                <Link href="/services"><BriefcaseBusiness size={15} /><span>Enterprise support<small>Build competitiveness</small></span></Link>
-                <Link href="/intelligence"><BarChart3 size={15} /><span>Market intelligence<small>Make informed decisions</small></span></Link>
+            <aside className="mc-nema-service-panel" aria-label="Explore Mengo Chamber services">
+              {/* Retain the Chamber's original inauguration photograph. */}
+              <div className="mc-nema-panel-photo" role="img" aria-label="Mengo Chamber officials at the Chamber's inauguration" />
+              <div className="mc-nema-panel-heading">
+                <span>WELCOME TO MCCL</span>
+                <h3>Connecting business. Creating opportunity.</h3>
+                <p>Your gateway to partnerships, enterprise growth and investment in Buganda.</p>
+              </div>
+              <nav className="mc-nema-panel-services" aria-label="Explore Chamber services">
+                <Link href="/membership">
+                  <span className="mc-nema-service-symbol"><UsersRound size={18} aria-hidden="true" /></span>
+                  <span className="mc-nema-service-copy"><strong>Membership</strong><small>Connect and grow</small></span>
+                  <ArrowUpRight className="mc-nema-service-arrow" size={15} aria-hidden="true" />
+                </Link>
+                <Link href="/trade-investment">
+                  <span className="mc-nema-service-symbol"><Handshake size={18} aria-hidden="true" /></span>
+                  <span className="mc-nema-service-copy"><strong>Trade &amp; investment</strong><small>Explore opportunities</small></span>
+                  <ArrowUpRight className="mc-nema-service-arrow" size={15} aria-hidden="true" />
+                </Link>
+                <Link href="/services">
+                  <span className="mc-nema-service-symbol"><BriefcaseBusiness size={18} aria-hidden="true" /></span>
+                  <span className="mc-nema-service-copy"><strong>Enterprise support</strong><small>Build competitiveness</small></span>
+                  <ArrowUpRight className="mc-nema-service-arrow" size={15} aria-hidden="true" />
+                </Link>
+                <Link href="/intelligence">
+                  <span className="mc-nema-service-symbol"><BarChart3 size={18} aria-hidden="true" /></span>
+                  <span className="mc-nema-service-copy"><strong>Market intelligence</strong><small>Insights and reports</small></span>
+                  <ArrowUpRight className="mc-nema-service-arrow" size={15} aria-hidden="true" />
+                </Link>
+              </nav>
+              <div className="mc-nema-panel-footer">
+                <Link href="/about">Discover the Chamber <ArrowRight size={15} aria-hidden="true" /></Link>
               </div>
             </aside>
           </div>
