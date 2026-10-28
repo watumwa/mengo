@@ -35,3 +35,28 @@
     background:#d9ad33;content:"";
   }
 }
+
+/* Kingdom dropdown: authentic 2026 photograph of the royal palace in Mengo.
+   Photographer: Samson Ssemakadde; Wikimedia Commons, CC0 1.0.
+   https://commons.wikimedia.org/wiki/File:The_Buganda_Kingdom_royal_Palace_in_Mengo,_Kampala.jpg */
+@media (min-width:1151px){
+  .bp-mega-intro[href="/kingdom"]{
+    background-color:#123963;
+    background-image:
+      linear-gradient(180deg,rgba(3,26,58,.80) 0%,rgba(5,32,66,.35) 47%,rgba(3,24,55,.94) 100%),
+      url("https://upload.wikimedia.org/wikipedia/commons/0/07/The_Buganda_Kingdom_royal_Palace_in_Mengo%2C_Kampala.jpg");
+    background-size:cover;
+    background-position:center,47% 50%;
+    background-repeat:no-repeat;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);
+  }
+  .bp-mega-intro[href="/kingdom"] span,
+  .bp-mega-intro[href="/kingdom"] strong,
+  .bp-mega-intro[href="/kingdom"] small{
+    position:relative;
+    z-index:1;
+    text-shadow:0 2px 9px rgba(2,15,38,.7);
+  }
+  .bp-mega-intro[href="/kingdom"] span{color:#ffdf88}
+  .bp-mega-intro[href="/kingdom"] small{color:#fff}
+}
