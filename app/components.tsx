@@ -24,7 +24,7 @@ const navigation: NavigationItem[] = [
   { label: "Chamber", href: "/about", items: [
     { label: "Our Story & Mandate", href: "/about", description: "MCCL's role and institutional purpose" },
     { label: "Leadership & Governance", href: "/about/leadership", description: "Approved profiles and accountability" },
-    { label: "Strategic Plan 2026–2029", href: "/about/strategy", description: "Twezimbe priorities and direction" },
+    { label: "Our Strategy", href: "/strategy", description: "Vision, priorities and business impact" },
     { label: "Membership", href: "/membership", description: "Who can join and how to participate" },
     { label: "Services", href: "/services", description: "Confirmed Chamber support pathways" },
   ] },
@@ -69,7 +69,7 @@ export function Header() {
 
 const footerColumns = [
   { title: "Discover", links: [["Our Kingdom", "/kingdom"], ["Buganda Economy", "/economy"], ["Investment & Opportunities", "/invest"], ["News & Events", "/insights"], ["Economic Map", "/economic-map"]] },
-  { title: "The Chamber", links: [["Our Story & Mandate", "/about"], ["Membership", "/membership"], ["Services", "/services"], ["Strategic Plan", "/about/strategy"], ["Contact", "/contact"]] },
+  { title: "The Chamber", links: [["Our Story & Mandate", "/about"], ["Membership", "/membership"], ["Services", "/services"], ["Our Strategy", "/strategy"], ["Contact", "/contact"]] },
   { title: "Resources", links: [["Publications", "/publications"], ["Business Directory", "/businesses"], ["Commercial Centres", "/commercial-centres"], ["Accessibility", "/accessibility"], ["Privacy", "/privacy"]] },
 ];
 

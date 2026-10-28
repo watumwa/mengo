@@ -36,7 +36,7 @@ const planPriorities = [
 ];
 
 const exploreLinks = [
-  { title: "Strategic Plan 2026–2029", text: "Understand MCCL’s direction, vision and priorities for the next three years.", href: "/strategy", icon: FileText },
+  { title: "Our Strategy", text: "Explore MCCL’s vision, priorities and plans for lasting business growth.", href: "/strategy", icon: FileText },
   { title: "Membership information", text: "See how businesses and institutions can participate in the Chamber.", href: "/membership", icon: UsersRound },
   { title: "Investment & opportunities", text: "Begin a conversation around investment, partnership and trade.", href: "/invest", icon: Handshake },
   { title: "Events & updates", text: "Follow Chamber activity, forums, publications and announcements.", href: "/events-calendar", icon: CalendarDays },
@@ -93,7 +93,7 @@ export default function HomePage() {
               <span>MCCL is a Company Limited by Guarantee established by the Kingdom of Buganda to promote business growth, trade development and investment opportunities within Buganda and beyond.</span>
               <Link href="/about">READ OUR MANDATE <ArrowRight size={15} /></Link>
             </div>
-            <Link href="/strategy" className="mc-nema-plan-summary"><div><small>MCCL STRATEGIC PLAN</small><strong>“Twezimbe”</strong><span>2026—2029</span></div><p>A connected, competitive and sustainable business ecosystem.</p><em>READ THE PLAN <ArrowRight size={14} /></em></Link>
+            <Link href="/strategy" className="mc-nema-plan-summary"><div><small>OUR SHARED DIRECTION</small><strong>“Twezimbe”</strong><span>Building opportunity</span></div><p>A connected, competitive and sustainable business ecosystem.</p><em>READ THE PLAN <ArrowRight size={14} /></em></Link>
           </div>
           <div className="mc-nema-role-grid">
             {strategicRoles.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={25} /><strong>{title}</strong><span>{text}</span><small>MORE <ArrowRight size={12} /></small></Link>)}
@@ -101,7 +101,7 @@ export default function HomePage() {
         </div></section>
 
         <section className="mc-nema-priorities" aria-labelledby="priorities-title"><div className="bp-shell">
-          <div className="mc-nema-section-title"><FileText size={29} /><div><h2 id="priorities-title">MCCL Strategic Priorities</h2><p>2026—2029: the work that turns the plan into value for business.</p></div></div>
+          <div className="mc-nema-section-title"><FileText size={29} /><div><h2 id="priorities-title">MCCL Strategic Priorities</h2><p>Turning the Chamber’s priorities into meaningful value for business.</p></div></div>
           <div className="mc-nema-priority-grid">
             {planPriorities.map(({ title, text, href }, index) => <Link href={href} key={title}><span>0{index + 1}</span><strong>{title}</strong><p>{text}</p><small>READ MORE <ArrowRight size={13} /></small></Link>)}
           </div>

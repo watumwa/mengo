@@ -1,2 +1,6 @@
-import { BlueprintPage } from "../../BlueprintPage";
-export default function AboutStrategy(){return <BlueprintPage eyebrow="The Chamber / Strategic Plan" title="Twezimbe 2026–2029." description="A clear public view of MCCL's strategic direction, with approved wording and progress indicators when available." sections={[{eyebrow:"Strategic priorities",title:"Direction before decoration.",text:"The six priorities will use the final approved phrasing from MCCL's strategy documents.",cards:[{title:"Revenue generation",text:"Approved public strategy wording and measures pending confirmation."},{title:"Membership growth",text:"Participation, outreach and member-value direction."},{title:"Institutional development",text:"Governance, capability and operational foundation."},{title:"Trade & investment",text:"Linkage and promotion priorities."},{title:"Policy advocacy",text:"Evidence-led business voice and consultation."},{title:"Market intelligence",text:"Research and usable economic information."}]},{eyebrow:"Roadmap",title:"Progress should be visible and sourced.",text:"No decorative dashboards or invented achievements. Indicators will appear only with an approved baseline, date and source.",cards:[{title:"Programme roadmap",text:"Published milestones must identify timing, owner and status."},{title:"Progress indicators",text:"Use sourced measures with explanatory context."},{title:"Reports",text:"Link authorised plan documents and progress publications."}]}]} action={{label:"View publications",href:"/publications"}}/>}
+import { redirect } from "next/navigation";
+
+// Preserve existing links while using a single Strategy page.
+export default function AboutStrategy() {
+  redirect("/strategy");
+}

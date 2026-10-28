@@ -76,7 +76,7 @@ const pages: Record<string, Detail> = {
   "trade-investment":{
     title:"Trade & Investment Hub",
     description:"Connections to markets, investors and strategic commercial partnerships.",
-    intro:"The 2026–2029 strategic plan aims to position the Chamber as a hub for business networking and investment. Planned activities include B2B engagements, inbound and outbound trade missions, sector networking forums, regular business dialogues and digital networking platforms.",
+    intro:"The Chamber's strategy aims to position the Chamber as a hub for business networking and investment. Planned activities include B2B engagements, inbound and outbound trade missions, sector networking forums, regular business dialogues and digital networking platforms.",
     items:[
       {title:"B2B Engagements",text:"Facilitate structured introductions between buyers, suppliers, enterprises and investors."},
       {title:"Trade Missions",text:"Plan inbound and outbound delegations to build commercial connections."},
@@ -102,7 +102,7 @@ const pages: Record<string, Detail> = {
   "vision-mission-values": {
     title:"Vision, Mission & Values",
     description:"A strategic direction rooted in enterprise and Buganda's development aspirations.",
-    intro:"The Chamber's 2026–2029 plan presents a vision for responsible businesses that create opportunities, jobs and improved livelihoods, supported by business services, partnerships and advocacy.",
+    intro:"The Chamber's strategy presents a vision for responsible businesses that create opportunities, jobs and improved livelihoods, supported by business services, partnerships and advocacy.",
     items:[
       {title:"Vision",text:"A kingdom where vibrant, competitive and responsible businesses creates opportunities, jobs and improved livelihoods for communities."},
       {title:"Mission",text:"To facilitate trade, investment, enterprise growth, agricultural transformation, and industrial development by providing quality business services, strategic linkages, and effective advocacy for a competitive business environment in Uganda."},
@@ -136,7 +136,7 @@ const pages: Record<string, Detail> = {
     ],cta:"Institutional Enquiry"
   },
   "strategic-plan": {
-    title:"Strategic Plan 2026–2029",
+    title:"Our Strategic Direction",
     description:"Twezimbe — Building a Competitive, Connected, and Sustainable Business Ecosystem in Buganda.",
     intro:"The three-year strategy provides the Chamber's direction for institutional sustainability, stronger membership, trade and investment connections, business advocacy and data-driven services. Planned programmes and performance targets are not presented as completed achievements.",
     items:[
@@ -153,7 +153,7 @@ const pages: Record<string, Detail> = {
   "membership-categories": {
     title:"Membership Categories",
     description:"Seven pathways for businesses, institutions and individuals to participate.",
-    intro:"The 2026–2029 strategic plan proposes seven membership categories to serve enterprises and stakeholders across sectors and communities. Eligibility, subscriptions and rights remain subject to the Chamber's governing instruments and approved policies.",
+    intro:"The Chamber's strategy proposes seven membership categories to serve enterprises and stakeholders across sectors and communities. Eligibility, subscriptions and rights remain subject to the Chamber's governing instruments and approved policies.",
     items:[
       {title:"Corporate Membership",text:"Registered companies, partnerships, associations, foundations, cooperatives, professional organisations and incorporated entities. Proposed access includes advocacy, networking, business development and market initiatives."},
       {title:"International and Bilateral Membership",text:"Foreign businesses, multinational corporations, foreign chambers, diplomatic business missions and international organisations seeking commercial connections with Buganda and Uganda."},
@@ -212,7 +212,7 @@ const pages: Record<string, Detail> = {
   },
   "strategic-goals": {
     title: "Six Strategic Goals",
-    description: "The Chamber's 2026–2029 strategic implementation priorities.",
+    description: "The Chamber's priorities for business and institutional growth.",
     intro: "The six strategic goals are Revenue Generation, Membership Growth and Expansion, Institutional Capacity Development, Trade Promotion and Investment Linkages, Policy Advocacy and Research, and Market Intelligence and Data Systems. The goals set out intended action, not verified delivery.",
     items: [
       {title:"Revenue Generation",text:"Diversify income through membership subscriptions, training, advisory services, partnerships and sponsorship."},
@@ -326,7 +326,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
   const related = strategyPage ? [
     {title:"Six Strategic Goals",href:"/strategic-goals"},
     {title:"Five Strategic Propositions",href:"/strategic-propositions"},
-    {title:"Strategic Plan 2026–2029",href:"/strategic-plan"}
+    {title:"Our Strategy",href:"/strategy"}
   ] : membershipPage ? [
     {title:"Membership Categories",href:"/membership-categories"},
     {title:"Proposed Fees",href:"/membership-fees"},
@@ -344,11 +344,11 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
         <h2>{data.title}</h2><p>{data.intro}</p>
         <div className="detail-actions"><Link className="btn navy" href={primaryHref}>{data.cta} <ArrowUpRight size={16}/></Link><Link className="detail-text-link" href="/explore">Explore the Chamber <ArrowRight size={16}/></Link></div>
       </div>
-      <div className="detail-image"><img src={visual.src} alt={visual.alt}/><span>Mengo Chamber of Commerce Limited · Twezimbe 2026–2029</span></div>
+      <div className="detail-image"><img src={visual.src} alt={visual.alt}/><span>Mengo Chamber of Commerce Limited</span></div>
     </div></section>
     <section className="detail-priorities section cream"><div className="container">
       <div className="sectionhead"><div><div className="eyebrow">Explore in detail</div><h2>{strategyPage ? "Our strategic priorities" : membershipPage ? "Membership information" : "Key areas and opportunities"}</h2></div>
-        <p>{strategyPage ? "The priorities below reflect the Chamber's 2026–2029 strategic plan." : "Discover the areas outlined for this section. Future services and programmes remain subject to confirmation."}</p></div>
+        <p>{strategyPage ? "These priorities are drawn from the Chamber's strategic framework." : "Discover the areas outlined for this section. Future services and programmes remain subject to confirmation."}</p></div>
       <div className="detail-feature-grid">{data.items.map((item,index)=><article className="detail-feature" key={item.title}>
         <span className="detail-feature-number">{String(index+1).padStart(2,"0")}</span>
         <h3>{item.title}</h3><p>{item.text}</p>
