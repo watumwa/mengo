@@ -2,3 +2,36 @@
 .bp-utility-bar{background:#f4f6f8;color:#35516f;border-bottom:1px solid #e0e6ec}.bp-utility-content{min-height:26px;font-size:9px;font-weight:800}.bp-utility-content>div{gap:15px}.bp-utility-content a:hover{color:#0b4b8a}.bp-utility-content p span{color:#ad7912}.bp-nav-wrap{background:#0a3f7b;border:0;box-shadow:none}.bp-nav{min-height:66px;gap:0}.bp-nav>.bp-brand{margin-right:25px}.bp-nav>.bp-brand img{width:43px;height:49px}.bp-nav>.bp-brand strong{font-size:15px;color:#fff}.bp-nav>.bp-brand b{font-size:9px;color:#deebf9}.bp-nav>.bp-brand small{margin-top:4px;color:#f2cf69;font-size:8px;font-weight:900;letter-spacing:.075em}.bp-desktop-nav{justify-content:flex-start;gap:0;margin-left:0}.bp-nav-link,.bp-nav-trigger{padding:24px 12px;color:#fff;font-size:10px;font-weight:800}.bp-nav-link:hover,.bp-nav-trigger:hover,.bp-nav-trigger[aria-expanded=true]{background:#0f528f;color:#f2d47b}.bp-nav-actions{margin-left:auto;gap:9px}.bp-search-button{width:31px;height:31px;border-color:#ffffff8a;color:#fff}.bp-search-button:hover{background:#fff;color:#0a3f7b}.bp-join-button{min-height:34px;padding:9px 15px;border-color:#c48e12;background:#d9ad33;box-shadow:none;color:#112f57;font-size:10px;font-weight:900}.bp-mega-menu{top:calc(100% - 1px)}.bp-mobile-nav{border-top:0}.bp-mobile-group>div:first-child a,.bp-mobile-direct{color:#0a3f7b}.bp-mobile-group button{color:#0a3f7b}.bp-footer .bp-brand img{width:74px;height:80px}
 @media(max-width:1150px){.bp-desktop-nav,.bp-search-button{display:none}.bp-nav{min-height:61px}.bp-nav-actions{margin-left:auto}.bp-menu-button{display:grid;color:#fff}.bp-mobile-nav{top:100%}}
 @media(max-width:700px){.bp-utility-content{min-height:25px;font-size:8px}.bp-nav{min-height:61px}.bp-nav>.bp-brand{margin-right:0}.bp-nav>.bp-brand img{width:39px;height:45px}.bp-nav>.bp-brand strong{font-size:12px}.bp-nav>.bp-brand b{font-size:8px}.bp-nav>.bp-brand small{font-size:7px}.bp-join-button{display:none}.bp-mobile-nav .bp-shell{padding-top:10px}}
+
+
+/* Keep every desktop mega-menu inside the viewport and attached to the
+   full navigation bar, not to individual tabs with negative offsets. */
+@media (min-width:1151px){
+  .bp-desktop-nav .bp-nav-group{position:static}
+  .bp-nav-link,.bp-nav-trigger{min-height:66px;box-sizing:border-box}
+  .bp-mega-menu{
+    position:absolute;
+    top:100%;
+    right:auto;
+    left:calc(50% - 45px);
+    transform:translateX(-50%);
+    width:min(940px,calc(100vw - 36px));
+    max-width:calc(100vw - 36px);
+    box-sizing:border-box;
+    grid-template-columns:minmax(190px,240px) minmax(0,1fr);
+    gap:18px;
+    padding:16px;
+    border:1px solid #dbe5ef;
+    border-top:3px solid #d9ad33;
+    border-radius:0 0 12px 12px;
+    box-shadow:0 22px 54px rgba(3,29,68,.24);
+  }
+  .bp-mega-intro{min-width:0;border-radius:8px;padding:22px}
+  .bp-mega-links{min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px}
+  .bp-mega-links a{min-width:0;border-radius:5px}
+  .bp-nav-trigger[aria-expanded=true]{position:relative}
+  .bp-nav-trigger[aria-expanded=true]:after{
+    position:absolute;right:12px;bottom:0;left:12px;height:3px;
+    background:#d9ad33;content:"";
+  }
+}
