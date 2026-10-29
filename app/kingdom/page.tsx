@@ -87,7 +87,7 @@ export default function Kingdom() {
 
         <section className={styles.intro} aria-labelledby="intro-title">
           <div className={styles.shell}>
-            <div className={styles.introGrid}>
+            <div className={styles.introGrid} data-chamber-reveal>
               <div>
                 <p className={styles.sectionKicker}>THE HEART OF BUGANDA</p>
                 <h2 id="intro-title">A living Kingdom with a remarkable story.</h2>
@@ -108,7 +108,7 @@ export default function Kingdom() {
             </div>
             <div className={styles.storyGrid}>
               {stories.map(story => (
-                <Link href={story.href} className={styles.storyCard} key={story.href}>
+                <Link href={story.href} className={styles.storyCard} data-chamber-reveal key={story.href}>
                   <div className={styles.photoFrame}>
                     <ResponsivePhoto photo={story.image} width={680} height={450} sizes="(max-width: 720px) 100vw, (max-width: 1050px) 50vw, 33vw" />
                   </div>
@@ -135,7 +135,7 @@ export default function Kingdom() {
             />
             <span>Kabaka Birthday Run — community participation</span>
           </div>
-          <div className={styles.communityText}>
+          <div className={styles.communityText} data-chamber-reveal>
             <p className={styles.sectionKicker}>PEOPLE AT THE CENTRE</p>
             <h2 id="community-title">A shared spirit of belonging.</h2>
             <p>Public events, cultural celebrations and community programmes bring people together across Buganda. They are part of the wider social fabric in which enterprise and livelihoods grow.</p>

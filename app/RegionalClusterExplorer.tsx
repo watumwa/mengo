@@ -61,7 +61,7 @@ export function RegionalClusterExplorer() {
           </div>
 
           <div className={styles.detail} aria-live="polite">
-            <div className={styles.detailTop}>
+            <div className={styles.detailTop} key={active.id}>
               <span><Building2 size={18} aria-hidden="true" /> REGIONAL CHAMBER CLUSTER</span>
               <h3>{active.name}</h3>
               <p>{active.note}</p>
@@ -83,7 +83,7 @@ export function RegionalClusterExplorer() {
               <div className={styles.countyGrid}>
                 {active.counties.map(name=><button type="button" key={name} className={[styles.county,name===selectedCounty?styles.countyActive:""].join(" ")} aria-pressed={name===selectedCounty} onClick={()=>{setCounty(name);setMapScope("county");}}>{name}</button>)}
               </div>
-              <div className={styles.countyInfo}>
+              <div className={styles.countyInfo} key={selectedCounty}>
                 <span><UsersRound size={17} aria-hidden="true"/> SELECTED COUNTY</span>
                 <strong>Ssaza {selectedCounty}</strong>
                 <p>Part of the {active.name} Chamber cluster. Its detailed committee membership and active programmes require official confirmation.</p>

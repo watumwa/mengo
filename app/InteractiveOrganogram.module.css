@@ -52,3 +52,21 @@
 @media(max-width:960px){.divisions{grid-template-columns:repeat(3,minmax(0,1fr))}.intro{display:block}.exploreLink{margin-top:19px}.statusSecondary{margin-left:0}}
 @media(max-width:640px){.shell{width:min(100% - 26px,1250px)}.chart{padding:25px 14px}.partners,.three,.two,.divisions{grid-template-columns:1fr}.flow{height:36px}.flow svg{height:35px}.node{min-height:80px}.divisions .node{min-height:80px}.details{padding:21px 17px;gap:12px}.detailIcon{width:35px;height:35px}.statusSecondary{display:none}.partnerRow{padding:11px}.tierHeading{line-height:1.6}}
 @media(prefers-reduced-motion:reduce){.travelling{animation:none;stroke-dasharray:none}.node{transition:none}.node:hover{transform:none}}
+
+
+/* Phase 5: selected-unit feedback and gentler connection movement. */
+.nodeAction svg{transition:transform .24s cubic-bezier(.2,.75,.3,1)}
+.node:hover .nodeAction svg,.node:focus-visible .nodeAction svg{transform:translateX(4px)}
+.node:active{transform:translateY(-1px)}
+.travelling{animation-duration:2.5s;opacity:.85}
+.details>div{animation:chamberOrgDetailIn .36s cubic-bezier(.2,.75,.25,1) both}
+@keyframes chamberOrgDetailIn{
+  from{opacity:.55;transform:translate3d(0,7px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .nodeAction svg{transition:none}
+  .node:hover .nodeAction svg,.node:focus-visible .nodeAction svg{transform:none}
+  .node:active{transform:none}
+  .details>div{animation:none}
+}

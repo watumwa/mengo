@@ -75,3 +75,24 @@
 .resetMap{display:block;margin:0 0 19px;border:0;border-bottom:2px solid #c79e3c;background:transparent;color:#0e5389;padding:0 0 5px;font-size:12px;font-weight:800;font-family:inherit;cursor:pointer;text-align:left}
 .resetMap:focus-visible{outline:3px solid #d9aa35;outline-offset:3px}
 .mapPanel>section{min-width:0}
+
+
+/* Phase 5: selected cluster and county respond without perpetual panel motion. */
+.region>svg:last-child{transition:transform .22s ease}
+.region:hover>svg:last-child,.region:focus-visible>svg:last-child{transform:translateX(4px)}
+.region:active{transform:translateX(1px)}
+.county{transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease}
+.county:focus-visible{box-shadow:0 0 0 2px #fff,0 0 0 5px #d9aa35}
+.detailTop{animation:chamberClusterDetailIn .38s cubic-bezier(.2,.78,.28,1) both}
+.countyInfo{animation:chamberClusterDetailIn .33s cubic-bezier(.2,.78,.28,1) both}
+.connector span{animation-duration:2.45s;opacity:.8}
+@keyframes chamberClusterDetailIn{
+  from{opacity:.65;transform:translate3d(0,8px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .region>svg:last-child,.county{transition:none}
+  .region:hover>svg:last-child,.region:focus-visible>svg:last-child{transform:none}
+  .region:active{transform:none}
+  .detailTop,.countyInfo{animation:none}
+}

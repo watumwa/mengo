@@ -34,6 +34,8 @@ import "./client-photo-stories.css";
 import "./chamber-design-system.css";
 import "./phase3-refinement.css";
 import "./phase4-editorial-layouts.css";
+import "./phase5-motion.css";
+import { ChamberScrollMotion } from "./ChamberScrollMotion";
 export const metadata: Metadata = {
   title: "Mengo Chamber of Commerce | Connecting Commerce. Building Prosperity.",
   description: "Connecting commercial centres, traders, enterprises and market opportunities in Buganda and beyond.",
@@ -43,4 +45,4 @@ export const metadata: Metadata = {
     apple: [{ url: "/images/buganda-kingdom-crest-mark.png", type: "image/png" }],
   },
 };
-export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) { return <html lang="en"><body>{children}</body></html>; }
+export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) { return <html lang="en"><body>{children}<ChamberScrollMotion /></body></html>; }

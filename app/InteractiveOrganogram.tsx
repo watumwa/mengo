@@ -115,7 +115,7 @@ export function InteractiveOrganogram() {
 
         <aside className={styles.details} aria-labelledby="org-detail-heading" aria-live="polite">
           <span className={styles.detailIcon}><Info size={22} aria-hidden="true" /></span>
-          <div>
+          <div key={selected}>
             <p>{active.group} · Selected unit</p>
             <h3 id="org-detail-heading">{active.title}</h3>
             <strong>{active.function}</strong>

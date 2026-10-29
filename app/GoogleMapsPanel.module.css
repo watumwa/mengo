@@ -15,3 +15,15 @@
 .footer p svg{flex:none}
 .footer a{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;color:#0b5388;font-weight:900;font-size:12px;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:670px){.toolbar{align-items:flex-start;flex-direction:column;padding:15px}.controls{width:100%}.controls button{flex:1}.map{height:360px}.footer{align-items:flex-start;flex-direction:column;gap:9px}.footer a{white-space:normal}}
+
+
+/* Phase 5: map-mode controls with immediate, accessible selection feedback. */
+.controls button{
+  transition:background-color .18s ease,color .18s ease,box-shadow .18s ease;
+}
+.controls button:hover:not(.selected){background:#e1eaf2;color:#194a73}
+.footer a{transition:color .18s ease}
+.footer a:hover{color:#0a3e70}
+@media(prefers-reduced-motion:reduce){
+  .controls button,.footer a{transition:none}
+}

@@ -32,3 +32,18 @@
 .boundaries{font-size:12px;color:#687e90;line-height:1.75;margin:15px 3px 0}
 @media(max-width:860px){.layout{grid-template-columns:1fr}.controls{padding:17px}.regionList{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.shell{width:min(100% - 28px,1220px)}.regionList{grid-template-columns:1fr}.intro p:not(.eyebrow){font-size:14px}}
+
+
+/* Phase 5: clearly communicating county and region selection. */
+.regionButton,.countyButton{
+  transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.regionButton svg{transition:transform .22s ease}
+.regionButton:hover svg,.regionButton:focus-visible svg{transform:translateX(3px)}
+.activeRegion{box-shadow:0 5px 14px rgba(11,58,102,.17)}
+.countyButton:hover,.countyButton:focus-visible{background:#eef4f9}
+.selectedCounty:hover,.selectedCounty:focus-visible{background:#d7b259}
+@media(prefers-reduced-motion:reduce){
+  .regionButton,.countyButton,.regionButton svg{transition:none}
+  .regionButton:hover svg,.regionButton:focus-visible svg{transform:none}
+}

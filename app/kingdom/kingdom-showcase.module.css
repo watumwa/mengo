@@ -59,3 +59,23 @@
 @media(max-width:1030px){.storyGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.linkGrid{grid-template-columns:1fr}.communityText{padding:44px}}
 @media(max-width:740px){.shell{width:min(100% - 30px,1160px)}.hero{min-height:510px}.heroBody{padding:80px 0 95px}.heroShade{background:linear-gradient(90deg,#041d3bee,#052c56ac)}.heroCredit{left:15px;right:15px;font-size:9px}.intro{padding:56px 0}.introGrid{grid-template-columns:1fr;gap:22px}.discover{padding:58px 0 65px}.discoverHeading{display:block}.discoverHeading>p{margin-top:17px}.storyGrid{grid-template-columns:1fr;gap:17px}.community{grid-template-columns:1fr}.communityPhoto{min-height:300px}.communityText{padding:42px 24px 50px}.linksSection{padding:55px 0}}
 @media(prefers-reduced-motion:reduce){.storyCard,.photoFrame img{transition:none}.storyCard:hover,.storyCard:hover img{transform:none}}
+
+
+/* Phase 5: thoughtful emphasis for actual navigable Kingdom cards only. */
+.storyCard:focus-visible,.linkGrid>a:focus-visible,
+.primaryAction:focus-visible,.secondaryAction:focus-visible,.inlineAction:focus-visible{
+  outline:3px solid #cba558;
+  outline-offset:4px;
+}
+.readMore svg,.linkGrid>a>svg:last-child{transition:transform .24s ease}
+.storyCard:hover .readMore svg,.storyCard:focus-visible .readMore svg,
+.linkGrid>a:hover>svg:last-child,.linkGrid>a:focus-visible>svg:last-child{
+  transform:translate(3px,-2px);
+}
+.linkGrid>a{transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease}
+.linkGrid>a:hover{border-color:#bdcfdd;background:#f7fafc;box-shadow:0 10px 27px rgba(16,54,91,.07)}
+@media(prefers-reduced-motion:reduce){
+  .readMore svg,.linkGrid>a>svg:last-child,.linkGrid>a{transition:none}
+  .storyCard:hover .readMore svg,.storyCard:focus-visible .readMore svg,
+  .linkGrid>a:hover>svg:last-child,.linkGrid>a:focus-visible>svg:last-child{transform:none}
+}
