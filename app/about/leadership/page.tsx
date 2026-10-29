@@ -3,7 +3,7 @@ import { Shell } from "../../components";
 import "./leadership.css";
 
 type Leader={name:string;role:string;photo?:string};
-const patron:Leader={name:"Owek. Charles Peter Mayiga",role:"Katikkiro of Buganda · Patron / Overseer"};
+const patron:Leader={name:"Owek. Charles Peter Mayiga",role:"Katikkiro of Buganda · Patron / Overseer",photo:"/images/leadership/charles-peter-mayiga.jpg"};
 const chair:Leader={name:"Chief John Fred Kiyimba Freeman",role:"Board Chair"};
 const vice:Leader={name:"Owek. Steven Kayiwa",role:"Vice Chair"};
 const members:Leader[]=[
