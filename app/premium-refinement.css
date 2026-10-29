@@ -1,0 +1,354 @@
+/*
+ * Phase 9.1 — Mengo Chamber premium refinement.
+ * Presentation only: keeps existing copy, authentic photographs, links,
+ * carousel cadence, CMS, membership and business functionality intact.
+ * Loaded after all prior site styles to resolve overlapping legacy rules.
+ */
+:root {
+  --mc-premium-navy: #123D70;
+  --mc-premium-gold: #E8B94B;
+  --mc-premium-white: #F7F8FA;
+  --mc-premium-slate: #263547;
+  --mc-premium-mist: #DDE6EE;
+}
+
+/* Header: deliberate logo proportions, consistent click targets and spacing. */
+.bp-header .bp-nav-wrap {
+  background: #123D70;
+  box-shadow: 0 4px 16px rgba(8, 30, 58, .14);
+}
+.bp-header .bp-nav {
+  min-height: 74px;
+  gap: clamp(12px, 1.1vw, 22px);
+}
+.bp-header .bp-nav > .bp-brand {
+  flex: 0 0 auto;
+  gap: 12px;
+}
+.bp-header .bp-nav > .bp-brand img {
+  width: 53px;
+  height: 60px;
+  object-fit: contain;
+}
+.bp-header .bp-brand strong { line-height: 1.12; letter-spacing: -.02em; }
+.bp-header .bp-desktop-nav { gap: 1px; }
+.bp-header .bp-nav-link,
+.bp-header .bp-nav-trigger {
+  min-height: 55px;
+  padding-inline: clamp(9px, .9vw, 14px);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .005em;
+}
+.bp-header .bp-nav-actions { gap: 12px; }
+.bp-header .bp-join-button {
+  min-height: 44px;
+  padding: 12px 18px;
+  border-radius: 6px;
+  background: var(--mc-premium-gold);
+  border-color: var(--mc-premium-gold);
+  box-shadow: none;
+  color: #143554;
+}
+.bp-header .bp-join-button:hover {
+  background: #f1ca6a;
+  color: #143554;
+}
+.bp-header .bp-search-button { width: 42px; height: 42px; border-radius: 6px; }
+.bp-header .bp-nav-link:focus-visible,
+.bp-header .bp-nav-trigger:focus-visible,
+.bp-header .bp-join-button:focus-visible,
+.bp-header .bp-search-button:focus-visible,
+.bp-header .bp-menu-button:focus-visible {
+  outline: 3px solid #f2ca6a;
+  outline-offset: 3px;
+}
+
+/* Hero: keep the authentic Bulange building; reduce competing image contrast. */
+.mc-nema-home .mc-nema-hero {
+  background: #092b53;
+  min-height: 0;
+}
+.mc-nema-home .mc-nema-hero::before {
+  background-image:
+    linear-gradient(92deg,
+      rgba(3, 23, 50, .90) 0%,
+      rgba(4, 27, 57, .80) 35%,
+      rgba(7, 36, 69, .57) 67%,
+      rgba(8, 35, 66, .38) 100%),
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Buganda_Court_Building1.jpg/1920px-Buganda_Court_Building1.jpg");
+  background-position: center, 54% 32%;
+  animation-duration: 48s;
+}
+@media (min-width: 1100px) {
+  .mc-nema-home .mc-nema-hero-grid {
+    grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+    gap: clamp(38px, 4.6vw, 74px);
+    min-height: 650px;
+    padding-block: clamp(60px, 5.8vw, 86px);
+    align-items: center;
+  }
+  .mc-nema-home .mc-nema-hero-copy { max-width: 540px; }
+  .mc-nema-home .mc-nema-hero .mc-nema-service-panel.mc-nema-news-panel {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+  }
+}
+.mc-nema-home .mc-nema-hero-copy h1 {
+  font-family: var(--chamber-type-ui, Manrope, Arial, sans-serif);
+  font-size: clamp(43px, 4.25vw, 63px);
+  line-height: 1.065;
+  letter-spacing: -.042em;
+  margin-bottom: 11px;
+  text-wrap: balance;
+}
+.mc-nema-home .mc-nema-hero-copy h1 .mc-nema-brand-description {
+  font-size: clamp(24px, 2.35vw, 34px);
+  font-weight: 650;
+  letter-spacing: -.012em;
+  margin-top: 9px;
+}
+.mc-nema-home .mc-nema-hero .mc-nema-twezimbe {
+  margin: 24px 0 7px;
+  font-size: clamp(31px, 3vw, 43px);
+  line-height: 1.18;
+}
+.mc-nema-home .mc-nema-hero-copy h2 {
+  font-size: clamp(19px, 1.65vw, 24px);
+  line-height: 1.35;
+  margin-bottom: 21px;
+}
+.mc-nema-home .mc-nema-hero-summary {
+  max-width: 490px;
+  font-size: 16px;
+  line-height: 1.78;
+  margin: 21px 0 28px;
+  color: #f0f4f9;
+}
+.mc-nema-home .mc-nema-hero .mc-nema-primary-action {
+  border-radius: 7px;
+  min-height: 48px;
+  border: 1px solid #eec970;
+  background: var(--mc-premium-gold);
+  color: #11365a;
+  box-shadow: none;
+}
+.mc-nema-home .mc-nema-hero .mc-nema-primary-action:hover {
+  background: #f1ca6a;
+  color: #11365a;
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* Photo-forward editorial carousel. No frame, border, mask or heavy blur. */
+.mc-nema-home .mc-nema-hero .mc-nema-service-panel.mc-nema-news-panel {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: none;
+  background: transparent;
+  overflow: hidden;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: none;
+  overflow: hidden;
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: none !important;
+  background-color: var(--mc-premium-white);
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-photo {
+  height: clamp(295px, 26vw, 370px);
+  background: #143553;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-photo img {
+  object-fit: cover;
+  transition: opacity .6s ease;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-detail {
+  margin-top: 0;
+  min-height: 204px;
+  padding: clamp(21px, 2.3vw, 30px);
+  border: 0;
+  border-radius: 0;
+  background: rgba(247, 248, 250, .96);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none;
+  color: var(--mc-premium-slate);
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-label {
+  color: #91691f !important;
+  font-size: 11px !important;
+  font-weight: 850;
+  letter-spacing: .13em;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-detail h3 {
+  color: #123D70;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.22;
+  letter-spacing: -.027em;
+  max-width: 530px;
+  text-wrap: balance;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-description {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  color: #43546a !important;
+  max-width: 550px;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-bottom {
+  margin-top: 19px;
+  gap: 14px;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-bottom > a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: .065em;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #bdccd9;
+  background: #fff;
+  color: #123D70;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-controls button:hover {
+  background: #eaf1f6;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-controls span {
+  color: #425a70;
+  font-size: 12px;
+}
+.mc-nema-home .mc-nema-hero :is(.mc-hero-slider-controls button,.mc-hero-slider-bottom > a):focus-visible {
+  outline: 3px solid #b18324;
+  outline-offset: 3px;
+}
+
+/* Section rhythm and editorial readability, without changing any content. */
+.mc-nema-home .mc-nema-quick-actions { padding-block: 27px; }
+.mc-nema-home .mc-nema-quick-grid { gap: clamp(14px, 2.5vw, 26px); }
+.mc-nema-home .mc-nema-quick-grid a { min-height: 63px; font-size: 11px; line-height: 1.5; }
+.mc-nema-home .mc-nema-topic-nav a { font-size: 11px; line-height: 1.4; }
+.mc-nema-home .mc-nema-mandate,
+.mc-nema-home .mc-nema-priorities,
+.mc-nema-home .mc-nema-explore {
+  padding-block: clamp(68px, 7vw, 100px);
+}
+.mc-nema-home .mc-nema-mandate-intro h2,
+.mc-nema-home .mc-nema-closing h2 {
+  font-family: var(--chamber-type-editorial, Georgia, serif);
+  letter-spacing: -.028em;
+  line-height: 1.13;
+}
+.mc-nema-home .mc-nema-section-title h2,
+.mc-nema-home .mc-client-gallery-heading h2 {
+  font-size: clamp(27px, 2.7vw, 40px);
+  line-height: 1.17;
+  letter-spacing: -.028em;
+}
+.mc-nema-home .mc-nema-role-grid { gap: clamp(13px, 1.7vw, 23px); }
+.mc-nema-home .mc-nema-role-grid a {
+  min-width: 0;
+  border: 1px solid #dce5ec;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: clamp(20px, 1.7vw, 26px);
+  line-height: 1.45;
+}
+.mc-nema-home .mc-nema-role-grid span { font-size: 12px; line-height: 1.65; }
+.mc-nema-home .mc-nema-priority-grid {
+  background: transparent;
+  gap: 16px;
+}
+.mc-nema-home .mc-nema-priority-grid a {
+  border: 1px solid #dce5ec;
+  border-radius: 9px;
+  background: #fff;
+  min-width: 0;
+}
+.mc-nema-home .mc-nema-priority-grid p { font-size: 12px; line-height: 1.65; }
+.mc-nema-home .mc-nema-explore-grid {
+  background: transparent;
+  gap: 15px;
+}
+.mc-nema-home .mc-nema-explore-grid a {
+  border: 1px solid #e0e7ed;
+  border-radius: 9px;
+  background: #fff;
+}
+.mc-nema-home .mc-client-gallery-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.mc-nema-home .mc-client-gallery-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Responsive: avoid the cramped 801–1099px two-column range. */
+@media (min-width: 801px) and (max-width: 1099px) {
+  .mc-nema-home .mc-nema-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+    padding-block: 57px 70px;
+    min-height: 0;
+  }
+  .mc-nema-home .mc-nema-hero-copy { max-width: 780px; }
+  .mc-nema-home .mc-nema-hero .mc-nema-service-panel.mc-nema-news-panel {
+    max-width: 780px;
+    width: 100%;
+    justify-self: start;
+  }
+}
+@media (min-width: 1151px) and (max-width: 1320px) {
+  .bp-header .bp-nav > .bp-brand img { width: 46px; height: 52px; }
+  .bp-header .bp-nav > .bp-brand { gap: 9px; margin-right: 10px; }
+  .bp-header .bp-nav-link,.bp-header .bp-nav-trigger { font-size: 11px; padding-inline: 8px; }
+  .bp-header .bp-nav-actions { gap: 8px; }
+  .bp-header .bp-join-button { padding-inline: 12px; font-size: 11px; }
+}
+@media (max-width: 1150px) {
+  .bp-header .bp-nav { min-height: 65px; }
+  .bp-header .bp-nav > .bp-brand img { width: 44px; height: 50px; }
+  .bp-header .bp-menu-button { width: 44px; height: 44px; }
+}
+@media (max-width: 800px) {
+  .mc-nema-home .mc-nema-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    gap: 30px;
+    padding-block: 48px 65px;
+  }
+  .mc-nema-home .mc-nema-hero .mc-nema-service-panel.mc-nema-news-panel {
+    width: 100%;
+    max-width: 680px;
+    justify-self: start;
+  }
+  .mc-nema-home .mc-nema-hero .mc-hero-slider-photo { height: clamp(265px, 48vw, 365px); }
+}
+@media (max-width: 560px) {
+  .mc-nema-home .mc-nema-hero-grid { gap: 28px; padding-block: 38px 64px; }
+  .mc-nema-home .mc-nema-hero-copy h1 { font-size: clamp(36px, 9vw, 46px); }
+  .mc-nema-home .mc-nema-hero-copy h1 .mc-nema-brand-description { font-size: clamp(22px, 5.5vw, 28px); }
+  .mc-nema-home .mc-nema-hero .mc-nema-twezimbe { font-size: clamp(30px, 7.4vw, 39px); }
+  .mc-nema-home .mc-nema-hero-summary { font-size: 15px; line-height: 1.7; }
+  .mc-nema-home .mc-nema-hero .mc-hero-slider-photo { height: clamp(230px, 69vw, 295px); }
+  .mc-nema-home .mc-nema-hero .mc-hero-slider-detail { padding: 23px 20px 20px; min-height: 0; }
+  .mc-nema-home .mc-nema-hero .mc-hero-slider-detail h3 { font-size: clamp(21px, 5.5vw, 25px); }
+  .mc-nema-home .mc-nema-hero .mc-hero-slider-controls { gap: 6px; }
+  .mc-nema-home .mc-nema-hero .mc-hero-slider-controls button { width: 40px; height: 40px; }
+  .mc-nema-home .mc-nema-hero .mc-hero-slider-bottom { flex-wrap: wrap; }
+  .mc-nema-home .mc-nema-role-grid { gap: 12px; }
+  .mc-nema-home .mc-nema-mandate,.mc-nema-home .mc-nema-priorities,.mc-nema-home .mc-nema-explore { padding-block: 58px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mc-nema-home .mc-nema-hero::before,
+  .mc-nema-home .mc-hero-slider-photo img,
+  .mc-nema-home .mc-nema-hero .mc-nema-primary-action { animation: none !important; transition: none !important; }
+  .mc-nema-home .mc-nema-hero .mc-nema-primary-action:hover { transform: none; }
+}

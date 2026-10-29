@@ -41,7 +41,7 @@ export function HeroStoryCarousel() {
     if (paused || !pageVisible || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = window.setInterval(() => setActive((index) => (index + 1) % stories.length), 5000);
     return () => window.clearInterval(id);
-  }, [paused, pageVisible]);
+  }, [paused, pageVisible, active]);
   const next = () => setActive((index) => (index + 1) % stories.length);
   const previous = () => setActive((index) => (index - 1 + stories.length) % stories.length);
   return (
