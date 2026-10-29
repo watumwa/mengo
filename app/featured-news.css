@@ -99,3 +99,21 @@
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   .mc-nema-home .mc-hero-slider-detail{background:rgba(255,255,255,.94)}
 }
+
+/* Make the photograph extend behind the translucent caption. */
+.mc-nema-home .mc-nema-service-panel.mc-nema-news-panel{
+  background:transparent;
+}
+.mc-nema-home .mc-hero-slider{
+  background-color:#173d69;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.mc-nema-home .mc-hero-slider-detail{
+  background:rgba(244,249,255,.69);
+  -webkit-backdrop-filter:blur(12px) saturate(125%);
+  backdrop-filter:blur(12px) saturate(125%);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .mc-nema-home .mc-hero-slider-detail{background:rgba(244,249,255,.82)}
+}

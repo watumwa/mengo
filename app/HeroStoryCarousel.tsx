@@ -45,7 +45,7 @@ export function HeroStoryCarousel() {
   const next = () => setActive((index) => (index + 1) % stories.length);
   const previous = () => setActive((index) => (index - 1 + stories.length) % stories.length);
   return (
-    <div className="mc-hero-slider" aria-roledescription="carousel" aria-label="Chamber stories" onFocusCapture={() => setPaused(true)} onBlurCapture={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false); }}>
+    <div className="mc-hero-slider" style={{ backgroundImage: `url("${stories[active].photo.src}")`, backgroundPosition: stories[active].photo.position ?? "center" }} aria-roledescription="carousel" aria-label="Chamber stories" onFocusCapture={() => setPaused(true)} onBlurCapture={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false); }}>
       <div className="mc-hero-slider-photo">
         {stories.map((story, index) => (
           <img key={story.photo.src} src={story.photo.src} alt={story.photo.alt} className={index === active ? "is-active" : ""} style={{ objectPosition: story.photo.position }} width="880" height="588" aria-hidden={index !== active} />
