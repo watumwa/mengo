@@ -169,7 +169,8 @@
   -webkit-mask-image: none;
   mask-image: none;
   background-image: none !important;
-  background-color: var(--mc-premium-white);
+  /* Allow the Bulange hero photograph behind the caption to show through. */
+  background-color: transparent;
 }
 .mc-nema-home .mc-nema-hero .mc-hero-slider-photo {
   height: clamp(295px, 26vw, 370px);
@@ -188,11 +189,17 @@
   padding: clamp(21px, 2.3vw, 30px);
   border: 0;
   border-radius: 0;
-  background: rgba(247, 248, 250, .96);
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  /* Noticeable transparency with just enough diffusion for readable text. */
+  background: rgba(255, 255, 255, .35);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   box-shadow: none;
-  color: var(--mc-premium-slate);
+  color: #173452;
+}
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .mc-nema-home .mc-nema-hero .mc-hero-slider-detail {
+    background: rgba(255, 255, 255, .65);
+  }
 }
 .mc-nema-home .mc-nema-hero .mc-hero-slider-label {
   color: #91691f !important;
