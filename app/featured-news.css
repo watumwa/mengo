@@ -85,3 +85,17 @@
 @media(min-width:801px){
   .mc-nema-home .mc-hero-slider-photo{height:clamp(300px,29vw,440px)}
 }
+
+/* Translucent editorial caption beneath the rotating photographs. */
+.mc-nema-home .mc-hero-slider-detail{
+  background:rgba(255,255,255,.82);
+  -webkit-backdrop-filter:blur(15px) saturate(115%);
+  backdrop-filter:blur(15px) saturate(115%);
+  border-top:1px solid rgba(255,255,255,.65);
+}
+.mc-nema-home .mc-hero-slider{
+  background:rgba(255,255,255,.82);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .mc-nema-home .mc-hero-slider-detail{background:rgba(255,255,255,.94)}
+}
