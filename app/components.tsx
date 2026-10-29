@@ -72,7 +72,7 @@ export function Header() {
 
   return <header className="bp-header">
     <a className="bp-skip-link" href="#main-content">Skip to content</a>
-    <div className="bp-utility-bar"><div className="bp-shell bp-utility-content"><p>Obwakabaka bwa Buganda <span aria-hidden="true">•</span> Kingdom of Buganda</p><div className="bp-utility-socials" aria-label="Mengo Chamber social media">
+    <div className="bp-utility-bar"><div className="bp-shell bp-utility-content"><p>Obwakabaka bwa Buganda <span className="bp-utility-separator" aria-hidden="true">•</span> <span className="bp-utility-translation">Kingdom of Buganda</span></p><div className="bp-utility-socials" aria-label="Mengo Chamber social media">
       {socialPlatforms.map(({ name, icon }) => (
         <span key={name} className="bp-social-brand" role="img" aria-label={`${name} — official profile link to be added`} title={`${name} — official profile link to be added`}>
           <Image src={icon} alt="" width={19} height={19} unoptimized aria-hidden="true" />
