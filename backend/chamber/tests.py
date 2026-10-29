@@ -75,3 +75,19 @@ class AccessControlTests(TestCase):
   self.assertEqual(business.name,"Updated Shop")
   self.assertFalse(business.published)
   self.assertFalse(business.verified)
+
+class ApplicationTrackingTests(TestCase):
+ def setUp(self):
+  self.client=APIClient()
+  self.application=MembershipApplication.objects.create(organisation="Example",organisation_type="Business",district="Kampala",sector="Trade",contact_name="A Person",email="applicant@example.org",phone="0700000000")
+ def test_correct_email_and_reference(self):
+  response=self.client.post("/api/v1/membership/status/",{"reference":str(self.application.reference),"email":"applicant@example.org"},format="json")
+  self.assertEqual(response.status_code,200)
+  self.assertEqual(response.data["status"],"pending")
+  self.assertNotIn("internal_notes",response.data)
+ def test_wrong_email_is_private(self):
+  response=self.client.post("/api/v1/membership/status/",{"reference":str(self.application.reference),"email":"other@example.org"},format="json")
+  self.assertEqual(response.status_code,404)
+ def test_invalid_reference(self):
+  response=self.client.post("/api/v1/membership/status/",{"reference":"not-a-uuid","email":"applicant@example.org"},format="json")
+  self.assertEqual(response.status_code,400)

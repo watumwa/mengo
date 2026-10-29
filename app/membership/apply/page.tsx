@@ -28,7 +28,7 @@ export default function MembershipApply(){
  return <Shell><main className="mc-apply"><div className="bp-shell mc-apply-wrap">
   <Link href="/membership" className="mc-apply-back">← Membership overview</Link>
   <div className="mc-apply-intro"><p>MEMBERSHIP APPLICATION</p><h1>Apply to join the Chamber</h1><span>Provide your organisation and contact details for administrative review. Submission is not approval, and no payment is requested here.</span></div>
-  {reference?<div className="mc-apply-success" role="status"><h2>Application received</h2><p>Your application has been submitted for review. Keep this reference for enquiries:</p><strong>{reference}</strong><p>The Chamber will need to confirm eligibility and next steps. This confirmation is not evidence of approved membership.</p><Link href="/membership">Return to membership</Link></div>:
+  {reference?<div className="mc-apply-success" role="status"><h2>Application received</h2><p>Your application has been submitted for review. Keep this reference for enquiries:</p><strong>{reference}</strong><p>The Chamber will need to confirm eligibility and next steps. This confirmation is not evidence of approved membership.</p><Link href="/membership/status">Track application status</Link> · <Link href="/membership">Return to membership</Link></div>:
   <form className="mc-apply-form" onSubmit={submit}>
    <h2>Organisation details</h2>
    <div className="mc-apply-fields">

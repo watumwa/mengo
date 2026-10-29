@@ -131,3 +131,18 @@ class MyBusinessDetail(generics.RetrieveUpdateAPIView):
  serializer_class=MyBusinessSerializer
  def get_queryset(self):return Business.objects.filter(owner=self.request.user)
  def perform_update(self,serializer):serializer.save(published=False,verified=False)
+
+class ApplicationStatus(APIView):
+ permission_classes=[permissions.AllowAny]
+ throttle_classes=[ApplicationThrottle]
+ def post(self,request):
+  from uuid import UUID
+  reference=request.data.get("reference","")
+  email=request.data.get("email","")
+  if not isinstance(reference,str) or not isinstance(email,str) or len(email)>254:
+   return Response({"detail":"Invalid reference or email."},status=400)
+  try: identifier=UUID(reference)
+  except (ValueError,TypeError,AttributeError): return Response({"detail":"Invalid reference or email."},status=400)
+  application=MembershipApplication.objects.filter(reference=identifier,email__iexact=email.strip()).first()
+  if application is None: return Response({"detail":"No matching application was found."},status=404)
+  return Response({"reference":str(application.reference),"status":application.status,"submitted_at":application.created_at})

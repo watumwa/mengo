@@ -15,5 +15,6 @@ urlpatterns=[
  path("events/",views.Events.as_view()),
  path("articles/",views.Articles.as_view()),
  path("membership/apply/",views.Apply.as_view()),
+ path("membership/status/",views.ApplicationStatus.as_view()),
  path("enquiries/",views.Enquire.as_view()),
 ]
