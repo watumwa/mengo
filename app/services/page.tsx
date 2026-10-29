@@ -1,8 +1,9 @@
 import { BlueprintPage } from "../BlueprintPage";
+import { realPhotos } from "../realPhotos";
 
 export default function Services() {
   return <BlueprintPage eyebrow="Business Services" title="Supporting Enterprise Growth" description="Explore the areas in which the Chamber aims to support business connections, development and representation."
-     sections={[
+     image={realPhotos.pewosaEnterprise} imageCaption="An activity at a CBS PEWOSA enterprise and community programme." sections={[
   {
     "eyebrow": "Enterprise development",
     "title": "Practical areas of support",

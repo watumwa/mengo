@@ -1,8 +1,9 @@
 import { BlueprintPage } from "../BlueprintPage";
+import { realPhotos } from "../realPhotos";
 
 export default function Membership() {
   return <BlueprintPage eyebrow="Membership" title="Connect with the Business Community" description="Discover how participation in a Chamber of Commerce can create connections, shared knowledge and a stronger business voice."
-     sections={[
+     image={realPhotos.businessForum} imageCaption="A business forum panel discussion, illustrating the value of industry connections." sections={[
   {
     "eyebrow": "Why membership matters",
     "title": "Be part of a wider network",

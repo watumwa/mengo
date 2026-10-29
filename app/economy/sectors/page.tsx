@@ -1,8 +1,9 @@
 import { BlueprintPage } from "../../BlueprintPage";
+import { realPhotos } from "../../realPhotos";
 
 export default function EconomySectors() {
   return <BlueprintPage eyebrow="Economic Sectors" title="Industries & Enterprise" description="An introduction to the sectors that support trade, jobs, community life and investment across Buganda."
-     sections={[
+     image={realPhotos.coffeeExport} imageCaption="Coffee being loaded for export, from the Mwanyi Terimba collection." sections={[
   {
     "eyebrow": "Core sectors",
     "title": "A diverse commercial landscape",

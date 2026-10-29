@@ -3,7 +3,7 @@ import { realPhotos } from "../realPhotos";
 
 export default function Economy() {
   return <BlueprintPage eyebrow="Buganda Economy" title="Enterprise Across Buganda" description="Agriculture, trade, manufacturing, tourism and services connect communities and markets throughout Buganda."
-    image={realPhotos.market} imageCaption="Commercial activity at a market in Kampala." sections={[
+    image={realPhotos.coffeeProducts} imageCaption="Mwanyi Terimba coffee products displayed at the company's premises." sections={[
   {
     "eyebrow": "Economic activity",
     "title": "The sectors behind livelihoods",

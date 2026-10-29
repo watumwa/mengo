@@ -1,8 +1,9 @@
 import { BlueprintPage } from "../BlueprintPage";
+import { realPhotos } from "../realPhotos";
 
 export default function Cooperatives() {
   return <BlueprintPage eyebrow="SACCOs & Cooperatives" title="Working Together for Enterprise" description="Savings groups, producer cooperatives and community organisations play an important role in collective economic participation."
-     sections={[
+     image={realPhotos.essuubiCommunity} imageCaption="Group at an Essuubi Lyo Zambogo office, from the supplied photo collection." sections={[
   {
     "eyebrow": "Cooperative enterprise",
     "title": "Strength in shared purpose",

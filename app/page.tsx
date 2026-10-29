@@ -12,6 +12,9 @@ import {
   UsersRound,
 } from "lucide-react";
 import { Shell } from "./components";
+import { realPhotos } from "./realPhotos";
+import { ResponsivePhoto } from "./ResponsivePhoto";
+
 
 const quickActions = [
   { label: "JOIN THE CHAMBER", href: "/membership", icon: UsersRound },
@@ -40,6 +43,51 @@ const exploreLinks = [
   { title: "Membership information", text: "See how businesses and institutions can participate in the Chamber.", href: "/membership", icon: UsersRound },
   { title: "Investment & opportunities", text: "Begin a conversation around investment, partnership and trade.", href: "/invest", icon: Handshake },
   { title: "Events & updates", text: "Follow Chamber activity, forums, publications and announcements.", href: "/events-calendar", icon: CalendarDays },
+];
+
+const communityStories = [
+  {
+    title: "Coffee, value addition and exports",
+    context: "TRADE & AGRIBUSINESS",
+    description: "Coffee products and business activity from Mwanyi Terimba.",
+    href: "/economy",
+    photo: realPhotos.coffeeProducts,
+  },
+  {
+    title: "Business dialogue",
+    context: "ENTERPRISE & MARKETS",
+    description: "A discussion at the BBS Business Forum.",
+    href: "/services",
+    photo: realPhotos.businessForum,
+  },
+  {
+    title: "Community in action",
+    context: "SPORT & COMMUNITY",
+    description: "A crowd gathered for the Kabaka Birthday Run.",
+    href: "/events-calendar",
+    photo: realPhotos.birthdayRun,
+  },
+  {
+    title: "Culture and tradition",
+    context: "KINGDOM & HERITAGE",
+    description: "Cultural performers at a celebration in Buganda.",
+    href: "/kingdom/culture-tourism",
+    photo: realPhotos.culturalPerformance,
+  },
+  {
+    title: "Markets and trading centres",
+    context: "LOCAL COMMERCE",
+    description: "Market stalls and the everyday business of trade.",
+    href: "/commercial-centres",
+    photo: realPhotos.marketStalls,
+  },
+  {
+    title: "Enterprise and partnerships",
+    context: "BUSINESS COMMUNITY",
+    description: "A business team outside the Rexba Ltd offices.",
+    href: "/businesses",
+    photo: realPhotos.enterpriseGroup,
+  },
 ];
 
 export default function HomePage() {
@@ -99,6 +147,34 @@ export default function HomePage() {
             {strategicRoles.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={25} /><strong>{title}</strong><span>{text}</span><small>MORE <ArrowRight size={12} /></small></Link>)}
           </div>
         </div></section>
+
+        <section className="mc-client-gallery" aria-labelledby="community-gallery-title">
+          <div className="bp-shell">
+            <div className="mc-client-gallery-heading">
+              <div>
+                <p className="mc-client-gallery-kicker">BUGANDA IN PICTURES</p>
+                <h2 id="community-gallery-title">People, enterprise and community life.</h2>
+                <p>Genuine photographs from business, cultural and community activities across Buganda.</p>
+              </div>
+              <Link href="/explore" className="mc-client-gallery-more">EXPLORE THE CHAMBER <ArrowUpRight size={16} aria-hidden="true"/></Link>
+            </div>
+            <div className="mc-client-gallery-grid">
+              {communityStories.map(({title,context,description,href,photo}) =>
+                <Link href={href} key={title} className="mc-client-gallery-card">
+                  <div className="mc-client-gallery-photo">
+                    <ResponsivePhoto photo={photo} width={840} height={560} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+                  </div>
+                  <div className="mc-client-gallery-body">
+                    <span>{context}</span>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                    <small>DISCOVER MORE <ArrowUpRight size={15} aria-hidden="true"/></small>
+                  </div>
+                </Link>
+              )}
+            </div>
+          </div>
+        </section>
 
         <section className="mc-nema-priorities" aria-labelledby="priorities-title"><div className="bp-shell">
           <div className="mc-nema-section-title"><FileText size={29} /><div><h2 id="priorities-title">MCCL Strategic Priorities</h2><p>Turning the Chamber’s priorities into meaningful value for business.</p></div></div>

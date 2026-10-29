@@ -1,11 +1,12 @@
 import { BlueprintPage } from "../../BlueprintPage";
+import { realPhotos } from "../../realPhotos";
 
 export default function Achievements() {
   return <BlueprintPage
     eyebrow="Kingdom Development"
     title="Community & Economic Development"
     description="Explore the themes connecting enterprise, institutions and community development across Buganda."
-    sections={[
+    image={realPhotos.pewosaAgriculture} imageCaption="Visitors inspecting seedlings at a CBS PEWOSA programme demonstration." sections={[
   {
     "eyebrow": "Areas of contribution",
     "title": "Development that matters to communities",

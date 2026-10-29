@@ -1,11 +1,12 @@
 import { BlueprintPage } from "../BlueprintPage";
+import { realPhotos } from "../realPhotos";
 
 export default function About() {
   return <BlueprintPage
     eyebrow="About the Chamber"
     title="Our Story & Mandate"
     description="Connecting enterprises, markets and partnerships to support stronger livelihoods across Buganda."
-    sections={[
+    image={realPhotos.businessForum} imageCaption="A panel discussion at the BBS Business Forum, illustrating business dialogue." sections={[
   {
     "eyebrow": "Who we are",
     "title": "A Chamber built around business",

@@ -6,8 +6,8 @@ export default function KingdomHistory() {
     eyebrow="Kingdom Heritage"
     title="Buganda's History & Heritage"
     description="A rich cultural history reflected in Buganda's institutions, language, traditions and historic places."
-    image={realPhotos.bulange}
-    imageCaption="Bulange, Mengo — an important centre of the Kingdom's administrative life."
+    image={realPhotos.culturalPerformance}
+    imageCaption="A cultural performance from the supplied Buganda Royal photo collection."
     source={{"label":"Official Buganda Kingdom information","href":"https://buganda.or.ug/"}}
     sections={[
   {

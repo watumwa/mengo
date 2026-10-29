@@ -1,7 +1,8 @@
 import { BlueprintPage } from "../BlueprintPage";
+import { realPhotos } from "../realPhotos";
 
 export default function Opportunities(){
- return <BlueprintPage eyebrow="Market Opportunities" title="Trade, Markets & Partnerships" description="Explore the different ways enterprises can develop commercial relationships and reach new markets." sections={[
+ return <BlueprintPage eyebrow="Market Opportunities" title="Trade, Markets & Partnerships" description="Explore the different ways enterprises can develop commercial relationships and reach new markets." image={realPhotos.marketStalls} imageCaption="A covered market aisle with traders and goods." sections={[
   {
     "eyebrow": "Business opportunities",
     "title": "Connections across the value chain",

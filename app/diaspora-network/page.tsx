@@ -1,6 +1,7 @@
 import { BlueprintPage } from "../BlueprintPage";
+import { realPhotos } from "../realPhotos";
 
-export default function Diaspora(){ return <BlueprintPage eyebrow="Diaspora & Enterprise" title="Connecting Buganda's Global Community" description="People living abroad can maintain strong links with local enterprise, culture and professional networks in Buganda." sections={[
+export default function Diaspora(){ return <BlueprintPage eyebrow="Diaspora & Enterprise" title="Connecting Buganda's Global Community" description="People living abroad can maintain strong links with local enterprise, culture and professional networks in Buganda." image={realPhotos.coffeeContainer} imageCaption="Coffee sacks in an export container, illustrating international market links." sections={[
   {
     "eyebrow": "Global connections",
     "title": "Knowledge, markets and partnerships",

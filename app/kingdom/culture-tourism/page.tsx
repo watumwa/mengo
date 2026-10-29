@@ -6,8 +6,8 @@ export default function CultureTourism() {
     eyebrow="Culture & Tourism"
     title="Discover Buganda's Cultural Heritage"
     description="Historic places, traditional dress, crafts, language and ceremony are part of Buganda's living cultural landscape."
-    image={realPhotos.coffee}
-    imageCaption="Traditional Buganda dress — a glimpse of the Kingdom's living cultural heritage."
+    image={realPhotos.culturalPerformance}
+    imageCaption="Performers in traditional dress at a cultural gathering."
     source={{"label":"Visit the official Kingdom website","href":"https://buganda.or.ug/"}}
     sections={[
   {
