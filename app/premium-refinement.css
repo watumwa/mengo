@@ -64,26 +64,36 @@
   outline-offset: 3px;
 }
 
-/* Hero: keep the authentic Bulange building; reduce competing image contrast. */
+/* Preserve Bulange's natural colours. Charcoal is neutral (not blue); its
+   left-side shadow supports legible white text without tinting the building. */
 .mc-nema-home .mc-nema-hero {
-  background: #092b53;
+  background: #303235;
   min-height: 0;
 }
 .mc-nema-home .mc-nema-hero::before {
   background-image:
     linear-gradient(92deg,
-      rgba(3, 23, 50, .90) 0%,
-      rgba(4, 27, 57, .80) 35%,
-      rgba(7, 36, 69, .57) 67%,
-      rgba(8, 35, 66, .38) 100%),
+      rgba(0, 0, 0, .55) 0%,
+      rgba(0, 0, 0, .34) 36%,
+      rgba(0, 0, 0, .11) 68%,
+      rgba(0, 0, 0, .03) 100%),
     url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Buganda_Court_Building1.jpg/1920px-Buganda_Court_Building1.jpg");
   background-position: center, 54% 32%;
   animation-duration: 48s;
 }
+/* On desktop, use the available viewport width instead of keeping the
+   carousel inside the centered 1320px shell. Leave a small right gutter. */
 @media (min-width: 1100px) {
-  .mc-nema-home .mc-nema-hero-grid {
-    grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
-    gap: clamp(38px, 4.6vw, 74px);
+  .mc-nema-home .mc-nema-hero-grid.bp-shell {
+    box-sizing: border-box;
+    width: calc(100% - 16px);
+    max-width: none;
+    margin-left: auto;
+    margin-right: 16px;
+    padding-left: clamp(28px, 4vw, 74px);
+    padding-right: 0;
+    grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+    gap: clamp(24px, 3vw, 46px);
     min-height: 650px;
     padding-block: clamp(60px, 5.8vw, 86px);
     align-items: center;
@@ -92,7 +102,9 @@
   .mc-nema-home .mc-nema-hero .mc-nema-service-panel.mc-nema-news-panel {
     width: 100%;
     max-width: none;
-    justify-self: stretch;
+    justify-self: end;
+    margin-inline-start: auto;
+    margin-inline-end: 0;
   }
 }
 .mc-nema-home .mc-nema-hero-copy h1 {
@@ -292,7 +304,14 @@
 
 /* Responsive: avoid the cramped 801–1099px two-column range. */
 @media (min-width: 801px) and (max-width: 1099px) {
-  .mc-nema-home .mc-nema-hero-grid {
+  .mc-nema-home .mc-nema-hero-grid.bp-shell {
+    box-sizing: border-box;
+    width: calc(100% - 16px);
+    max-width: none;
+    margin-left: auto;
+    margin-right: 16px;
+    padding-left: clamp(24px, 4vw, 52px);
+    padding-right: 0;
     grid-template-columns: minmax(0, 1fr);
     gap: 35px;
     padding-block: 57px 70px;
@@ -320,6 +339,16 @@
   .bp-header .bp-menu-button { width: 44px; height: 44px; }
 }
 @media (max-width: 800px) {
+  .mc-nema-home .mc-nema-hero::before {
+    background-image:
+      linear-gradient(92deg, rgba(0,0,0,.52), rgba(0,0,0,.27) 68%, rgba(0,0,0,.10)),
+      url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Buganda_Court_Building1.jpg/1920px-Buganda_Court_Building1.jpg");
+  }
+  .mc-nema-home .mc-nema-hero-grid.bp-shell {
+    width: min(calc(100% - 30px), 1320px);
+    margin-inline: auto;
+    padding-inline: 0;
+  }
   .mc-nema-home .mc-nema-hero-grid {
     grid-template-columns: minmax(0, 1fr);
     min-height: 0;
