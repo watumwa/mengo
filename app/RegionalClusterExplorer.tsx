@@ -73,7 +73,7 @@ export function RegionalClusterExplorer() {
             <div className={styles.network} aria-label="How the selected cluster connects to local committees">
               <div className={styles.networkNode}><strong>Mengo Chamber of Commerce</strong><small>Institutional coordination</small></div>
               <div className={styles.connector} aria-hidden="true"><span /></div>
-              <div className={[styles.networkNode,styles.networkSelected]}><strong>{active.name}</strong><small>Regional cluster committee</small></div>
+              <div className={[styles.networkNode,styles.networkSelected].join(" ")}><strong>{active.name}</strong><small>Regional cluster committee</small></div>
               <div className={styles.connector} aria-hidden="true"><span /></div>
               <div className={styles.committees}>
                 {active.city&&<div className={styles.committee}><strong>{active.city}</strong><small>City-level representation</small></div>}
