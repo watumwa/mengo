@@ -30,6 +30,24 @@ class Businesses(SearchableList):
  queryset=Business.objects.filter(published=True,verified=True).order_by("name")
  serializer_class=BusinessSerializer
  search_fields=("name","sector","district")
+ def get_queryset(self):
+  qs=super().get_queryset()
+  sector=self.request.query_params.get("sector","").strip()[:120]
+  district=self.request.query_params.get("district","").strip()[:100]
+  if sector: qs=qs.filter(sector__iexact=sector)
+  if district: qs=qs.filter(district__iexact=district)
+  return qs
+
+class BusinessDetail(generics.RetrieveAPIView):
+ permission_classes=[permissions.AllowAny]
+ serializer_class=BusinessSerializer
+ queryset=Business.objects.filter(published=True,verified=True)
+
+class DirectoryFilters(APIView):
+ permission_classes=[permissions.AllowAny]
+ def get(self,request):
+  qs=Business.objects.filter(published=True,verified=True)
+  return Response({"sectors":list(qs.order_by("sector").values_list("sector",flat=True).distinct()),"districts":list(qs.order_by("district").values_list("district",flat=True).distinct())})
 class Opportunities(SearchableList):
  serializer_class=OpportunitySerializer
  search_fields=("title","sector","category","description")

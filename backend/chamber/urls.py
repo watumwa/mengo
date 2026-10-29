@@ -11,6 +11,8 @@ urlpatterns=[
  path("staff/applications/<int:pk>/review/",views.ReviewApplication.as_view()),
  path("centres/",views.Centres.as_view()),
  path("businesses/",views.Businesses.as_view()),
+ path("businesses/filters/",views.DirectoryFilters.as_view()),
+ path("businesses/<int:pk>/",views.BusinessDetail.as_view()),
  path("opportunities/",views.Opportunities.as_view()),
  path("events/",views.Events.as_view()),
  path("articles/",views.Articles.as_view()),

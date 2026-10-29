@@ -91,3 +91,24 @@ class ApplicationTrackingTests(TestCase):
  def test_invalid_reference(self):
   response=self.client.post("/api/v1/membership/status/",{"reference":"not-a-uuid","email":"applicant@example.org"},format="json")
   self.assertEqual(response.status_code,400)
+
+class DirectoryVisibilityTests(TestCase):
+ def setUp(self):
+  self.client=APIClient()
+  self.public=Business.objects.create(name="Approved Enterprise",sector="Agriculture",district="Wakiso",published=True,verified=True,description="Trading and services")
+  self.hidden=Business.objects.create(name="Private Enterprise",sector="Trade",district="Kampala",published=False,verified=False)
+ def test_only_public_verified_are_listed(self):
+  response=self.client.get("/api/v1/businesses/")
+  self.assertEqual(response.status_code,200)
+  self.assertEqual(response.data["count"],1)
+ def test_details_of_hidden_business_are_not_public(self):
+  self.assertEqual(self.client.get(f"/api/v1/businesses/{self.hidden.pk}/").status_code,404)
+  self.assertEqual(self.client.get(f"/api/v1/businesses/{self.public.pk}/").status_code,200)
+ def test_directory_filter_excludes_hidden_values(self):
+  response=self.client.get("/api/v1/businesses/filters/")
+  self.assertEqual(response.status_code,200)
+  self.assertIn("Agriculture",response.data["sectors"])
+  self.assertNotIn("Trade",response.data["sectors"])
+ def test_exact_sector_filter(self):
+  response=self.client.get("/api/v1/businesses/?sector=Trade")
+  self.assertEqual(response.data["count"],0)
