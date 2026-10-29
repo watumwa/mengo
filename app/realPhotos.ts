@@ -29,6 +29,11 @@ export const realPhotos = {
     alt: "People in traditional Buganda attire",
     position: "center",
   },
+  palace: {
+    src: "https://upload.wikimedia.org/wikipedia/commons/0/07/The_Buganda_Kingdom_royal_Palace_in_Mengo%2C_Kampala.jpg",
+    alt: "The royal palace building at Mengo, Kampala, photographed by Samson Ssemakadde (CC0)",
+    position: "center 45%",
+  },
   heritage: {
     src: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Buganda_kingdom_Clan_heads_meeting_in_Bulange_Mmengo%2C_Kampala.09.jpg?width=1600",
     alt: "Real photograph of a Buganda Kingdom clan heads meeting at Bulange, by Samson Ssemakadde (2025), CC0",
