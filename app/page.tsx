@@ -105,9 +105,15 @@ export default function HomePage() {
               <Link href="/membership" className="mc-nema-primary-action">JOIN THE CHAMBER <ArrowRight size={17} /></Link>
             </div>
 
-            <aside className="mc-nema-service-panel" aria-label="Explore Mengo Chamber services">
-              {/* Keep the original MCCL inauguration group photograph. */}
-              <div className="mc-nema-panel-photo" role="img" aria-label="Mengo Chamber officials at the Chamber's inauguration" />
+            <aside className="mc-nema-service-panel mc-nema-news-panel" aria-label="Featured Chamber news and services">
+              <Link className="mc-hero-news-card" href="/insights/trade-exhibitions-business-growth" aria-label="Read Mengo Chamber news about trade exhibitions">
+                <ResponsivePhoto photo={realPhotos.chamberInauguration} width={880} height={588} sizes="(max-width: 760px) 100vw, 440px" />
+                <div className="mc-hero-news-overlay">
+                  <span>CHAMBER NEWS</span>
+                  <strong>Trade exhibitions can unlock business growth</strong>
+                  <small>READ THE STORY <ArrowUpRight size={14} aria-hidden="true"/></small>
+                </div>
+              </Link>
               <div className="mc-nema-panel-heading">
                 <span>WELCOME TO MCCL</span>
                 <h3>Connecting business to opportunity.</h3>
@@ -133,20 +139,6 @@ export default function HomePage() {
           {quickActions.map(({ label, href, icon: Icon }) => <Link href={href} key={label}><Icon size={24} /><span>{label}</span></Link>)}
         </div></section>
 
-
-        <section className="mc-featured-news" aria-labelledby="mc-featured-news-title">
-          <div className="bp-shell mc-featured-news-grid">
-            <Link className="mc-featured-news-photo" href="/insights/trade-exhibitions-business-growth" aria-label="Read the featured Chamber news">
-              <ResponsivePhoto photo={realPhotos.chamberInauguration} width={1000} height={665} sizes="(max-width: 760px) 100vw, 52vw" />
-            </Link>
-            <div className="mc-featured-news-copy">
-              <p className="mc-featured-news-label">CHAMBER NEWS <span aria-hidden="true">/</span> TRADE &amp; ENTERPRISE</p>
-              <h2 id="mc-featured-news-title">Mengo Chamber of Commerce Calls for Greater Participation in Trade Exhibitions to Drive Business Growth.</h2>
-              <p>The Chamber highlights the importance of trade exhibitions as opportunities for businesses to connect, showcase their products and reach new markets.</p>
-              <Link href="/insights/trade-exhibitions-business-growth" className="mc-featured-news-link">READ THE STORY <ArrowUpRight size={18} aria-hidden="true" /></Link>
-            </div>
-          </div>
-        </section>
 
         <section className="mc-nema-mandate" aria-labelledby="mandate-title">
           <div className="mc-nema-mandate-photos" aria-hidden="true">

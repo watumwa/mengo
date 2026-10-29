@@ -1,0 +1,35 @@
+/* Frontend-only phase 1: premium design foundations */
+:root{--navy:var(--chamber-legacy-navy);--navy2:var(--chamber-legacy-navy2);--gold:var(--chamber-legacy-gold);--cream:var(--chamber-legacy-cream);--ink:var(--chamber-legacy-ink);--muted:var(--chamber-legacy-muted);--line:var(--chamber-legacy-line);color-scheme:light}
+html{scroll-padding-top:90px}body{min-width:320px;-webkit-font-smoothing:antialiased}
+:where(a,button,input,select,textarea):focus-visible{outline:3px solid #b98a24;outline-offset:3px}
+::selection{background:#cba558;color:#0b2037}img{max-width:100%}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(max-width:420px){.container{width:calc(100% - 32px)}.editorial-hero h1{overflow-wrap:break-word}}
+
+/* Accessible navigation and consistent editorial surfaces */
+.skip-link{position:fixed;z-index:1000;top:-90px;left:16px;padding:12px 18px;background:#102844;color:white;border:2px solid #cba558;border-radius:5px}
+.skip-link:focus{top:12px}
+#main-content{min-height:45vh}
+.navlinks a[aria-current="page"]{color:#95671a}
+.navlinks a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:2px;background:#cba558}
+@media(max-width:900px){.navlinks a[aria-current="page"]::after{display:none}.navlinks a[aria-current="page"]{background:#fbf5e8;padding-left:12px}}
+@media(min-width:901px) and (max-width:1200px){.navlinks{gap:12px}.navinner{gap:10px}.navactions{gap:5px}.navactions .btn{padding-inline:11px}}
+
+/* Explore page — accessible directory of frontend routes */
+.site-index-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.site-index-card{background:#fff;border:1px solid #e5e9ed;border-radius:9px;padding:24px;box-shadow:0 8px 26px #1028440a}
+.site-index-heading{display:flex;align-items:center;gap:13px;border-bottom:1px solid #e5e9ed;padding-bottom:17px}
+.site-index-heading h2{font:700 22px/1.2 Georgia,serif;color:#102844;margin:0}
+.site-index-card ul{padding:8px 0 0;margin:0;list-style:none}
+.site-index-card li+li{border-top:1px solid #edf0f2}
+.site-index-card li a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;color:#233b50;font-size:13px;font-weight:600}
+.site-index-card li a:hover{color:#a47c35}
+.site-index-card li svg{flex-shrink:0;color:#a47c35}
+.site-index-note{color:#68788a;font-size:12px;line-height:1.7;margin:26px 0 0}
+@media(max-width:960px){.site-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.site-index-grid{grid-template-columns:1fr}.site-index-card{padding:20px}}
+
+/* Footer policy navigation */
+.footbottom>span:last-child{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.footbottom>span:last-child a{display:inline;color:#c9d4de;font-size:12px;line-height:1.5}
+.footbottom>span:last-child a:hover{color:#e4bd6b}

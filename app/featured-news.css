@@ -24,3 +24,17 @@
 .mc-news-body p{margin:0 0 22px}
 @media(max-width:760px){.mc-featured-news-grid{grid-template-columns:minmax(0,1fr)}.mc-featured-news-photo{aspect-ratio:1.45}.mc-featured-news-copy h2{font-size:clamp(28px,7vw,38px)}.mc-news-article{padding-bottom:65px}}
 @media(prefers-reduced-motion:reduce){.mc-featured-news-photo img,.mc-featured-news-link svg{transition:none!important}.mc-featured-news-photo:hover img{transform:none}}
+
+/* Featured news card integrated into the existing Bulange hero. */
+.mc-nema-news-panel{overflow:hidden}
+.mc-hero-news-card{position:relative;display:block;min-height:245px;height:clamp(245px,23vw,340px);overflow:hidden;background:#092743;color:#fff;isolation:isolate}
+.mc-hero-news-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 39%;transition:transform .55s ease}
+.mc-hero-news-card:after{content:"";position:absolute;inset:24% 0 0;background:linear-gradient(180deg,transparent 0%,rgba(5,22,45,.60) 45%,rgba(5,22,45,.96) 100%);z-index:0}
+.mc-hero-news-overlay{position:absolute;z-index:1;bottom:0;left:0;right:0;padding:clamp(18px,2.2vw,28px);display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.mc-hero-news-overlay span{font:800 10px/1.3 Arial,sans-serif;letter-spacing:.16em;color:#f3ca74}
+.mc-hero-news-overlay strong{font-size:clamp(19px,1.85vw,26px);line-height:1.23;max-width:350px;letter-spacing:-.025em}
+.mc-hero-news-overlay small{font-size:11px;letter-spacing:.06em;font-weight:800;display:inline-flex;gap:8px;align-items:center;color:#f3ca74;margin-top:5px}
+.mc-hero-news-card:hover img{transform:scale(1.035)}
+.mc-hero-news-card:focus-visible{outline:3px solid #e0b95e;outline-offset:-3px}
+@media(max-width:760px){.mc-hero-news-card{height:270px}.mc-hero-news-overlay strong{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.mc-hero-news-card img{transition:none!important}.mc-hero-news-card:hover img{transform:none}}

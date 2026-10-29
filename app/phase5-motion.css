@@ -1,0 +1,110 @@
+/* Phase 5: restrained motion — unobtrusive, accessible, and opt-in.
+   No content is hidden if JavaScript is disabled or motion is reduced. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-chamber-motion="ready"] .chamber-scroll-reveal {
+    opacity:0;
+    transform:translate3d(0,17px,0);
+    transition:
+      opacity .68s ease var(--chamber-reveal-delay,0ms),
+      transform .68s cubic-bezier(.18,.8,.25,1) var(--chamber-reveal-delay,0ms);
+  }
+  html[data-chamber-motion="ready"] .chamber-scroll-reveal.chamber-is-visible,
+  html[data-chamber-motion="ready"] .chamber-scroll-reveal:focus-within {
+    opacity:1;
+    transform:translate3d(0,0,0);
+  }
+  html[data-chamber-motion="ready"] .chamber-scroll-reveal.chamber-is-visible:is(a,article:has(a)):hover {
+    transform:translate3d(0,-3px,0);
+  }
+}
+
+/* Interactive cards receive feedback; static information does not pretend to be clickable. */
+.bp-editorial-page .bp-editorial-card-grid article:has(a) {
+  transition:border-color .23s ease,box-shadow .23s ease;
+}
+.bp-editorial-page .bp-editorial-card-grid article:has(a):hover,
+.bp-editorial-page .bp-editorial-card-grid article:has(a):focus-within {
+  border-color:#b8cad9;
+  box-shadow:0 13px 29px rgba(10,42,78,.10);
+}
+.bp-editorial-page .bp-editorial-card-grid article a svg {
+  transition:transform .22s ease;
+}
+.bp-editorial-page .bp-editorial-card-grid article a:hover svg,
+.bp-editorial-page .bp-editorial-card-grid article a:focus-visible svg {
+  transform:translateX(4px);
+}
+.bp-editorial-cta a svg,
+.mc-nema-primary-action svg,
+.mc-nema-quick-grid a svg {
+  transition:transform .23s ease;
+}
+.bp-editorial-cta a:hover svg,
+.bp-editorial-cta a:focus-visible svg,
+.mc-nema-primary-action:hover svg,
+.mc-nema-quick-grid a:hover svg {
+  transform:translateX(4px);
+}
+.mc-nema-quick-grid a {
+  transition:border-color .2s ease,color .2s ease;
+}
+.mc-client-gallery-card:focus-visible {
+  outline:3px solid var(--chamber-focus-ring,#cba558);
+  outline-offset:4px;
+}
+
+/* Preserve navigation legibility and prevent unnecessary parallax on touch devices. */
+@media (max-width:760px) and (prefers-reduced-motion:no-preference) {
+  html[data-chamber-motion="ready"] .chamber-scroll-reveal {
+    transform:translate3d(0,11px,0);
+    transition-duration:.5s;
+  }
+  html[data-chamber-motion="ready"] .chamber-scroll-reveal.chamber-is-visible,
+  html[data-chamber-motion="ready"] .chamber-scroll-reveal:focus-within {
+    transform:translate3d(0,0,0);
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .bp-editorial-page .bp-editorial-card-grid article:has(a),
+  .bp-editorial-page .bp-editorial-card-grid article a svg,
+  .bp-editorial-cta a svg,
+  .mc-nema-primary-action svg,
+  .mc-nema-quick-grid a svg,
+  .mc-nema-quick-grid a {
+    transition:none!important;
+  }
+  .bp-editorial-page .bp-editorial-card-grid article a:hover svg,
+  .bp-editorial-page .bp-editorial-card-grid article a:focus-visible svg,
+  .bp-editorial-cta a:hover svg,
+  .mc-nema-primary-action:hover svg,
+  .mc-nema-quick-grid a:hover svg {
+    transform:none;
+  }
+}
+
+
+/* Phase 6 quality pass: keyboard clarity, image stability and narrow screens. */
+:where(.bp-header,.mc-nema-home,.bp-editorial-page,.bp-footer) :is(a,button,input,select,textarea):focus-visible {
+  outline:3px solid #d2a54a;
+  outline-offset:3px;
+}
+:where(.bp-header,.mc-nema-home,.bp-editorial-page,.bp-footer) :is(a,button) {
+  -webkit-tap-highlight-color:rgba(19,63,111,.12);
+}
+:where(.mc-nema-home,.bp-editorial-page,.bp-footer) img {
+  max-width:100%;
+}
+:where(.mc-nema-home,.bp-editorial-page) :is(h1,h2,h3,p) {
+  overflow-wrap:break-word;
+}
+:where(.mc-nema-home,.bp-editorial-page) :is(.bp-shell,.mc-client-gallery-card,.mc-nema-service-panel) {
+  min-width:0;
+}
+@media(max-width:760px) {
+  .mc-nema-home,.bp-editorial-page {max-width:100%;overflow-x:clip}
+  .mc-nema-home :is(.mc-nema-quick-grid,.mc-nema-role-grid,.mc-client-gallery-grid,.mc-nema-priority-grid,.mc-nema-explore-grid) > * {min-width:0}
+  .bp-editorial-page .bp-editorial-card-grid > * {min-width:0}
+}
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto!important}
+}

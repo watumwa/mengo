@@ -1,0 +1,49 @@
+.section{padding:clamp(52px,6vw,78px) 0;background:#f5f8fb;color:#143a60}
+.shell{width:min(1220px,calc(100% - 40px));margin-inline:auto}
+.intro{max-width:910px;margin-bottom:29px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:11px;font-weight:900;letter-spacing:.14em;color:#a77c2f;margin:0 0 12px}
+.intro h2{font:700 clamp(33px,4vw,55px)/1.1 Georgia,serif;color:#10375f;letter-spacing:-.035em;margin:0 0 12px}
+.intro p:not(.eyebrow){font-size:16px;color:#5b768c;line-height:1.75;margin:0}
+.layout{display:grid;grid-template-columns:minmax(270px,350px) minmax(0,1fr);gap:22px;align-items:start}
+.controls{border:1px solid #dae5ed;border-radius:12px;background:#fff;padding:21px;box-shadow:0 6px 20px #0b3d6b0c}
+.search{display:flex;gap:9px;align-items:center;border:1px solid #d2e0ea;background:#f5f8fb;border-radius:7px;padding:10px 12px;margin-bottom:22px;color:#32658c}
+.search:focus-within{outline:2px solid #c7a15a}
+.search input{border:0;outline:0;background:transparent;width:100%;min-width:0;font-size:13px;color:#173f64}
+.visuallyHidden{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.controls h3{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:900;color:#1a4770;margin:0 0 13px}
+.regionList{display:grid;gap:7px}
+.regionButton{width:100%;display:flex;align-items:center;gap:10px;text-align:left;background:#fff;border:1px solid #e0e8ef;border-radius:7px;padding:12px 13px;color:#20496f;cursor:pointer}
+.regionButton>span{color:#bc984d;font-size:11px;font-weight:900;min-width:20px}
+.regionButton strong{font-size:13px;flex:1}
+.regionButton svg{flex:none}
+.regionButton:hover{background:#f5f8fb}
+.activeRegion{background:#103e70;border-color:#103e70;color:#fff}
+.activeRegion:hover{background:#103e70}
+.regionButton:focus-visible,.countyButton:focus-visible,.backToRegion:focus-visible{outline:3px solid #d1a044;outline-offset:2px}
+.noResults{font-size:12px;color:#627d92;margin:12px 0}
+.counties{margin-top:23px;border-top:1px solid #e1e9ef;padding-top:20px}
+.countyButtons{display:flex;flex-wrap:wrap;gap:8px}
+.countyButton{border:1px solid #d1e0e9;border-radius:20px;background:#f8fafc;color:#204a70;padding:8px 12px;font-size:12px;font-weight:800;cursor:pointer}
+.countyButton:hover{border-color:#bf9944}
+.selectedCounty{background:#d7b259;color:#163d61;border-color:#c39a39}
+.backToRegion{margin-top:15px;border:0;border-bottom:1px solid #b89442;padding:0 0 5px;background:none;font-size:12px;color:#17598b;font-weight:800;cursor:pointer}
+.city{font-size:11px;line-height:1.55;color:#6b8294;margin:15px 0 0}
+.googleMap{min-width:0}
+.boundaries{font-size:12px;color:#687e90;line-height:1.75;margin:15px 3px 0}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.controls{padding:17px}.regionList{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.shell{width:min(100% - 28px,1220px)}.regionList{grid-template-columns:1fr}.intro p:not(.eyebrow){font-size:14px}}
+
+
+/* Phase 5: clearly communicating county and region selection. */
+.regionButton,.countyButton{
+  transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.regionButton svg{transition:transform .22s ease}
+.regionButton:hover svg,.regionButton:focus-visible svg{transform:translateX(3px)}
+.activeRegion{box-shadow:0 5px 14px rgba(11,58,102,.17)}
+.countyButton:hover,.countyButton:focus-visible{background:#eef4f9}
+.selectedCounty:hover,.selectedCounty:focus-visible{background:#d7b259}
+@media(prefers-reduced-motion:reduce){
+  .regionButton,.countyButton,.regionButton svg{transition:none}
+  .regionButton:hover svg,.regionButton:focus-visible svg{transform:none}
+}

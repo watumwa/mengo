@@ -1,0 +1,98 @@
+.section{background:#f7f9fb;color:#173d63;padding:clamp(55px,7vw,95px) 0}
+.shell{width:min(1230px,calc(100% - 40px));margin:auto}
+.heading{max-width:830px;margin:0 0 34px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.13em;font-weight:900;color:#9f7b30;margin:0 0 14px}
+.heading h2{font:700 clamp(35px,4.1vw,59px)/1.07 Georgia,serif;letter-spacing:-.04em;margin:0 0 17px;color:#0c335c}
+.heading>p:not(.eyebrow){font-size:16px;line-height:1.75;color:#627b90;margin:0}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:24px}
+.metrics>div{display:grid;gap:5px;padding:20px 23px;background:#fff;border:1px solid #e0e8ef;border-radius:10px;border-top:1px solid #e0e8ef}
+.metrics strong{display:inline-flex;align-items:center;gap:7px;font-size:clamp(25px,2.7vw,37px);font-weight:900;letter-spacing:-.04em;color:#0c4d83}
+.metrics span{font-size:12px;font-weight:700;color:#617a8f}
+.workspace{display:grid;grid-template-columns:minmax(290px,.77fr) minmax(0,1.35fr);gap:20px;align-items:start}
+.browser{background:#fff;border:1px solid #dce6ef;padding:19px;border-radius:13px;box-shadow:0 8px 22px rgba(7,38,72,.045)}
+.search{display:flex;gap:9px;align-items:center;border:1px solid #cadbe9;background:#f7fafc;border-radius:8px;padding:0 10px 0 13px;min-height:46px;color:#36628a}
+.search:focus-within{outline:2px solid #d4b159}
+.search input{width:100%;background:transparent;border:0;outline:0;color:#183d62;font-size:13px;min-width:0}
+.search button{display:grid;place-items:center;flex:none;border:0;background:transparent;color:#385b7d;cursor:pointer;padding:4px}
+.srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.matches{color:#7890a0;font-size:11px;letter-spacing:.02em;margin:13px 0 15px}
+.regionList{display:grid;gap:9px}
+.region{display:flex;align-items:center;text-align:left;gap:12px;padding:15px 12px;border:1px solid #e0e8ef;border-radius:8px;background:#fff;cursor:pointer;color:#1e4970;transition:background .2s,border-color .2s,transform .2s}
+.region:hover{border-color:#9fbcd5;background:#f4f8fc;transform:translateX(2px)}
+.region:focus-visible,.county:focus-visible,.empty button:focus-visible{outline:3px solid #d9aa35;outline-offset:2px}
+.regionActive{background:#0e3e6c;border-color:#0e3e6c;color:#fff;box-shadow:0 8px 18px #0c3d6d30}
+.regionActive:hover{background:#0d426f;color:#fff}
+.regionNumber{font:700 16px Georgia,serif;color:#b38e35;min-width:25px}
+.regionCopy{display:grid;gap:5px;flex:1;min-width:0}
+.regionCopy strong{font-size:14px;line-height:1.2}
+.regionCopy small{font-size:11px;color:#7a90a4;line-height:1.45}
+.regionActive .regionCopy small{color:#d5e5f2}
+.empty{background:#f4f7fa;border-radius:8px;padding:23px;text-align:center;font-size:13px;color:#617b8f}
+.empty button{border:0;border-bottom:1px solid #bc9742;background:transparent;color:#14578e;padding:6px;cursor:pointer;font-weight:800}
+.detail{overflow:hidden;background:#fff;border:1px solid #dbe5ef;border-radius:13px;box-shadow:0 14px 28px #102e5011}
+.detailTop{padding:28px 30px 24px;background:linear-gradient(115deg,#082c56,#0c5187);color:white}
+.detailTop>span{display:flex;align-items:center;gap:8px;color:#efcf7e;font-size:11px;letter-spacing:.13em;font-weight:900}
+.detailTop h3{font:700 clamp(31px,3vw,44px)/1.08 Georgia,serif;margin:11px 0}
+.detailTop p{font-size:14px;line-height:1.7;color:#e3edf6;margin:0}
+.network{padding:24px 27px 5px;display:flex;flex-direction:column;align-items:center;background:linear-gradient(180deg,#f7fafc,#fff)}
+.networkNode,.committee{padding:11px 20px;text-align:center;border-radius:8px;background:#fff;border:1px solid #d2e1ed;width:min(100%,390px);box-shadow:0 4px 14px #193b5912}
+.networkNode strong,.committee strong{display:block;font-size:13px;color:#14416d}
+.networkNode small,.committee small{display:block;margin-top:3px;font-size:11px;color:#71889b}
+.networkSelected{background:#edcf85;border-color:#c4a151}
+.networkSelected strong{color:#173b5d}
+.committees{display:flex;justify-content:center;gap:12px;width:100%}
+.committee{width:min(100%,285px)}
+.connector{height:33px;position:relative;width:3px;background:#cfdfeb}
+.connector:after{content:"";position:absolute;bottom:-1px;left:-4px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid #a78029}
+.connector span{position:absolute;inset:0;background:#cba248;animation:clusterFlow 1.7s linear infinite;transform-origin:top}
+@keyframes clusterFlow{0%{transform:scaleY(0);opacity:.9}95%,100%{transform:scaleY(1);opacity:0}}
+.countySection{padding:25px 29px 30px}
+.countyHead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.countyHead h4{font-size:20px;color:#173c62;margin:0}
+.countyHead>span{font-size:11px;color:#8d6e2c;font-weight:800}
+.countyGrid{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0 20px}
+.county{border:1px solid #cbdbe8;border-radius:999px;background:#f7fafc;padding:9px 16px;color:#1b4a70;font-weight:800;font-size:12px;cursor:pointer}
+.county:hover{border-color:#b68b2f}
+.countyActive{background:#d8b051;border-color:#bd942c;color:#152f4e}
+.countyInfo{border-left:3px solid #cba04a;background:#f5f8fb;padding:18px 19px;border-radius:0 8px 8px 0}
+.countyInfo>span{display:flex;align-items:center;gap:7px;color:#8c6e2e;font-size:10px;font-weight:900;letter-spacing:.08em}
+.countyInfo>strong{display:block;color:#183b5e;font-size:20px;margin:8px 0}
+.countyInfo p{color:#5f778b;font-size:12px;line-height:1.65;margin:0 0 11px}
+.countyInfo a{display:inline-flex;align-items:center;gap:7px;color:#175a8c;font-size:12px;font-weight:850;text-decoration:underline;text-underline-offset:3px}
+.mapPanel{display:grid;grid-template-columns:.84fr 1.16fr;gap:28px;margin-top:24px;background:white;padding:27px;border:1px solid #dce6ef;border-radius:12px;align-items:center}
+.mapPanel h3{font:700 clamp(25px,2.6vw,37px)/1.16 Georgia,serif;color:#143b5f;margin:0 0 12px}
+.mapPanel p:not(.eyebrow){font-size:14px;color:#577189;line-height:1.75;margin:0 0 19px}
+.mapPanel a{display:inline-flex;align-items:center;gap:9px;color:#0e5389;font-weight:900;font-size:12px;border-bottom:2px solid #c79e3c;padding-bottom:5px}
+.mapPanel figure{margin:0;min-width:0}
+.mapPanel img{display:block;width:100%;height:auto;object-fit:contain;max-height:390px;border-radius:7px;background:#f7f8f9}
+.mapPanel figcaption{font-size:11px;color:#698396;margin-top:9px;line-height:1.45}
+.note{font-size:12px;color:#71879a;line-height:1.65;margin:17px 0 0}
+@media(max-width:990px){.workspace{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.regionList{grid-template-columns:repeat(2,minmax(0,1fr))}.mapPanel{grid-template-columns:1fr}}
+@media(max-width:680px){.shell{width:min(100% - 26px,1230px)}.metrics{gap:8px}.metrics>div{padding:14px 12px}.metrics strong{font-size:26px}.regionList{grid-template-columns:1fr}.browser{padding:14px}.detailTop{padding:24px 19px}.network{padding:20px 12px 4px}.countySection{padding:23px 17px}.committees{flex-wrap:wrap}.mapPanel{padding:18px}.countyHead{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.connector span{animation:none}.region{transition:none}.region:hover{transform:none}}
+
+/* Interactive Google Maps controls, replacing the old static county image. */
+.resetMap{display:block;margin:0 0 19px;border:0;border-bottom:2px solid #c79e3c;background:transparent;color:#0e5389;padding:0 0 5px;font-size:12px;font-weight:800;font-family:inherit;cursor:pointer;text-align:left}
+.resetMap:focus-visible{outline:3px solid #d9aa35;outline-offset:3px}
+.mapPanel>section{min-width:0}
+
+
+/* Phase 5: selected cluster and county respond without perpetual panel motion. */
+.region>svg:last-child{transition:transform .22s ease}
+.region:hover>svg:last-child,.region:focus-visible>svg:last-child{transform:translateX(4px)}
+.region:active{transform:translateX(1px)}
+.county{transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease}
+.county:focus-visible{box-shadow:0 0 0 2px #fff,0 0 0 5px #d9aa35}
+.detailTop{animation:chamberClusterDetailIn .38s cubic-bezier(.2,.78,.28,1) both}
+.countyInfo{animation:chamberClusterDetailIn .33s cubic-bezier(.2,.78,.28,1) both}
+.connector span{animation-duration:2.45s;opacity:.8}
+@keyframes chamberClusterDetailIn{
+  from{opacity:.65;transform:translate3d(0,8px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .region>svg:last-child,.county{transition:none}
+  .region:hover>svg:last-child,.region:focus-visible>svg:last-child{transform:none}
+  .region:active{transform:none}
+  .detailTop,.countyInfo{animation:none}
+}
