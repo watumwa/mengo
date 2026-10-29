@@ -2,7 +2,7 @@ import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
 export default function Insights(){
- return <BlueprintPage eyebrow="News & Insights" title="Stories from the Business Community" description="Follow the themes shaping enterprise development, trade and community opportunity in Buganda." image={realPhotos.enkuuka} imageCaption="A community gathering at CBS Enkuuka." gallery={[{ photo: realPhotos.birthdayRunGroup, label: "Kabaka Birthday Run public-interest campaign" }, { photo: realPhotos.businessForum, label: "Panel discussion from the BBS Business Forum" }]} sections={[
+ return <BlueprintPage presentation="journal" eyebrow="News & Insights" title="Stories from the Business Community" description="Follow the themes shaping enterprise development, trade and community opportunity in Buganda." image={realPhotos.enkuuka} imageCaption="A community gathering at CBS Enkuuka." gallery={[{ photo: realPhotos.birthdayRunGroup, label: "Kabaka Birthday Run public-interest campaign" }, { photo: realPhotos.businessForum, label: "Panel discussion from the BBS Business Forum" }]} sections={[
   {
     "eyebrow": "Areas of interest",
     "title": "Business, people and progress",

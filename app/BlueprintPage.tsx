@@ -7,12 +7,14 @@ import type { ChamberPhoto } from "./realPhotos";
 
 type ContentCard = { title: string; text: string; href?: string; label?: string };
 type ContentSection = { eyebrow: string; title: string; text: string; cards?: ContentCard[] };
+type EditorialPresentation = "classic" | "split" | "feature" | "journal";
 export type BlueprintPageProps = {
   eyebrow: string;
   title: string;
   description: string;
   image?: ChamberPhoto;
   feature?: ReactNode;
+  presentation?: EditorialPresentation;
   imageCaption?: string;
   gallery?: Array<{ photo: ChamberPhoto; label: string }>;
   source?: { label: string; href: string };
@@ -20,21 +22,34 @@ export type BlueprintPageProps = {
   action?: { label: string; href: string };
 };
 
-export function BlueprintPage({ eyebrow, title, description, image, feature, imageCaption, gallery, source, sections, action }: BlueprintPageProps) {
+export function BlueprintPage({ eyebrow, title, description, image, feature, presentation = "classic", imageCaption, gallery, source, sections, action }: BlueprintPageProps) {
+  const splitIntro = presentation === "split" && Boolean(image) && sections.length > 0;
   return <Shell>
-    <main className="bp-editorial-page">
+    <main className={`bp-editorial-page bp-editorial--${presentation}`}>
       <PageHero eyebrow={eyebrow} title={title} description={description} />
       {feature}
-      {(image || source) && <section className="bp-editorial-media"><div className="bp-shell">
+      {!splitIntro && (image || source) && <section className="bp-editorial-media"><div className="bp-shell">
         {image && <figure><ResponsivePhoto photo={image} width={1200} height={630} sizes="(max-width:800px) 100vw, 1100px" /><figcaption>{imageCaption ?? image.alt}</figcaption></figure>}
         {source && <a href={source.href} target="_blank" rel="noopener noreferrer" className="bp-source-link">{source.label} <ExternalLink size={15} aria-hidden="true" /></a>}
       </div></section>}
       <div className="bp-editorial-sections">{sections.map((section, index) =>
         <Fragment key={section.title}><section className={index % 2 ? "bp-editorial-section bp-editorial-section-soft" : "bp-editorial-section"} key={section.title}>
           <div className="bp-shell">
-            <p className="bp-eyebrow">{section.eyebrow}</p>
-            <h2>{section.title}</h2>
-            <p className="bp-editorial-lead">{section.text}</p>
+            {splitIntro && index === 0 ? <div className="bp-editorial-intro-split">
+              <div className="bp-editorial-intro-split-copy">
+                <p className="bp-eyebrow">{section.eyebrow}</p>
+                <h2>{section.title}</h2>
+                <p className="bp-editorial-lead">{section.text}</p>
+              </div>
+              <div className="bp-editorial-intro-split-media">
+                {image && <figure><ResponsivePhoto photo={image} width={1200} height={630} sizes="(max-width:760px) 100vw, 50vw" /><figcaption>{imageCaption ?? image.alt}</figcaption></figure>}
+                {source && <a href={source.href} target="_blank" rel="noopener noreferrer" className="bp-source-link">{source.label} <ExternalLink size={15} aria-hidden="true" /></a>}
+              </div>
+            </div> : <div className="bp-editorial-heading">
+              <p className="bp-eyebrow">{section.eyebrow}</p>
+              <h2>{section.title}</h2>
+              <p className="bp-editorial-lead">{section.text}</p>
+            </div>}
             {section.cards && <div className="bp-editorial-card-grid">{section.cards.map(card =>
               <article key={card.title}>
                 {card.label && <span>{card.label}</span>}

@@ -2,7 +2,7 @@ import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
 
 export default function KingdomHistory() {
-  return <BlueprintPage
+  return <BlueprintPage presentation="feature"
     eyebrow="Kingdom Heritage"
     title="Buganda's History & Heritage"
     description="A rich cultural history reflected in Buganda's institutions, language, traditions and historic places."

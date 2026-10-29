@@ -2,7 +2,7 @@ import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
 
 export default function CultureTourism() {
-  return <BlueprintPage
+  return <BlueprintPage presentation="feature"
     eyebrow="Culture & Tourism"
     title="Discover Buganda's Cultural Heritage"
     description="Historic places, traditional dress, crafts, language and ceremony are part of Buganda's living cultural landscape."

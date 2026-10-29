@@ -2,7 +2,7 @@ import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
 
 export default function Institutions() {
-  return <BlueprintPage
+  return <BlueprintPage presentation="split"
     eyebrow="Kingdom Institutions"
     title="Institutions & Community Life"
     description="Education, media, culture, enterprise and community organisations contribute in different ways to life across Buganda."

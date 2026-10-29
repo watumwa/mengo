@@ -2,7 +2,7 @@ import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
 export default function Opportunities(){
- return <BlueprintPage eyebrow="Market Opportunities" title="Trade, Markets & Partnerships" description="Explore the different ways enterprises can develop commercial relationships and reach new markets." image={realPhotos.marketStalls} imageCaption="A covered market aisle with traders and goods." gallery={[{ photo: realPhotos.coffeeExport, label: "Coffee export trade from Mwanyi Terimba" }, { photo: realPhotos.businessForum, label: "Trade and enterprise discussions at the BBS Business Forum" }]} sections={[
+ return <BlueprintPage presentation="feature" eyebrow="Market Opportunities" title="Trade, Markets & Partnerships" description="Explore the different ways enterprises can develop commercial relationships and reach new markets." image={realPhotos.marketStalls} imageCaption="A covered market aisle with traders and goods." gallery={[{ photo: realPhotos.coffeeExport, label: "Coffee export trade from Mwanyi Terimba" }, { photo: realPhotos.businessForum, label: "Trade and enterprise discussions at the BBS Business Forum" }]} sections={[
   {
     "eyebrow": "Business opportunities",
     "title": "Connections across the value chain",

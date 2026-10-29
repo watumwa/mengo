@@ -2,7 +2,7 @@ import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
 export default function Contact() {
-  return <BlueprintPage eyebrow="Contact the Chamber" title="Connect with Mengo Chamber" description="For membership, partnership, trade and investment enquiries, please use the Chamber's official communication channels."
+  return <BlueprintPage presentation="split" eyebrow="Contact the Chamber" title="Connect with Mengo Chamber" description="For membership, partnership, trade and investment enquiries, please use the Chamber's official communication channels."
      image={realPhotos.chamberInauguration} imageCaption="Mengo Chamber inauguration photograph. This is contextual imagery, not a photograph of the contact office" sections={[
   {
     "eyebrow": "General enquiries",

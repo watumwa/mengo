@@ -2,7 +2,7 @@ import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
 export default function About() {
-  return <BlueprintPage
+  return <BlueprintPage presentation="split"
     eyebrow="About the Chamber"
     title="Our Story & Mandate"
     description="Connecting enterprises, markets and partnerships to support stronger livelihoods across Buganda."

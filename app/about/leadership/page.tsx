@@ -2,7 +2,7 @@ import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
 
 export default function AboutLeadership() {
-  return <BlueprintPage
+  return <BlueprintPage presentation="journal"
     eyebrow="Chamber Leadership"
     title="Leadership & Governance"
     description="Institutional oversight and responsible stewardship are essential to a trusted business chamber."

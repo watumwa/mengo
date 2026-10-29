@@ -2,7 +2,7 @@ import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
 
 export default function Achievements() {
-  return <BlueprintPage
+  return <BlueprintPage presentation="journal"
     eyebrow="Kingdom Development"
     title="Community & Economic Development"
     description="Explore the themes connecting enterprise, institutions and community development across Buganda."

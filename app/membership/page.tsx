@@ -2,7 +2,7 @@ import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
 export default function Membership() {
-  return <BlueprintPage eyebrow="Membership" title="Connect with the Business Community" description="Discover how participation in a Chamber of Commerce can create connections, shared knowledge and a stronger business voice."
+  return <BlueprintPage presentation="feature" eyebrow="Membership" title="Connect with the Business Community" description="Discover how participation in a Chamber of Commerce can create connections, shared knowledge and a stronger business voice."
      image={realPhotos.businessForum} imageCaption="A business forum panel discussion, illustrating the value of industry connections." gallery={[{ photo: realPhotos.chamberInauguration, label: "Group photograph from the Chamber inauguration" }, { photo: realPhotos.enterpriseGroup, label: "Enterprise team photographed outside Rexba Ltd" }]} sections={[
   {
     "eyebrow": "Why membership matters",

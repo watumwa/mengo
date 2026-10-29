@@ -2,7 +2,7 @@ import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
 export default function Publications() {
-  return <BlueprintPage eyebrow="Reports & Publications" title="Knowledge, Research & Reports" description="Learn about the strategic documents and information resources that support business planning and Chamber priorities."
+  return <BlueprintPage presentation="journal" eyebrow="Reports & Publications" title="Knowledge, Research & Reports" description="Learn about the strategic documents and information resources that support business planning and Chamber priorities."
      image={realPhotos.businessForum} imageCaption="Business forum panel, illustrating the exchange of ideas and information" gallery={[{ photo: realPhotos.essuubiCommunity, label: "A publication presented at an Essuubi Lyo Zambogo office" }, { photo: realPhotos.chamberInauguration, label: "Group photograph from the Chamber's inauguration" }]} sections={[
   {
     "eyebrow": "Key documents",

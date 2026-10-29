@@ -1,7 +1,7 @@
 import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
-export default function Diaspora(){ return <BlueprintPage eyebrow="Diaspora & Enterprise" title="Connecting Buganda's Global Community" description="People living abroad can maintain strong links with local enterprise, culture and professional networks in Buganda." image={realPhotos.coffeeContainer} imageCaption="Coffee sacks in an export container, illustrating international market links." gallery={[{ photo: realPhotos.coffeeExport, label: "Coffee sacks moving towards export shipment" }, { photo: realPhotos.coffeeProducts, label: "Processed and packaged coffee products" }]} sections={[
+export default function Diaspora(){ return <BlueprintPage presentation="feature" eyebrow="Diaspora & Enterprise" title="Connecting Buganda's Global Community" description="People living abroad can maintain strong links with local enterprise, culture and professional networks in Buganda." image={realPhotos.coffeeContainer} imageCaption="Coffee sacks in an export container, illustrating international market links." gallery={[{ photo: realPhotos.coffeeExport, label: "Coffee sacks moving towards export shipment" }, { photo: realPhotos.coffeeProducts, label: "Processed and packaged coffee products" }]} sections={[
   {
     "eyebrow": "Global connections",
     "title": "Knowledge, markets and partnerships",

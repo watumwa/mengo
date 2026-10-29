@@ -2,7 +2,7 @@ import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
 
 export default function KingdomLeadership() {
-  return <BlueprintPage
+  return <BlueprintPage presentation="split"
     eyebrow="Kingdom Leadership"
     title="Traditional Leadership & Institutions"
     description="An introduction to the institutions and traditional leadership structures of the Kingdom of Buganda."
