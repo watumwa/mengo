@@ -210,3 +210,21 @@
   .mc-nema-mandate-photo{animation:none;opacity:0}
   .mc-nema-mandate-photo:first-child{opacity:1}
 }
+
+/* Prominent Twezimbe wordmark between the Chamber name and its tagline. */
+.mc-nema-hero .mc-nema-twezimbe{
+  margin:12px 0 4px;
+  color:#f9d17b;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(43px,4.4vw,62px);
+  font-weight:800;
+  letter-spacing:-.035em;
+  line-height:1.06;
+  text-shadow:0 2px 15px rgba(0,0,0,.30);
+}
+@media(max-width:560px){
+  .mc-nema-hero .mc-nema-twezimbe{
+    font-size:clamp(42px,10vw,52px);
+    margin:10px 0 5px;
+  }
+}
