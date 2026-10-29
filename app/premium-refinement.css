@@ -189,36 +189,36 @@
   padding: clamp(21px, 2.3vw, 30px);
   border: 0;
   border-radius: 0;
-  /* Noticeable transparency with just enough diffusion for readable text. */
-  background: rgba(255, 255, 255, .35);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  /* Readable against any hero image, while remaining subtly translucent. */
+  background: rgba(255, 255, 255, .80);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   box-shadow: none;
-  color: #173452;
+  color: #19364d;
 }
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
   .mc-nema-home .mc-nema-hero .mc-hero-slider-detail {
-    background: rgba(255, 255, 255, .65);
+    background: rgba(255, 255, 255, .92);
   }
 }
 .mc-nema-home .mc-nema-hero .mc-hero-slider-label {
-  color: #91691f !important;
-  font-size: 11px !important;
+  color: #714d0c !important;
+  font-size: 12px !important;
   font-weight: 850;
   letter-spacing: .13em;
 }
 .mc-nema-home .mc-nema-hero .mc-hero-slider-detail h3 {
-  color: #123D70;
-  font-size: clamp(22px, 2vw, 28px);
+  color: #102d50;
+  font-size: clamp(23px, 2.1vw, 29px);
   line-height: 1.22;
   letter-spacing: -.027em;
   max-width: 530px;
   text-wrap: balance;
 }
 .mc-nema-home .mc-nema-hero .mc-hero-slider-description {
-  font-size: 14px !important;
-  line-height: 1.7 !important;
-  color: #43546a !important;
+  font-size: 15px !important;
+  line-height: 1.72 !important;
+  color: #293e53 !important;
   max-width: 550px;
 }
 .mc-nema-home .mc-nema-hero .mc-hero-slider-bottom {
@@ -230,6 +230,8 @@
   display: inline-flex;
   align-items: center;
   letter-spacing: .065em;
+  font-size: 12px;
+  color: #102d50;
 }
 .mc-nema-home .mc-nema-hero .mc-hero-slider-controls button {
   width: 40px;
@@ -243,7 +245,7 @@
   background: #eaf1f6;
 }
 .mc-nema-home .mc-nema-hero .mc-hero-slider-controls span {
-  color: #425a70;
+  color: #263e54;
   font-size: 12px;
 }
 .mc-nema-home .mc-nema-hero :is(.mc-hero-slider-controls button,.mc-hero-slider-bottom > a):focus-visible {
