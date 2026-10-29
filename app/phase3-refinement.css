@@ -1,0 +1,310 @@
+/* Phase 3 — considered, premium header and homepage refinement.
+   No copy, links, genuine photographs or existing animation sequence changed. */
+
+.bp-nav-wrap{box-shadow:0 5px 17px rgba(7,28,53,.12)}
+.bp-nav-wrap{background:var(--chamber-navy-800)}
+.bp-nav{min-height:74px}
+.bp-nav>.bp-brand{gap:13px}
+.bp-nav>.bp-brand img{width:50px;height:57px}
+.bp-nav>.bp-brand strong{font-size:clamp(15px,1.2vw,17px);line-height:1.08}
+.bp-nav>.bp-brand b{font-size:10px;letter-spacing:.03em}
+.bp-nav>.bp-brand small{font-size:8px;letter-spacing:.095em}
+.bp-nav-link,.bp-nav-trigger{
+  position:relative;min-height:74px;
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:0 clamp(9px,.84vw,13px);
+  font-size:12px;
+  line-height:1.25;
+  transition:color .18s ease,background .18s ease;
+}
+.bp-nav-trigger svg{transition:transform .2s ease}
+.bp-nav-trigger[aria-expanded="true"] svg{transform:rotate(180deg)}
+.bp-nav-link[aria-current="page"],.bp-nav-trigger[aria-current="page"]{
+  color:#f7df9f;
+}
+.bp-nav-link[aria-current="page"]:after,.bp-nav-trigger[aria-current="page"]:after{
+  content:"";position:absolute;bottom:9px;left:16px;right:16px;
+  height:2px;border-radius:99px;background:#e7be65;
+}
+.bp-nav-link:hover,.bp-nav-trigger:hover,.bp-nav-trigger[aria-expanded="true"]{
+  background:rgba(255,255,255,.075);color:#ffe3a3;
+}
+.bp-nav-actions{gap:12px}
+.bp-search-button{
+  display:grid;place-items:center;flex:none;
+  width:39px;height:39px;
+  border:1px solid rgba(255,255,255,.45);
+  background:rgba(255,255,255,.04);
+  border-radius:10px;
+}
+.bp-search-button:hover{background:rgba(255,255,255,.14);color:#fff}
+.bp-join-button{
+  min-height:42px;padding:10px 17px;
+  background:#e5b848;border-color:#e5b848;
+  border-radius:8px;color:#102e56;
+  box-shadow:0 3px 12px rgba(0,0,0,.12);
+  font-size:11px;font-weight:850;
+}
+.bp-join-button:hover{background:#f1ca6b;border-color:#f1ca6b}
+@media(min-width:1151px){
+  .bp-mega-menu{
+    border:1px solid #dfe7ef;
+    border-top:1px solid #dfe7ef;
+    border-radius:0 0 14px 14px;
+    box-shadow:0 24px 62px rgba(8,31,60,.20);
+    padding:20px;
+  }
+  .bp-mega-intro{border-radius:9px}
+  .bp-mega-links a{
+    border-radius:7px;
+    padding:13px 14px;
+    transition:background-color .18s ease;
+  }
+  .bp-mega-links a:hover{background:#edf4fa}
+  .bp-mega-links strong{font-size:13px;line-height:1.4}
+  .bp-mega-links small{font-size:11px;line-height:1.5}
+}
+@media(max-width:1300px) and (min-width:1151px){
+  .bp-nav>.bp-brand{gap:9px;margin-right:16px}
+  .bp-nav>.bp-brand img{width:43px;height:50px}
+  .bp-nav>.bp-brand strong{font-size:14px}
+  .bp-nav>.bp-brand b{font-size:9px}
+  .bp-nav-link,.bp-nav-trigger{padding-inline:8px;font-size:11px}
+  .bp-nav-actions{gap:8px}
+  .bp-join-button{padding-inline:11px;font-size:10px}
+}
+@media(max-width:1150px){
+  .bp-nav{min-height:67px}
+  .bp-nav>.bp-brand{gap:10px}
+  .bp-nav>.bp-brand img{width:45px;height:52px}
+  .bp-menu-button{
+    display:grid;place-items:center;
+    width:45px;height:45px;flex:none;
+    border:1px solid rgba(255,255,255,.33);
+    border-radius:9px;background:rgba(255,255,255,.07);
+    color:#fff;
+  }
+  .bp-menu-button svg{width:24px;height:24px}
+  .bp-menu-button:hover{background:rgba(255,255,255,.15)}
+  .bp-mobile-nav{
+    border:1px solid #dfe7ef;
+    border-top:0;
+    border-radius:0 0 14px 14px;
+    box-shadow:0 18px 38px rgba(8,31,60,.17);
+  }
+  .bp-mobile-group>div:first-child a,.bp-mobile-direct{
+    font-size:15px;min-height:49px;
+  }
+  .bp-mobile-group>div:first-child button{
+    min-width:44px;min-height:44px;
+  }
+  .bp-mobile-subnav a{min-height:42px;font-size:13px}
+}
+@media(max-width:700px){
+  .bp-nav{min-height:63px}
+  .bp-nav>.bp-brand img{width:41px;height:47px}
+  .bp-nav>.bp-brand strong{font-size:12px}
+  .bp-nav>.bp-brand b{font-size:8px}
+  .bp-menu-button{width:43px;height:43px}
+}
+
+/* Original Bulange photograph retained; improve focus and legibility. */
+.mc-nema-hero{
+  min-height:clamp(560px,48vw,635px);
+  background:#08294e;
+}
+.mc-nema-hero:before{
+  background-image:
+    linear-gradient(100deg,rgba(0,0,0,.80) 0%,rgba(0,0,0,.69) 36%,rgba(0,0,0,.33) 67%,rgba(0,0,0,.14) 100%),
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Buganda_Court_Building1.jpg/1920px-Buganda_Court_Building1.jpg");
+  background-position:center,54% 32%;
+}
+.mc-nema-hero-grid{
+  grid-template-columns:minmax(0,1.13fr) minmax(335px,.78fr);
+  gap:clamp(28px,4.6vw,75px);
+  min-height:clamp(560px,48vw,635px);
+  padding-block:clamp(66px,6vw,95px);
+  align-items:center;
+}
+.mc-nema-hero-copy{min-width:0;max-width:720px}
+.mc-nema-hero h1{
+  max-width:700px;
+  margin-bottom:14px;
+  font-size:clamp(44px,4.8vw,70px);
+  line-height:1.045;
+  letter-spacing:-.047em;
+  text-wrap:balance;
+}
+.mc-nema-hero h1>.mc-nema-brand-description{
+  margin-top:9px;
+  font-size:clamp(23px,2.45vw,34px);
+  font-weight:650;
+  line-height:1.18;
+  letter-spacing:-.018em;
+}
+.mc-nema-hero .mc-nema-twezimbe{
+  margin:21px 0 10px;
+  font-size:clamp(35px,3.65vw,49px);
+  font-weight:750;
+  line-height:1.12;
+}
+.mc-nema-hero h2{
+  margin-bottom:18px;
+  font-size:clamp(20px,1.75vw,25px);
+  font-weight:650;
+  line-height:1.3;
+}
+.mc-nema-hero-rule{
+  max-width:440px;
+  height:2px;
+  background:linear-gradient(90deg,rgba(243,204,112,.92),rgba(243,204,112,.1));
+}
+.mc-nema-hero-summary{
+  max-width:490px;
+  margin:19px 0 27px;
+  color:#ecf3fd;
+  font-size:clamp(15px,1.3vw,17px);
+  line-height:1.7;
+}
+.mc-nema-hero-copy>.mc-nema-primary-action{
+  min-height:48px;
+  padding:15px 25px;
+  border:1px solid rgba(255,241,200,.65);
+  border-radius:9px;
+  background:#e2b84e;
+  color:#12345b;
+  box-shadow:0 9px 20px rgba(0,0,0,.18);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.035em;
+}
+.mc-nema-hero-copy>.mc-nema-primary-action:hover{
+  background:#f1cf78;
+  color:#12345b;
+  transform:translateY(-2px);
+  box-shadow:0 13px 25px rgba(0,0,0,.20);
+}
+.mc-nema-hero-copy>.mc-nema-primary-action:focus-visible{
+  outline:3px solid #fff;outline-offset:4px;
+}
+
+/* Original inauguration panel photograph and menu destinations preserved. */
+.mc-nema-service-panel{
+  width:min(100%,435px);
+  justify-self:end;
+  border:1px solid rgba(255,255,255,.86);
+  border-radius:16px;
+  box-shadow:0 22px 55px rgba(0,0,0,.26);
+}
+.mc-nema-panel-photo{
+  height:120px;
+  background-position:center 36%;
+}
+.mc-nema-panel-heading{padding:21px 24px 17px}
+.mc-nema-panel-heading span{
+  font-size:10px;
+  color:#866021;
+  letter-spacing:.12em;
+}
+.mc-nema-panel-heading h3{
+  margin:8px 0 0;
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.23;
+}
+.mc-nema-panel-heading p{
+  font-size:12px;
+  line-height:1.6;
+}
+.mc-nema-panel-services{
+  gap:0 18px;
+  padding:0 24px 24px;
+}
+.mc-nema-panel-services a{
+  min-height:60px;
+  gap:8px;
+  padding-block:11px;
+  border-bottom:1px solid #e6edf3;
+  color:#164c7c;
+}
+.mc-nema-panel-services a:hover{background:#f7fafc;color:#0a3f7b}
+.mc-nema-panel-services a strong{font-size:12px;line-height:1.35}
+.mc-nema-panel-services a>svg:last-child{transition:transform .2s ease}
+.mc-nema-panel-services a:hover>svg:last-child{transform:translate(2px,-2px)}
+.mc-nema-photo-credit{font-size:10px}
+
+/* Narrow desktop and tablet: stack to avoid headline and panel collisions. */
+@media(max-width:1050px){
+  .mc-nema-hero-grid{
+    grid-template-columns:minmax(0,1fr);
+    gap:34px;
+    padding-block:60px 75px;
+    min-height:auto;
+  }
+  .mc-nema-hero-copy{max-width:740px}
+  .mc-nema-service-panel{justify-self:start;width:min(100%,530px)}
+  .mc-nema-hero:before{
+    background-image:
+      linear-gradient(105deg,rgba(0,0,0,.83) 0%,rgba(0,0,0,.65) 60%,rgba(0,0,0,.35) 100%),
+      url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Buganda_Court_Building1.jpg/1920px-Buganda_Court_Building1.jpg");
+  }
+}
+@media(max-width:700px){
+  .mc-nema-hero{min-height:0}
+  .mc-nema-hero-grid{padding:46px 0 72px;gap:29px}
+  .mc-nema-hero h1{
+    font-size:clamp(35px,8.7vw,51px);
+    line-height:1.08;
+  }
+  .mc-nema-hero h1>.mc-nema-brand-description{
+    font-size:clamp(22px,5.15vw,29px);
+  }
+  .mc-nema-hero .mc-nema-twezimbe{
+    font-size:clamp(32px,7.5vw,42px);
+    margin:16px 0 8px;
+  }
+  .mc-nema-hero h2{font-size:clamp(19px,4.6vw,23px)}
+  .mc-nema-hero-summary{font-size:15px;line-height:1.65}
+  .mc-nema-service-panel{
+    width:min(100%,500px);
+    border-radius:13px;
+  }
+  .mc-nema-panel-heading{padding:18px 20px 13px}
+  .mc-nema-panel-services{padding:0 20px 19px;gap:0 12px}
+  .mc-nema-panel-services a{min-height:55px}
+  .mc-nema-photo-credit{
+    right:15px;left:15px;bottom:10px;
+    font-size:9px;text-align:left;
+  }
+}
+@media(max-width:420px){
+  .mc-nema-panel-services{grid-template-columns:1fr}
+  .mc-nema-panel-services a{min-height:47px}
+  .mc-nema-panel-photo{height:102px}
+  .mc-nema-hero-copy>.mc-nema-primary-action{
+    width:100%;max-width:310px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .bp-nav-trigger svg,.mc-nema-panel-services a>svg:last-child{
+    transition:none!important;
+  }
+  .mc-nema-hero-copy>.mc-nema-primary-action:hover{transform:none}
+}
+
+/* Clear navigation rhythm beneath the hero without altering its destinations. */
+.mc-nema-topic-nav a{
+  display:inline-flex;align-items:center;
+  min-height:48px;
+  font-size:11px;
+  letter-spacing:.015em;
+}
+.mc-nema-quick-grid a{
+  min-height:62px;
+  gap:14px;
+  font-size:11px;
+  line-height:1.4;
+}
+@media(max-width:700px){
+  .mc-nema-topic-nav a{min-height:46px;padding-inline:14px}
+  .mc-nema-quick-grid a{min-height:54px}
+}
