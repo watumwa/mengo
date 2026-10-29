@@ -278,3 +278,59 @@
   .mc-nema-hero h2{font-size:19px}
   .mc-nema-hero-summary{font-size:14px;line-height:1.6}
 }
+
+/* Editorial hero entrance: a single, staged reveal; no perpetual moving typography.
+   The Chamber name leads, followed by the descriptor, Twezimbe and the tagline. */
+@keyframes mcHeroTypeRise{
+  from{opacity:0;transform:translate3d(0,22px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+@keyframes mcHeroSoftRise{
+  from{opacity:0;transform:translate3d(0,12px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+@keyframes mcHeroLineUnfold{
+  from{opacity:0;transform:scaleX(.06)}
+  to{opacity:1;transform:scaleX(1)}
+}
+.mc-nema-hero h1>.mc-nema-brand-name{
+  display:block;
+  margin:0;
+  font-size:inherit;
+  font-weight:inherit;
+  line-height:inherit;
+  letter-spacing:inherit;
+  animation:mcHeroTypeRise .88s cubic-bezier(.18,.82,.22,1) .08s both;
+}
+.mc-nema-hero h1>.mc-nema-brand-description{
+  animation:mcHeroSoftRise .72s cubic-bezier(.18,.82,.22,1) .23s both;
+}
+.mc-nema-hero-copy>.mc-nema-twezimbe{
+  animation:mcHeroTypeRise .82s cubic-bezier(.18,.82,.22,1) .50s both;
+}
+.mc-nema-hero-copy>h2{
+  animation:mcHeroSoftRise .72s cubic-bezier(.18,.82,.22,1) .79s both;
+}
+.mc-nema-hero-copy>.mc-nema-hero-rule{
+  transform-origin:left center;
+  animation:mcHeroLineUnfold .78s cubic-bezier(.22,.76,.2,1) 1.02s both;
+}
+.mc-nema-hero-copy>.mc-nema-hero-summary{
+  animation:mcHeroSoftRise .66s cubic-bezier(.18,.82,.22,1) 1.12s both;
+}
+.mc-nema-hero-copy>.mc-nema-primary-action{
+  animation:mcHeroSoftRise .65s cubic-bezier(.18,.82,.22,1) 1.25s both;
+}
+@media(prefers-reduced-motion:reduce){
+  .mc-nema-hero h1>.mc-nema-brand-name,
+  .mc-nema-hero h1>.mc-nema-brand-description,
+  .mc-nema-hero-copy>.mc-nema-twezimbe,
+  .mc-nema-hero-copy>h2,
+  .mc-nema-hero-copy>.mc-nema-hero-rule,
+  .mc-nema-hero-copy>.mc-nema-hero-summary,
+  .mc-nema-hero-copy>.mc-nema-primary-action{
+    animation:none!important;
+    opacity:1!important;
+    transform:none!important;
+  }
+}

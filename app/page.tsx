@@ -97,7 +97,7 @@ export default function HomePage() {
         <section className="mc-nema-hero" aria-labelledby="home-title">
           <div className="bp-shell mc-nema-hero-grid">
             <div className="mc-nema-hero-copy">
-              <h1 id="home-title">Mengo Chamber <span>of Commerce Limited</span></h1>
+              <h1 id="home-title"><span className="mc-nema-brand-name">Mengo Chamber </span><span className="mc-nema-brand-description">of Commerce Limited</span></h1>
               <p className="mc-nema-twezimbe">Twezimbe</p>
               <h2>Uplifting Livelihoods.</h2>
               <div className="mc-nema-hero-rule" />
