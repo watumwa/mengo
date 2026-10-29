@@ -1,2 +1,26 @@
 import { BlueprintPage } from "../BlueprintPage";
-export default function Privacy(){return <BlueprintPage eyebrow="Legal / Privacy" title="Privacy information awaiting approval." description="MCCL's approved privacy notice and data-use information should be published here before personal-data forms are activated." sections={[{eyebrow:"Required policy",title:"Clear data-use notice.",text:"The final policy must identify the controller, purpose, lawful basis, retention, security, data-subject rights and contact route.",cards:[{title:"Membership data",text:"Explain application and member-data use once an authorised workflow exists."},{title:"Enquiries",text:"State how contact and investment-enquiry information is handled."},{title:"Cookies & analytics",text:"Disclose tools and choices before activation."}]}]} action={{label:"Accessibility commitment",href:"/accessibility"}}/>}
+
+export default function Privacy() {
+  return <BlueprintPage eyebrow="Privacy" title="Privacy & Personal Information" description="Information about how visitor and membership data may be handled on the Chamber website."
+     sections={[
+  {
+    "eyebrow": "Current information",
+    "title": "Formal privacy notice pending",
+    "text": "A formal MCCL privacy notice has not yet been published on this website. Do not use the demonstration interfaces to submit confidential or sensitive information.",
+    "cards": [
+      {
+        "title": "Membership enquiries",
+        "text": "Any future application process should explain what data is collected and why."
+      },
+      {
+        "title": "Your information",
+        "text": "A published policy should explain retention, access and correction rights."
+      },
+      {
+        "title": "External sites",
+        "text": "When following external links, review the privacy information on those websites."
+      }
+    ]
+  }
+]} action={{"label":"Website accessibility","href":"/accessibility"}} />;
+}

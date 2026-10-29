@@ -23,27 +23,27 @@ const navigation: NavigationItem[] = [
   ] },
   { label: "Chamber", href: "/about", items: [
     { label: "Our Story & Mandate", href: "/about", description: "MCCL's role and institutional purpose" },
-    { label: "Leadership & Governance", href: "/about/leadership", description: "Approved profiles and accountability" },
+    { label: "Leadership & Governance", href: "/about/leadership", description: "Leadership and institutional roles" },
     { label: "Our Strategy", href: "/strategy", description: "Vision, priorities and business impact" },
     { label: "Membership", href: "/membership", description: "Who can join and how to participate" },
     { label: "Services", href: "/services", description: "Confirmed Chamber support pathways" },
   ] },
   { label: "Economy", href: "/economy", items: [
     { label: "Economic Sectors", href: "/economy/sectors", description: "Sectors, institutions and context" },
-    { label: "Business Directory", href: "/businesses", description: "Clearly labelled demonstration records" },
+    { label: "Business Directory", href: "/businesses", description: "Enterprise and sector information" },
     { label: "SACCOs & Cooperatives", href: "/cooperatives", description: "Cooperative enterprise discovery" },
     { label: "Commercial Centres", href: "/commercial-centres", description: "Markets and trading areas" },
-    { label: "Economic Map", href: "/economic-map", description: "Verified places and mapped context" },
+    { label: "Economic Map", href: "/economic-map", description: "Regional business geography" },
   ] },
   { label: "Invest", href: "/invest", items: [
-    { label: "Investment Projects", href: "/invest", description: "Status-labelled editorial project portfolio" },
-    { label: "Trade Opportunities", href: "/opportunities", description: "Verified opportunities when published" },
+    { label: "Trade & Investment", href: "/invest", description: "Sectors, partnerships and market links" },
+    { label: "Trade Opportunities", href: "/opportunities", description: "Trade and partnership information" },
     { label: "Investor Enquiries", href: "/contact?subject=investment", description: "Start an investment conversation" },
   ] },
   { label: "Updates", href: "/insights", items: [
-    { label: "Latest News", href: "/insights", description: "Verified stories and source-led updates" },
-    { label: "Events Calendar", href: "/events-calendar", description: "Confirmed events when announced" },
-    { label: "Publications & Reports", href: "/publications", description: "Approved documents and resources" },
+    { label: "Latest News", href: "/insights", description: "Business stories and updates" },
+    { label: "Events Calendar", href: "/events-calendar", description: "Forums, workshops and networking" },
+    { label: "Publications & Reports", href: "/publications", description: "Research and strategic information" },
   ] },
   { label: "Contact", href: "/contact" },
 ];
@@ -73,7 +73,7 @@ const footerColumns = [
   { title: "Resources", links: [["Publications", "/publications"], ["Business Directory", "/businesses"], ["Commercial Centres", "/commercial-centres"], ["Accessibility", "/accessibility"], ["Privacy", "/privacy"]] },
 ];
 
-export function Footer() { return <footer className="bp-footer"><div className="bp-shell"><div className="bp-footer-grid"><div className="bp-footer-brand"><Brand/><p>Mengo Chamber of Commerce Limited is a business-facing institution that helps showcase, connect and enable enterprise participation across Buganda.</p><Link href="/contact" className="bp-footer-contact">Get in touch <ArrowRight size={15}/></Link></div>{footerColumns.map((column) => <div key={column.title}><h2>{column.title}</h2>{column.links.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</div>)}<div className="bp-footer-note"><h2>Stay informed</h2><p>Official MCCL updates, events and publications will be shared here as they are confirmed.</p><Link href="/insights">Read the latest updates <ArrowRight size={15}/></Link></div></div><div className="bp-footer-bottom"><span>© 2026 Mengo Chamber of Commerce Limited. All rights reserved.</span><span>Content and imagery are subject to editorial verification and rights clearance.</span></div></div></footer>; }
+export function Footer() { return <footer className="bp-footer"><div className="bp-shell"><div className="bp-footer-grid"><div className="bp-footer-brand"><Brand/><p>Mengo Chamber of Commerce Limited is a business-facing institution that helps showcase, connect and enable enterprise participation across Buganda.</p><Link href="/contact" className="bp-footer-contact">Contact information <ArrowRight size={15}/></Link></div>{footerColumns.map((column) => <div key={column.title}><h2>{column.title}</h2>{column.links.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</div>)}<div className="bp-footer-note"><h2>Stay informed</h2><p>Explore the Chamber's business themes, event information and publications.</p><Link href="/insights">Explore news and insights <ArrowRight size={15}/></Link></div></div><div className="bp-footer-bottom"><span>© 2026 Mengo Chamber of Commerce Limited. All rights reserved.</span></div></div></footer>; }
 
 export function Shell({ children }: { children: React.ReactNode }) { return <><Header/><div id="main-content">{children}</div><Footer/></>; }
 

@@ -1,2 +1,43 @@
 import { BlueprintPage } from "../BlueprintPage";
-export default function EconomicMap(){return <BlueprintPage eyebrow="Buganda Economy / Economic Map" title="A map built from verified places." description="The blueprint's economic map will connect approved institutions, markets, investments and Chamber events with meaningful category filters and accessible list fallback." sections={[{eyebrow:"Map standard",title:"Geography must be useful and true.",text:"A single broad Google Maps embed is not presented as an economic map. Pin data, images, category, source and precise coordinates must be verified before interactive mapping is enabled.",cards:[{title:"Confirmed places",text:"Institutions, markets, investment sites and Chamber events require a source-backed location record."},{title:"Verified boundaries",text:"Traditional county boundaries appear only when authoritative GIS data is approved."},{title:"Accessible list view",text:"Every map record also appears in a searchable, keyboard-usable list."}]},{eyebrow:"Regional context",title:"Six planning clusters, clearly labelled.",text:"The Chamber's Greater Kampala, Mpigi, Masaka, Mityana, Luweero and Mukono clusters are planning context—not substitute administrative boundaries or fabricated business counts.",cards:[{title:"Category filters",text:"Visitors will filter approved records by type, sector and regional context."},{title:"Map popups",text:"Each popup will show a real image, concise description and source reference."},{title:"Data stewardship",text:"Location records require an owner, verification date and update process."}]}]} action={{label:"Explore Masaza geography",href:"/kingdom/masaza"}}/>}
+
+export default function EconomicMap() {
+  return <BlueprintPage eyebrow="Regional Economy" title="Discover Buganda's Business Regions" description="Geography helps explain how markets, production areas, institutions and trading links connect across Buganda."
+     sections={[
+  {
+    "eyebrow": "Regional connections",
+    "title": "Six planning clusters",
+    "text": "The Chamber's strategic framework identifies the Greater Kampala, Mpigi, Masaka, Mityana, Luweero and Mukono areas as regional economic clusters.",
+    "cards": [
+      {
+        "title": "Greater Kampala",
+        "text": "Urban trade, services, business networks and regional market links."
+      },
+      {
+        "title": "Greater Masaka & Mpigi",
+        "text": "Agricultural production, local enterprise and movement to wider markets."
+      },
+      {
+        "title": "Greater Mityana, Luweero & Mukono",
+        "text": "Enterprise, transport links and different agricultural and commercial activities."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Understanding places",
+    "title": "Regional clusters and traditional counties",
+    "text": "Economic planning clusters are not the same as Buganda's Masaza or Uganda's district boundaries. An interactive map with individual business records is not yet available on this page.",
+    "cards": [
+      {
+        "title": "Masaza",
+        "text": "Explore Buganda's traditional geography.",
+        "href": "/kingdom/masaza"
+      },
+      {
+        "title": "Commercial centres",
+        "text": "Learn about trading centres and markets.",
+        "href": "/commercial-centres"
+      }
+    ]
+  }
+]} action={{"label":"Explore commercial centres","href":"/commercial-centres"}} />;
+}

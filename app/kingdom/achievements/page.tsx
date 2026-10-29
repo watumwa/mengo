@@ -1,2 +1,48 @@
 import { BlueprintPage } from "../../BlueprintPage";
-export default function Achievements(){return <BlueprintPage eyebrow="Kingdom Achievements" title="Achievements with evidence." description="A future collection of completed, ongoing and proposed initiatives, clearly separated by verified status." sections={[{eyebrow:"Editorial model",title:"Evidence is the feature.",text:"An achievement record must show the implementing organisation, location, dates, source, verified status and measurable outcome only where it is substantiated.",cards:[{title:"Completed achievements",text:"Publish only where completion and outcome can be documented."},{title:"Ongoing programmes",text:"State current status and responsible organisation with a current source."},{title:"Proposed initiatives",text:"Clearly label ideas and proposals so they cannot be mistaken for live delivery."}]},{eyebrow:"Story format",title:"No decorative claims.",text:"Feature stories will use an actual photograph of the named activity, photo credit, source link and careful editorial summary.",cards:[{title:"Agriculture",text:"Sector stories will need specific documentary evidence."},{title:"Infrastructure",text:"Project photography must match the exact site and status."},{title:"Tourism & enterprise",text:"Outcomes and ownership require independent confirmation."}]}]} action={{label:"Read news and insights",href:"/insights"}}/>}
+
+export default function Achievements() {
+  return <BlueprintPage
+    eyebrow="Kingdom Development"
+    title="Community & Economic Development"
+    description="Explore the themes connecting enterprise, institutions and community development across Buganda."
+    sections={[
+  {
+    "eyebrow": "Areas of contribution",
+    "title": "Development that matters to communities",
+    "text": "Agriculture, education, health, heritage, enterprise and infrastructure are important areas for community livelihoods and institutional engagement.",
+    "cards": [
+      {
+        "title": "Agriculture and enterprise",
+        "text": "Production, value addition, trade and community enterprise create links across the economy."
+      },
+      {
+        "title": "Education and skills",
+        "text": "Learning and skills development help prepare people for employment and entrepreneurship."
+      },
+      {
+        "title": "Culture and tourism",
+        "text": "Heritage conservation and visitor activity contribute to Buganda's social and economic landscape."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Chamber connections",
+    "title": "Where enterprise fits in",
+    "text": "The Chamber's role is to help promote commerce and business participation. Programme achievements should be attributed to the organisations responsible for them.",
+    "cards": [
+      {
+        "title": "Business services",
+        "text": "Explore enterprise support priorities.",
+        "href": "/services"
+      },
+      {
+        "title": "Economic sectors",
+        "text": "Discover sectors connected to local development.",
+        "href": "/economy/sectors"
+      }
+    ]
+  }
+]}
+    action={{"label":"Explore economic sectors","href":"/economy/sectors"}}
+  />;
+}

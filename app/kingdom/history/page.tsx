@@ -1,3 +1,54 @@
 import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
-export default function KingdomHistory(){return <BlueprintPage eyebrow="Kingdom Heritage" title="History, heritage and cultural continuity." description="A source-led space for Buganda's historical narrative, archival material and heritage conservation." image={realPhotos.bulange} imageCaption="Bulange, Mengo — authentic architecture photograph; source and licence recorded in the image metadata." source={{label:"Official Buganda Kingdom information",href:"https://buganda.or.ug/"}} sections={[{eyebrow:"Historical narrative",title:"Tell the story by era.",text:"The final narrative will use authoritative dates, archive references and reviewed cultural context rather than unsupported summaries.",cards:[{title:"Origins & early Kingdom",text:"Historical context, source references and chronology to be approved by cultural and historical editors."},{title:"Colonial and post-independence eras",text:"Explain changes carefully using named sources and dated records."},{title:"Heritage conservation",text:"Document current conservation activity only with the responsible institution's evidence."}]},{eyebrow:"Archive standards",title:"Every image carries its provenance.",text:"Archival imagery will include a caption, date, photographer or collection, licence and source link.",cards:[{title:"Clans & language",text:"Cultural material will be developed with appropriate context and review."},{title:"Customs & living heritage",text:"Respect cultural protocols, permissions and the distinction between public and sacred practice."},{title:"Related official sources",text:"External references will remain clearly attributable to their publishers."}]}]} action={{label:"Explore Kingdom overview",href:"/kingdom"}}/>}
+
+export default function KingdomHistory() {
+  return <BlueprintPage
+    eyebrow="Kingdom Heritage"
+    title="Buganda's History & Heritage"
+    description="A rich cultural history reflected in Buganda's institutions, language, traditions and historic places."
+    image={realPhotos.bulange}
+    imageCaption="Bulange, Mengo — an important centre of the Kingdom's administrative life."
+    source={{"label":"Official Buganda Kingdom information","href":"https://buganda.or.ug/"}}
+    sections={[
+  {
+    "eyebrow": "Living history",
+    "title": "A heritage carried across generations",
+    "text": "The Kingdom's historical narrative includes its traditional leadership, political changes, community life and cultural practices.",
+    "cards": [
+      {
+        "title": "Origins and leadership",
+        "text": "Explore the development of the Kingdom and the traditional structures of governance."
+      },
+      {
+        "title": "Historical transitions",
+        "text": "Understand how institutions and society have evolved over time."
+      },
+      {
+        "title": "Preservation",
+        "text": "Heritage buildings, records, language and customs help connect past and present."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Cultural identity",
+    "title": "Traditions that remain part of daily life",
+    "text": "Language, clan identity, crafts, dress and ceremony continue to shape Buganda's cultural landscape.",
+    "cards": [
+      {
+        "title": "Language and identity",
+        "text": "Luganda and shared cultural expressions remain central to community life."
+      },
+      {
+        "title": "Historic places",
+        "text": "Discover architecture and landmarks associated with the Kingdom."
+      },
+      {
+        "title": "Further reading",
+        "text": "Consult the Kingdom's official sources for historical accounts and records."
+      }
+    ]
+  }
+]}
+    action={{"label":"Explore the Kingdom","href":"/kingdom"}}
+  />;
+}

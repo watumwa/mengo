@@ -1,4 +1,60 @@
 import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
-export const metadata={title:"Our Kingdom | Mengo Chamber of Commerce",description:"A curated introduction to Buganda's heritage, institutions, economy and geography."};
-export default function Kingdom(){return <BlueprintPage eyebrow="Our Kingdom" title="A proud heritage. A prosperous future." description="A curated introduction to Buganda's cultural identity, institutions, economic contributions and geographic context—without presenting MCCL as the Kingdom's government." image={realPhotos.bulange} imageCaption="Bulange, Mengo — authentic photograph of the Buganda Kingdom administrative headquarters; CC BY-SA 4.0." source={{label:"Official Buganda Kingdom website",href:"https://buganda.or.ug/"}} sections={[{eyebrow:"Kingdom at a glance",title:"Rooted in history. Focused on tomorrow.",text:"The overview connects historical and cultural context to pathways for responsible enterprise, education, health, trade and community development.",cards:[{title:"Heritage and history",text:"Source-led eras, archival material and heritage conservation.",href:"/kingdom/history"},{title:"Leadership and governance",text:"Cultural roles and institutions with official reference links.",href:"/kingdom/leadership"},{title:"Masaza and Gombolola",text:"Traditional county context kept distinct from modern districts.",href:"/kingdom/masaza"}]},{eyebrow:"Institutions and achievements",title:"Discover what the ecosystem has built.",text:"Institution and achievement stories will identify the real operator, location, source, status and approved image.",cards:[{title:"Kingdom institutions",text:"Education, media, enterprise, culture and community profiles.",href:"/kingdom/institutions"},{title:"Economic achievements",text:"Completed, ongoing and proposed work separated by verified status.",href:"/kingdom/achievements"},{title:"Culture and tourism",text:"Heritage destinations and cultural features with appropriate permissions.",href:"/kingdom/culture-tourism"}]},{eyebrow:"Connection to MCCL",title:"Honouring heritage. Enabling commerce.",text:"MCCL helps showcase, connect and enable business participation. The Chamber's services and membership role are separate from cultural and government institutions.",cards:[{title:"The Chamber",text:"Learn about MCCL's mandate and strategic direction.",href:"/about"},{title:"Buganda economy",text:"Explore sectors, business discovery and trade context.",href:"/economy"},{title:"Investment pathways",text:"View transparent, status-aware investment information.",href:"/invest"}]}]} action={{label:"Explore the Masaza map",href:"/kingdom/masaza"}}/>}
+
+export default function Kingdom() {
+  return <BlueprintPage
+    eyebrow="The Kingdom of Buganda"
+    title="Heritage, Identity & Opportunity"
+    description="Explore Buganda's cultural heritage, traditional institutions and the communities that shape its social and economic life."
+    image={realPhotos.bulange}
+    imageCaption="Bulange, Mengo — the Buganda Kingdom's administrative headquarters. Photograph credited in the source."
+    source={{"label":"Visit the Buganda Kingdom website","href":"https://buganda.or.ug/"}}
+    sections={[
+  {
+    "eyebrow": "Discover Buganda",
+    "title": "A living heritage",
+    "text": "Buganda's history and cultural institutions form an important part of the region's identity. Explore the places, traditions and structures that give this heritage its distinctive character.",
+    "cards": [
+      {
+        "title": "History & heritage",
+        "text": "Learn about Buganda's historical context and living traditions.",
+        "href": "/kingdom/history"
+      },
+      {
+        "title": "Kingdom leadership",
+        "text": "Explore traditional leadership and institutional roles.",
+        "href": "/kingdom/leadership"
+      },
+      {
+        "title": "Masaza & Gombolola",
+        "text": "Learn about Buganda's traditional counties and local geography.",
+        "href": "/kingdom/masaza"
+      }
+    ]
+  },
+  {
+    "eyebrow": "People and places",
+    "title": "From heritage to community life",
+    "text": "Education, culture, commerce and community institutions are all part of Buganda's wider story.",
+    "cards": [
+      {
+        "title": "Institutions",
+        "text": "Explore Kingdom-linked institutions and their different roles.",
+        "href": "/kingdom/institutions"
+      },
+      {
+        "title": "Culture & tourism",
+        "text": "Discover the cultural and tourism dimensions of the Kingdom.",
+        "href": "/kingdom/culture-tourism"
+      },
+      {
+        "title": "Buganda economy",
+        "text": "Explore the sectors and enterprises contributing to local livelihoods.",
+        "href": "/economy"
+      }
+    ]
+  }
+]}
+    action={{"label":"Discover the Chamber","href":"/about"}}
+  />;
+}

@@ -1,8 +1,42 @@
-"use client";
-import {useMemo,useState} from "react";
-import Link from "next/link";
-import {Search,ArrowUpRight,BriefcaseBusiness,MapPin} from "lucide-react";
-import {Shell} from "../components";
-import {useChamberRecords} from "../hooks/useChamberRecords";
-type Opportunity={id:number;title:string;category:string;sector:string;district:string;description:string;closes_at:string|null};
-export default function Opportunities(){const {records:opportunities,loading,error}=useChamberRecords<Opportunity>("opportunities");const [query,setQuery]=useState("");const [category,setCategory]=useState("All opportunities");const cats=["All opportunities",...new Set(opportunities.map(x=>x.category))];const results=useMemo(()=>opportunities.filter(x=>(category==="All opportunities"||x.category===category)&&JSON.stringify(x).toLowerCase().includes(query.toLowerCase())),[query,category,opportunities]);return <Shell><section className="directoryhero opportunityhero"><div className="container"><div className="kicker">Connecting traders to markets</div><h1>Market Opportunities</h1><p>Discover trade connections, buyer and supplier networks, partnerships and enterprise development pathways.</p></div></section><section className="section cream"><div className="container"><div className="directory-next"><BriefcaseBusiness size={25}/><div><h3>Explore the new Opportunity Exchange</h3><p>Filter potential trade, investment and partnership opportunities by type and region.</p></div><Link href="/exchange">Open Exchange <ArrowUpRight size={16}/></Link></div><p className="notice">Preview opportunities only. Details are illustrative and not verified.</p><div className="filters filterrow"><label className="searchbox"><Search size={18}/><input aria-label="Search opportunities" placeholder="Search opportunities..." value={query} onChange={e=>setQuery(e.target.value)}/></label><select aria-label="Filter opportunity type" value={category} onChange={e=>setCategory(e.target.value)}>{cats.map(x=><option key={x}>{x}</option>)}</select></div><div className="featuregrid">{results.map(x=><article className="featurecard" key={x.id}><span className="serviceicon"><BriefcaseBusiness size={24}/></span><p className="tag">{x.category} · {x.sector}</p><h3>{x.title}</h3><p>{x.description}</p><p><MapPin size={14}/> {x.district}</p><Link className="textlink" href="/contact">Enquire about opportunity <ArrowUpRight size={15}/></Link></article>)}</div>{loading&&<div className="empty">Loading opportunities...</div>}{error&&<div role="alert" className="empty">{error}</div>}{!loading&&!error&&results.length===0&&<div className="empty">No preview opportunities match your search.</div>}</div></section></Shell>}
+import { BlueprintPage } from "../BlueprintPage";
+
+export default function Opportunities(){
+ return <BlueprintPage eyebrow="Market Opportunities" title="Trade, Markets & Partnerships" description="Explore the different ways enterprises can develop commercial relationships and reach new markets." sections={[
+  {
+    "eyebrow": "Business opportunities",
+    "title": "Connections across the value chain",
+    "text": "Market access often depends on clear product standards, reliable suppliers, distribution networks and the right business relationships.",
+    "cards": [
+      {
+        "title": "Buyer–supplier links",
+        "text": "Connections between producers, distributors, retailers and service providers."
+      },
+      {
+        "title": "Business partnerships",
+        "text": "Collaboration in areas such as processing, logistics, technology and skills."
+      },
+      {
+        "title": "Trade readiness",
+        "text": "Information, standards, packaging and commercial preparation for wider markets."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Opportunity notices",
+    "title": "Check live availability",
+    "text": "There are no independently verified live offers or tenders listed in this section at present. Confirm any specific commercial opportunity with the organisation issuing it.",
+    "cards": [
+      {
+        "title": "Economic sectors",
+        "text": "Discover sector-level business opportunities.",
+        "href": "/economy/sectors"
+      },
+      {
+        "title": "Investment",
+        "text": "Explore investment themes and Chamber priorities.",
+        "href": "/invest"
+      }
+    ]
+  }
+]} action={{"label":"Explore trade & investment","href":"/invest"}} />;
+}

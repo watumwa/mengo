@@ -1,10 +1,40 @@
-import Link from "next/link";
-import {ArrowUpRight,Globe2,Handshake,BriefcaseBusiness,GraduationCap,MapPinned} from "lucide-react";
-import {Shell} from "../components";
-const pathways=[
- {title:"Diaspora business connections",icon:Handshake,detail:"Explore prospective partnerships between enterprises in Buganda and Ugandan professionals or businesses abroad.",href:"/connect"},
- {title:"Investment and enterprise development",icon:BriefcaseBusiness,detail:"Discover sectors and proposed pathways for trade, investment and entrepreneurship.",href:"/invest"},
- {title:"Skills, knowledge and mentorship",icon:GraduationCap,detail:"Explore future opportunities for professional knowledge exchange and business mentorship.",href:"/training"},
- {title:"Regional commercial clusters",icon:MapPinned,detail:"Learn about the Chamber's six regional clusters and potential cross-border market links.",href:"/economic-map"}
-];
-export default function Diaspora(){return <Shell><main><section className="connect-hero"><div className="container"><span className="eyebrow">Global Business Connections</span><h1>BUGANDA DIASPORA <em>NETWORK</em></h1><p>Building pathways between Buganda's enterprises, global expertise, investment and commercial markets.</p></div></section><div className="container concept-page"><div className="connect-intro"><span className="eyebrow">Proposed digital ecosystem experience</span><h2>Local enterprise. Global connections.</h2><p>This is a proposed engagement pathway for the Chamber's digital ecosystem. It is not an existing verified diaspora member directory or live introduction service.</p></div><div className="diaspora-hero"><Globe2 size={40}/><h3>Bridge business communities across borders.</h3><p>Explore how professional networks, entrepreneurs, investors and institutions could contribute to knowledge exchange and commercial growth in Buganda.</p><Link href="/contact">Discuss partnership opportunities <ArrowUpRight size={17}/></Link></div><div className="diaspora-grid">{pathways.map(({title,detail,icon:Icon,href})=><article key={title}><Icon size={27}/><h3>{title}</h3><p>{detail}</p><Link href={href}>Explore pathway <ArrowUpRight size={15}/></Link></article>)}</div><p className="region-note">This concept is part of the premium digital ecosystem design brief. Programme availability and official contact channels require MCCL confirmation.</p></div></main></Shell>}
+import { BlueprintPage } from "../BlueprintPage";
+
+export default function Diaspora(){ return <BlueprintPage eyebrow="Diaspora & Enterprise" title="Connecting Buganda's Global Community" description="People living abroad can maintain strong links with local enterprise, culture and professional networks in Buganda." sections={[
+  {
+    "eyebrow": "Global connections",
+    "title": "Knowledge, markets and partnerships",
+    "text": "Diaspora engagement can create connections for skills exchange, enterprise development, trade and investment discussion.",
+    "cards": [
+      {
+        "title": "Business networks",
+        "text": "Professional and commercial contacts can help enterprises understand new markets."
+      },
+      {
+        "title": "Skills and mentorship",
+        "text": "Knowledge sharing can support entrepreneurship and business capability."
+      },
+      {
+        "title": "Investment interests",
+        "text": "An informed starting point for conversations about business sectors and opportunities."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Chamber connections",
+    "title": "Explore the possibilities",
+    "text": "A dedicated verified diaspora member directory or live introduction service has not been launched on this website.",
+    "cards": [
+      {
+        "title": "Trade & investment",
+        "text": "Learn about the sectors and partnerships in focus.",
+        "href": "/invest"
+      },
+      {
+        "title": "Membership",
+        "text": "Explore the Chamber's approach to participation.",
+        "href": "/membership"
+      }
+    ]
+  }
+]} action={{"label":"Explore trade & investment","href":"/invest"}} />; }

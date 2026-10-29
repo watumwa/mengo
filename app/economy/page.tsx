@@ -1,3 +1,49 @@
 import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
-export default function Economy(){return <BlueprintPage eyebrow="Buganda Economy" title="An economy of enterprise and connection." description="Explore source-led sector context, verified institutions, business discovery and regional economic information." image={realPhotos.market} imageCaption="Kampala market photograph; general commerce context, not a claim about a named MCCL programme." sections={[{eyebrow:"Sector explorer",title:"What connects the economy.",text:"Sector pages will combine verified local context, named institutions, approved stories and honest opportunity status.",cards:[{title:"Agriculture & Agribusiness",text:"Production, cooperative enterprise, value addition and trade context."},{title:"Education & Skills",text:"Institutions and skills pathways with official sources."},{title:"Healthcare & Community",text:"Documented programmes only, attributed to their real operators."},{title:"Property & Infrastructure",text:"Status-labelled sites and approved project information."},{title:"Media & ICT",text:"Real operator profiles, facilities and technology context."},{title:"Tourism, Trade & Industry",text:"Heritage, destinations and enterprise activity with clear attribution."}]},{eyebrow:"Useful discovery",title:"Build from verified records.",text:"Directories and maps remain useful only when their records are current, consented and correctly attributed.",cards:[{title:"Business directory",text:"Demonstration listings are clearly marked until verification workflows exist.",href:"/businesses"},{title:"Cooperatives",text:"Distinct cooperative records, not a duplicate business directory.",href:"/cooperatives"},{title:"Commercial centres",text:"Trading areas kept separate from Masaza administration.",href:"/commercial-centres"}]}]} action={{label:"Explore economic sectors",href:"/economy/sectors"}}/>}
+
+export default function Economy() {
+  return <BlueprintPage eyebrow="Buganda Economy" title="Enterprise Across Buganda" description="Agriculture, trade, manufacturing, tourism and services connect communities and markets throughout Buganda."
+    image={realPhotos.market} imageCaption="Commercial activity at a market in Kampala." sections={[
+  {
+    "eyebrow": "Economic activity",
+    "title": "The sectors behind livelihoods",
+    "text": "Buganda's economy brings together a wide range of enterprises, from small traders and farming communities to manufacturers and service providers.",
+    "cards": [
+      {
+        "title": "Agriculture & agribusiness",
+        "text": "Farming, processing, storage and the movement of produce to markets."
+      },
+      {
+        "title": "Trade & services",
+        "text": "Wholesale, retail, transport, finance and other services serving households and enterprises."
+      },
+      {
+        "title": "Industry & innovation",
+        "text": "Manufacturing, technology, training and growing enterprise capability."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Explore opportunities",
+    "title": "Connect with the commercial ecosystem",
+    "text": "The Chamber's priorities include stronger market linkages, enterprise development and useful business information.",
+    "cards": [
+      {
+        "title": "Economic sectors",
+        "text": "Explore the industries shaping local business.",
+        "href": "/economy/sectors"
+      },
+      {
+        "title": "Commercial centres",
+        "text": "Learn about markets and trading areas.",
+        "href": "/commercial-centres"
+      },
+      {
+        "title": "Cooperatives",
+        "text": "Understand the place of SACCOs and producer groups.",
+        "href": "/cooperatives"
+      }
+    ]
+  }
+]} action={{"label":"Explore economic sectors","href":"/economy/sectors"}} />;
+}

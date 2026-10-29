@@ -1,17 +1,3 @@
-"use client";
-import {useMemo,useState} from "react";
-import Link from "next/link";
-import {ArrowLeft,ArrowUpRight,Handshake,Search,CheckCircle2} from "lucide-react";
-import {Shell} from "../../../components";
-type Request={id:string;partner:string;sector:string;purpose:string;status:string};
-const initial:Request[]=[
- {id:"DEMO-101",partner:"Agribusiness supplier concept",sector:"Agriculture",purpose:"Explore regional sourcing",status:"Draft"},
- {id:"DEMO-102",partner:"Distribution partner concept",sector:"Trade",purpose:"Discuss wholesale channels",status:"Illustrative review"},
- {id:"DEMO-103",partner:"Digital services concept",sector:"Technology",purpose:"Explore business technology",status:"Concept"}
-];
-export default function MemberConnections(){
- const [items,setItems]=useState(initial);const [query,setQuery]=useState("");const [sector,setSector]=useState("All sectors");const [partner,setPartner]=useState("");const [purpose,setPurpose]=useState("");const [message,setMessage]=useState("");
- const filtered=useMemo(()=>items.filter(x=>(sector==="All sectors"||x.sector===sector)&&[x.partner,x.sector,x.purpose].join(" ").toLowerCase().includes(query.toLowerCase())),[items,query,sector]);
- const add=()=>{if(!partner.trim()||!purpose.trim())return;setItems(v=>[{id:`LOCAL-${String(v.length+1).padStart(3,"0")}`,partner:partner.trim(),purpose:purpose.trim(),sector:"Other",status:"Local draft"},...v]);setPartner("");setPurpose("");setMessage("A local demonstration draft has been added. It is not saved or submitted to the Chamber.")};
- return <Shell><main className="workspace-shell"><div className="container workspace-top"><Link href="/portal-preview/member"><ArrowLeft size={15}/> Member dashboard</Link><span>Interactive frontend preview · No live connections</span></div><div className="container preview-detail"><span className="eyebrow">MCCL CONNECT / Member workspace</span><h1>My business introductions</h1><p>Explore a proposed member journey for requesting Chamber-facilitated introductions and tracking their progress. All records are examples.</p><div className="preview-detail-grid"><section><div className="preview-toolbar"><label><Search size={16}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search requests" aria-label="Search requests"/></label><select aria-label="Filter by sector" value={sector} onChange={e=>setSector(e.target.value)}>{["All sectors","Agriculture","Trade","Technology","Other"].map(x=><option key={x}>{x}</option>)}</select></div><div className="preview-records">{filtered.map(x=><article key={x.id}><div><span>{x.id} · {x.sector}</span><strong>{x.status}</strong></div><h3>{x.partner}</h3><p>{x.purpose}</p></article>)}{!filtered.length&&<p>No matching requests.</p>}</div></section><aside className="preview-form"><Handshake size={29}/><h2>Draft an introduction request</h2><p>This form only adds a temporary item to the current page. It does not contact any partner.</p><label>Prospective partner or business<input value={partner} onChange={e=>setPartner(e.target.value)} placeholder="Partner description"/></label><label>Purpose of introduction<textarea rows={4} value={purpose} onChange={e=>setPurpose(e.target.value)} placeholder="What would you like to explore?"/></label><button type="button" disabled={!partner.trim()||!purpose.trim()} onClick={add}>Add local draft <ArrowUpRight size={16}/></button>{message&&<p className="preview-confirm" role="status"><CheckCircle2 size={16}/>{message}</p>}</aside></div><p className="workspace-footnote">Demonstration data and drafts only. Refreshing the page clears newly added drafts. No backend, email or database is connected.</p></div></main></Shell>
-}
+import { notFound } from "next/navigation";
+// Unfinished design demonstrations are not part of the public site.
+export default function Page(){ notFound(); }

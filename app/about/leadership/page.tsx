@@ -1,2 +1,48 @@
 import { BlueprintPage } from "../../BlueprintPage";
-export default function AboutLeadership(){return <BlueprintPage eyebrow="Chamber Leadership" title="Governance with accountability." description="A protected space for official MCCL leadership profiles, mandates, governance structure and public accountability." sections={[{eyebrow:"Approved profiles only",title:"No substitute portraits or biographies.",text:"Board and management profiles will be published only when MCCL supplies approved portraits, titles, biographies and consent.",cards:[{title:"Board and governance",text:"Mandates, roles and governance structure with official confirmation."},{title:"Management",text:"Approved individual profiles and responsibilities."},{title:"Institutional accountability",text:"Public-facing governance and enquiry pathways."}]},{eyebrow:"Publication standard",title:"Accurate by design.",text:"Profile records will include source, approval date and role verification, not unverified names or fictional biographies.",cards:[{title:"Portraits",text:"Use approved headshots with consent."},{title:"Titles",text:"Confirm before each publication or revision."},{title:"Contact pathways",text:"Use approved organisation routes rather than personal contact details."}]}]} action={{label:"Contact MCCL",href:"/contact"}}/>}
+
+export default function AboutLeadership() {
+  return <BlueprintPage
+    eyebrow="Chamber Leadership"
+    title="Leadership & Governance"
+    description="Institutional oversight and responsible stewardship are essential to a trusted business chamber."
+    sections={[
+  {
+    "eyebrow": "Governance",
+    "title": "How the Chamber is structured",
+    "text": "The Chamber's governance framework distinguishes strategic oversight from day-to-day coordination and member services.",
+    "cards": [
+      {
+        "title": "Governing Council",
+        "text": "Strategic direction, institutional accountability and policy oversight."
+      },
+      {
+        "title": "Secretariat",
+        "text": "Coordination of operations, member engagement and Chamber programmes."
+      },
+      {
+        "title": "Regional engagement",
+        "text": "Connections with local enterprises and stakeholders across Buganda."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Public information",
+    "title": "Leadership profiles",
+    "text": "Official names, appointments and portraits should be obtained from the Chamber's authorised records. For current leadership information, use the Chamber's official channels.",
+    "cards": [
+      {
+        "title": "Governance and accountability",
+        "text": "Understand the institutional approach to transparency and representation.",
+        "href": "/governance"
+      },
+      {
+        "title": "Strategic priorities",
+        "text": "Read about the work guiding the Chamber.",
+        "href": "/strategy"
+      }
+    ]
+  }
+]}
+    action={{"label":"Explore governance","href":"/governance"}}
+  />;
+}

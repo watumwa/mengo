@@ -1,7 +1,47 @@
-"use client";
-import {useMemo,useState} from "react";
-import Link from "next/link";
-import {ArrowUpRight,BookOpen,Search} from "lucide-react";
-import {Shell} from "../components";
-const articles=[{title:"Connecting Local Traders to Wider Markets",category:"Trade Insights",summary:"Explore how business networks can help entrepreneurs discover buyers and partnerships."},{title:"Building Resilient Small Businesses",category:"Enterprise Development",summary:"An editorial concept about skills, financial literacy and long-term enterprise growth."},{title:"Digital Tools for Local Commerce",category:"Innovation",summary:"How digital discovery and communication can help businesses reach customers."},{title:"Community Partnerships for Shared Prosperity",category:"Community Impact",summary:"Why cooperation between businesses and communities matters for sustainable development."}];
-export default function Insights(){const [q,setQ]=useState("");const [category,setCategory]=useState("All topics");const categories=["All topics",...new Set(articles.map(x=>x.category))];const filtered=useMemo(()=>articles.filter(x=>(category==="All topics"||x.category===category)&&JSON.stringify(x).toLowerCase().includes(q.toLowerCase())),[q,category]);return <Shell><main><section className="directoryhero newshero"><div className="container"><div className="kicker">Knowledge and enterprise</div><h1>News & Insights</h1><p>Business perspectives, community stories and resources for a stronger commercial future.</p></div></section><section className="section cream"><div className="container"><p className="notice">Editorial previews only. These are proposed topics, not published Chamber news or verified announcements.</p><div className="sectionhead"><div><div className="eyebrow">Explore our stories</div><h2>Ideas for Growth</h2></div></div><div className="filters filterrow"><label className="searchbox"><Search size={17}/><input aria-label="Search insights" placeholder="Search articles..." value={q} onChange={e=>setQ(e.target.value)}/></label><select aria-label="Filter topic" value={category} onChange={e=>setCategory(e.target.value)}>{categories.map(x=><option key={x}>{x}</option>)}</select></div><div className="cards">{filtered.map((x,i)=><article className="articlecard" key={x.title}><div className="newsvisual"><BookOpen size={32}/></div><div className="body"><span className="tag">{x.category}</span><h3>{x.title}</h3><p>{x.summary}</p><Link href="/contact" className="textlink">Suggest a story <ArrowUpRight size={15}/></Link></div></article>)}</div>{!filtered.length&&<p className="empty">No matching topics.</p>}</div></section></main></Shell>}
+import { BlueprintPage } from "../BlueprintPage";
+
+export default function Insights(){
+ return <BlueprintPage eyebrow="News & Insights" title="Stories from the Business Community" description="Follow the themes shaping enterprise development, trade and community opportunity in Buganda." sections={[
+  {
+    "eyebrow": "Areas of interest",
+    "title": "Business, people and progress",
+    "text": "The Chamber's areas of interest span enterprise growth, market access, regional development, investment, and the wider economic life of Buganda.",
+    "cards": [
+      {
+        "title": "Enterprise & livelihoods",
+        "text": "How entrepreneurs, traders and businesses contribute to local prosperity."
+      },
+      {
+        "title": "Trade & market access",
+        "text": "Connections among producers, buyers, service providers and wider markets."
+      },
+      {
+        "title": "Culture & community",
+        "text": "The people, places and institutions contributing to Buganda's identity and development."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Official updates",
+    "title": "News and announcements",
+    "text": "No official Chamber news articles have been published in this section yet. Updates will be added when publication information and relevant photographs are confirmed.",
+    "cards": [
+      {
+        "title": "Reports & publications",
+        "text": "Explore information about the Chamber's resources.",
+        "href": "/publications"
+      },
+      {
+        "title": "Events & programmes",
+        "text": "Learn about the types of events associated with the Chamber's work.",
+        "href": "/events-calendar"
+      },
+      {
+        "title": "Our strategy",
+        "text": "Explore the priorities behind the Chamber's direction.",
+        "href": "/strategy"
+      }
+    ]
+  }
+]} action={{"label":"Explore publications","href":"/publications"}} />;
+}

@@ -1,2 +1,41 @@
 import { BlueprintPage } from "../BlueprintPage";
-export default function Accessibility(){return <BlueprintPage eyebrow="Accessibility" title="A more usable public experience." description="MCCL's accessibility commitment will be maintained through clear navigation, keyboard support, contrast, captions and responsive layouts." sections={[{eyebrow:"Current design commitments",title:"Access is part of the build.",text:"The design system provides a skip link, keyboard-operable menus, visible focus states, responsive navigation, labelled controls and reduced-motion support.",cards:[{title:"Keyboard navigation",text:"Core navigation and page actions remain usable without a pointer."},{title:"Responsive reading",text:"Layouts, type and controls adapt at mobile, tablet and desktop widths."},{title:"Image context",text:"Alt text and captions identify imagery without inventing unsupported claims."}]},{eyebrow:"Feedback",title:"Improve with real visitor feedback.",text:"An approved accessibility contact route will be added when MCCL confirms its official support channel.",cards:[{title:"Report a barrier",text:"Provide a response-owned channel for accessibility feedback."},{title:"Content reviews",text:"Check contrast, headings, links and media before publication."},{title:"Ongoing testing",text:"Review new functionality with keyboard and mobile checks."}]}]} action={{label:"Contact MCCL",href:"/contact"}}/>}
+
+export default function Accessibility() {
+  return <BlueprintPage eyebrow="Accessibility" title="An Accessible Web Experience" description="Mengo Chamber aims to make information easier to find and use across phones, tablets and desktop computers."
+     sections={[
+  {
+    "eyebrow": "Using this website",
+    "title": "Navigation and readability",
+    "text": "The website provides keyboard-accessible navigation, clear links and responsive layouts intended to support different devices and ways of browsing.",
+    "cards": [
+      {
+        "title": "Keyboard use",
+        "text": "Use the Tab key to move between interactive elements and Enter to open a selected link."
+      },
+      {
+        "title": "Mobile viewing",
+        "text": "Navigation and content layouts adapt to smaller screens."
+      },
+      {
+        "title": "Motion preferences",
+        "text": "Where supported, reduced-motion settings limit decorative movement."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Feedback",
+    "title": "Accessibility improvements",
+    "text": "Accessibility is ongoing work. If a page is difficult to navigate or understand, the issue can be raised through the Chamber's official contact channels.",
+    "cards": [
+      {
+        "title": "Clarity",
+        "text": "Use descriptive headings and links to make navigation easier."
+      },
+      {
+        "title": "Images",
+        "text": "Photograph captions and alternative text help provide context."
+      }
+    ]
+  }
+]} action={{"label":"Explore the website","href":"/explore"}} />;
+}

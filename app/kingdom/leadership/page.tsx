@@ -1,3 +1,51 @@
 import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
-export default function KingdomLeadership(){return <BlueprintPage eyebrow="Kingdom Leadership" title="Leadership and institutions." description="An institutional guide that explains cultural roles without inventing biographies or presenting MCCL as government." image={realPhotos.heritage} imageCaption="Authentic Kingdom gathering at Bulange; contextual photograph, not an official leadership portrait." source={{label:"Buganda Kingdom official website",href:"https://buganda.or.ug/"}} sections={[{eyebrow:"Approved reference",title:"Roles before personalities.",text:"Official portraits, current officeholder information and biographical content are reserved until approved by the relevant Kingdom office.",cards:[{title:"The Kabaka",text:"Cultural role and official reference link; use an approved portrait only."},{title:"The Katikkiro",text:"Responsibilities and official reference link; confirm current officeholder before publication."},{title:"The Great Lukiiko",text:"Institutional structure and responsibilities with primary-source confirmation."}]},{eyebrow:"Traditional administration",title:"Connected governance context.",text:"Masaza, Gombolola and clan administration will be explained with authoritative terminology and no speculative records.",cards:[{title:"Masaza",text:"Traditional county context distinct from modern district administration."},{title:"Gombolola",text:"Sub-county records require authoritative confirmation."},{title:"Clans",text:"Cultural identity content requires appropriate sources and sensitivity."}]}]} action={{label:"Explore Masaza",href:"/kingdom/masaza"}}/>}
+
+export default function KingdomLeadership() {
+  return <BlueprintPage
+    eyebrow="Kingdom Leadership"
+    title="Traditional Leadership & Institutions"
+    description="An introduction to the institutions and traditional leadership structures of the Kingdom of Buganda."
+    image={realPhotos.heritage}
+    imageCaption="Clan leaders at Bulange, Mengo. Contextual photograph, not an official leadership portrait."
+    source={{"label":"Official Kingdom website","href":"https://buganda.or.ug/"}}
+    sections={[
+  {
+    "eyebrow": "Traditional leadership",
+    "title": "The institutions of the Kingdom",
+    "text": "The Kabaka is central to Buganda's traditional monarchy. The Katikkiro and the Lukiiko are among the institutions associated with the Kingdom's administration and public life.",
+    "cards": [
+      {
+        "title": "The Kabaka",
+        "text": "The Kingdom's traditional monarch and a central symbol of cultural identity."
+      },
+      {
+        "title": "The Katikkiro",
+        "text": "The office associated with coordinating the Kingdom's administration."
+      },
+      {
+        "title": "The Lukiiko",
+        "text": "An important institution within the Kingdom's public and administrative life."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Local organisation",
+    "title": "Masaza and Gombolola",
+    "text": "Traditional county and subcounty structures help explain Buganda's historical and cultural geography. They should not be confused with Uganda's current district administration.",
+    "cards": [
+      {
+        "title": "Masaza",
+        "text": "Explore the traditional counties of Buganda.",
+        "href": "/kingdom/masaza"
+      },
+      {
+        "title": "Official information",
+        "text": "For current officeholders and formal institutional details, consult the Kingdom's official channels."
+      }
+    ]
+  }
+]}
+    action={{"label":"Explore Masaza","href":"/kingdom/masaza"}}
+  />;
+}

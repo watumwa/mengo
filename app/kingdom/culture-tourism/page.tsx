@@ -1,3 +1,51 @@
 import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
-export default function CultureTourism(){return <BlueprintPage eyebrow="Culture & Tourism" title="Culture, place and living heritage." description="Editorial features for verified Buganda heritage sites, cultural experiences and visitor destinations." image={realPhotos.coffee} imageCaption="Authentic Buganda cultural dress photograph; contextual image, not a claim about a specific tourism site." source={{label:"Official Buganda Kingdom website",href:"https://buganda.or.ug/"}} sections={[{eyebrow:"Place-led stories",title:"Respectful tourism context.",text:"Kasubi Tombs, Bulange, island destinations and other places will be added with accurate place names, permissions, descriptions and photo credits.",cards:[{title:"Heritage sites",text:"Use verified site photography and respect all cultural protocols."},{title:"Cultural experiences",text:"Describe public experiences accurately without staging or fictionalising ceremony."},{title:"Island and landscape stories",text:"Use actual location imagery and verified travel context."}]},{eyebrow:"Photography protocols",title:"Protect context and rights.",text:"Sacred sites, ceremonies and people require appropriate consent, permissions and captioning.",cards:[{title:"Caption every image",text:"Name the place, activity, date and photographer or source."},{title:"No generic substitution",text:"A heritage image must never be passed off as another named site."},{title:"Source links",text:"Related official and partner information remains attributable."}]}]} action={{label:"Explore the Kingdom",href:"/kingdom"}}/>}
+
+export default function CultureTourism() {
+  return <BlueprintPage
+    eyebrow="Culture & Tourism"
+    title="Discover Buganda's Cultural Heritage"
+    description="Historic places, traditional dress, crafts, language and ceremony are part of Buganda's living cultural landscape."
+    image={realPhotos.coffee}
+    imageCaption="Traditional Buganda dress — a glimpse of the Kingdom's living cultural heritage."
+    source={{"label":"Visit the official Kingdom website","href":"https://buganda.or.ug/"}}
+    sections={[
+  {
+    "eyebrow": "Places and traditions",
+    "title": "A heritage worth exploring",
+    "text": "Buganda's cultural landscape includes important places such as Bulange and the Kasubi Tombs, alongside traditions sustained through community life.",
+    "cards": [
+      {
+        "title": "Heritage sites",
+        "text": "Discover locations that reflect Buganda's historical and cultural identity."
+      },
+      {
+        "title": "Language and tradition",
+        "text": "Luganda, customary practices and shared heritage remain central to community life."
+      },
+      {
+        "title": "Dress and craft",
+        "text": "Traditional clothing and craftsmanship express cultural identity across generations."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Visiting respectfully",
+    "title": "People, places and context",
+    "text": "Cultural experiences are most meaningful when the people, places and traditions are represented accurately and respectfully.",
+    "cards": [
+      {
+        "title": "Heritage information",
+        "text": "Use the official Kingdom channels for the latest visitor guidance."
+      },
+      {
+        "title": "Related places",
+        "text": "Explore Masaza and local cultural geography.",
+        "href": "/kingdom/masaza"
+      }
+    ]
+  }
+]}
+    action={{"label":"Explore Buganda's heritage","href":"/kingdom/history"}}
+  />;
+}

@@ -1,5 +1,51 @@
-import Link from "next/link";
 import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
-const counties=["Buddu","Bugerere","Bulemeezi","Buluuli","Busiro","Busujju","Butambala","Buvuma","Buweekula","Gomba","Kabula","Kooki","Kyaddondo","Kyaggwe","Mawogola","Mawokota","Ssese","Ssingo"];
-export default function Masaza(){return <BlueprintPage eyebrow="Masaza & Gombolola" title="The Masaza explorer." description="A respectful, searchable foundation for Buganda's traditional counties and their verified local context." image={realPhotos.bulange} imageCaption="Bulange, Mengo — contextual Kingdom architecture photograph." sections={[{eyebrow:"Data integrity",title:"18 traditional counties, clearly distinguished.",text:"This preview lists the 18 Masaza named in the Buganda Statistics Unit map. Boundary data, spellings, Gombolola records and county profiles require approval before richer detail pages publish.",cards:counties.slice(0,6).map(title=>({title,text:"County profile structure prepared; local history, institutions, economy and source records awaiting verification.",href:"/contact",label:"Profile pending verification"}))},{eyebrow:"Map and profiles",title:"Explore verified local context.",text:"County detail pages will combine source-cleared place photography, authority-approved administration records, local economy, documented projects and map references.",cards:[{title:"County map",text:"Use confirmed GIS boundaries rather than equating district limits with traditional Masaza.",href:"/economic-map"},{title:"Gombolola register",text:"Load authoritative records only after the complete list is approved."},{title:"Local sources",text:"Each profile will cite its place, institution and project sources."}]}]} action={{label:"View the real county map",href:"/"}}/>}
+
+export default function Masaza() {
+  return <BlueprintPage
+    eyebrow="Masaza & Gombolola"
+    title="The Traditional Counties of Buganda"
+    description="Explore the traditional Masaza and the regional identity they represent within the Kingdom of Buganda."
+    image={realPhotos.bulange}
+    imageCaption="Bulange, Mengo — contextual photograph of the Kingdom's headquarters."
+    sections={[
+  {
+    "eyebrow": "Traditional geography",
+    "title": "Understanding the Masaza",
+    "text": "Buganda's 18 traditional Masaza form part of its historical and cultural geography. Their boundaries and administration differ from present-day districts.",
+    "cards": [
+      {
+        "title": "Buddu, Bugerere & Bulemeezi",
+        "text": "Traditional county names in Buganda's historical geography."
+      },
+      {
+        "title": "Buluuli, Busiro & Busujju",
+        "text": "Explore the relationship between the Kingdom's regions and local communities."
+      },
+      {
+        "title": "Other Masaza",
+        "text": "Butambala, Buvuma, Buweekula, Gomba, Kabula, Kooki, Kyaddondo, Kyaggwe, Mawogola, Mawokota, Ssese and Ssingo."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Communities and commerce",
+    "title": "Local identity, local enterprise",
+    "text": "The Masaza provide valuable cultural context for understanding place-based traditions, community links and commercial activity.",
+    "cards": [
+      {
+        "title": "Culture",
+        "text": "Explore local heritage and cultural practices.",
+        "href": "/kingdom/culture-tourism"
+      },
+      {
+        "title": "Commercial centres",
+        "text": "Learn about trading areas and markets without confusing them with traditional county administration.",
+        "href": "/commercial-centres"
+      }
+    ]
+  }
+]}
+    action={{"label":"Explore the Kingdom","href":"/kingdom"}}
+  />;
+}

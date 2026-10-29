@@ -1,18 +1,3 @@
-"use client";
-import {useMemo,useState} from "react";
-import Link from "next/link";
-import {ArrowLeft,ArrowUpRight,ClipboardCheck,Search,ShieldAlert} from "lucide-react";
-import {Shell} from "../../../components";
-type Item={ref:string;title:string;type:string;stage:string};
-const seed:Item[]=[
- {ref:"DEMO-OP-001",title:"Regional agriculture buyer network",type:"Trade",stage:"Draft"},
- {ref:"DEMO-OP-002",title:"SME logistics collaboration",type:"Partnership",stage:"Editorial review"},
- {ref:"DEMO-OP-003",title:"Processing and value addition",type:"Investment",stage:"Verification"},
- {ref:"DEMO-OP-004",title:"Professional service providers",type:"Supplier",stage:"Draft"}
-];
-export default function OpportunityQueue(){
- const [items,setItems]=useState(seed);const [query,setQuery]=useState("");const [stage,setStage]=useState("All stages");const [selected,setSelected]=useState<string|null>(null);
- const filtered=useMemo(()=>items.filter(x=>(stage==="All stages"||x.stage===stage)&&[x.title,x.type,x.ref].join(" ").toLowerCase().includes(query.toLowerCase())),[items,query,stage]);
- const update=(ref:string,status:string)=>setItems(v=>v.map(x=>x.ref===ref?{...x,stage:status}:x));
- return <Shell><main className="workspace-shell"><div className="container workspace-top"><Link href="/portal-preview/secretariat"><ArrowLeft size={15}/> Secretariat dashboard</Link><span>Frontend prototype · No administrative access</span></div><div className="container preview-detail"><span className="eyebrow">Secretariat / Opportunity Exchange</span><h1>Opportunity review desk</h1><p>Preview a structured review workflow for trade, partnership, investment and supplier opportunities. All records are fictional.</p><div className="preview-toolbar"><label><Search size={16}/><input aria-label="Search opportunities" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search reference or opportunity"/></label><select aria-label="Filter by status" value={stage} onChange={e=>setStage(e.target.value)}>{["All stages","Draft","Editorial review","Verification","Ready for approval"].map(x=><option key={x}>{x}</option>)}</select></div><div className="preview-records">{filtered.map(x=><article key={x.ref}><div><span>{x.ref} · {x.type}</span><strong>{x.stage}</strong></div><h3>{x.title}</h3><p>Example opportunity awaiting appropriate review, verification and publication controls.</p><button type="button" className="preview-toggle" onClick={()=>setSelected(selected===x.ref?null:x.ref)}>{selected===x.ref?"Close review":"Review example"} <ArrowUpRight size={15}/></button>{selected===x.ref&&<div className="preview-review"><strong><ClipboardCheck size={17}/> Demonstration workflow</strong><p>Check source, ownership, business legitimacy, contact permissions, claims and deadlines before any real publication.</p><div><button type="button" onClick={()=>update(x.ref,"Editorial review")}>Editorial review</button><button type="button" onClick={()=>update(x.ref,"Verification")}>Verification</button><button type="button" onClick={()=>update(x.ref,"Ready for approval")}>Ready for approval</button></div></div>}</article>)}{!filtered.length&&<p className="concept-empty">No opportunities match your filters.</p>}</div><div className="mission-notice"><ShieldAlert size={19}/><p>Status changes are local to this browser page and do not approve, verify or publish real opportunities. A secure backend and staff permissions will be required later.</p></div></div></main></Shell>
-}
+import { notFound } from "next/navigation";
+// Unfinished design demonstrations are not part of the public site.
+export default function Page(){ notFound(); }

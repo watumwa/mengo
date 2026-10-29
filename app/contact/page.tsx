@@ -1,2 +1,43 @@
 import { BlueprintPage } from "../BlueprintPage";
-export default function Contact(){return <BlueprintPage eyebrow="Contact" title="Start a well-informed conversation." description="Official MCCL contact details, office information and a secure enquiry workflow will be published after confirmation." sections={[{eyebrow:"Contact information",title:"Publish approved channels only.",text:"The blueprint calls for an official address, phone, email, opening information and office map. None are invented here before MCCL confirms them.",cards:[{title:"Investment enquiries",text:"Use the approved MCCL route for investor conversations and due-diligence requests."},{title:"Membership enquiries",text:"Confirm eligibility, categories and application steps before opening a form."},{title:"General partnerships",text:"Share a verified organisation contact path for collaboration and services."}]},{eyebrow:"Enquiry standard",title:"Privacy and follow-through.",text:"Any future contact form will state its purpose, data use, response ownership and privacy information.",cards:[{title:"Data privacy",text:"Collect only the information needed for the stated enquiry."},{title:"No fake submission",text:"A frontend demo must never claim to have sent an enquiry."},{title:"Office map",text:"Use a confirmed MCCL location, not an approximate pin."}]}]} action={{label:"Explore membership information",href:"/membership"}}/>}
+
+export default function Contact() {
+  return <BlueprintPage eyebrow="Contact the Chamber" title="Connect with Mengo Chamber" description="For membership, partnership, trade and investment enquiries, please use the Chamber's official communication channels."
+     sections={[
+  {
+    "eyebrow": "General enquiries",
+    "title": "Start with the right information",
+    "text": "Contact details have not yet been confirmed for publication on this website. Please refer to the Chamber's recognised communication channels for current contact information.",
+    "cards": [
+      {
+        "title": "Membership",
+        "text": "Enquire about membership categories, eligibility and participation."
+      },
+      {
+        "title": "Partnerships",
+        "text": "Discuss potential enterprise, community and institutional partnerships."
+      },
+      {
+        "title": "Trade & investment",
+        "text": "Ask about the Chamber's approach to business and market connections."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Find out more",
+    "title": "Explore the Chamber's work",
+    "text": "Learn more about the institution and its priorities before making an enquiry.",
+    "cards": [
+      {
+        "title": "About MCCL",
+        "text": "Read about the Chamber's identity and mandate.",
+        "href": "/about"
+      },
+      {
+        "title": "Our strategy",
+        "text": "Explore enterprise development and trade priorities.",
+        "href": "/strategy"
+      }
+    ]
+  }
+]} action={{"label":"Explore membership","href":"/membership"}} />;
+}

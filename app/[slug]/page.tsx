@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { PageHero, Shell } from "../components";
 
@@ -302,6 +302,33 @@ const pages: Record<string, Detail> = {
   },
 };
 
+const legacyRoutes: Record<string,string> = {
+ "policy-briefs":"/policy-advocacy",
+ "resources":"/publications",
+ "news-announcements":"/insights",
+ "media-gallery":"/insights",
+ "news":"/insights",
+ "entrepreneurship":"/services",
+ "agriculture":"/economy/sectors",
+ "arbitration":"/services",
+ "research":"/intelligence",
+ "market-intelligence":"/intelligence",
+ "partners":"/about",
+ "success-stories":"/insights",
+ "faq":"/about",
+ "strategic-plan":"/strategy",
+ "vision-mission-values":"/strategy",
+ "membership-fees":"/membership",
+ "membership-categories":"/membership",
+ "special-interest-groups":"/membership",
+ "international-trade":"/invest",
+ "trade-investment":"/invest",
+ "market-linkages":"/opportunities",
+ "business-advisory":"/services",
+ "business-development":"/services",
+ "training":"/services"
+};
+
 const visualBySlug: Record<string, { src: string; alt: string }> = {
   about: { src: "/images/buganda-royal-palace.jpg", alt: "Buganda royal palace in Mengo, Kampala" },
   "commercial-centres": { src: "/images/kampala-market.jpg", alt: "Kampala market and commercial activity" },
@@ -315,21 +342,22 @@ export function generateStaticParams() {
 
 export default async function DetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (legacyRoutes[slug]) redirect(legacyRoutes[slug]);
   const data = pages[slug];
   if (!data) notFound();
-  const visual = visualBySlug[slug] ?? { src: "/images/kampala-market.jpg", alt: "Commercial activity in Kampala" };
+  const visual = visualBySlug[slug] ?? null;
   const membershipPage = slug.startsWith("membership") || slug === "special-interest-groups";
   const strategyPage = slug.startsWith("strategic") || slug === "vision-mission-values";
   const governancePage = ["about","leadership","secretariat","partners"].includes(slug);
   const editorialLabel = strategyPage ? "Strategic direction" : membershipPage ? "Membership pathways" : governancePage ? "Our institution" : "Explore the Chamber";
-  const primaryHref = membershipPage ? "/join" : "/contact";
+  const primaryHref = membershipPage ? "/membership" : "/contact";
   const related = strategyPage ? [
     {title:"Six Strategic Goals",href:"/strategic-goals"},
     {title:"Five Strategic Propositions",href:"/strategic-propositions"},
     {title:"Our Strategy",href:"/strategy"}
   ] : membershipPage ? [
     {title:"Membership Categories",href:"/membership-categories"},
-    {title:"Proposed Fees",href:"/membership-fees"},
+    {title:"Membership Overview",href:"/membership"},
     {title:"Special Interest Groups",href:"/special-interest-groups"}
   ] : [
     {title:"Explore All Pages",href:"/explore"},
@@ -339,16 +367,16 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
 
   return <Shell><main className="detail-editorial">
     <PageHero title={data.title} description={data.description} />
-    <section className="detail-intro-section"><div className="container detail-intro-grid">
+    <section className="detail-intro-section"><div className={visual ? "container detail-intro-grid" : "container detail-intro-grid detail-intro-no-image"}>
       <div className="detail-intro-copy"><div className="eyebrow">{editorialLabel}</div>
-        <h2>{data.title}</h2><p>{data.intro}</p>
+        <p>{data.intro}</p>
         <div className="detail-actions"><Link className="btn navy" href={primaryHref}>{data.cta} <ArrowUpRight size={16}/></Link><Link className="detail-text-link" href="/explore">Explore the Chamber <ArrowRight size={16}/></Link></div>
       </div>
-      <div className="detail-image"><img src={visual.src} alt={visual.alt}/><span>Mengo Chamber of Commerce Limited</span></div>
+      {visual && <div className="detail-image"><img src={visual.src} alt={visual.alt}/><span>{visual.alt}</span></div>}
     </div></section>
     <section className="detail-priorities section cream"><div className="container">
       <div className="sectionhead"><div><div className="eyebrow">Explore in detail</div><h2>{strategyPage ? "Our strategic priorities" : membershipPage ? "Membership information" : "Key areas and opportunities"}</h2></div>
-        <p>{strategyPage ? "These priorities are drawn from the Chamber's strategic framework." : "Discover the areas outlined for this section. Future services and programmes remain subject to confirmation."}</p></div>
+        <p>{strategyPage ? "These priorities are drawn from the Chamber's strategic framework." : "Explore the main themes and information related to this subject."}</p></div>
       <div className="detail-feature-grid">{data.items.map((item,index)=><article className="detail-feature" key={item.title}>
         <span className="detail-feature-number">{String(index+1).padStart(2,"0")}</span>
         <h3>{item.title}</h3><p>{item.text}</p>

@@ -1,3 +1,44 @@
 import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
-export default function CommercialCentres(){return <BlueprintPage eyebrow="Buganda Economy / Commercial Centres" title="Markets and trading areas." description="A trading-area explorer that stays distinct from Buganda's traditional Masaza administration." image={realPhotos.market} imageCaption="Kampala market photograph; a general commerce image, not a depiction of every commercial centre." sections={[{eyebrow:"Commercial discovery",title:"Search a real trading-area record.",text:"Each commercial centre will carry its own named location, facilities, economic activity, source and accurately matched photo.",cards:[{title:"Markets",text:"Named markets and their source-verified local context."},{title:"Trading areas",text:"Commercial hubs described by actual location and activity."},{title:"Access & opportunity",text:"Useful information published only with supporting evidence."}]},{eyebrow:"Place accuracy",title:"One photograph, one place.",text:"A market image will never be reused to imply it represents another named trading area.",cards:[{title:"Distinct from Masaza",text:"Traditional administration and commercial geography are different systems."},{title:"Verified source",text:"Location and activity must be source-backed."},{title:"Local imagery",text:"Use the actual market or centre where permission exists."}]}]} action={{label:"View the current centre preview",href:"/centres"}}/>}
+
+export default function CommercialCentres() {
+  return <BlueprintPage eyebrow="Markets & Trading Centres" title="Where Business Happens" description="Markets and commercial centres bring together traders, customers, suppliers and services throughout Buganda."
+    image={realPhotos.market} imageCaption="Market activity in Kampala, illustrating local commerce." sections={[
+  {
+    "eyebrow": "Commercial life",
+    "title": "Trading places and local markets",
+    "text": "From established urban markets to town trading areas, commercial centres are important meeting points in the movement of goods and services.",
+    "cards": [
+      {
+        "title": "Markets",
+        "text": "Retail and wholesale places connect local customers, traders and suppliers."
+      },
+      {
+        "title": "Trading centres",
+        "text": "Town centres support transport, business services and everyday trade."
+      },
+      {
+        "title": "Market access",
+        "text": "Storage, distribution, standards and information all influence business opportunities."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Geography",
+    "title": "Understanding the difference",
+    "text": "Commercial centres describe places of trade; Masaza describe Buganda's traditional counties. Both matter, but they serve different purposes.",
+    "cards": [
+      {
+        "title": "Traditional counties",
+        "text": "Explore the Masaza and their cultural geography.",
+        "href": "/kingdom/masaza"
+      },
+      {
+        "title": "Business connections",
+        "text": "Learn about the Chamber's enterprise and trade priorities.",
+        "href": "/services"
+      }
+    ]
+  }
+]} action={{"label":"Explore the economy","href":"/economy"}} />;
+}

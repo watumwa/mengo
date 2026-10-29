@@ -1,2 +1,46 @@
 import { BlueprintPage } from "../BlueprintPage";
-export default function Membership(){return <BlueprintPage eyebrow="Membership" title="Belong. Connect. Grow." description="A clear membership route for businesses, institutions and people who want to participate in Buganda's business ecosystem." sections={[{eyebrow:"Who can join",title:"Membership information before an application.",text:"Categories, eligibility, benefits, fees and processing times will be published only after MCCL approves the final public information.",cards:[{title:"Eligibility",text:"Applicant types and qualifying criteria require formal confirmation."},{title:"Membership categories",text:"Categories and benefits will be clearly compared once approved."},{title:"Fees and renewal",text:"No amounts are presented before official approval and publication."}]},{eyebrow:"Application journey",title:"A transparent, human process.",text:"The planned journey is enquiry, account/profile, documents, review, approval, payment and activation. The current wizard is a frontend-only preview and does not submit information.",cards:[{title:"Preview the process",text:"Explore the nine-stage application demonstration without creating a record.",href:"/join"},{title:"Privacy notice",text:"Personal data collection must have an approved notice and secure workflow."},{title:"Member stories",text:"Publish only real businesses and testimonials with written consent."}]},{eyebrow:"Membership value",title:"Practical business participation.",text:"Confirmed benefits may include visibility, networking, advocacy, market information, training and opportunity connections.",cards:[{title:"Business visibility",text:"Directory publication follows consent and verification."},{title:"Connections",text:"Events and introductions are published only when operational."},{title:"Services",text:"Support pathways will identify eligibility and availability."}]}]} action={{label:"Open the membership preview",href:"/join"}}/>}
+
+export default function Membership() {
+  return <BlueprintPage eyebrow="Membership" title="Connect with the Business Community" description="Discover how participation in a Chamber of Commerce can create connections, shared knowledge and a stronger business voice."
+     sections={[
+  {
+    "eyebrow": "Why membership matters",
+    "title": "Be part of a wider network",
+    "text": "The Chamber's membership approach is intended to bring together businesses, institutions and professionals who share an interest in enterprise development across Buganda.",
+    "cards": [
+      {
+        "title": "Business connections",
+        "text": "Meet and learn from enterprises and stakeholders with related interests."
+      },
+      {
+        "title": "A shared voice",
+        "text": "Participate in constructive discussion about the business environment."
+      },
+      {
+        "title": "Information and development",
+        "text": "Access news about the Chamber's focus areas, activities and enterprise initiatives."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Membership information",
+    "title": "Before applying",
+    "text": "Membership categories, eligibility, application arrangements and any applicable fees require confirmation by the Chamber. This website is not currently accepting paid membership applications.",
+    "cards": [
+      {
+        "title": "Who can participate",
+        "text": "Find information about the Chamber's intended business community."
+      },
+      {
+        "title": "How to enquire",
+        "text": "Use confirmed official Chamber channels for current application arrangements."
+      },
+      {
+        "title": "Explore services",
+        "text": "See the areas of support connected to the Chamber's mandate.",
+        "href": "/services"
+      }
+    ]
+  }
+]} action={{"label":"Explore the Chamber","href":"/about"}} />;
+}

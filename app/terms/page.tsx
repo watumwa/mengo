@@ -1,2 +1,26 @@
 import { BlueprintPage } from "../BlueprintPage";
-export default function Terms(){return <BlueprintPage eyebrow="Legal / Terms" title="Terms of use awaiting approval." description="Approved terms will define acceptable use, content ownership, external links, limitations and contact information." sections={[{eyebrow:"Publication requirement",title:"Legal text should be specific.",text:"The final terms should be reviewed and approved by MCCL before forms, directories or public submissions are represented as operational.",cards:[{title:"Website use",text:"Visitor responsibilities and acceptable use."},{title:"Content",text:"Rights, source attribution and permitted reuse."},{title:"External links",text:"Clear responsibility boundaries for third-party sources."}]}]} action={{label:"Privacy information",href:"/privacy"}}/>}
+
+export default function Terms() {
+  return <BlueprintPage eyebrow="Website Information" title="Terms of Website Use" description="General information about browsing this Chamber of Commerce website and accessing external resources."
+     sections={[
+  {
+    "eyebrow": "Using this website",
+    "title": "Content and service availability",
+    "text": "The formal website terms have not yet been published. Information on this website is provided for general reference and does not itself constitute an offer, membership approval or investment advice.",
+    "cards": [
+      {
+        "title": "External websites",
+        "text": "Links to other organisations are provided for information; their own terms apply."
+      },
+      {
+        "title": "Business opportunities",
+        "text": "Confirm any opportunity, fee or application directly with the responsible organisation."
+      },
+      {
+        "title": "Website content",
+        "text": "Publication and image rights remain with their respective owners where applicable."
+      }
+    ]
+  }
+]} action={{"label":"Privacy information","href":"/privacy"}} />;
+}

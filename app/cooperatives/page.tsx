@@ -1,2 +1,43 @@
 import { BlueprintPage } from "../BlueprintPage";
-export default function Cooperatives(){return <BlueprintPage eyebrow="Buganda Economy / SACCOs & Cooperatives" title="Cooperative enterprise, clearly represented." description="A dedicated home for verified cooperative and SACCO records, separate from the general business directory." sections={[{eyebrow:"Cooperative directory",title:"Built for real organisations.",text:"Search and filters will publish legal name, activity, verified location, service context and approved contact information only when consented data exists.",cards:[{title:"Savings & credit",text:"Confirmed SACCO profiles and eligibility information."},{title:"Producer cooperatives",text:"Agricultural and value-chain organisations with source-cleared records."},{title:"Community enterprise",text:"Verified local cooperative activity and support pathways."}]},{eyebrow:"Profile integrity",title:"Consent, clarity and location.",text:"Success stories and member imagery require named organisations, permissions, dates and verifiable outcomes.",cards:[{title:"Verification status",text:"Make record status visible to every visitor."},{title:"Real premises and people",text:"Use approved organisation imagery, never generic handshakes."},{title:"Update profile",text:"Enable only after a secure submission and approval workflow exists."}]}]} action={{label:"Enquire about cooperative records",href:"/contact"}}/>}
+
+export default function Cooperatives() {
+  return <BlueprintPage eyebrow="SACCOs & Cooperatives" title="Working Together for Enterprise" description="Savings groups, producer cooperatives and community organisations play an important role in collective economic participation."
+     sections={[
+  {
+    "eyebrow": "Cooperative enterprise",
+    "title": "Strength in shared purpose",
+    "text": "Cooperative organisations can help members mobilise savings, access services, pool resources and reach markets.",
+    "cards": [
+      {
+        "title": "SACCOs",
+        "text": "Savings and credit cooperatives can support financial participation for eligible members."
+      },
+      {
+        "title": "Producer groups",
+        "text": "Farmers and producers may organise around shared procurement, processing or marketing."
+      },
+      {
+        "title": "Community initiatives",
+        "text": "Collective enterprise can strengthen local skills and commercial networks."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Explore related sectors",
+    "title": "From saving to trade",
+    "text": "Cooperative enterprises intersect with agriculture, financial services and value chains across the economy. This page provides sector information rather than an official register of individual SACCOs.",
+    "cards": [
+      {
+        "title": "Agribusiness",
+        "text": "Explore the wider agricultural and enterprise sectors.",
+        "href": "/economy/sectors"
+      },
+      {
+        "title": "Business support",
+        "text": "Learn more about enterprise services.",
+        "href": "/services"
+      }
+    ]
+  }
+]} action={{"label":"Explore economic sectors","href":"/economy/sectors"}} />;
+}

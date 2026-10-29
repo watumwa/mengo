@@ -1,12 +1,45 @@
 import Link from "next/link";
-import {ArrowUpRight,BookOpen,Building2,Handshake,Landmark,Newspaper,UsersRound} from "lucide-react";
-import {PageHero,Shell} from "../components";
-const sections=[
- {title:"The Chamber",icon:Landmark,links:[["About the Chamber","/about"],["Vision, Mission & Values","/vision-mission-values"],["Leadership & Board","/leadership"],["Governance & Accountability","/governance"],["Our Strategy","/strategy"],["Six Strategic Goals","/strategic-goals"],["Five Strategic Propositions","/strategic-propositions"],["Partners & Affiliations","/partners"]]},
- {title:"Membership",icon:UsersRound,links:[["Membership Overview","/membership"],["Membership Categories","/membership-categories"],["Fees & Benefits","/membership-fees"],["Special Interest Groups","/special-interest-groups"],["Member Success Stories","/success-stories"],["Join the Chamber","/join"]]},
- {title:"Business Services",icon:Building2,links:[["Business Development","/business-development"],["Advisory & Consultancy","/business-advisory"],["Training & Capacity Building","/training"],["Entrepreneurship & Innovation","/entrepreneurship"],["Agricultural Transformation","/agriculture"],["Business Governance","/arbitration"]]},
- {title:"Trade & Investment",icon:Handshake,links:[["Trade & Investment Hub","/trade-investment"],["Commercial Centres","/centres"],["Business Directory","/businesses"],["Opportunity Exchange","/exchange"],["Business Opportunity Navigator","/opportunity-navigator"],["Interactive Data Explorer","/data-explorer"],["Events Calendar Preview","/calendar-preview"],["English / Luganda Preview","/language-preview"],["International Trade","/international-trade"],["Trade Missions & B2B","/trade-missions"]]},
- {title:"Research & Advocacy",icon:BookOpen,links:[["Research & Publications","/research"],["Market Intelligence","/intelligence"],["Policy Advocacy","/policy-advocacy"],["Policy Briefs","/policy-briefs"],["Business Resources","/resources"],["Regional & Ssaza Networks","/regional-networks"]]},
- {title:"News & Support",icon:Newspaper,links:[["News & Announcements","/news-announcements"],["Events Calendar","/events-calendar"],["Media Gallery","/media-gallery"],["Help & FAQs","/faq"],["Contact","/contact"],["Digital Workspace Designs","/portal-preview"]]}
+import { ArrowUpRight, BookOpen, Building2, Handshake, Landmark, Newspaper } from "lucide-react";
+import { PageHero, Shell } from "../components";
+
+const sections = [
+  { title: "The Kingdom", icon: Landmark, links: [
+    ["Kingdom Overview", "/kingdom"], ["History & Heritage", "/kingdom/history"],
+    ["Leadership & Institutions", "/kingdom/leadership"], ["Masaza & Gombolola", "/kingdom/masaza"],
+    ["Culture & Tourism", "/kingdom/culture-tourism"]
+  ]},
+  { title: "The Chamber", icon: Landmark, links: [
+    ["About the Chamber", "/about"], ["Leadership & Governance", "/about/leadership"],
+    ["Our Strategy", "/strategy"], ["Membership", "/membership"], ["Business Services", "/services"]
+  ]},
+  { title: "Economy & Business", icon: Building2, links: [
+    ["Buganda Economy", "/economy"], ["Economic Sectors", "/economy/sectors"],
+    ["Business Community", "/businesses"], ["SACCOs & Cooperatives", "/cooperatives"],
+    ["Commercial Centres", "/commercial-centres"], ["Regional Economy", "/economic-map"]
+  ]},
+  { title: "Trade & Investment", icon: Handshake, links: [
+    ["Trade & Investment", "/invest"], ["Market Opportunities", "/opportunities"],
+    ["Market Intelligence", "/intelligence"], ["Business Advocacy", "/policy-advocacy"]
+  ]},
+  { title: "News & Resources", icon: Newspaper, links: [
+    ["News & Insights", "/insights"], ["Events & Programmes", "/events-calendar"],
+    ["Reports & Publications", "/publications"]
+  ]},
+  { title: "Information & Support", icon: BookOpen, links: [
+    ["Contact", "/contact"], ["Accessibility", "/accessibility"],
+    ["Privacy", "/privacy"], ["Website Terms", "/terms"]
+  ]}
 ];
-export default function ExplorePage(){return <Shell><main><PageHero title="Explore the Chamber" description="Find the Chamber's proposed programmes, membership pathways, trade resources and institutional information in one place."/><section className="section cream"><div className="container"><div className="site-index-grid">{sections.map(({title,icon:Icon,links})=><section className="site-index-card" key={title}><div className="site-index-heading"><span className="serviceicon"><Icon size={22}/></span><h2>{title}</h2></div><ul>{links.map(([label,url])=><li key={url}><Link href={url}>{label}<ArrowUpRight size={15}/></Link></li>)}</ul></section>)}</div><p className="site-index-note">This is a frontend presentation of proposed Chamber services. Operational availability, membership fees and official appointments require confirmation.</p></div></section></main></Shell>}
+export default function ExplorePage() {
+ return <Shell><main>
+  <PageHero title="Explore the Chamber" description="Find information about the Kingdom, business community, membership, trade, investment and the Chamber's work." />
+  <section className="section cream"><div className="container">
+   <div className="site-index-grid">{sections.map(({title,icon:Icon,links}) =>
+    <section className="site-index-card" key={title}>
+     <div className="site-index-heading"><span className="serviceicon"><Icon size={22}/></span><h2>{title}</h2></div>
+     <ul>{links.map(([label,url])=><li key={url}><Link href={url}>{label}<ArrowUpRight size={15}/></Link></li>)}</ul>
+    </section>
+   )}</div>
+  </div></section>
+ </main></Shell>;
+}

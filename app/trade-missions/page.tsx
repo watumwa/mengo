@@ -1,14 +1,3 @@
-"use client";
-import {useState} from "react";
-import Link from "next/link";
-import {ArrowUpRight,Globe2,MapPinned,BriefcaseBusiness,UsersRound,ShieldAlert} from "lucide-react";
-import {Shell} from "../components";
-const missions=[
- {title:"Inbound buyer and investor visits",direction:"Inbound",icon:Globe2,description:"A proposed pathway for hosting international buyers, investors and business delegations.",steps:["Expression of interest","Sector and partner matching","Business meetings","Follow-up"]},
- {title:"Outbound trade delegations",direction:"Outbound",icon:MapPinned,description:"A proposed pathway for connecting Buganda enterprises with regional and international markets.",steps:["Market assessment","Participant readiness","Delegation planning","Commercial follow-up"]},
- {title:"Sector-specific business missions",direction:"Sector focused",icon:BriefcaseBusiness,description:"A proposed programme concept for focused visits and B2B engagements in priority sectors.",steps:["Sector selection","Business profiling","Stakeholder dialogue","Opportunity review"]}
-];
-export default function TradeMissions(){
- const [direction,setDirection]=useState("All missions");const [selected,setSelected]=useState<string|null>(null);
- return <Shell><main><section className="connect-hero"><div className="container"><span className="eyebrow">Trade & Market Access</span><h1>TRADE MISSIONS & <em>DELEGATIONS</em></h1><p>Explore the Chamber's proposed approach to facilitating inbound and outbound business connections.</p></div></section><div className="container concept-page"><div className="connect-intro"><span className="eyebrow">Building market connections</span><h2>Connecting Buganda to wider markets.</h2><p>Facilitating trade missions is a strategic-plan priority. The experiences below describe proposed workflows; no mission dates, confirmed destinations, fees or registration availability are asserted.</p></div><div className="concept-tabs">{["All missions","Inbound","Outbound","Sector focused"].map(x=><button key={x} type="button" className={direction===x?"active":""} onClick={()=>setDirection(x)}>{x}</button>)}</div><div className="learning-grid">{missions.filter(x=>direction==="All missions"||x.direction===direction).map(m=>{const Icon=m.icon;return <article key={m.title}><div className="learning-icon"><Icon size={26}/></div><span>{m.direction}</span><h3>{m.title}</h3><p>{m.description}</p><button type="button" onClick={()=>setSelected(selected===m.title?null:m.title)}>{selected===m.title?"Hide mission stages":"Explore mission stages"} <ArrowUpRight size={15}/></button>{selected===m.title&&<ol className="mission-steps">{m.steps.map(s=><li key={s}>{s}</li>)}</ol>}</article>})}</div><div className="mission-notice"><ShieldAlert size={20}/><p>These are programme concepts only. Please contact MCCL for officially confirmed missions and participation procedures.</p></div><div className="concept-next"><span><UsersRound size={18}/> Interested in trade promotion and partnerships?</span><Link href="/contact">Contact the Chamber <ArrowUpRight size={16}/></Link></div></div></main></Shell>
-}
+import { redirect } from "next/navigation";
+// Historic concept URL retained for incoming links; direct visitors to published information.
+export default function Page(){ redirect("/invest"); }

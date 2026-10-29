@@ -1,26 +1,47 @@
-"use client";
-import {useMemo,useState} from "react";
-import Link from "next/link";                                                                                                                                                                                                                                                                                                                                                                           
-import {ArrowUpRight,Building2,MapPin,Search,ShieldAlert,SlidersHorizontal,Handshake,Store} from "lucide-react";
-import {Shell} from "../components";
-import {useChamberRecords} from "../hooks/useChamberRecords";
-type Business={id:string|number;name:string;sector:string;district:string;description:string;verified:boolean};
-const sectors=["All sectors","Agriculture","Retail","Manufacturing","Technology"];
-export default function BusinessDirectory(){
- const {records,loading,error}=useChamberRecords<Business>("businesses");
- const [query,setQuery]=useState("");const [selected,setSelected]=useState<string[]>([]);const [sector,setSector]=useState("All sectors");const [district,setDistrict]=useState("All districts");const [sort,setSort]=useState("Name A–Z");
- const districts=["All districts",...new Set(records.map(x=>x.district))];
- const availableSectors=["All sectors",...new Set([...sectors.slice(1),...records.map(x=>x.sector)])];
- const results=useMemo(()=>records.filter(x=>(sector==="All sectors"||x.sector===sector)&&(district==="All districts"||x.district===district)&&(`${x.name} ${x.sector} ${x.district} ${x.description}`.toLowerCase().includes(query.toLowerCase()))).sort((a,b)=>sort==="Name Z–A"?b.name.localeCompare(a.name):a.name.localeCompare(b.name)),[records,query,sector,district,sort]);
- const toggle=(id:string)=>setSelected(v=>v.includes(id)?v.filter(x=>x!==id):v.length<3?[...v,id]:v);
- const compare=records.filter(x=>selected.includes(String(x.id)));
- const reset=()=>{setQuery("");setSector("All sectors");setDistrict("All districts");setSort("Name A–Z")};
- return <Shell><main className="business-directory-page"><section className="connect-hero"><div className="container"><span className="eyebrow">Explore Local Enterprise</span><h1>BUSINESS <em>DIRECTORY</em></h1><p>Explore businesses, sectors and commercial connections across Buganda.</p><div className="connect-hero-links"><Link href="/connect">Explore matchmaking <ArrowUpRight size={16}/></Link><Link href="/membership">Membership pathways <ArrowUpRight size={16}/></Link></div></div></section>
- <div className="container directory-premium"><div className="connect-intro"><span className="eyebrow">Enterprise discovery</span><h2>Discover the business community.</h2><p>Search the current demonstration directory by name, sector or district. Listings are illustrative and should not be interpreted as verified Chamber members.</p></div>
- <div className="directory-toolbar"><label className="directory-query"><Search size={19}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search business, sector or service..." aria-label="Search businesses"/></label><label><SlidersHorizontal size={16}/><select aria-label="Filter sector" value={sector} onChange={e=>setSector(e.target.value)}>{availableSectors.map(x=><option key={x}>{x}</option>)}</select></label><label><MapPin size={16}/><select aria-label="Filter district" value={district} onChange={e=>setDistrict(e.target.value)}>{districts.map(x=><option key={x}>{x}</option>)}</select></label><label><select aria-label="Sort businesses" value={sort} onChange={e=>setSort(e.target.value)}><option>Name A–Z</option><option>Name Z–A</option></select></label></div>
- <div className="directory-results-head"><div><h3>Business profiles</h3><p><ShieldAlert size={14}/> Sample records are not verified or endorsed.</p></div><div><span aria-live="polite">{loading?"Loading...":`${results.length} results`}</span><button type="button" onClick={reset}>Reset filters</button></div></div>
- <div className="directory-premium-grid">{results.map((x,i)=><article key={x.id}><div className="directory-company-top"><span className="directory-company-avatar"><Building2 size={26}/></span><span className="directory-company-index">PROFILE {String(i+1).padStart(2,"0")}</span></div><span className="directory-company-sector">{x.sector}</span><h3>{x.name}</h3><p className="directory-company-description">{x.description}</p><div className="directory-company-location"><MapPin size={15}/>{x.district}</div><div className="directory-company-foot"><span><ShieldAlert size={13}/> Unverified preview</span><Link href="/contact">Enquire <ArrowUpRight size={15}/></Link></div><button className="directory-compare-button" type="button" aria-pressed={selected.includes(String(x.id))} onClick={()=>toggle(String(x.id))}>{selected.includes(String(x.id))?"Remove from comparison":selected.length>=3?"Maximum 3 profiles":"Compare this profile"}</button></article>)}</div>
- {loading&&<p className="directory-feedback" role="status">Loading business profiles...</p>}{error&&<p className="directory-feedback" role="alert">{error}</p>}{!loading&&!results.length&&<div className="directory-feedback"><Store size={22}/><h3>No matching profiles</h3><p>Try another sector or district.</p><button type="button" onClick={reset}>Clear filters</button></div>}
- {compare.length>0&&<section className="directory-compare" aria-label="Compare selected sample businesses"><div className="directory-compare-head"><div><span className="eyebrow">Interactive comparison</span><h3>Compare sample business profiles</h3><p>{compare.length} of 3 selected · Illustrative records only</p></div><button type="button" onClick={()=>setSelected([])}>Clear selection</button></div><div className="directory-compare-grid">{compare.map(x=><article key={x.id}><strong>{x.name}</strong><span>{x.sector}</span><span>{x.district}</span><p>{x.description}</p><button type="button" onClick={()=>toggle(String(x.id))}>Remove</button></article>)}</div></section>}
- <div className="directory-next"><Handshake size={25}/><div><h3>Looking for the right commercial partner?</h3><p>Explore proposed business matching by partner type, sector and region.</p></div><Link href="/connect">MCCL CONNECT <ArrowUpRight size={16}/></Link></div></div></main></Shell>
+import { BlueprintPage } from "../BlueprintPage";
+
+export default function Businesses(){
+ return <BlueprintPage eyebrow="Business Community" title="Discover Enterprise in Buganda" description="Explore the sectors, networks and commercial connections that bring businesses together across Buganda." sections={[
+  {
+    "eyebrow": "Business connections",
+    "title": "A broad and diverse business community",
+    "text": "From small retailers and agricultural producers to manufacturers and service firms, enterprises contribute to the region's jobs, trade and livelihoods.",
+    "cards": [
+      {
+        "title": "Agriculture & processing",
+        "text": "Growers, processors, wholesalers and businesses involved in value addition."
+      },
+      {
+        "title": "Trade & distribution",
+        "text": "Markets, transport, wholesale networks and everyday retail enterprise."
+      },
+      {
+        "title": "Professional & digital services",
+        "text": "Finance, business advisory, technology and a wide range of other service providers."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Business directory",
+    "title": "Organisation listings",
+    "text": "A verified MCCL member and business directory has not yet been published on this website. The Chamber's official channels should be used to confirm membership or request an introduction.",
+    "cards": [
+      {
+        "title": "Join the network",
+        "text": "Learn about membership participation.",
+        "href": "/membership"
+      },
+      {
+        "title": "Commercial centres",
+        "text": "Explore markets and trading areas.",
+        "href": "/commercial-centres"
+      },
+      {
+        "title": "Economic sectors",
+        "text": "Read more about business activity in Buganda.",
+        "href": "/economy/sectors"
+      }
+    ]
+  }
+]} action={{"label":"Explore membership","href":"/membership"}} />;
 }

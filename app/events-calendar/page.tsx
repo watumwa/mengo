@@ -1,8 +1,46 @@
-"use client";
-import {useMemo,useState} from "react";
-import Link from "next/link";
-import {CalendarDays,MapPin,ArrowUpRight,Search} from "lucide-react";
-import {Shell} from "../components";
-const categories=["All programmes","Trade fairs","Workshops","Networking","Exhibitions"];
-const programmes=[{title:"Trade Fairs & Exhibitions",type:"Trade fairs",desc:"Showcase local enterprise and connect businesses with buyers and partners."},{title:"Enterprise Skills Workshops",type:"Workshops",desc:"Practical learning on financial literacy, digital commerce and business operations."},{title:"Business Networking Forums",type:"Networking",desc:"Build relationships between traders, suppliers, investors and community leaders."},{title:"Product & Innovation Showcases",type:"Exhibitions",desc:"Create visibility for locally developed products and innovative enterprises."}];
-export default function EventsCalendar(){const [category,setCategory]=useState("All programmes");const [q,setQ]=useState("");const filtered=useMemo(()=>programmes.filter(x=>(category==="All programmes"||x.type===category)&&JSON.stringify(x).toLowerCase().includes(q.toLowerCase())),[category,q]);return <Shell><main><section className="directoryhero eventhero"><div className="container"><div className="kicker">Trade, learn and connect</div><h1>Events & Programmes</h1><p>Explore the types of business forums, trade fairs, workshops and networking programmes envisioned for the Chamber.</p></div></section><section className="section cream"><div className="container"><p className="notice">Programme concepts only. No confirmed event dates, registrations or tickets are available yet.</p><div className="sectionhead"><div><div className="eyebrow">Community calendar</div><h2>Explore Programmes</h2></div></div><div className="programfilters">{categories.map(x=><button key={x} className={category===x?"active":""} onClick={()=>setCategory(x)}>{x}</button>)}</div><label className="searchbox eventsearch"><Search size={17}/><input aria-label="Search programmes" placeholder="Search programmes..." value={q} onChange={e=>setQ(e.target.value)}/></label><div className="cards">{filtered.map((x,i)=><article className="articlecard" key={x.title}><div className="eventvisual"><CalendarDays size={38}/><span>Programme concept</span></div><div className="body"><span className="tag">{x.type}</span><h3>{x.title}</h3><p>{x.desc}</p><Link className="textlink" href="/contact">Ask about this programme <ArrowUpRight size={15}/></Link></div></article>)}</div>{!filtered.length&&<p className="empty">No programmes match the selected filters.</p>}</div></section></main></Shell>}
+import { BlueprintPage } from "../BlueprintPage";
+
+export default function EventsCalendar(){
+ return <BlueprintPage eyebrow="Events & Programmes" title="Bringing Business People Together" description="Business forums, training and networking can help enterprises exchange ideas and build stronger connections." sections={[
+  {
+    "eyebrow": "Business engagement",
+    "title": "Ways to meet and collaborate",
+    "text": "The Chamber's strategic priorities include opportunities for dialogue, sector engagement and business development.",
+    "cards": [
+      {
+        "title": "Business forums",
+        "text": "Conversations among enterprise leaders, institutions and stakeholders."
+      },
+      {
+        "title": "Trade exhibitions",
+        "text": "Opportunities to showcase products, services and commercial ideas."
+      },
+      {
+        "title": "Skills workshops",
+        "text": "Learning activities focused on practical business needs."
+      },
+      {
+        "title": "Networking events",
+        "text": "Meeting people and organisations with complementary interests."
+      }
+    ]
+  },
+  {
+    "eyebrow": "Event information",
+    "title": "Confirmed dates and registration",
+    "text": "No verified event schedule or online registration is currently published on this page. Please check the Chamber's official communication channels for event announcements.",
+    "cards": [
+      {
+        "title": "Stay informed",
+        "text": "Read the website's news and information sections.",
+        "href": "/insights"
+      },
+      {
+        "title": "Membership",
+        "text": "Learn more about participating in the Chamber.",
+        "href": "/membership"
+      }
+    ]
+  }
+]} action={{"label":"Explore the Chamber","href":"/about"}} />;
+}
