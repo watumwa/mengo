@@ -1,0 +1,63 @@
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { realPhotos } from "./realPhotos";
+
+const stories = [
+  {
+    label: "CHAMBER NEWS",
+    title: "Trade exhibitions can unlock business growth",
+    description: "Board Chairperson John Fred Kiyimba Freeman encourages business owners to participate in trade exhibitions to expand their enterprises and unlock opportunities.",
+    href: "/insights/trade-exhibitions-business-growth",
+    photo: realPhotos.chamberInauguration,
+  },
+  {
+    label: "BUSINESS & TRADE",
+    title: "Connecting enterprise with opportunity",
+    description: "A business forum brings together people working across enterprise and markets.",
+    href: "/services",
+    photo: realPhotos.businessForum,
+  },
+  {
+    label: "AGRIBUSINESS",
+    title: "Supporting value addition and trade",
+    description: "Coffee products from Mwanyi Terimba illustrate opportunities for local enterprise and value addition.",
+    href: "/economy",
+    photo: realPhotos.coffeeProducts,
+  },
+] as const;
+
+export function HeroStoryCarousel() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => setActive((index) => (index + 1) % stories.length), 6500);
+    return () => window.clearInterval(id);
+  }, [paused]);
+  const next = () => setActive((index) => (index + 1) % stories.length);
+  const previous = () => setActive((index) => (index - 1 + stories.length) % stories.length);
+  return (
+    <div className="mc-hero-slider" aria-roledescription="carousel" aria-label="Chamber stories" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false); }}>
+      <div className="mc-hero-slider-photo">
+        {stories.map((story, index) => (
+          <img key={story.photo.src} src={story.photo.src} alt={story.photo.alt} className={index === active ? "is-active" : ""} style={{ objectPosition: story.photo.position }} width="880" height="588" aria-hidden={index !== active} />
+        ))}
+      </div>
+      <div className="mc-hero-slider-detail" aria-live="off">
+        <p className="mc-hero-slider-label">{stories[active].label}</p>
+        <h3>{stories[active].title}</h3>
+        <p className="mc-hero-slider-description">{stories[active].description}</p>
+        <div className="mc-hero-slider-bottom">
+          <Link href={stories[active].href}>READ MORE <ArrowRight size={15} aria-hidden="true" /></Link>
+          <div className="mc-hero-slider-controls" aria-label="Slide navigation">
+            <button type="button" onClick={previous} aria-label="Previous story"><ChevronLeft size={19}/></button>
+            <span aria-label={`Story ${active + 1} of ${stories.length}`}>{String(active + 1).padStart(2, "0")} / {String(stories.length).padStart(2, "0")}</span>
+            <button type="button" onClick={next} aria-label="Next story"><ChevronRight size={19}/></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

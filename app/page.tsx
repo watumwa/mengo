@@ -14,6 +14,7 @@ import {
 import { Shell } from "./components";
 import { realPhotos } from "./realPhotos";
 import { ResponsivePhoto } from "./ResponsivePhoto";
+import { HeroStoryCarousel } from "./HeroStoryCarousel";
 
 
 const quickActions = [
@@ -105,27 +106,7 @@ export default function HomePage() {
               <Link href="/membership" className="mc-nema-primary-action">JOIN THE CHAMBER <ArrowRight size={17} /></Link>
             </div>
 
-            <aside className="mc-nema-service-panel mc-nema-news-panel" aria-label="Featured Chamber news and services">
-              <Link className="mc-hero-news-card" href="/insights/trade-exhibitions-business-growth" aria-label="Read Mengo Chamber news about trade exhibitions">
-                <ResponsivePhoto photo={realPhotos.chamberInauguration} width={880} height={588} sizes="(max-width: 760px) 100vw, 440px" />
-                <div className="mc-hero-news-overlay">
-                  <span>CHAMBER NEWS</span>
-                  <strong>Trade exhibitions can unlock business growth</strong>
-                  <small>READ THE STORY <ArrowUpRight size={14} aria-hidden="true"/></small>
-                </div>
-              </Link>
-              <div className="mc-nema-panel-heading">
-                <span>WELCOME TO MCCL</span>
-                <h3>Connecting business to opportunity.</h3>
-                <p>Discover the services and connections helping enterprises grow across Buganda.</p>
-              </div>
-              <nav className="mc-nema-panel-services" aria-label="Explore Chamber services">
-                <Link href="/membership"><UsersRound size={18} aria-hidden="true" /><strong>Membership</strong><ArrowUpRight size={14} aria-hidden="true" /></Link>
-                <Link href="/trade-investment"><Handshake size={18} aria-hidden="true" /><strong>Trade &amp; investment</strong><ArrowUpRight size={14} aria-hidden="true" /></Link>
-                <Link href="/services"><BriefcaseBusiness size={18} aria-hidden="true" /><strong>Enterprise support</strong><ArrowUpRight size={14} aria-hidden="true" /></Link>
-                <Link href="/intelligence"><BarChart3 size={18} aria-hidden="true" /><strong>Market intelligence</strong><ArrowUpRight size={14} aria-hidden="true" /></Link>
-              </nav>
-            </aside>
+            <aside className="mc-nema-service-panel mc-nema-news-panel" aria-label="Featured stories"><HeroStoryCarousel /></aside>
           </div>
           <p className="mc-nema-photo-credit">Bulange Mengo photo: <a href="https://commons.wikimedia.org/wiki/File:Buganda_Court_Building1.jpg" target="_blank" rel="noopener noreferrer">Dixon099</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · cropped and darkened</p>
 

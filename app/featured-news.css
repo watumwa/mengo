@@ -38,3 +38,23 @@
 .mc-hero-news-card:focus-visible{outline:3px solid #e0b95e;outline-offset:-3px}
 @media(max-width:760px){.mc-hero-news-card{height:270px}.mc-hero-news-overlay strong{font-size:22px}}
 @media(prefers-reduced-motion:reduce){.mc-hero-news-card img{transition:none!important}.mc-hero-news-card:hover img{transform:none}}
+
+/* Balanced, image-led Chamber story carousel */
+.mc-nema-home .mc-nema-news-panel{padding:0;overflow:hidden;background:#fff}
+.mc-hero-slider{width:100%;min-width:0;background:#fff;color:#173d69}
+.mc-hero-slider-photo{height:clamp(240px,26vw,355px);position:relative;overflow:hidden;background:#112b48}
+.mc-hero-slider-photo img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s ease}
+.mc-hero-slider-photo img.is-active{opacity:1}
+.mc-hero-slider-detail{padding:clamp(20px,2.4vw,32px);background:#fff}
+.mc-hero-slider-label{font-size:11px!important;letter-spacing:.14em;font-weight:800;color:#a47a38!important;margin:0 0 10px!important}
+.mc-hero-slider-detail h3{font-size:clamp(21px,2.05vw,29px);line-height:1.22;margin:0 0 12px;letter-spacing:-.035em;color:#173d69}
+.mc-hero-slider-description{color:#5a6f83!important;font-size:14px!important;line-height:1.65!important;margin:0!important}
+.mc-hero-slider-bottom{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-top:19px}
+.mc-hero-slider-bottom>a{display:inline-flex;align-items:center;gap:7px;color:#173d69;font-size:11px;font-weight:800;letter-spacing:.075em}
+.mc-hero-slider-controls{display:flex;gap:8px;align-items:center}
+.mc-hero-slider-controls button{height:34px;width:34px;border-radius:50%;border:1px solid #d3dce7;background:#fff;color:#173d69;display:grid;place-items:center;cursor:pointer}
+.mc-hero-slider-controls button:hover{background:#ecf2f8}
+.mc-hero-slider-controls button:focus-visible,.mc-hero-slider-bottom a:focus-visible{outline:3px solid #d2a54a;outline-offset:3px}
+.mc-hero-slider-controls span{font-size:11px;font-weight:800;color:#6e8092;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:760px){.mc-hero-slider-photo{height:270px}.mc-hero-slider-detail{padding:23px}.mc-hero-slider-detail h3{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.mc-hero-slider-photo img{transition:none}}
