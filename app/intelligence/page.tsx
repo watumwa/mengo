@@ -1,7 +1,7 @@
 import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
-export default function Intelligence(){ return <BlueprintPage eyebrow="Market Intelligence" title="Knowledge for Better Business Decisions" description="Research, market information and business insight can help entrepreneurs understand change and plan for growth." image={realPhotos.businessForum} imageCaption="Participants discussing business issues at the BBS Business Forum." sections={[
+export default function Intelligence(){ return <BlueprintPage eyebrow="Market Intelligence" title="Knowledge for Better Business Decisions" description="Research, market information and business insight can help entrepreneurs understand change and plan for growth." image={realPhotos.businessForum} imageCaption="Participants discussing business issues at the BBS Business Forum." gallery={[{ photo: realPhotos.masazaMap, label: "Illustrative map of Buganda traditional counties" }, { photo: realPhotos.coffeeExport, label: "Coffee export activity reflecting regional market connections" }]} sections={[
   {
     "eyebrow": "Business research",
     "title": "Why market information matters",

@@ -2,7 +2,7 @@ import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
 export default function EventsCalendar(){
- return <BlueprintPage eyebrow="Events & Programmes" title="Bringing Business People Together" description="Business forums, training and networking can help enterprises exchange ideas and build stronger connections." image={realPhotos.birthdayRun} imageCaption="Large public turnout at the Kabaka Birthday Run." sections={[
+ return <BlueprintPage eyebrow="Events & Programmes" title="Bringing Business People Together" description="Business forums, training and networking can help enterprises exchange ideas and build stronger connections." image={realPhotos.birthdayRun} imageCaption="Large public turnout at the Kabaka Birthday Run." gallery={[{ photo: realPhotos.enkuuka, label: "Community turnout at CBS Enkuuka" }, { photo: realPhotos.birthdayRunGroup, label: "Kabaka Birthday Run participants at an event" }]} sections={[
   {
     "eyebrow": "Business engagement",
     "title": "Ways to meet and collaborate",

@@ -3,7 +3,7 @@ import { realPhotos } from "../realPhotos";
 
 export default function CommercialCentres() {
   return <BlueprintPage eyebrow="Markets & Trading Centres" title="Where Business Happens" description="Markets and commercial centres bring together traders, customers, suppliers and services throughout Buganda."
-    image={realPhotos.marketStalls} imageCaption="Market stalls and local trading activity, from the REXBA collection." sections={[
+    image={realPhotos.marketStalls} imageCaption="Market stalls and local trading activity, from the REXBA collection." gallery={[{ photo: realPhotos.enterpriseGroup, label: "Entrepreneurs outside the Rexba Ltd offices" }, { photo: realPhotos.coffeeExport, label: "Coffee export activity at Mwanyi Terimba" }]} sections={[
   {
     "eyebrow": "Commercial life",
     "title": "Trading places and local markets",

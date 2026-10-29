@@ -3,7 +3,7 @@ import { realPhotos } from "../realPhotos";
 
 export default function Services() {
   return <BlueprintPage eyebrow="Business Services" title="Supporting Enterprise Growth" description="Explore the areas in which the Chamber aims to support business connections, development and representation."
-     image={realPhotos.pewosaEnterprise} imageCaption="An activity at a CBS PEWOSA enterprise and community programme." sections={[
+     image={realPhotos.pewosaEnterprise} imageCaption="An activity at a CBS PEWOSA enterprise and community programme." gallery={[{ photo: realPhotos.pewosaAgriculture, label: "Agricultural seedlings at a CBS PEWOSA event" }, { photo: realPhotos.coffeeProducts, label: "Processed and packaged coffee products from Mwanyi Terimba" }]} sections={[
   {
     "eyebrow": "Enterprise development",
     "title": "Practical areas of support",

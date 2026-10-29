@@ -2,7 +2,7 @@ import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
 export default function Invest(){
- return <BlueprintPage eyebrow="Trade & Investment" title="Explore Investment Potential in Buganda" description="Understand the sectors, partnerships and enterprise opportunities that can support long-term economic growth." image={realPhotos.coffeeProducts} imageCaption="Packaged coffee products at Mwanyi Terimba, illustrating value addition." sections={[
+ return <BlueprintPage eyebrow="Trade & Investment" title="Explore Investment Potential in Buganda" description="Understand the sectors, partnerships and enterprise opportunities that can support long-term economic growth." image={realPhotos.coffeeProducts} imageCaption="Packaged coffee products at Mwanyi Terimba, illustrating value addition." gallery={[{ photo: realPhotos.coffeeExport, label: "Mwanyi Terimba coffee export shipment" }, { photo: realPhotos.enterpriseGroup, label: "Enterprise team outside Rexba Ltd" }]} sections={[
   {
     "eyebrow": "Investment landscape",
     "title": "Where enterprise meets opportunity",

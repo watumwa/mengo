@@ -8,7 +8,7 @@ export default function Institutions() {
     description="Education, media, culture, enterprise and community organisations contribute in different ways to life across Buganda."
     image={realPhotos.k2Launch}
     imageCaption="A group photograph at a Kibuga-branded event; contextual Kingdom enterprise imagery."
-    sections={[
+    gallery={[{ photo: realPhotos.educationCelebration, label: "Celebration at an education ceremony" }, { photo: realPhotos.essuubiCommunity, label: "An Essuubi Lyo Zambogo community initiative" }]} sections={[
   {
     "eyebrow": "Institutional landscape",
     "title": "Different organisations, different roles",

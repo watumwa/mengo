@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { PageHero, Shell } from "../components";
+import { realPhotos } from "../realPhotos";
+import { ResponsivePhoto } from "../ResponsivePhoto";
 
 type Detail = { title: string; description: string; intro: string; items: { title: string; text: string }[]; cta: string };
 
@@ -329,11 +331,26 @@ const legacyRoutes: Record<string,string> = {
  "training":"/services"
 };
 
-const visualBySlug: Record<string, { src: string; alt: string }> = {
-  about: { src: "/images/buganda-royal-palace.jpg", alt: "Buganda royal palace in Mengo, Kampala" },
-  "commercial-centres": { src: "/images/kampala-market.jpg", alt: "Kampala market and commercial activity" },
-  "market-linkages": { src: "/images/kampala-market.jpg", alt: "Kampala market and commercial activity" },
-  events: { src: "/images/buganda-traditional-wear.jpg", alt: "Buganda community gathering in traditional dress" },
+const visualBySlug: Record<string, { src: string; alt: string; position?: string }> = {
+  "policy-advocacy": realPhotos.businessForum,
+  "regional-networks": realPhotos.masazaMap,
+  "trade-missions": realPhotos.coffeeExport,
+  "leadership": realPhotos.chamberInauguration,
+  "secretariat": realPhotos.chamberInauguration,
+  "about": realPhotos.chamberInauguration,
+  "strategic-goals": realPhotos.pewosaAgriculture,
+  "strategic-propositions": realPhotos.businessForum,
+  "membership": realPhotos.enterpriseGroup,
+  "commercial-centres": realPhotos.marketStalls,
+  "investment": realPhotos.coffeeExport,
+  "events": realPhotos.birthdayRun,
+  "impact": realPhotos.pewosaAgriculture,
+  "contact": realPhotos.chamberInauguration,
+  "business-advisory": realPhotos.businessForum,
+  "training": realPhotos.educationCelebration,
+  "entrepreneurship": realPhotos.enterpriseGroup,
+  "agriculture": realPhotos.pewosaAgriculture,
+  "market-linkages": realPhotos.coffeeExport,
 };
 
 export function generateStaticParams() {
@@ -372,7 +389,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
         <p>{data.intro}</p>
         <div className="detail-actions"><Link className="btn navy" href={primaryHref}>{data.cta} <ArrowUpRight size={16}/></Link><Link className="detail-text-link" href="/explore">Explore the Chamber <ArrowRight size={16}/></Link></div>
       </div>
-      {visual && <div className="detail-image"><img src={visual.src} alt={visual.alt}/><span>{visual.alt}</span></div>}
+      {visual && <div className="detail-image"><ResponsivePhoto photo={visual} width={900} height={580} sizes="(max-width: 800px) 100vw, 45vw" /><span>{visual.alt}</span></div>}
     </div></section>
     <section className="detail-priorities section cream"><div className="container">
       <div className="sectionhead"><div><div className="eyebrow">Explore in detail</div><h2>{strategyPage ? "Our strategic priorities" : membershipPage ? "Membership information" : "Key areas and opportunities"}</h2></div>

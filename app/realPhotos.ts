@@ -124,4 +124,19 @@ export const realPhotos = {
     alt: "People taking part in a CBS PEWOSA programme event",
     position: "center",
   },
+  chamberInauguration: {
+    src: "/images/mengo-board-inauguration.jpeg",
+    alt: "Mengo Chamber of Commerce inauguration group photograph",
+    position: "center 40%",
+  },
+  masazaMap: {
+    src: "/images/buganda-amasaza-map.jpg",
+    alt: "Map illustrating Buganda traditional counties",
+    position: "center",
+  },
+  palaceLocal: {
+    src: "/images/buganda-royal-palace.jpg",
+    alt: "Photograph of the royal palace building in Mengo",
+    position: "center",
+  },
 } satisfies Record<string, ChamberPhoto>;

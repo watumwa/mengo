@@ -9,7 +9,7 @@ export default function KingdomHistory() {
     image={realPhotos.culturalPerformance}
     imageCaption="A cultural performance from the supplied Buganda Royal photo collection."
     source={{"label":"Official Buganda Kingdom information","href":"https://buganda.or.ug/"}}
-    sections={[
+    gallery={[{ photo: realPhotos.palaceLocal, label: "The royal palace building in Mengo" }, { photo: realPhotos.ekisaakaate, label: "Ekisaakaate programme display from the client collection" }]} sections={[
   {
     "eyebrow": "Living history",
     "title": "A heritage carried across generations",

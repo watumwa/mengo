@@ -2,7 +2,7 @@ import { BlueprintPage } from "../BlueprintPage";
 import { realPhotos } from "../realPhotos";
 
 export default function Businesses(){
- return <BlueprintPage eyebrow="Business Community" title="Discover Enterprise in Buganda" description="Explore the sectors, networks and commercial connections that bring businesses together across Buganda." image={realPhotos.enterpriseGroup} imageCaption="A team outside the offices of Rexba Ltd, illustrating local enterprise." sections={[
+ return <BlueprintPage eyebrow="Business Community" title="Discover Enterprise in Buganda" description="Explore the sectors, networks and commercial connections that bring businesses together across Buganda." image={realPhotos.enterpriseGroup} imageCaption="A team outside the offices of Rexba Ltd, illustrating local enterprise." gallery={[{ photo: realPhotos.marketStalls, label: "Market traders and goods from the REXBA collection" }, { photo: realPhotos.coffeeProducts, label: "Mwanyi Terimba coffee products ready for sale" }]} sections={[
   {
     "eyebrow": "Business connections",
     "title": "A broad and diverse business community",

@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, ExternalLink } from "lucide-react";
 import { PageHero, Shell } from "./components";
@@ -12,12 +13,13 @@ export type BlueprintPageProps = {
   description: string;
   image?: ChamberPhoto;
   imageCaption?: string;
+  gallery?: Array<{ photo: ChamberPhoto; label: string }>;
   source?: { label: string; href: string };
   sections: ContentSection[];
   action?: { label: string; href: string };
 };
 
-export function BlueprintPage({ eyebrow, title, description, image, imageCaption, source, sections, action }: BlueprintPageProps) {
+export function BlueprintPage({ eyebrow, title, description, image, imageCaption, gallery, source, sections, action }: BlueprintPageProps) {
   return <Shell>
     <main className="bp-editorial-page">
       <PageHero eyebrow={eyebrow} title={title} description={description} />
@@ -26,7 +28,7 @@ export function BlueprintPage({ eyebrow, title, description, image, imageCaption
         {source && <a href={source.href} target="_blank" rel="noopener noreferrer" className="bp-source-link">{source.label} <ExternalLink size={15} aria-hidden="true" /></a>}
       </div></section>}
       <div className="bp-editorial-sections">{sections.map((section, index) =>
-        <section className={index % 2 ? "bp-editorial-section bp-editorial-section-soft" : "bp-editorial-section"} key={section.title}>
+        <Fragment key={section.title}><section className={index % 2 ? "bp-editorial-section bp-editorial-section-soft" : "bp-editorial-section"} key={section.title}>
           <div className="bp-shell">
             <p className="bp-eyebrow">{section.eyebrow}</p>
             <h2>{section.title}</h2>
@@ -41,6 +43,15 @@ export function BlueprintPage({ eyebrow, title, description, image, imageCaption
             )}</div>}
           </div>
         </section>
+        {index === 0 && gallery && gallery.length > 0 && <section className="bp-related-photo-section" aria-label={`Photographs related to ${title}`}>
+          <div className="bp-shell bp-related-photo-grid">
+            {gallery.map(({ photo, label }) => <figure key={photo.src}>
+              <ResponsivePhoto photo={photo} width={750} height={470} sizes="(max-width:700px) 100vw, 50vw" />
+              <figcaption>{label}</figcaption>
+            </figure>)}
+          </div>
+        </section>}
+        </Fragment>
       )}</div>
       {action && <section className="bp-editorial-cta"><div className="bp-shell"><div>
         <p className="bp-eyebrow">RELATED INFORMATION</p>

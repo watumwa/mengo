@@ -1,11 +1,12 @@
 import { BlueprintPage } from "../../BlueprintPage";
+import { realPhotos } from "../../realPhotos";
 
 export default function AboutLeadership() {
   return <BlueprintPage
     eyebrow="Chamber Leadership"
     title="Leadership & Governance"
     description="Institutional oversight and responsible stewardship are essential to a trusted business chamber."
-    sections={[
+    image={realPhotos.chamberInauguration} imageCaption="Mengo Chamber inauguration group photograph — contextual image, not a current official leadership roster" gallery={[{ photo: realPhotos.businessForum, label: "Panel discussion at the BBS Business Forum" }, { photo: realPhotos.institutionVisit, label: "Participants at an institutional visit" }]} sections={[
   {
     "eyebrow": "Governance",
     "title": "How the Chamber is structured",

@@ -9,7 +9,7 @@ export default function KingdomLeadership() {
     image={realPhotos.heritage}
     imageCaption="Clan leaders at Bulange, Mengo. Contextual photograph, not an official leadership portrait."
     source={{"label":"Official Kingdom website","href":"https://buganda.or.ug/"}}
-    sections={[
+    gallery={[{ photo: realPhotos.palaceLocal, label: "The royal palace building in Mengo" }, { photo: realPhotos.culturalPerformance, label: "Cultural performance from the Buganda Royal collection" }]} sections={[
   {
     "eyebrow": "Traditional leadership",
     "title": "The institutions of the Kingdom",

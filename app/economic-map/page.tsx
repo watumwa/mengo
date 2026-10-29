@@ -1,8 +1,9 @@
 import { BlueprintPage } from "../BlueprintPage";
+import { realPhotos } from "../realPhotos";
 
 export default function EconomicMap() {
   return <BlueprintPage eyebrow="Regional Economy" title="Discover Buganda's Business Regions" description="Geography helps explain how markets, production areas, institutions and trading links connect across Buganda."
-     sections={[
+     image={realPhotos.masazaMap} imageCaption="Illustrative map of Buganda's traditional counties; confirm current administrative boundaries separately" gallery={[{ photo: realPhotos.marketStalls, label: "Trading stalls from the REXBA collection" }, { photo: realPhotos.coffeeExport, label: "Coffee export activity from Mwanyi Terimba" }]} sections={[
   {
     "eyebrow": "Regional connections",
     "title": "Six planning clusters",

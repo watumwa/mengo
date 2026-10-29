@@ -13,3 +13,21 @@
 
 .detail-intro-grid.detail-intro-no-image{display:block;max-width:900px}
 .detail-intro-no-image .detail-intro-copy{max-width:820px}
+
+
+/* Additional real photographs, selected per editorial topic rather than generic stock. */
+.bp-related-photo-section{padding:24px 0 65px;background:#f6f8fa}
+.bp-related-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.bp-related-photo-grid figure{min-width:0;margin:0;overflow:hidden;border-radius:11px;background:#fff;box-shadow:0 9px 22px rgba(7,35,68,.08)}
+.bp-related-photo-grid img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;background:#dde5ed}
+.bp-related-photo-grid figcaption{min-height:47px;padding:13px 17px;color:#576d81;font-size:12px;line-height:1.6}
+@media(max-width:700px){.bp-related-photo-section{padding:15px 0 46px}.bp-related-photo-grid{grid-template-columns:1fr;gap:16px}.bp-related-photo-grid img{aspect-ratio:16/10}}
+
+/* Client-supplied photographic stories on public landing pages. */
+.mc-photo-moments{background:#f5f7f9;padding:32px 0 40px}
+.mc-photo-moments-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.mc-photo-moments-grid:has(.mc-photo-moment:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+.mc-photo-moment{min-width:0;margin:0;background:#fff;border:1px solid #e2e8ed;border-radius:10px;overflow:hidden;box-shadow:0 7px 20px rgba(8,38,69,.07)}
+.mc-photo-moment img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.mc-photo-moment figcaption{font-size:12px;color:#587187;line-height:1.5;padding:13px 15px;min-height:56px}
+@media(max-width:730px){.mc-photo-moments{padding:22px 0 35px}.mc-photo-moments-grid,.mc-photo-moments-grid:has(.mc-photo-moment:nth-child(2):last-child){grid-template-columns:1fr;gap:14px}.mc-photo-moment img{aspect-ratio:16/9}}

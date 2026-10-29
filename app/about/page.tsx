@@ -6,7 +6,7 @@ export default function About() {
     eyebrow="About the Chamber"
     title="Our Story & Mandate"
     description="Connecting enterprises, markets and partnerships to support stronger livelihoods across Buganda."
-    image={realPhotos.businessForum} imageCaption="A panel discussion at the BBS Business Forum, illustrating business dialogue." sections={[
+    image={realPhotos.businessForum} imageCaption="A panel discussion at the BBS Business Forum, illustrating business dialogue." gallery={[{ photo: realPhotos.chamberInauguration, label: "Mengo Chamber inauguration group photograph" }, { photo: realPhotos.marketStalls, label: "Trading activity from the REXBA collection" }]} sections={[
   {
     "eyebrow": "Who we are",
     "title": "A Chamber built around business",

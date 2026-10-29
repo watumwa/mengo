@@ -9,7 +9,7 @@ export default function CultureTourism() {
     image={realPhotos.culturalPerformance}
     imageCaption="Performers in traditional dress at a cultural gathering."
     source={{"label":"Visit the official Kingdom website","href":"https://buganda.or.ug/"}}
-    sections={[
+    gallery={[{ photo: realPhotos.palaceLocal, label: "The royal palace building in Mengo" }, { photo: realPhotos.ekisaakaate, label: "Ekisaakaate programme display" }]} sections={[
   {
     "eyebrow": "Places and traditions",
     "title": "A heritage worth exploring",
