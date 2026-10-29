@@ -228,3 +228,53 @@
     margin:10px 0 5px;
   }
 }
+
+/* Homepage identity hierarchy: the Chamber name leads, Twezimbe supports it. */
+.mc-nema-hero-copy{max-width:670px}
+.mc-nema-hero h1{
+  max-width:680px;
+  margin:0 0 10px;
+  font-size:clamp(43px,5.1vw,70px);
+  line-height:1.02;
+  letter-spacing:-.047em;
+}
+.mc-nema-hero h1 span{
+  display:block;
+  margin-top:5px;
+  font-size:clamp(25px,2.6vw,35px);
+  font-weight:670;
+  letter-spacing:-.02em;
+  line-height:1.16;
+}
+.mc-nema-hero .mc-nema-twezimbe{
+  margin:16px 0 6px;
+  font-size:clamp(33px,3.3vw,45px);
+  letter-spacing:-.028em;
+  line-height:1.12;
+}
+.mc-nema-hero h2{
+  margin:0 0 14px;
+  color:#fff;
+  font-size:clamp(20px,1.85vw,24px);
+  font-weight:650;
+  line-height:1.24;
+}
+.mc-nema-hero-summary{
+  max-width:520px;
+  margin:15px 0 25px;
+  font-size:clamp(14px,1.12vw,16px);
+  line-height:1.65;
+}
+@media(max-width:800px){
+  .mc-nema-hero-grid{padding-top:48px;padding-bottom:52px}
+  .mc-nema-hero h1{font-size:clamp(41px,6.6vw,60px)}
+  .mc-nema-hero h1 span{font-size:clamp(24px,3.6vw,30px)}
+}
+@media(max-width:560px){
+  .mc-nema-hero-grid{padding-top:38px;padding-bottom:65px}
+  .mc-nema-hero h1{font-size:clamp(35px,9.25vw,46px)}
+  .mc-nema-hero h1 span{font-size:clamp(22px,5.3vw,27px)}
+  .mc-nema-hero .mc-nema-twezimbe{font-size:clamp(31px,8vw,39px);margin-top:13px}
+  .mc-nema-hero h2{font-size:19px}
+  .mc-nema-hero-summary{font-size:14px;line-height:1.6}
+}

@@ -97,12 +97,11 @@ export default function HomePage() {
         <section className="mc-nema-hero" aria-labelledby="home-title">
           <div className="bp-shell mc-nema-hero-grid">
             <div className="mc-nema-hero-copy">
-              <p>MENGO CHAMBER OF COMMERCE LIMITED</p>
               <h1 id="home-title">Mengo Chamber <span>of Commerce Limited</span></h1>
               <p className="mc-nema-twezimbe">Twezimbe</p>
               <h2>Uplifting Livelihoods.</h2>
               <div className="mc-nema-hero-rule" />
-              <p className="mc-nema-hero-summary">We facilitate trade, investment, enterprise growth, agricultural transformation and industrial development through quality business services, strategic linkages and advocacy.</p>
+              <p className="mc-nema-hero-summary">Connecting businesses to markets, investment and opportunities across Buganda.</p>
               <Link href="/membership" className="mc-nema-primary-action">JOIN THE CHAMBER <ArrowRight size={17} /></Link>
             </div>
 
@@ -123,7 +122,7 @@ export default function HomePage() {
             </aside>
           </div>
           <p className="mc-nema-photo-credit">Bulange Mengo photo: <a href="https://commons.wikimedia.org/wiki/File:Buganda_Court_Building1.jpg" target="_blank" rel="noopener noreferrer">Dixon099</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · cropped and darkened</p>
-          <div className="mc-nema-slider-dots" aria-hidden="true"><i className="is-active" /><i /><i /><i /><i /></div>
+
         </section>
 
         <nav className="mc-nema-topic-nav" aria-label="Featured Chamber topics"><div className="bp-shell">
