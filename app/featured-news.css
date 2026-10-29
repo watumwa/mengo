@@ -58,3 +58,30 @@
 .mc-hero-slider-controls span{font-size:11px;font-weight:800;color:#6e8092;font-variant-numeric:tabular-nums;white-space:nowrap}
 @media(max-width:760px){.mc-hero-slider-photo{height:270px}.mc-hero-slider-detail{padding:23px}.mc-hero-slider-detail h3{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.mc-hero-slider-photo img{transition:none}}
+
+/* Wider hero layout: allocate more width to the slideshow without changing the Bulange background. */
+@media(min-width:801px){
+  .mc-nema-home .mc-nema-hero-grid{
+    grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+    gap:clamp(22px,3.2vw,58px);
+  }
+  .mc-nema-home .mc-nema-service-panel.mc-nema-news-panel{
+    width:100%;
+    max-width:none;
+    justify-self:stretch;
+  }
+  .mc-nema-home .mc-nema-hero-copy{min-width:0}
+}
+@media(min-width:801px) and (max-width:1050px){
+  .mc-nema-home .mc-nema-hero-grid{grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);gap:24px}
+}
+@media(max-width:800px){
+  .mc-nema-home .mc-nema-service-panel.mc-nema-news-panel{
+    width:100%;
+    max-width:620px;
+    justify-self:center;
+  }
+}
+@media(min-width:801px){
+  .mc-nema-home .mc-hero-slider-photo{height:clamp(300px,29vw,440px)}
+}

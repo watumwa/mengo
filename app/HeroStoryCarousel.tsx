@@ -31,15 +31,21 @@ const stories = [
 export function HeroStoryCarousel() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [pageVisible, setPageVisible] = useState(true);
   useEffect(() => {
-    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const id = window.setInterval(() => setActive((index) => (index + 1) % stories.length), 6500);
+    const onVisibilityChange = () => setPageVisible(!document.hidden);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", onVisibilityChange);
+  }, []);
+  useEffect(() => {
+    if (paused || !pageVisible || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => setActive((index) => (index + 1) % stories.length), 5000);
     return () => window.clearInterval(id);
-  }, [paused]);
+  }, [paused, pageVisible]);
   const next = () => setActive((index) => (index + 1) % stories.length);
   const previous = () => setActive((index) => (index - 1 + stories.length) % stories.length);
   return (
-    <div className="mc-hero-slider" aria-roledescription="carousel" aria-label="Chamber stories" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false); }}>
+    <div className="mc-hero-slider" aria-roledescription="carousel" aria-label="Chamber stories" onFocusCapture={() => setPaused(true)} onBlurCapture={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false); }}>
       <div className="mc-hero-slider-photo">
         {stories.map((story, index) => (
           <img key={story.photo.src} src={story.photo.src} alt={story.photo.alt} className={index === active ? "is-active" : ""} style={{ objectPosition: story.photo.position }} width="880" height="588" aria-hidden={index !== active} />
