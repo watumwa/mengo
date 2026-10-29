@@ -5,7 +5,7 @@
 .heading h2{font:700 clamp(35px,4.1vw,59px)/1.07 Georgia,serif;letter-spacing:-.04em;margin:0 0 17px;color:#0c335c}
 .heading>p:not(.eyebrow){font-size:16px;line-height:1.75;color:#627b90;margin:0}
 .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:24px}
-.metrics>div{display:grid;gap:5px;padding:20px 23px;background:#fff;border:1px solid #e0e8ef;border-radius:10px;border-top:3px solid #cea64c}
+.metrics>div{display:grid;gap:5px;padding:20px 23px;background:#fff;border:1px solid #e0e8ef;border-radius:10px;border-top:1px solid #e0e8ef}
 .metrics strong{display:inline-flex;align-items:center;gap:7px;font-size:clamp(25px,2.7vw,37px);font-weight:900;letter-spacing:-.04em;color:#0c4d83}
 .metrics span{font-size:12px;font-weight:700;color:#617a8f}
 .workspace{display:grid;grid-template-columns:minmax(290px,.77fr) minmax(0,1.35fr);gap:20px;align-items:start}

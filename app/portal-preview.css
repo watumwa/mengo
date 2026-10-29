@@ -1,6 +1,6 @@
 /* Frontend phases: shared portal concept presentation */
 .portal-preview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin:35px 0}
-.portal-preview-card{background:#fff;border:1px solid #e2e6e9;border-top:4px solid #cba558;border-radius:9px;overflow:hidden;box-shadow:0 12px 32px #0b20370a}
+.portal-preview-card{background:#fff;border:1px solid #e2e6e9;border-top:1px solid #e2e6e9;border-radius:9px;overflow:hidden;box-shadow:0 12px 32px #0b20370a}
 .portal-preview-head{display:flex;align-items:flex-start;gap:16px;padding:28px;border-bottom:1px solid #e5e9ed}
 .portal-preview-head h2{margin:0 0 9px;font-family:Georgia,serif;font-size:25px;color:#102844}
 .portal-preview-head p{margin:0;color:#68788a;font-size:13px;line-height:1.65}

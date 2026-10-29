@@ -10,7 +10,7 @@
 .heroactions .btn{min-height:47px}
 .quickcard{transition:background .2s,transform .2s}
 .quickcard:hover{background:#fcf9f2;transform:translateY(-3px)}
-.servicecard{border-top:3px solid #cba558}
+.servicecard{border-top:1px solid #e2e8ef}
 .sectionhead h2{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.025em}
 .navlinks a:focus-visible,.btn:focus-visible,.quickcard:focus-visible{outline:3px solid #cba558;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
