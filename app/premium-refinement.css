@@ -302,7 +302,9 @@
   .mc-nema-home .mc-nema-hero .mc-nema-service-panel.mc-nema-news-panel {
     max-width: 780px;
     width: 100%;
-    justify-self: start;
+    justify-self: end;
+    margin-inline-start: auto;
+    margin-inline-end: 0;
   }
 }
 @media (min-width: 1151px) and (max-width: 1320px) {
