@@ -133,6 +133,21 @@ export default function HomePage() {
           {quickActions.map(({ label, href, icon: Icon }) => <Link href={href} key={label}><Icon size={24} /><span>{label}</span></Link>)}
         </div></section>
 
+
+        <section className="mc-featured-news" aria-labelledby="mc-featured-news-title">
+          <div className="bp-shell mc-featured-news-grid">
+            <Link className="mc-featured-news-photo" href="/insights/trade-exhibitions-business-growth" aria-label="Read the featured Chamber news">
+              <ResponsivePhoto photo={realPhotos.chamberInauguration} width={1000} height={665} sizes="(max-width: 760px) 100vw, 52vw" />
+            </Link>
+            <div className="mc-featured-news-copy">
+              <p className="mc-featured-news-label">CHAMBER NEWS <span aria-hidden="true">/</span> TRADE &amp; ENTERPRISE</p>
+              <h2 id="mc-featured-news-title">Mengo Chamber of Commerce Calls for Greater Participation in Trade Exhibitions to Drive Business Growth.</h2>
+              <p>The Chamber highlights the importance of trade exhibitions as opportunities for businesses to connect, showcase their products and reach new markets.</p>
+              <Link href="/insights/trade-exhibitions-business-growth" className="mc-featured-news-link">READ THE STORY <ArrowUpRight size={18} aria-hidden="true" /></Link>
+            </div>
+          </div>
+        </section>
+
         <section className="mc-nema-mandate" aria-labelledby="mandate-title">
           <div className="mc-nema-mandate-photos" aria-hidden="true">
             {[realPhotos.pewosaAgriculture, realPhotos.coffeeExport, realPhotos.businessForum, realPhotos.enterpriseGroup].map((photo) => (

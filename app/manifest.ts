@@ -1,2 +1,0 @@
-import type {MetadataRoute} from "next";
-export default function manifest():MetadataRoute.Manifest{return {name:"Mengo Chamber of Commerce",short_name:"Mengo Chamber",description:"Discover enterprise, commerce and opportunity across Buganda.",start_url:"/",display:"standalone",background_color:"#f8f6f1",theme_color:"#103e2c",icons:[{src:"/images/buganda-kingdom-crest-mark.png",sizes:"any",type:"image/png",purpose:"any"}]}}

@@ -35,6 +35,7 @@ import "./chamber-design-system.css";
 import "./phase3-refinement.css";
 import "./phase4-editorial-layouts.css";
 import "./phase5-motion.css";
+import "./featured-news.css";
 import { ChamberScrollMotion } from "./ChamberScrollMotion";
 export const metadata: Metadata = {
   title: "Mengo Chamber of Commerce | Connecting Commerce. Building Prosperity.",
