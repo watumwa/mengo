@@ -6,7 +6,7 @@ type Business={id:number;name:string;sector:string;district:string;description:s
 export const dynamic="force-dynamic";
 export default async function BusinessProfile({params}:{params:Promise<{id:string}>}){
  const {id}=await params;
- if(!/^\\d+$/.test(id))notFound();
+ if(!/^[0-9]+$/.test(id))notFound();
  const base=process.env.CHAMBER_BACKEND_URL;
  let business:Business|null=null;
  if(base)try{const url=new URL(`/api/v1/businesses/${id}/`,base);const response=await fetch(url,{next:{revalidate:60},signal:AbortSignal.timeout(8000)});if(response.ok)business=await response.json();}catch{}
