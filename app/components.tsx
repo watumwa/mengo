@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, ChevronRight, Facebook, Instagram, Linkedin, Menu, Search, X, Youtube } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronRight, Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 
 type NavigationItem = {
@@ -48,6 +48,14 @@ const navigation: NavigationItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
+const socialPlatforms = [
+  { name: "Facebook", icon: "/images/social/facebook.svg" },
+  { name: "Instagram", icon: "/images/social/instagram.svg" },
+  { name: "X", icon: "/images/social/x.svg" },
+  { name: "LinkedIn", icon: "/images/social/linkedin.svg" },
+  { name: "YouTube", icon: "/images/social/youtube.svg" },
+] as const;
+
 function Brand({ onClick, compact = false }: { onClick?: () => void; compact?: boolean }) {
   const crest = compact ? "/images/buganda-kingdom-crest-mark.png" : "/images/buganda-kingdom-crest.png";
   return <Link href="/" className={compact ? "bp-brand bp-brand-compact" : "bp-brand"} onClick={onClick} aria-label="Mengo Chamber of Commerce Limited home"><Image src={crest} alt="" width={64} height={64} priority /><span><strong>Mengo Chamber</strong><b>of Commerce Limited</b><small>Uplifting Livelihoods</small></span></Link>;
@@ -62,12 +70,12 @@ export function Header() {
 
   return <header className="bp-header">
     <a className="bp-skip-link" href="#main-content">Skip to content</a>
-    <div className="bp-utility-bar"><div className="bp-shell bp-utility-content"><p>Obwakabaka bwa Buganda <span aria-hidden="true">•</span> Kingdom of Buganda</p><div className="bp-utility-socials" aria-label="Social media profiles — links will be added when available">
-      <span className="bp-social-icon" role="img" aria-label="Facebook, link to be added" title="Facebook — link coming soon"><Facebook size={16} strokeWidth={2.1} aria-hidden="true" /></span>
-      <span className="bp-social-icon" role="img" aria-label="Instagram, link to be added" title="Instagram — link coming soon"><Instagram size={16} strokeWidth={2.1} aria-hidden="true" /></span>
-      <span className="bp-social-icon" role="img" aria-label="X, link to be added" title="X — link coming soon"><span className="bp-social-x" aria-hidden="true">𝕏</span></span>
-      <span className="bp-social-icon" role="img" aria-label="LinkedIn, link to be added" title="LinkedIn — link coming soon"><Linkedin size={16} strokeWidth={2.1} aria-hidden="true" /></span>
-      <span className="bp-social-icon" role="img" aria-label="YouTube, link to be added" title="YouTube — link coming soon"><Youtube size={17} strokeWidth={2.1} aria-hidden="true" /></span>
+    <div className="bp-utility-bar"><div className="bp-shell bp-utility-content"><p>Obwakabaka bwa Buganda <span aria-hidden="true">•</span> Kingdom of Buganda</p><div className="bp-utility-socials" aria-label="Mengo Chamber social media">
+      {socialPlatforms.map(({ name, icon }) => (
+        <span key={name} className="bp-social-brand" role="img" aria-label={`${name} — official profile link to be added`} title={`${name} — official profile link to be added`}>
+          <Image src={icon} alt="" width={19} height={19} unoptimized aria-hidden="true" />
+        </span>
+      ))}
     </div></div></div>
     <div className="bp-nav-wrap"><div className="bp-shell bp-nav"><Brand onClick={close} compact/><nav className="bp-desktop-nav" aria-label="Primary navigation">{navigation.map((entry) => entry.items ? <div className="bp-nav-group" key={entry.label} onMouseLeave={() => setOpenMenu(null)}><button type="button" className="bp-nav-trigger" onClick={() => setOpenMenu(openMenu === entry.label ? null : entry.label)} aria-haspopup="true" aria-expanded={openMenu === entry.label}>{entry.label} <ChevronDown size={14} aria-hidden="true"/></button><div className={openMenu === entry.label ? "bp-mega-menu is-open" : "bp-mega-menu"}><Link href={entry.href} className="bp-mega-intro" onClick={close}><span>Explore</span><strong>{entry.label}</strong><small>Start with the overview <ArrowRight size={14}/></small></Link><div className="bp-mega-links">{entry.items.map((item) => <Link href={item.href} key={item.href} onClick={close}><strong>{item.label}</strong><small>{item.description}</small></Link>)}</div></div></div> : <Link href={entry.href} className="bp-nav-link" key={entry.label} onClick={close}>{entry.label}</Link>)}</nav><div className="bp-nav-actions"><Link className="bp-search-button" href="/search" aria-label="Search the website"><Search size={19}/></Link><Link className="bp-join-button" href="/membership">Join the Chamber <ArrowRight size={15}/></Link><button type="button" className="bp-menu-button" onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? "Close menu" : "Open menu"} aria-expanded={mobileOpen}>{mobileOpen ? <X/> : <Menu/>}</button></div></div><nav className={mobileOpen ? "bp-mobile-nav is-open" : "bp-mobile-nav"} aria-label="Mobile navigation"><div className="bp-shell">{navigation.map((entry) => entry.items ? <div className="bp-mobile-group" key={entry.label}><div><Link href={entry.href} onClick={close}>{entry.label}</Link><button type="button" onClick={() => toggleMobileGroup(entry.label)} aria-label={`Show ${entry.label} pages`} aria-expanded={mobileGroups.includes(entry.label)}><ChevronDown size={18}/></button></div><div className={mobileGroups.includes(entry.label) ? "bp-mobile-subnav is-open" : "bp-mobile-subnav"}>{entry.items.map((item) => <Link href={item.href} key={item.href} onClick={close}><ChevronRight size={14}/>{item.label}</Link>)}</div></div> : <Link className="bp-mobile-direct" href={entry.href} key={entry.label} onClick={close}>{entry.label}</Link>)}<Link href="/membership" className="bp-mobile-join" onClick={close}>Join the Chamber <ArrowRight size={16}/></Link></div></nav></div>
   </header>;
