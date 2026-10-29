@@ -81,3 +81,30 @@
     transform:none;
   }
 }
+
+
+/* Phase 6 quality pass: keyboard clarity, image stability and narrow screens. */
+:where(.bp-header,.mc-nema-home,.bp-editorial-page,.bp-footer) :is(a,button,input,select,textarea):focus-visible {
+  outline:3px solid #d2a54a;
+  outline-offset:3px;
+}
+:where(.bp-header,.mc-nema-home,.bp-editorial-page,.bp-footer) :is(a,button) {
+  -webkit-tap-highlight-color:rgba(19,63,111,.12);
+}
+:where(.mc-nema-home,.bp-editorial-page,.bp-footer) img {
+  max-width:100%;
+}
+:where(.mc-nema-home,.bp-editorial-page) :is(h1,h2,h3,p) {
+  overflow-wrap:break-word;
+}
+:where(.mc-nema-home,.bp-editorial-page) :is(.bp-shell,.mc-client-gallery-card,.mc-nema-service-panel) {
+  min-width:0;
+}
+@media(max-width:760px) {
+  .mc-nema-home,.bp-editorial-page {max-width:100%;overflow-x:clip}
+  .mc-nema-home :is(.mc-nema-quick-grid,.mc-nema-role-grid,.mc-client-gallery-grid,.mc-nema-priority-grid,.mc-nema-explore-grid) > * {min-width:0}
+  .bp-editorial-page .bp-editorial-card-grid > * {min-width:0}
+}
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto!important}
+}
