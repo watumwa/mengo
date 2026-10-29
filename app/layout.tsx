@@ -31,6 +31,7 @@ import "./blueprint-editorial.css";
 import "./blueprint-legacy.css";
 import "./business-directory-modern.css";
 import "./client-photo-stories.css";
+import "./chamber-design-system.css";
 export const metadata: Metadata = {
   title: "Mengo Chamber of Commerce | Connecting Commerce. Building Prosperity.",
   description: "Connecting commercial centres, traders, enterprises and market opportunities in Buganda and beyond.",
