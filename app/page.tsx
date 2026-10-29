@@ -133,7 +133,13 @@ export default function HomePage() {
           {quickActions.map(({ label, href, icon: Icon }) => <Link href={href} key={label}><Icon size={24} /><span>{label}</span></Link>)}
         </div></section>
 
-        <section className="mc-nema-mandate" aria-labelledby="mandate-title"><div className="bp-shell">
+        <section className="mc-nema-mandate" aria-labelledby="mandate-title">
+          <div className="mc-nema-mandate-photos" aria-hidden="true">
+            {[realPhotos.pewosaAgriculture, realPhotos.coffeeExport, realPhotos.businessForum, realPhotos.enterpriseGroup].map((photo) => (
+              <div key={photo.src} className="mc-nema-mandate-photo" style={{ backgroundImage: `url("${photo.src}")` }} />
+            ))}
+          </div>
+          <div className="bp-shell">
           <div className="mc-nema-mandate-top">
             <div className="mc-nema-mandate-intro">
               <p><Landmark size={25} /> Mandate</p>
@@ -146,7 +152,7 @@ export default function HomePage() {
           <div className="mc-nema-role-grid">
             {strategicRoles.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={25} /><strong>{title}</strong><span>{text}</span><small>MORE <ArrowRight size={12} /></small></Link>)}
           </div>
-          <p className="mc-nema-mandate-photo-credit">Agricultural enterprise activity — CBS PEWOSA client photograph collection.</p>
+          <p className="mc-nema-mandate-photo-credit">Photographs: CBS PEWOSA, Mwanyi Terimba, BBS Business Forum and REXBA client collections.</p>
         </div></section>
 
         <section className="mc-client-gallery" aria-labelledby="community-gallery-title">
