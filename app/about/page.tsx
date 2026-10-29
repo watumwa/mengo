@@ -50,6 +50,6 @@ export default function About() {
     ]
   }
 ]}
-    action={{"label":"Explore membership","href":"/membership"}}
+    action={{"label":"Meet the Chamber leadership","href":"/about/leadership"}}
   />;
 }

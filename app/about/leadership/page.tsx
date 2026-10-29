@@ -1,49 +1,40 @@
-import { BlueprintPage } from "../../BlueprintPage";
-import { realPhotos } from "../../realPhotos";
+import Link from "next/link";
+import { Shell } from "../../components";
+import "./leadership.css";
 
-export default function AboutLeadership() {
-  return <BlueprintPage presentation="journal"
-    eyebrow="Chamber Leadership"
-    title="Leadership & Governance"
-    description="Institutional oversight and responsible stewardship are essential to a trusted business chamber."
-    image={realPhotos.chamberInauguration} imageCaption="Mengo Chamber inauguration group photograph — contextual image, not a current official leadership roster" gallery={[{ photo: realPhotos.businessForum, label: "Panel discussion at the BBS Business Forum" }, { photo: realPhotos.institutionVisit, label: "Participants at an institutional visit" }]} sections={[
-  {
-    "eyebrow": "Governance",
-    "title": "How the Chamber is structured",
-    "text": "The Chamber's governance framework distinguishes strategic oversight from day-to-day coordination and member services.",
-    "cards": [
-      {
-        "title": "Governing Council",
-        "text": "Strategic direction, institutional accountability and policy oversight."
-      },
-      {
-        "title": "Secretariat",
-        "text": "Coordination of operations, member engagement and Chamber programmes."
-      },
-      {
-        "title": "Regional engagement",
-        "text": "Connections with local enterprises and stakeholders across Buganda."
-      }
-    ]
-  },
-  {
-    "eyebrow": "Public information",
-    "title": "Leadership profiles",
-    "text": "Official names, appointments and portraits should be obtained from the Chamber's authorised records. For current leadership information, use the Chamber's official channels.",
-    "cards": [
-      {
-        "title": "Governance and accountability",
-        "text": "Understand the institutional approach to transparency and representation.",
-        "href": "/governance"
-      },
-      {
-        "title": "Strategic priorities",
-        "text": "Read about the work guiding the Chamber.",
-        "href": "/strategy"
-      }
-    ]
-  }
-]}
-    action={{"label":"Explore interactive organogram","href":"/governance#interactive-organogram"}}
-  />;
+type Leader={name:string;role:string;photo?:string};
+const patron:Leader={name:"Owek. Charles Peter Mayiga",role:"Katikkiro of Buganda · Patron / Overseer"};
+const chair:Leader={name:"Chief John Fred Kiyimba Freeman",role:"Board Chair"};
+const vice:Leader={name:"Owek. Steven Kayiwa",role:"Vice Chair"};
+const members:Leader[]=[
+ {name:"Hajji Musa Bugere",role:"Board Member"},
+ {name:"Sarah Kironde Ssemanda",role:"Board Member"},
+ {name:"Owek. Ritah Namyalo",role:"Board Member"},
+ {name:"Robert Nsereko",role:"Board Member"},
+];
+function Portrait({leader}:{leader:Leader}){
+ return <div className="mcl-portrait" aria-label={`Portrait pending for ${leader.name}`}>
+  {leader.photo?<img src={leader.photo} alt={`Portrait of ${leader.name}`} width={360} height={400}/>:<span aria-hidden="true" className="mcl-portrait-empty" />}
+ </div>;
+}
+function MainLeader({leader}:{leader:Leader}){
+ return <article className="mcl-main-person"><Portrait leader={leader}/><div><p className="mcl-person-role">{leader.role}</p><h2>{leader.name}</h2></div></article>;
+}
+export const metadata={title:"Leadership & Governance | Mengo Chamber of Commerce",description:"Meet the governance and leadership structure of Mengo Chamber of Commerce Limited."};
+export default function Leadership(){
+ return <Shell><main className="mcl-page">
+  <header className="mcl-heading"><div className="bp-shell"><p>ABOUT THE CHAMBER</p><h1>Governance & Key Leadership</h1><span>Institutional oversight, board leadership and representation.</span></div></header>
+  <section className="mcl-chart" aria-label="Mengo Chamber leadership hierarchy"><div className="bp-shell">
+    <div className="mcl-tier"><MainLeader leader={patron}/></div>
+    <div className="mcl-connector" aria-hidden="true"/>
+    <div className="mcl-tier"><MainLeader leader={chair}/></div>
+    <div className="mcl-connector" aria-hidden="true"/>
+    <div className="mcl-tier"><MainLeader leader={vice}/></div>
+    <div className="mcl-connector" aria-hidden="true"/>
+    <div className="mcl-board-label">BOARD MEMBERS</div>
+    <div className="mcl-member-grid">{members.map(person=><article className="mcl-member" key={person.name}><Portrait leader={person}/><div><p className="mcl-person-role">{person.role}</p><h3>{person.name}</h3></div></article>)}</div>
+    <p className="mcl-photo-note">Official individual portraits will be published when provided by the Chamber.</p>
+    <div className="mcl-footer-links"><Link href="/about">About the Chamber</Link><Link href="/governance">Governance & accountability</Link></div>
+  </div></section>
+ </main></Shell>;
 }
