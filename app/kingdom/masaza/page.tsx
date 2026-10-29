@@ -1,13 +1,13 @@
 import { BlueprintPage } from "../../BlueprintPage";
 import { realPhotos } from "../../realPhotos";
+import { MasazaGoogleExplorer } from "../../MasazaGoogleExplorer";
 
 export default function Masaza() {
   return <BlueprintPage
     eyebrow="Masaza & Gombolola"
     title="The Traditional Counties of Buganda"
     description="Explore the traditional Masaza and the regional identity they represent within the Kingdom of Buganda."
-    image={realPhotos.masazaMap}
-    imageCaption="Illustrative map of Buganda's Masaza; not a modern district boundary map"
+    feature={<MasazaGoogleExplorer />}
     gallery={[{ photo: realPhotos.enkuuka, label: "Community gathering at CBS Enkuuka" }, { photo: realPhotos.marketStalls, label: "Local market activity from the REXBA collection" }]} sections={[
   {
     "eyebrow": "Traditional geography",

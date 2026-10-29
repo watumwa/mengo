@@ -70,3 +70,8 @@
 @media(max-width:990px){.workspace{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.regionList{grid-template-columns:repeat(2,minmax(0,1fr))}.mapPanel{grid-template-columns:1fr}}
 @media(max-width:680px){.shell{width:min(100% - 26px,1230px)}.metrics{gap:8px}.metrics>div{padding:14px 12px}.metrics strong{font-size:26px}.regionList{grid-template-columns:1fr}.browser{padding:14px}.detailTop{padding:24px 19px}.network{padding:20px 12px 4px}.countySection{padding:23px 17px}.committees{flex-wrap:wrap}.mapPanel{padding:18px}.countyHead{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.connector span{animation:none}.region{transition:none}.region:hover{transform:none}}
+
+/* Interactive Google Maps controls, replacing the old static county image. */
+.resetMap{display:block;margin:0 0 19px;border:0;border-bottom:2px solid #c79e3c;background:transparent;color:#0e5389;padding:0 0 5px;font-size:12px;font-weight:800;font-family:inherit;cursor:pointer;text-align:left}
+.resetMap:focus-visible{outline:3px solid #d9aa35;outline-offset:3px}
+.mapPanel>section{min-width:0}

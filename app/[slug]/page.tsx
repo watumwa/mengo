@@ -333,7 +333,7 @@ const legacyRoutes: Record<string,string> = {
 
 const visualBySlug: Record<string, { src: string; alt: string; position?: string }> = {
   "policy-advocacy": realPhotos.businessForum,
-  "regional-networks": realPhotos.masazaMap,
+  "regional-networks": realPhotos.marketStalls,
   "trade-missions": realPhotos.coffeeExport,
   "leadership": realPhotos.chamberInauguration,
   "secretariat": realPhotos.chamberInauguration,

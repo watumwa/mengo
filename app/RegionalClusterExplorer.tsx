@@ -1,33 +1,29 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { GoogleMapsPanel } from "./GoogleMapsPanel";
+import { chamberRegions, type ChamberRegion } from "./chamberRegions";
 import { ArrowRight, ArrowUpRight, Building2, CheckCircle2, MapPinned, Search, UsersRound, X } from "lucide-react";
 import styles from "./RegionalClusterExplorer.module.css";
 
-type Region = { id: string; name: string; counties: string[]; city?: string; note: string };
-const regions: Region[] = [
-  { id: "kampala", name: "Greater Kampala", counties: ["Kyaddondo", "Busiro"], city: "Kampala City Committee", note: "Regional coordination for the two constituent Ssaza, the Kampala City Committee and sub-county committees." },
-  { id: "mpigi", name: "Greater Mpigi", counties: ["Gomba", "Butambala", "Mawokota"], note: "Three constituent Ssaza with local representation through sub-county committees." },
-  { id: "masaka", name: "Greater Masaka", counties: ["Buddu", "Kkooki", "Kabula", "Ssese", "Mawogola"], city: "Masaka City Committee", note: "Five constituent Ssaza, together with the Masaka City Committee and sub-county committees." },
-  { id: "mityana", name: "Greater Mityana", counties: ["Ssingo", "Busujju", "Buweekula"], note: "Three constituent Ssaza with coordination extending to sub-county committees." },
-  { id: "luweero", name: "Greater Luweero", counties: ["Buluuli", "Bulemeezi"], note: "Two constituent Ssaza with local sub-county committee representation." },
-  { id: "mukono", name: "Greater Mukono", counties: ["Kyaggwe", "Bugerere", "Buvuma"], note: "Three constituent Ssaza with local sub-county committee representation." },
-];
+const regions = chamberRegions;
 const countyCount = regions.reduce((n, region) => n + region.counties.length, 0);
 
 export function RegionalClusterExplorer() {
   const [query, setQuery] = useState("");
   const [activeId, setActiveId] = useState("kampala");
   const [county, setCounty] = useState("Kyaddondo");
+  const [mapScope, setMapScope] = useState<"region" | "county">("region");
   const active = regions.find(region => region.id === activeId) ?? regions[0];
   const matched = useMemo(() => {
     const text = query.trim().toLocaleLowerCase();
     return regions.filter(region => !text || [region.name, region.city ?? "", ...region.counties].some(value => value.toLocaleLowerCase().includes(text)));
   }, [query]);
-  const selectRegion = (region: Region) => { setActiveId(region.id); setCounty(region.counties[0]); };
+  const selectRegion = (region: ChamberRegion) => { setActiveId(region.id); setCounty(region.counties[0]); setMapScope("region"); };
   const selectedCounty = active.counties.includes(county) ? county : active.counties[0];
+  const mapPlace = mapScope === "region" ? active.mapPlace : `${selectedCounty} Buganda Uganda`;
+  const mapHeading = mapScope === "region" ? `${active.name} — regional reference` : `Ssaza ${selectedCounty} — map search`;
 
   return (
     <section id="regional-clusters" className={styles.section} aria-labelledby="cluster-heading">
@@ -85,7 +81,7 @@ export function RegionalClusterExplorer() {
             <div className={styles.countySection}>
               <div className={styles.countyHead}><h4>Constituent Ssaza</h4><span>Select a county</span></div>
               <div className={styles.countyGrid}>
-                {active.counties.map(name=><button type="button" key={name} className={[styles.county,name===selectedCounty?styles.countyActive:""].join(" ")} aria-pressed={name===selectedCounty} onClick={()=>setCounty(name)}>{name}</button>)}
+                {active.counties.map(name=><button type="button" key={name} className={[styles.county,name===selectedCounty?styles.countyActive:""].join(" ")} aria-pressed={name===selectedCounty} onClick={()=>{setCounty(name);setMapScope("county");}}>{name}</button>)}
               </div>
               <div className={styles.countyInfo}>
                 <span><UsersRound size={17} aria-hidden="true"/> SELECTED COUNTY</span>
@@ -98,15 +94,13 @@ export function RegionalClusterExplorer() {
         </div>
         <div className={styles.mapPanel}>
           <div>
-            <p className={styles.eyebrow}>GEOGRAPHICAL REFERENCE</p>
-            <h3>Traditional counties and regional coordination</h3>
-            <p>The reference map illustrates traditional areas of Buganda. The interactive cluster selector above uses the exact Ssaza groupings from the strategic plan, not invented polygon boundaries.</p>
+            <p className={styles.eyebrow}>LIVE GOOGLE MAPS</p>
+            <h3>Explore Buganda on a real map.</h3>
+            <p>Choose any region or Ssaza above to change the map. Pan, zoom or switch to satellite view. Regional map views use familiar town reference points; county selections initiate a Google Maps place search.</p>
+            {mapScope === "county" && <button type="button" className={styles.resetMap} onClick={() => setMapScope("region")}>Show the wider {active.name} area</button>}
             <Link href="/governance#interactive-organogram">See the animated governance organogram <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
-          <figure>
-            <Image src="/images/buganda-amasaza-map.jpg" alt="Illustrative map of the traditional Ssaza of Buganda" width={840} height={540} unoptimized/>
-            <figcaption>Illustrative traditional-county map. Not an authoritative administrative or cadastral boundary dataset.</figcaption>
-          </figure>
+          <GoogleMapsPanel place={mapPlace} heading={mapHeading} context="Approximate location reference, not a verified historical boundary" zoom={mapScope === "region" ? 9 : 11} />
         </div>
         <p className={styles.note}>Source: MCCL Strategic Plan 2026–2029, printed pages 34–35. These are strategic organisational arrangements, not a live member registry. Committee members, officeholders and verified geographical boundaries can be connected when official data is supplied.</p>
       </div>

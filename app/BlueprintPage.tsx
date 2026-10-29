@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, ExternalLink } from "lucide-react";
 import { PageHero, Shell } from "./components";
@@ -12,6 +12,7 @@ export type BlueprintPageProps = {
   title: string;
   description: string;
   image?: ChamberPhoto;
+  feature?: ReactNode;
   imageCaption?: string;
   gallery?: Array<{ photo: ChamberPhoto; label: string }>;
   source?: { label: string; href: string };
@@ -19,10 +20,11 @@ export type BlueprintPageProps = {
   action?: { label: string; href: string };
 };
 
-export function BlueprintPage({ eyebrow, title, description, image, imageCaption, gallery, source, sections, action }: BlueprintPageProps) {
+export function BlueprintPage({ eyebrow, title, description, image, feature, imageCaption, gallery, source, sections, action }: BlueprintPageProps) {
   return <Shell>
     <main className="bp-editorial-page">
       <PageHero eyebrow={eyebrow} title={title} description={description} />
+      {feature}
       {(image || source) && <section className="bp-editorial-media"><div className="bp-shell">
         {image && <figure><ResponsivePhoto photo={image} width={1200} height={630} sizes="(max-width:800px) 100vw, 1100px" /><figcaption>{imageCaption ?? image.alt}</figcaption></figure>}
         {source && <a href={source.href} target="_blank" rel="noopener noreferrer" className="bp-source-link">{source.label} <ExternalLink size={15} aria-hidden="true" /></a>}
