@@ -146,6 +146,7 @@ export default function HomePage() {
           <div className="mc-nema-role-grid">
             {strategicRoles.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={25} /><strong>{title}</strong><span>{text}</span><small>MORE <ArrowRight size={12} /></small></Link>)}
           </div>
+          <p className="mc-nema-mandate-photo-credit">Agricultural enterprise activity — CBS PEWOSA client photograph collection.</p>
         </div></section>
 
         <section className="mc-client-gallery" aria-labelledby="community-gallery-title">
