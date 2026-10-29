@@ -24,6 +24,7 @@ const navigation: NavigationItem[] = [
   { label: "Chamber", href: "/about", items: [
     { label: "Our Story & Mandate", href: "/about", description: "MCCL's role and institutional purpose" },
     { label: "Leadership & Governance", href: "/about/leadership", description: "Leadership and institutional roles" },
+    { label: "Interactive Organogram", href: "/governance#interactive-organogram", description: "Explore roles, committees and animated governance connections" },
     { label: "Our Strategy", href: "/strategy", description: "Vision, priorities and business impact" },
     { label: "Membership", href: "/membership", description: "Who can join and how to participate" },
     { label: "Services", href: "/services", description: "Confirmed Chamber support pathways" },
@@ -34,6 +35,7 @@ const navigation: NavigationItem[] = [
     { label: "SACCOs & Cooperatives", href: "/cooperatives", description: "Cooperative enterprise discovery" },
     { label: "Commercial Centres", href: "/commercial-centres", description: "Markets and trading areas" },
     { label: "Economic Map", href: "/economic-map", description: "Regional business geography" },
+    { label: "Regional Chamber Clusters", href: "/centres", description: "Interact with the six Amabendobendo and 18 Ssaza" },
   ] },
   { label: "Invest", href: "/invest", items: [
     { label: "Trade & Investment", href: "/invest", description: "Sectors, partnerships and market links" },

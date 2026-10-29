@@ -46,6 +46,6 @@ export default function Masaza() {
     ]
   }
 ]}
-    action={{"label":"Explore the Kingdom","href":"/kingdom"}}
+    action={{"label":"Explore regional Chamber clusters","href":"/centres"}}
   />;
 }

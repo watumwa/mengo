@@ -44,6 +44,6 @@ export default function AboutLeadership() {
     ]
   }
 ]}
-    action={{"label":"Explore governance","href":"/governance"}}
+    action={{"label":"Explore interactive organogram","href":"/governance#interactive-organogram"}}
   />;
 }
