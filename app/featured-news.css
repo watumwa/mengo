@@ -117,3 +117,53 @@
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   .mc-nema-home .mc-hero-slider-detail{background:rgba(244,249,255,.82)}
 }
+
+
+/* Borderless hero integration: let the photograph and its caption dissolve
+   into the Bulange background instead of sitting inside a framed card. */
+.mc-nema-home .mc-nema-hero .mc-nema-service-panel.mc-nema-news-panel {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  overflow: visible;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider {
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 3%, #000 97%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 3%, #000 97%, transparent 100%);
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-photo {
+  border: 0;
+  border-radius: 0;
+}
+.mc-nema-home .mc-nema-hero .mc-hero-slider-detail {
+  position: relative;
+  margin-top: -26px;
+  padding-top: calc(clamp(20px, 2.4vw, 32px) + 26px);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(240, 247, 255, 0) 0%,
+    rgba(240, 247, 255, .48) 27%,
+    rgba(240, 247, 255, .58) 100%
+  );
+  -webkit-backdrop-filter: blur(10px) saturate(115%);
+  backdrop-filter: blur(10px) saturate(115%);
+}
+@media (max-width: 760px) {
+  .mc-nema-home .mc-nema-hero .mc-hero-slider-detail {
+    padding-top: 49px;
+  }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mc-nema-home .mc-nema-hero .mc-hero-slider-detail {
+    background: linear-gradient(to bottom, rgba(240,247,255,.08), rgba(240,247,255,.75) 30%, rgba(240,247,255,.83));
+  }
+}
