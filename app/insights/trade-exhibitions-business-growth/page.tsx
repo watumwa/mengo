@@ -19,7 +19,7 @@ export default function TradeExhibitionsStory() {
           <h1>Mengo Chamber of Commerce Calls for Greater Participation in Trade Exhibitions to Drive Business Growth.</h1>
           <p className="mc-news-deck">The Chamber is encouraging wider business participation in trade exhibitions as a way to strengthen enterprise connections and market opportunities.</p>
           <figure>
-            <ResponsivePhoto photo={realPhotos.chamberInauguration} width={1280} height={854} sizes="(max-width: 760px) 100vw, 1000px" />
+            <ResponsivePhoto photo={{src:"https://nilepost.co.ug/new_cms/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-01-at-16.24.35-1.jpeg",alt:"Mengo Chamber delegation photographed at Bulange during discussions on trade exhibitions",position:"center"}} width={1280} height={854} sizes="(max-width: 760px) 100vw, 1000px" />
             <figcaption>Mengo Chamber of Commerce representatives. Chamber photograph.</figcaption>
           </figure>
           <div className="mc-news-body">

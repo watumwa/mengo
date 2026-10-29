@@ -10,7 +10,7 @@ const stories = [
     title: "Trade exhibitions can unlock business growth",
     description: "Board Chairperson John Fred Kiyimba Freeman encourages business owners to participate in trade exhibitions to expand their enterprises and unlock opportunities.",
     href: "/insights/trade-exhibitions-business-growth",
-    photo: realPhotos.chamberInauguration,
+    photo: {src: "https://nilepost.co.ug/new_cms/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-01-at-16.24.35-1.jpeg", alt: "Mengo Chamber delegation photographed at Bulange during the meeting on trade exhibitions", position: "center 43%"},
   },
   {
     label: "BUSINESS & TRADE",
