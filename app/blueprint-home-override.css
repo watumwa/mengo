@@ -60,3 +60,45 @@
   .bp-mega-intro[href="/kingdom"] span{color:#ffdf88}
   .bp-mega-intro[href="/kingdom"] small{color:#fff}
 }
+
+/* Top utility bar: social icons only; destinations will be added after confirmation. */
+.bp-utility-content .bp-utility-socials{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.bp-utility-socials .bp-social-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:26px;
+  flex:none;
+  border:1px solid rgba(31,76,112,.12);
+  border-radius:6px;
+  color:#244f7c;
+  background:rgba(255,255,255,.65);
+}
+.bp-utility-socials .bp-social-icon svg{
+  width:16px;
+  height:16px;
+  flex:none;
+}
+.bp-utility-socials .bp-social-x{
+  display:block;
+  font-size:17px;
+  font-weight:700;
+  line-height:1;
+}
+@media(max-width:700px){
+  .bp-utility-content{gap:8px}
+  .bp-utility-content>p{min-width:0;line-height:1.25}
+  .bp-utility-content .bp-utility-socials{gap:2px;flex:none}
+  .bp-utility-socials .bp-social-icon{width:23px;height:24px;border:0;background:transparent}
+  .bp-utility-socials .bp-social-icon svg{width:14px;height:14px}
+  .bp-utility-socials .bp-social-x{font-size:15px}
+}
+@media(max-width:380px){
+  .bp-utility-content>p{font-size:7px}
+  .bp-utility-socials .bp-social-icon{width:20px}
+}
