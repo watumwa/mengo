@@ -55,12 +55,32 @@ class Opportunities(SearchableList):
   return Opportunity.objects.filter(published=True).filter(Q(closes_at__isnull=True)|Q(closes_at__gt=timezone.now())).order_by("-created_at")
 class Events(SearchableList):
  serializer_class=EventSerializer
- search_fields=("title","venue")
- def get_queryset(self):return Event.objects.filter(published=True,starts_at__gte=timezone.now()).order_by("starts_at")
+ search_fields=("title","venue","description")
+ def get_queryset(self):
+  qs=Event.objects.filter(published=True,starts_at__gte=timezone.now()).order_by("starts_at")
+  term=self.request.query_params.get("q","").strip()[:100]
+  if term: qs=qs.filter(Q(title__icontains=term)|Q(venue__icontains=term)|Q(description__icontains=term))
+  return qs
+
+class EventDetail(generics.RetrieveAPIView):
+ permission_classes=[permissions.AllowAny]
+ serializer_class=EventSerializer
+ queryset=Event.objects.filter(published=True,starts_at__gte=timezone.now())
+
 class Articles(SearchableList):
- queryset=Article.objects.filter(published=True).order_by("-published_at")
  serializer_class=ArticleSerializer
- search_fields=("title","summary")
+ search_fields=("title","summary","body")
+ def get_queryset(self):
+  qs=Article.objects.filter(published=True,published_at__lte=timezone.now()).order_by("-published_at","-id")
+  term=self.request.query_params.get("q","").strip()[:100]
+  if term: qs=qs.filter(Q(title__icontains=term)|Q(summary__icontains=term)|Q(body__icontains=term))
+  return qs
+
+class ArticleDetail(generics.RetrieveAPIView):
+ permission_classes=[permissions.AllowAny]
+ serializer_class=ArticleSerializer
+ lookup_field="slug"
+ queryset=Article.objects.filter(published=True,published_at__lte=timezone.now())
 class ApplicationThrottle(throttling.AnonRateThrottle):
  scope="applications"
 class Apply(generics.CreateAPIView):

@@ -15,6 +15,7 @@ import { Shell } from "./components";
 import { realPhotos } from "./realPhotos";
 import { ResponsivePhoto } from "./ResponsivePhoto";
 import { HeroStoryCarousel } from "./HeroStoryCarousel";
+import { LatestChamberUpdates } from "./LatestChamberUpdates";
 
 
 const quickActions = [
@@ -120,6 +121,8 @@ export default function HomePage() {
           {quickActions.map(({ label, href, icon: Icon }) => <Link href={href} key={label}><Icon size={24} /><span>{label}</span></Link>)}
         </div></section>
 
+
+        <LatestChamberUpdates />
 
         <section className="mc-nema-mandate" aria-labelledby="mandate-title">
           <div className="mc-nema-mandate-photos" aria-hidden="true">

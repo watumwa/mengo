@@ -112,3 +112,52 @@ class DirectoryVisibilityTests(TestCase):
  def test_exact_sector_filter(self):
   response=self.client.get("/api/v1/businesses/?sector=Trade")
   self.assertEqual(response.data["count"],0)
+
+from datetime import timedelta
+from django.utils import timezone
+from .models import Article, Event
+
+class PublishingWorkflowTests(TestCase):
+ def setUp(self):
+  self.client=APIClient()
+  self.now=timezone.now()
+  self.draft=Article.objects.create(title="Draft",slug="draft-story",summary="Draft summary",body="Hidden text",published=False,published_at=self.now-timedelta(days=1))
+  self.scheduled=Article.objects.create(title="Scheduled",slug="scheduled-story",summary="Future",body="Not yet",published=True,published_at=self.now+timedelta(days=1))
+  self.live=Article.objects.create(title="Visible article",slug="visible-article",summary="Public story",body="Published text",published=True,published_at=self.now-timedelta(minutes=1))
+ def test_only_live_articles_are_listed(self):
+  response=self.client.get("/api/v1/articles/")
+  self.assertEqual(response.status_code,200)
+  self.assertEqual(response.data["count"],1)
+  self.assertEqual(response.data["results"][0]["slug"],"visible-article")
+ def test_drafts_and_scheduled_articles_are_not_public(self):
+  for slug in ("draft-story","scheduled-story"):
+   self.assertEqual(self.client.get(f"/api/v1/articles/{slug}/").status_code,404)
+  self.assertEqual(self.client.get("/api/v1/articles/visible-article/").status_code,200)
+ def test_article_search(self):
+  self.assertEqual(self.client.get("/api/v1/articles/?q=visible").data["count"],1)
+  self.assertEqual(self.client.get("/api/v1/articles/?q=scheduled").data["count"],0)
+ def test_anonymous_cannot_publish_article(self):
+  response=self.client.post("/api/v1/articles/",{"title":"Injected"},format="json")
+  self.assertEqual(response.status_code,405)
+ def test_event_visibility(self):
+  Event.objects.create(title="Public forum",description="Enterprise networking",venue="Mengo",starts_at=self.now+timedelta(days=3),ends_at=self.now+timedelta(days=3,hours=2),published=True)
+  Event.objects.create(title="Draft forum",description="Not public",venue="Mengo",starts_at=self.now+timedelta(days=3),ends_at=self.now+timedelta(days=3,hours=2),published=False)
+  Event.objects.create(title="Past forum",description="Past",venue="Mengo",starts_at=self.now-timedelta(days=3),ends_at=self.now-timedelta(days=3,hours=2),published=True)
+  listed=self.client.get("/api/v1/events/")
+  self.assertEqual(listed.data["count"],1)
+  self.assertEqual(self.client.get("/api/v1/events/?q=networking").data["count"],1)
+  self.assertEqual(self.client.get("/api/v1/events/2/").status_code,404)
+  self.assertEqual(self.client.get("/api/v1/events/1/").status_code,200)
+
+class PublicationAdminTests(TestCase):
+ def test_publishing_sets_timestamp_when_missing(self):
+  from django.contrib.admin.sites import AdminSite
+  from django.test import RequestFactory
+  from .admin import ArticleAdmin
+  from django.contrib.auth import get_user_model
+  user=get_user_model().objects.create_superuser(username="publisher",email="publisher@example.org",password="safe-password-0123")
+  request=RequestFactory().post("/admin/chamber/article/add/")
+  request.user=user
+  obj=Article(title="Admin story",slug="admin-story",summary="News",body="Body",published=True)
+  ArticleAdmin(Article,AdminSite()).save_model(request,obj,None,False)
+  self.assertIsNotNone(obj.published_at)
