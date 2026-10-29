@@ -392,3 +392,55 @@
   .mc-nema-home .mc-nema-hero .mc-nema-primary-action { animation: none !important; transition: none !important; }
   .mc-nema-home .mc-nema-hero .mc-nema-primary-action:hover { transform: none; }
 }
+
+/* Header width and alignment: use wide screens without stretching every
+   page section. Brand stays left, the 7 primary links stay centered,
+   and Search / Join the Chamber remain pinned to the right. */
+@media (min-width: 1151px) {
+  .bp-header .bp-nav.bp-shell,
+  .bp-header .bp-utility-content.bp-shell {
+    width: min(calc(100% - 64px), 1740px);
+    max-width: none;
+    margin-inline: auto;
+  }
+  .bp-header .bp-nav.bp-shell {
+    gap: clamp(12px, 1.6vw, 27px);
+  }
+  .bp-header .bp-nav > .bp-brand {
+    margin-right: 0;
+    min-width: 0;
+  }
+  .bp-header .bp-desktop-nav {
+    justify-content: center;
+    gap: clamp(2px, .35vw, 9px);
+    margin-inline: auto;
+    flex: 0 0 auto;
+  }
+  .bp-header .bp-nav-actions {
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    margin-left: 0;
+  }
+}
+@media (min-width: 1450px) {
+  .bp-header .bp-nav.bp-shell {
+    display: grid;
+    grid-template-columns: minmax(235px, 1fr) max-content minmax(235px, 1fr);
+    gap: clamp(12px, 2vw, 34px);
+  }
+  .bp-header .bp-nav > .bp-brand { justify-self: start; }
+  .bp-header .bp-desktop-nav { margin: 0; justify-self: center; }
+  .bp-header .bp-nav-actions { justify-self: end; }
+  .bp-header .bp-nav > .bp-brand img {
+    width: 58px;
+    height: 65px;
+  }
+  .bp-header .bp-nav > .bp-brand strong { font-size: 17px; }
+}
+@media (min-width: 1151px) and (max-width: 1300px) {
+  .bp-header .bp-nav.bp-shell { gap: 13px; }
+  .bp-header .bp-desktop-nav { gap: 0; }
+  .bp-header .bp-nav-link,
+  .bp-header .bp-nav-trigger { padding-inline: 8px; font-size: 11px; }
+  .bp-header .bp-join-button { padding-inline: 11px; }
+}
