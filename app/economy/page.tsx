@@ -3,7 +3,7 @@ import { realPhotos } from "../realPhotos";
 
 export default function Economy() {
   return <BlueprintPage presentation="split" eyebrow="Buganda Economy" title="Enterprise Across Buganda" description="Agriculture, trade, manufacturing, tourism and services connect communities and markets throughout Buganda."
-    image={realPhotos.coffeeProducts} imageCaption="Mwanyi Terimba coffee products displayed at the company's premises." gallery={[{ photo: realPhotos.pewosaAgriculture, label: "Agricultural seedlings at a CBS PEWOSA demonstration" }, { photo: realPhotos.marketStalls, label: "Everyday commerce in a local trading area" }]} sections={[
+    image={realPhotos.coffeeContainer} imageCaption="Coffee sacks stacked in a shipping container at Mwanyi Terimba." gallery={[{ photo: realPhotos.pewosaAgriculture, label: "Agricultural seedlings at a CBS PEWOSA demonstration" }, { photo: realPhotos.marketStalls, label: "Everyday commerce in a local trading area" }]} sections={[
   {
     "eyebrow": "Economic activity",
     "title": "The sectors behind livelihoods",

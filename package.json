@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run check:photos",
+    "check:photos": "node scripts/audit-photos.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ."

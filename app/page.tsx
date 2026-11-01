@@ -51,16 +51,16 @@ const communityStories = [
   {
     title: "Coffee, value addition and exports",
     context: "TRADE & AGRIBUSINESS",
-    description: "Coffee products and business activity from Mwanyi Terimba.",
+    description: "Coffee prepared for export from Mwanyi Terimba.",
     href: "/economy",
-    photo: realPhotos.coffeeProducts,
+    photo: realPhotos.coffeeExport,
   },
   {
-    title: "Business dialogue",
-    context: "ENTERPRISE & MARKETS",
-    description: "A discussion at the BBS Business Forum.",
+    title: "Partnerships and institutional links",
+    context: "PARTNERSHIPS & INSTITUTIONS",
+    description: "An institutional visit from the supplied REX photograph collection.",
     href: "/services",
-    photo: realPhotos.businessForum,
+    photo: realPhotos.institutionVisit,
   },
   {
     title: "Community in action",
@@ -126,7 +126,7 @@ export default function HomePage() {
 
         <section className="mc-nema-mandate" aria-labelledby="mandate-title">
           <div className="mc-nema-mandate-photos" aria-hidden="true">
-            {[realPhotos.pewosaAgriculture, realPhotos.coffeeExport, realPhotos.businessForum, realPhotos.enterpriseGroup].map((photo) => (
+            {[realPhotos.pewosaAgriculture, realPhotos.pewosaEnterprise, realPhotos.essuubiCommunity, realPhotos.chamberInauguration].map((photo) => (
               <div key={photo.src} className="mc-nema-mandate-photo" style={{ backgroundImage: `url("${photo.src}")` }} />
             ))}
           </div>
@@ -143,7 +143,7 @@ export default function HomePage() {
           <div className="mc-nema-role-grid">
             {strategicRoles.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={25} /><strong>{title}</strong><span>{text}</span><small>MORE <ArrowRight size={12} /></small></Link>)}
           </div>
-          <p className="mc-nema-mandate-photo-credit">Photographs: CBS PEWOSA, Mwanyi Terimba, BBS Business Forum and REXBA client collections.</p>
+          <p className="mc-nema-mandate-photo-credit">Photographs: CBS PEWOSA, Essuubi Lyo Zambogo and the Mengo Chamber inauguration collection.</p>
         </div></section>
 
         <section className="mc-client-gallery" aria-labelledby="community-gallery-title">

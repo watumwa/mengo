@@ -3,7 +3,7 @@ import { realPhotos } from "../../realPhotos";
 
 export default function EconomySectors() {
   return <BlueprintPage presentation="feature" eyebrow="Economic Sectors" title="Industries & Enterprise" description="An introduction to the sectors that support trade, jobs, community life and investment across Buganda."
-     image={realPhotos.coffeeExport} imageCaption="Coffee being loaded for export, from the Mwanyi Terimba collection." gallery={[{ photo: realPhotos.coffeeProducts, label: "Coffee value-addition products at Mwanyi Terimba" }, { photo: realPhotos.marketStalls, label: "Local market stalls from the REXBA collection" }]} sections={[
+     image={realPhotos.pewosaAgriculture} imageCaption="Agricultural demonstration at a CBS PEWOSA programme." gallery={[{ photo: realPhotos.coffeeProducts, label: "Coffee value-addition products at Mwanyi Terimba" }, { photo: realPhotos.marketStalls, label: "Local market stalls from the REXBA collection" }]} sections={[
   {
     "eyebrow": "Core sectors",
     "title": "A diverse commercial landscape",

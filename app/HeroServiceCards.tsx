@@ -3,34 +3,35 @@
 import Link from "next/link";
 import { ArrowRight, BarChart3, BriefcaseBusiness, Handshake, RotateCcw, Scale } from "lucide-react";
 import { useEffect, useState } from "react";
+import { realPhotos } from "./realPhotos";
 
 const heroServices = [
   {
     title: "Trade & investment",
     description: "Business linkages, trade missions, investment connections and market access pathways.",
     href: "/trade-investment",
-    image: "/images/kampala-market.jpg",
+    image: realPhotos.coffeeExport.src,
     icon: Handshake,
   },
   {
     title: "Business development",
     description: "Practical advisory, enterprise capability and growth support for businesses at every stage.",
     href: "/business-advisory",
-    image: "/images/buganda-royal-palace.jpg",
+    image: realPhotos.enterpriseGroup.src,
     icon: BriefcaseBusiness,
   },
   {
     title: "Advocacy & research",
     description: "Evidence-led representation for a fairer, more enabling business environment.",
     href: "/policy-advocacy",
-    image: "/images/buganda-traditional-wear.jpg",
+    image: realPhotos.businessForum.src,
     icon: Scale,
   },
   {
     title: "Market intelligence",
     description: "Business information, sector insight and data that support better decisions.",
     href: "/intelligence",
-    image: "/images/buganda-gomesi.jpg",
+    image: realPhotos.marketStalls.src,
     icon: BarChart3,
   },
 ];

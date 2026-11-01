@@ -6,10 +6,10 @@ export default function KingdomHistory() {
     eyebrow="Kingdom Heritage"
     title="Buganda's History & Heritage"
     description="A rich cultural history reflected in Buganda's institutions, language, traditions and historic places."
-    image={realPhotos.culturalPerformance}
-    imageCaption="A cultural performance from the supplied Buganda Royal photo collection."
+    image={realPhotos.palaceLocal}
+    imageCaption="The royal palace building in Mengo, a landmark of Buganda's heritage."
     source={{"label":"Official Buganda Kingdom information","href":"https://buganda.or.ug/"}}
-    gallery={[{ photo: realPhotos.palaceLocal, label: "The royal palace building in Mengo" }, { photo: realPhotos.ekisaakaate, label: "Ekisaakaate programme display from the client collection" }]} sections={[
+    gallery={[{ photo: realPhotos.heritage, label: "Clan heads meeting at Bulange, Mengo" }, { photo: realPhotos.ekisaakaate, label: "Ekisaakaate programme display from the client collection" }]} sections={[
   {
     "eyebrow": "Living history",
     "title": "A heritage carried across generations",
