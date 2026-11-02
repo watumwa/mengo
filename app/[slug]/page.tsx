@@ -104,9 +104,9 @@ const pages: Record<string, Detail> = {
   "vision-mission-values": {
     title:"Vision, Mission & Values",
     description:"A strategic direction rooted in enterprise and Buganda's development aspirations.",
-    intro:"The Chamber's strategy presents a vision for responsible businesses that create opportunities, jobs and improved livelihoods, supported by business services, partnerships and advocacy.",
+    intro:"The Chamber's strategy presents a vision for a vibrant, competitive chamber of commerce that creates business opportunities, jobs and improves livelihoods for the communities.",
     items:[
-      {title:"Vision",text:"A kingdom where vibrant, competitive and responsible businesses creates opportunities, jobs and improved livelihoods for communities."},
+      {title:"Vision",text:"A vibrant, competitive chamber of commerce that creates business opportunities, jobs and improves livelihoods for the communities."},
       {title:"Mission",text:"To facilitate trade, investment, enterprise growth, agricultural transformation, and industrial development by providing quality business services, strategic linkages, and effective advocacy for a competitive business environment in Uganda."},
       {title:"Co-operation",text:"Promoting unity for shared growth and development."},
       {title:"Innovation",text:"Encouraging continuous learning, creativity, and improvement."},
@@ -205,7 +205,7 @@ const pages: Record<string, Detail> = {
     description: "Building a competitive, connected and sustainable business ecosystem in Buganda.",
     intro: "Mengo Chamber of Commerce Limited is a company limited by guarantee, registered under Section 18(3) of the Companies Act, 2012 (Certificate No. 8003468736068). Established by the Kingdom of Buganda, the Chamber is envisioned as a consortium of affiliated members advancing enterprise growth, trade development and investment opportunities within Buganda and beyond.",
     items: [
-      { title: "Our Vision", text: "A kingdom where vibrant, competitive and responsible businesses creates opportunities, jobs and improved livelihoods for communities." },
+      { title: "Our Vision", text: "A vibrant, competitive chamber of commerce that creates business opportunities, jobs and improves livelihoods for the communities." },
       { title: "Our Mission", text: "To facilitate trade, investment, enterprise growth, agricultural transformation, and industrial development by providing quality business services, strategic linkages, and effective advocacy for a competitive business environment in Uganda." },
       { title: "Strategic Theme", text: "Building a Competitive, Connected, and Sustainable Business Ecosystem in Buganda." },
       { title: "Core Values", text: "Co-operation, Innovation, Integrity, Service Excellence and Loyalty." },

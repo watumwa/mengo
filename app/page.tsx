@@ -110,7 +110,6 @@ export default function HomePage() {
             <aside className="mc-nema-service-panel mc-nema-news-panel" aria-label="Featured stories"><HeroStoryCarousel /></aside>
           </div>
           <p className="mc-nema-photo-credit">Bulange Mengo photo: <a href="https://commons.wikimedia.org/wiki/File:Buganda_Court_Building1.jpg" target="_blank" rel="noopener noreferrer">Dixon099</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · cropped and darkened</p>
-
         </section>
 
         <nav className="mc-nema-topic-nav" aria-label="Featured Chamber topics"><div className="bp-shell">
@@ -188,7 +187,7 @@ export default function HomePage() {
           </div>
         </div></section>
 
-        <section className="mc-nema-closing"><div className="bp-shell"><div><p>OUR VISION</p><h2>A Buganda where vibrant, competitive and responsible businesses create opportunity, jobs and improved livelihoods.</h2></div><Link href="/contact">START A CONVERSATION <ArrowRight size={17} /></Link></div></section>
+        <section className="mc-nema-closing"><div className="bp-shell"><div><p>OUR VISION</p><h2>A vibrant, competitive chamber of commerce that creates business opportunities, jobs and improves livelihoods for the communities.</h2></div><Link href="/contact">START A CONVERSATION <ArrowRight size={17} /></Link></div></section>
       </main>
     </Shell>
   );
