@@ -61,7 +61,7 @@ const socialPlatforms = [
 
 function Brand({ onClick, compact = false }: { onClick?: () => void; compact?: boolean }) {
   const crest = compact ? "/images/buganda-kingdom-crest-mark.png" : "/images/buganda-kingdom-crest.png";
-  return <Link href="/" className={compact ? "bp-brand bp-brand-compact" : "bp-brand"} onClick={onClick} aria-label="Mengo Chamber of Commerce Limited home"><Image src={crest} alt="" width={64} height={64} priority /><span><strong>Mengo Chamber</strong><b>of Commerce Limited</b><small>Uplifting Livelihoods</small></span></Link>;
+  return <Link href="/" className={compact ? "bp-brand bp-brand-compact" : "bp-brand"} onClick={onClick} aria-label="Mengo Chamber of Commerce Limited home"><Image src={crest} alt="" width={64} height={64} priority /><span><strong>Mengo Chamber</strong><b>of Commerce Limited</b></span></Link>;
 }
 
 export function Header() {
