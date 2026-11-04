@@ -9,7 +9,7 @@ export default function KingdomHistory() {
     image={realPhotos.palaceLocal}
     imageCaption="The royal palace building in Mengo, a landmark of Buganda's heritage."
     source={{"label":"Official Buganda Kingdom information","href":"https://buganda.or.ug/"}}
-    gallery={[{ photo: realPhotos.heritage, label: "Clan heads meeting at Bulange, Mengo" }, { photo: realPhotos.ekisaakaate, label: "Ekisaakaate programme display from the client collection" }]} sections={[
+    gallery={[{ photo: realPhotos.heritage, label: "Clan heads meeting at Bulange, Mengo" }, { photo: realPhotos.lukiikoSession, label: "A formal session in the historic Buganda Lukiiko" }]} sections={[
   {
     "eyebrow": "Living history",
     "title": "A heritage carried across generations",

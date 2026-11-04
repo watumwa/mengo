@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Membership() {
   return <BlueprintPage presentation="feature" eyebrow="Membership" title="Connect with the Business Community" description="Discover how participation in a Chamber of Commerce can create connections, shared knowledge and a stronger business voice."
      feature={<section style={{background:"#edf4fa",padding:"30px 0"}}><div className="bp-shell" style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:24,flexWrap:"wrap"}}><div><strong style={{display:"block",fontSize:22,color:"#163f70"}}>Interested in Chamber membership?</strong><p style={{color:"#536e83",margin:"8px 0 0"}}>Submit your business details for review. No payment is required.</p></div><Link href="/membership/apply" style={{background:"#123f75",color:"#fff",borderRadius:6,padding:"15px 22px",fontWeight:800}}>Apply for membership →</Link></div></section>}
-     image={realPhotos.pewosaEnterprise} imageCaption="Enterprise and community programme participants at a CBS PEWOSA event." gallery={[{ photo: realPhotos.chamberInauguration, label: "Group photograph from the Chamber inauguration" }, { photo: realPhotos.enterpriseGroup, label: "Enterprise team photographed outside Rexba Ltd" }]} sections={[
+     image={realPhotos.enterpriseGroup} imageCaption="Enterprise team photographed outside Rexba Ltd." gallery={[{ photo: realPhotos.chamberInauguration, label: "Group photograph from the Chamber inauguration" }, { photo: realPhotos.institutionVisit, label: "Participants attending an institutional visit" }]} sections={[
   {
     "eyebrow": "Why membership matters",
     "title": "Be part of a wider network",

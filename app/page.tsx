@@ -19,10 +19,10 @@ import { LatestChamberUpdates } from "./LatestChamberUpdates";
 
 
 const quickActions = [
-  { label: "JOIN THE CHAMBER", href: "/membership", icon: UsersRound },
-  { label: "EXPLORE TRADE & INVESTMENT", href: "/trade-investment", icon: Handshake },
-  { label: "SHARE A BUSINESS ISSUE", href: "/policy-advocacy", icon: Scale },
-  { label: "GET MARKET INTELLIGENCE", href: "/intelligence", icon: BarChart3 },
+  { eyebrow: "Membership", title: "Apply to join", text: "Submit your organisation for Chamber review.", href: "/membership/apply", icon: UsersRound },
+  { eyebrow: "Business directory", title: "Find a business", text: "Search approved profiles by sector and district.", href: "/businesses", icon: BriefcaseBusiness },
+  { eyebrow: "Trade & investment", title: "Explore opportunities", text: "Review published trade and partnership opportunities.", href: "/opportunities", icon: Handshake },
+  { eyebrow: "Research & data", title: "Use market intelligence", text: "Explore reports, publications and economic information.", href: "/intelligence", icon: BarChart3 },
 ];
 
 const strategicRoles = [
@@ -49,11 +49,11 @@ const exploreLinks = [
 
 const communityStories = [
   {
-    title: "Coffee, value addition and exports",
-    context: "TRADE & AGRIBUSINESS",
-    description: "Coffee prepared for export from Mwanyi Terimba.",
-    href: "/economy",
-    photo: realPhotos.coffeeExport,
+    title: "Skills, enterprise and future opportunity",
+    context: "EDUCATION & ENTERPRISE",
+    description: "Graduates celebrating an education milestone in Buganda.",
+    href: "/services",
+    photo: realPhotos.educationCelebration,
   },
   {
     title: "Partnerships and institutional links",
@@ -104,7 +104,10 @@ export default function HomePage() {
               <h2>Uplifting Livelihoods.</h2>
               <div className="mc-nema-hero-rule" />
               <p className="mc-nema-hero-summary">Connecting businesses to markets, investment and opportunities across Buganda.</p>
-              <Link href="/membership" className="mc-nema-primary-action">JOIN THE CHAMBER <ArrowRight size={17} /></Link>
+              <div className="mc-nema-hero-actions">
+                <Link href="/membership" className="mc-nema-primary-action">JOIN THE CHAMBER <ArrowRight size={17} /></Link>
+                <Link href="/opportunities" className="mc-nema-secondary-action">EXPLORE OPPORTUNITIES <ArrowUpRight size={16} /></Link>
+              </div>
             </div>
 
             <aside className="mc-nema-service-panel mc-nema-news-panel" aria-label="Featured stories"><HeroStoryCarousel /></aside>
@@ -116,8 +119,19 @@ export default function HomePage() {
           <Link href="/membership">Membership</Link><Link href="/trade-investment">Trade &amp; Investment</Link><Link href="/services">Enterprise Growth</Link><Link href="/policy-advocacy">Advocacy &amp; Research</Link><Link href="/intelligence">Market Intelligence</Link><Link href="/economy">Buganda Economy</Link><Link href="/publications">Resources</Link><Link href="/contact">Contact</Link>
         </div></nav>
 
-        <section className="mc-nema-quick-actions" aria-label="Quick actions"><div className="bp-shell mc-nema-quick-grid">
-          {quickActions.map(({ label, href, icon: Icon }) => <Link href={href} key={label}><Icon size={24} /><span>{label}</span></Link>)}
+        <section className="mc-nema-quick-actions" aria-labelledby="business-gateway-title"><div className="bp-shell">
+          <div className="mc-nema-quick-heading">
+            <div><p>BUSINESS GATEWAY</p><h2 id="business-gateway-title">Start with a business need.</h2></div>
+            <p>Join the Chamber, discover enterprises, explore opportunities and access information for better business decisions.</p>
+          </div>
+          <div className="mc-nema-quick-grid">
+            {quickActions.map(({ eyebrow, title, text, href, icon: Icon }) => <Link href={href} key={title}>
+              <div><Icon size={23} /><small>{eyebrow}</small></div>
+              <strong>{title}</strong>
+              <span>{text}</span>
+              <em>START HERE <ArrowRight size={13} /></em>
+            </Link>)}
+          </div>
         </div></section>
 
 

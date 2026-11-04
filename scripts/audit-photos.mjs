@@ -1,6 +1,6 @@
 // Safeguard the client photography library and the homepage's image diversity.
-import { existsSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { join, relative } from "node:path";
 
 const read = (file) => readFileSync(join(process.cwd(), file), "utf8");
 const catalog = read("app/realPhotos.ts");
@@ -19,6 +19,34 @@ const assert = (condition, message) => {
 // Every local photograph in the central catalogue must actually exist.
 for (const match of catalog.matchAll(/\bsrc:\s*"(\/images\/[^"]+)"/g)) {
   assert(existsSync(join(process.cwd(), "public", match[1])), "Missing asset " + match[1]);
+}
+
+// Keep the wider site from falling back to the same small set of photographs.
+const tsxFiles = [];
+const collectTsx = (directory) => {
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) collectTsx(path);
+    else if (entry.isFile() && entry.name.endsWith(".tsx")) tsxFiles.push(path);
+  }
+};
+collectTsx(join(process.cwd(), "app"));
+
+const siteUsage = new Map();
+for (const file of tsxFiles) {
+  for (const key of photoRefs(readFileSync(file, "utf8"))) {
+    assert(knownPhotos.has(key), "Unknown photo " + key + " in " + relative(process.cwd(), file));
+    const references = siteUsage.get(key) ?? [];
+    references.push(relative(process.cwd(), file));
+    siteUsage.set(key, references);
+  }
+}
+const maximumSiteReferences = 6;
+for (const [key, references] of siteUsage) {
+  assert(
+    references.length <= maximumSiteReferences,
+    key + " is referenced " + references.length + " times across the site; use more context-specific photographs"
+  );
 }
 
 const gallery = homepage.match(/const communityStories\s*=\s*\[([\s\S]*?)\n\];/);
@@ -54,5 +82,6 @@ assert(heroPhoto(history) !== heroPhoto(culture), "Kingdom history and culture s
 
 console.log(
   "Photo audit passed: " + locations.size +
-  " distinct client photos across homepage carousel, mandate and gallery; all catalogue assets exist."
+  " distinct client photos across homepage carousel, mandate and gallery; all catalogue assets exist; no catalogued photo exceeds " +
+  maximumSiteReferences + " site references."
 );

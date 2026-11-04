@@ -6,10 +6,10 @@ export default function KingdomLeadership() {
     eyebrow="Kingdom Leadership"
     title="Traditional Leadership & Institutions"
     description="An introduction to the institutions and traditional leadership structures of the Kingdom of Buganda."
-    image={realPhotos.heritage}
-    imageCaption="Clan leaders at Bulange, Mengo. Contextual photograph, not an official leadership portrait."
+    image={realPhotos.lukiikoAssembly}
+    imageCaption="Members seated in the Buganda Lukiiko."
     source={{"label":"Official Kingdom website","href":"https://buganda.or.ug/"}}
-    gallery={[{ photo: realPhotos.palaceLocal, label: "The royal palace building in Mengo" }, { photo: realPhotos.culturalPerformance, label: "Cultural performance from the Buganda Royal collection" }]} sections={[
+    gallery={[{ photo: realPhotos.ceoRetreatSession, label: "Strategic dialogue at the Buganda CEOs Retreat" }, { photo: realPhotos.oluwaloCeremony, label: "An Oluwalo event presentation" }]} sections={[
   {
     "eyebrow": "Traditional leadership",
     "title": "The institutions of the Kingdom",

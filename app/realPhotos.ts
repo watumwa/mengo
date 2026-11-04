@@ -39,15 +39,85 @@ export const realPhotos = {
     alt: "Real photograph of a Buganda Kingdom clan heads meeting at Bulange, by Samson Ssemakadde (2025), CC0",
     position: "center",
   },
+  budgetAssembly: {
+    src: "/images/client/buganda-budget-assembly.jpg",
+    alt: "Buganda Lukiiko members seated during a budget reading",
+    position: "center 52%",
+  },
+  budgetAddress: {
+    src: "/images/client/buganda-budget-address.jpg",
+    alt: "A speaker delivering the Buganda budget address in the Lukiiko",
+    position: "center 35%",
+  },
+  ceoRetreatGroup: {
+    src: "/images/client/buganda-ceo-retreat-group.jpg",
+    alt: "Participants in a group photograph at the Buganda CEOs Retreat",
+    position: "center 44%",
+  },
+  ceoRetreatSession: {
+    src: "/images/client/buganda-ceo-retreat-session.jpg",
+    alt: "A speaker addressing participants at the Buganda CEOs Retreat",
+    position: "center 40%",
+  },
+  lukiikoAssembly: {
+    src: "/images/client/buganda-lukiiko-assembly.jpg",
+    alt: "Members seated in the Buganda Lukiiko",
+    position: "center 52%",
+  },
+  lukiikoSession: {
+    src: "/images/client/buganda-lukiiko-session.jpg",
+    alt: "A formal session in the Buganda Lukiiko",
+    position: "center 45%",
+  },
+  womenCelebration: {
+    src: "/images/client/buganda-women-celebration.jpg",
+    alt: "Women attending a Buganda Women's Day celebration",
+    position: "center 50%",
+  },
+  royalCeremony: {
+    src: "/images/client/buganda-royal-ceremony.jpg",
+    alt: "A ceremonial procession during a Buganda Royal event",
+    position: "center 48%",
+  },
+  youthInitiative: {
+    src: "/images/client/buganda-youth-initiative.jpg",
+    alt: "Young people and leaders gathered at a Buganda youth initiative",
+    position: "center 48%",
+  },
+  bikaTournament: {
+    src: "/images/client/buganda-bika-tournament.jpg",
+    alt: "Teams and supporters gathered at a Buganda Bika tournament",
+    position: "center 50%",
+  },
+  masazaCup: {
+    src: "/images/client/buganda-masaza-cup.jpg",
+    alt: "Team jersey presentation at the Buganda Masaza Cup launch",
+    position: "center 42%",
+  },
+  muslimDinner: {
+    src: "/images/client/buganda-muslim-dinner.jpg",
+    alt: "Guests seated at a Buganda Muslim community dinner",
+    position: "center 48%",
+  },
+  oluwaloCeremony: {
+    src: "/images/client/buganda-oluwalo-ceremony.jpg",
+    alt: "Participants during a presentation at an Oluwalo event",
+    position: "center 45%",
+  },
+  ekisaakaatePanel: {
+    src: "/images/client/nnaabagereka-ekisaakaate-panel.jpg",
+    alt: "Panel at the Nnaabagereka Ekisaakaate programme",
+    position: "center 43%",
+  },
+  birthdayRunLaunch: {
+    src: "/images/client/kabaka-birthday-run-launch.jpg",
+    alt: "Group on stage at the launch of the Kabaka Birthday Run",
+    position: "center 43%",
+  },
   coffeeProducts: {
     src: "/images/client/mwanyi-coffee-products.jpg",
     alt: "Mwanyi Terimba coffee products displayed at the business premises",
     position: "center 45%",
-  },
-  coffeeExport: {
-    src: "/images/client/mwanyi-coffee-export.jpg",
-    alt: "Coffee sacks marked for export being loaded into a shipping container",
-    position: "center 50%",
   },
   coffeeContainer: {
     src: "/images/client/mwanyi-export-container.jpg",

@@ -18,9 +18,9 @@ export default function RegionalCentres() {
         <PhotoMoments
           label="Community and commercial activity in Buganda"
           items={[
-            { photo: realPhotos.marketStalls, caption: "Trading activity from the REXBA photograph collection" },
+            { photo: realPhotos.pewosaEnterprise, caption: "Enterprise and community activity at a CBS PEWOSA event" },
             { photo: realPhotos.pewosaAgriculture, caption: "Agricultural enterprise activity at a CBS PEWOSA event" },
-            { photo: realPhotos.coffeeExport, caption: "Coffee exports from the Mwanyi Terimba collection" },
+            { photo: realPhotos.k2Launch, caption: "Enterprise gathering at a K2 Telecom event" },
           ]}
         />
         <section className="bp-editorial-cta"><div className="bp-shell"><div>

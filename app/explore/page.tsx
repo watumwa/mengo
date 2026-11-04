@@ -35,7 +35,7 @@ const sections = [
 export default function ExplorePage() {
  return <Shell><main>
   <PageHero title="Explore the Chamber" description="Find information about the Kingdom, business community, membership, trade, investment and the Chamber's work." />
-<PhotoMoments label="Explore Buganda through heritage, enterprise and community photographs" items={[{ photo: realPhotos.palaceLocal, caption: "The royal palace building in Mengo" }, { photo: realPhotos.k2Launch, caption: "Enterprise gathering at a K2 Telecom event" }, { photo: realPhotos.enkuuka, caption: "Community gathering at CBS Enkuuka" }]} />
+<PhotoMoments label="Explore Buganda through heritage, enterprise and community photographs" items={[{ photo: realPhotos.palaceLocal, caption: "The royal palace building in Mengo" }, { photo: realPhotos.royalCeremony, caption: "A ceremonial procession during a Buganda Royal event" }, { photo: realPhotos.womenCelebration, caption: "Women gathered for a Buganda Women's Day celebration" }]} />
   <section className="section cream"><div className="container">
    <div className="site-index-grid">{sections.map(({title,icon:Icon,links}) =>
     <section className="site-index-card" key={title}>

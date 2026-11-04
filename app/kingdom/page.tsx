@@ -18,8 +18,8 @@ const stories = [
     eyebrow: "Leadership & Institutions",
     title: "The institutions of the Kingdom",
     description: "Learn about the Kabaka, the Katikkiro, the Lukiiko and the cultural institutions of Buganda.",
-    caption: "Clan heads meeting at Bulange, Mengo. Photo: Samson Ssemakadde, CC0.",
-    image: realPhotos.heritage,
+    caption: "A formal session in the Buganda Lukiiko.",
+    image: realPhotos.lukiikoSession,
     href: "/kingdom/leadership",
   },
   {
@@ -34,8 +34,8 @@ const stories = [
     eyebrow: "Community Development",
     title: "Investing in people",
     description: "See how education, cultural programmes and community initiatives contribute to Buganda's social life.",
-    caption: "An Ekisaakaate programme display from the client photograph collection.",
-    image: realPhotos.ekisaakaate,
+    caption: "A panel at the Nnaabagereka Ekisaakaate programme.",
+    image: realPhotos.ekisaakaatePanel,
     href: "/kingdom/achievements",
   },
   {
@@ -50,8 +50,8 @@ const stories = [
     eyebrow: "People & Communities",
     title: "A Kingdom brought together",
     description: "Discover the traditional counties, the people and the regional identities that make up Buganda.",
-    caption: "Community gathering at CBS Enkuuka.",
-    image: realPhotos.enkuuka,
+    caption: "Communities and teams gathered for a Buganda Bika tournament.",
+    image: realPhotos.bikaTournament,
     href: "/kingdom/masaza",
   },
 ];

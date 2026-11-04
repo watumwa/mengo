@@ -52,6 +52,9 @@
 .mc-nema-hero-summary { max-width: 600px; margin-top: 19px; font-size: 15px; line-height: 1.72; }
 .mc-nema-primary-action { min-width: 0; padding: 14px 19px 14px 17px; border: 1px solid #edcf77; border-radius: 0; background: #d2a42f; box-shadow: none; color: #082b55; letter-spacing: .04em; }
 .mc-nema-primary-action:hover { background: #f0c755; transform: none; }
+.mc-nema-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; }
+.mc-nema-secondary-action { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 47px; padding: 13px 17px; border: 1px solid rgba(245,211,125,.78); color: #fff; font-size: 10px; font-weight: 900; letter-spacing: .04em; }
+.mc-nema-secondary-action:hover { border-color: #f5d37d; background: rgba(6,29,62,.55); color: #f8dc92; }
 
 .mc-nema-service-panel { width: min(100%,402px); border: 1px solid #f0d68b; border-radius: 0; box-shadow: 14px 14px 0 rgba(2,20,49,.38); }
 .mc-nema-panel-photo { height: 142px; background-position: center 36%; }
@@ -71,13 +74,21 @@
 .mc-nema-topic-nav a:hover { color: #9a6c15; }
 .mc-nema-topic-nav a:not(:last-child)::after { background: #d8e1e9; }
 
-.mc-nema-quick-actions { padding: 0; background: #fff; }
-.mc-nema-quick-grid { gap: 0; }
-.mc-nema-quick-grid a { min-height: 80px; gap: 11px; padding: 18px 16px; border-top: 1px solid var(--mengo-rule); border-bottom: 0; border-left: 1px solid var(--mengo-rule); color: #315473; font-size: 9px; }
-.mc-nema-quick-grid a:first-child { border-left: 0; }
-.mc-nema-quick-grid svg { padding: 0; border: 0; border-radius: 0; color: #ad7c1e; }
-.mc-nema-quick-grid a:hover { border-color: var(--mengo-rule); background: #f7f5ef; color: #093e73; }
-.mc-nema-quick-grid a:hover svg { background: transparent; }
+.mc-nema-home .mc-nema-quick-actions { padding: clamp(58px,6.5vw,88px) 0; border-bottom: 1px solid #d6e0e8; background: #f5f7f8; }
+.mc-nema-quick-heading { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(320px,.72fr); gap: clamp(40px,8vw,120px); align-items: end; margin-bottom: 30px; }
+.mc-nema-quick-heading p { margin: 0; color: #587087; font-size: 14px; line-height: 1.7; }
+.mc-nema-quick-heading>div>p { margin-bottom: 10px; color: #9b711c; font-size: 10px; font-weight: 900; letter-spacing: .15em; }
+.mc-nema-quick-heading h2 { margin: 0; color: #082f5d; font-size: clamp(32px,3.1vw,45px); line-height: 1.05; }
+.mc-nema-home .mc-nema-quick-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1px; border: 1px solid #cbd8e4; background: #cbd8e4; }
+.mc-nema-home .mc-nema-quick-grid a { display: flex; min-height: 238px; flex-direction: column; align-items: flex-start; gap: 0; padding: 25px 22px; border: 0; background: #fff; color: #123d68; font-size: inherit; }
+.mc-nema-home .mc-nema-quick-grid a:hover { border: 0; background: #fffdf7; color: #092f5d; }
+.mc-nema-home .mc-nema-quick-grid svg { padding: 0; border: 0; border-radius: 0; background: none; }
+.mc-nema-quick-grid a>div { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; }
+.mc-nema-quick-grid a>div svg { flex: none; color: #ad7c1e; }
+.mc-nema-quick-grid a>div small { color: #8d6a22; font-size: 9px; font-weight: 900; letter-spacing: .1em; text-align: right; text-transform: uppercase; }
+.mc-nema-quick-grid strong { margin-top: 28px; color: #0a3765; font-family: Georgia,"Times New Roman",serif; font-size: 24px; line-height: 1.12; }
+.mc-nema-quick-grid a>span { margin-top: 10px; color: #5b7186; font-size: 12px; line-height: 1.6; }
+.mc-nema-quick-grid em { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 20px; color: #0a4d87; font-size: 9px; font-style: normal; font-weight: 900; letter-spacing: .08em; }
 
 .mc-nema-mandate { position: relative; overflow: hidden; padding: clamp(76px,8vw,118px) 0; background: #062d61; }
 .mc-nema-mandate::before { position: absolute; top: 0; right: 8%; width: 1px; height: 100%; background: rgba(240,217,138,.36); content: ""; }
@@ -93,9 +104,9 @@
 .mc-nema-plan-summary:hover { background: #fffdf7; transform: none; }
 
 .mc-nema-role-grid { gap: 0; margin-top: 66px; border-top: 1px solid rgba(255,255,255,.38); border-left: 1px solid rgba(255,255,255,.38); }
-.mc-nema-role-grid a { min-height: 225px; padding: 25px 21px; border: 0; border-right: 1px solid rgba(255,255,255,.38); border-top: 0; background: transparent; color: #fff; }
-.mc-nema-role-grid a:nth-child(odd) { background: rgba(3,24,55,.20); }
-.mc-nema-role-grid a:hover { background: rgba(255,255,255,.09); transform: none; }
+.mc-nema-home .mc-nema-mandate .mc-nema-role-grid a { min-height: 225px; padding: 25px 21px; border: 0; border-right: 1px solid rgba(255,255,255,.38); border-top: 0; background: rgba(3,24,55,.34); color: #fff; box-shadow: none; }
+.mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:nth-child(odd) { background: rgba(3,24,55,.57); }
+.mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:hover { background: rgba(17,70,120,.62); transform: none; }
 .mc-nema-role-grid svg { color: #f2d17a; }
 .mc-nema-role-grid strong { font-family: Georgia,"Times New Roman",serif; font-size: 24px; letter-spacing: -.035em; }
 .mc-nema-role-grid span { color: #d5e4f4; font-size: 11px; line-height: 1.56; }
@@ -141,12 +152,12 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
   .mc-nema-hero { min-height: 0; }
   .mc-nema-hero-grid { grid-template-columns: 1fr; padding: 56px 0 62px; }
   .mc-nema-service-panel { justify-self: start; box-shadow: 8px 8px 0 rgba(2,20,49,.35); }
-  .mc-nema-quick-grid { grid-template-columns: repeat(2,1fr); }
-  .mc-nema-quick-grid a:nth-child(odd) { border-left: 0; }
+  .mc-nema-quick-heading { grid-template-columns: 1fr; gap: 17px; }
+  .mc-nema-home .mc-nema-quick-grid { grid-template-columns: repeat(2,1fr); }
   .mc-nema-mandate-top { grid-template-columns: 1fr; }
   .mc-nema-role-grid { grid-template-columns: repeat(2,1fr); }
-  .mc-nema-role-grid a:nth-child(odd) { background: rgba(3,24,55,.20); }
-  .mc-nema-role-grid a:nth-child(even) { background: transparent; }
+  .mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:nth-child(odd) { background: rgba(3,24,55,.57); }
+  .mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:nth-child(even) { background: rgba(3,24,55,.34); }
   .mc-nema-explore-grid a:nth-child(odd) { border-right: 0; }
 }
 
@@ -155,8 +166,11 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
   .bp-nav-trigger::after { display: none; }
   .mc-nema-hero h1 { font-size: clamp(47px,14vw,62px); }
   .mc-nema-panel-photo { height: 118px; }
-  .mc-nema-quick-grid { grid-template-columns: 1fr; }
-  .mc-nema-quick-grid a { min-height: 62px; border-left: 0; }
+  .mc-nema-hero-actions { align-items: stretch; flex-direction: column; }
+  .mc-nema-hero-actions a { width: 100%; }
+  .mc-nema-home .mc-nema-quick-actions { padding: 52px 0; }
+  .mc-nema-home .mc-nema-quick-grid { grid-template-columns: 1fr; }
+  .mc-nema-home .mc-nema-quick-grid a { min-height: 205px; }
   .mc-nema-role-grid { grid-template-columns: 1fr; }
   .mc-nema-role-grid a { min-height: 156px; }
   .mc-nema-priority-grid { grid-template-columns: 1fr; }

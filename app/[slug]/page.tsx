@@ -333,24 +333,15 @@ const legacyRoutes: Record<string,string> = {
 
 const visualBySlug: Record<string, { src: string; alt: string; position?: string }> = {
   "policy-advocacy": realPhotos.businessForum,
-  "regional-networks": realPhotos.marketStalls,
+  "regional-networks": realPhotos.k2Launch,
   "trade-missions": realPhotos.coffeeContainer,
   "leadership": realPhotos.chamberInauguration,
   "secretariat": realPhotos.institutionVisit,
-  "about": realPhotos.chamberInauguration,
   "strategic-goals": realPhotos.pewosaAgriculture,
   "strategic-propositions": realPhotos.pewosaEnterprise,
-  "membership": realPhotos.enterpriseGroup,
-  "commercial-centres": realPhotos.marketStalls,
-  "investment": realPhotos.coffeeExport,
-  "events": realPhotos.birthdayRun,
+  "investment": realPhotos.coffeeProducts,
+  "events": realPhotos.educationCelebration,
   "impact": realPhotos.essuubiCommunity,
-  "contact": realPhotos.chamberInauguration,
-  "business-advisory": realPhotos.enterpriseGroup,
-  "training": realPhotos.educationCelebration,
-  "entrepreneurship": realPhotos.k2Launch,
-  "agriculture": realPhotos.pewosaAgriculture,
-  "market-linkages": realPhotos.coffeeExport,
 };
 
 export function generateStaticParams() {
