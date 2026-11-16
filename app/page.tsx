@@ -38,7 +38,7 @@ export default function HomePage() {
             <div className="mc-nema-hero-copy">
               <h1 id="home-title"><span className="mc-nema-brand-name">Mengo Chamber </span><span className="mc-nema-brand-description">of Commerce Limited</span></h1>
               <p className="mc-nema-twezimbe">Twezimbe</p>
-              <h2>Uplifting livelihoods through enterprise.</h2>
+              <h2>Uplifting livelihoods.</h2>
               <div className="mc-nema-hero-rule" />
               <p className="mc-nema-hero-summary">Connecting businesses to markets, investment and opportunity across Buganda and beyond.</p>
               <div className="mc-nema-hero-actions">
