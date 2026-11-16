@@ -72,19 +72,15 @@ for (const [src, key] of cataloguedLocalPhotos) {
   assert(siteUsage.has(key), "Local photo " + src + " is catalogued but not rendered on a content page");
 }
 
-const gallery = homepage.match(/const communityStories\s*=\s*\[([\s\S]*?)\n\];/);
 const mandate = homepage.match(/\{\[([^\]]+)\]\.map\(\(photo\)\s*=>/);
-assert(gallery, "Could not locate the homepage community gallery");
 assert(mandate, "Could not locate the homepage mandate photo strip");
 
 const groups = {
   "featured carousel": [...carousel.matchAll(/\bphoto:\s*realPhotos\.([A-Za-z]\w*)/g)].map((m) => m[1]),
   "mandate strip": photoRefs(mandate[1]),
-  "community gallery": photoRefs(gallery[1]),
 };
 assert(groups["featured carousel"].length >= 2, "Featured carousel images were not found");
 assert(groups["mandate strip"].length >= 4, "Expected four mandate photos");
-assert(groups["community gallery"].length >= 6, "Expected six community story photos");
 
 const locations = new Map();
 for (const [section, photos] of Object.entries(groups)) {
@@ -105,7 +101,7 @@ assert(heroPhoto(history) !== heroPhoto(culture), "Kingdom history and culture s
 
 console.log(
   "Photo audit passed: " + locations.size +
-  " distinct client photos across homepage carousel, mandate and gallery; all " + localPhotoFiles.length +
+  " distinct client photos across the streamlined homepage carousel and mandate; all " + localPhotoFiles.length +
   " local photographs are catalogued and rendered; no catalogued photo exceeds " +
   maximumSiteReferences + " site references."
 );
