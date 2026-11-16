@@ -10,7 +10,6 @@ import {
   UsersRound,
 } from "lucide-react";
 import { Shell } from "./components";
-import { realPhotos } from "./realPhotos";
 import { HeroStoryCarousel } from "./HeroStoryCarousel";
 import { LatestChamberUpdates } from "./LatestChamberUpdates";
 
@@ -33,7 +32,7 @@ const strategicRoles = [
 export default function HomePage() {
   return (
     <Shell>
-      <main id="main-content" className="mc-nema-home">
+      <main className="mc-nema-home">
         <section className="mc-nema-hero" aria-labelledby="home-title">
           <div className="bp-shell mc-nema-hero-grid">
             <div className="mc-nema-hero-copy">
@@ -43,8 +42,8 @@ export default function HomePage() {
               <div className="mc-nema-hero-rule" />
               <p className="mc-nema-hero-summary">Connecting businesses to markets, investment and opportunity across Buganda and beyond.</p>
               <div className="mc-nema-hero-actions">
-                <Link href="/membership" className="mc-nema-primary-action">EXPLORE MEMBERSHIP <ArrowRight size={17} /></Link>
-                <Link href="/opportunities" className="mc-nema-secondary-action">EXPLORE OPPORTUNITIES <ArrowUpRight size={16} /></Link>
+                <Link href="/membership" className="mc-nema-primary-action">Explore membership <ArrowRight size={17} /></Link>
+                <Link href="/opportunities" className="mc-nema-secondary-action">Explore opportunities <ArrowUpRight size={16} /></Link>
               </div>
               <p className="mc-nema-hero-meta">Established by the Kingdom of Buganda <span aria-hidden="true">·</span> Company Limited by Guarantee</p>
             </div>
@@ -63,7 +62,7 @@ export default function HomePage() {
 
         <section className="mc-nema-quick-actions" aria-labelledby="business-gateway-title"><div className="bp-shell">
           <div className="mc-nema-quick-heading">
-            <div><p>BUSINESS GATEWAY</p><h2 id="business-gateway-title">Start with a business need.</h2></div>
+            <div><p>Business gateway</p><h2 id="business-gateway-title">Start with a business need.</h2></div>
             <p>Join the Chamber, discover enterprises, explore opportunities or access support for business growth.</p>
           </div>
           <div className="mc-nema-quick-grid">
@@ -71,14 +70,14 @@ export default function HomePage() {
               <div><Icon size={23} /><small>{eyebrow}</small></div>
               <strong>{title}</strong>
               <span>{text}</span>
-              <em>START HERE <ArrowRight size={13} /></em>
+              <em>Explore <ArrowRight size={13} /></em>
             </Link>)}
           </div>
         </div></section>
 
         <section className="mc-home-about" aria-labelledby="mc-home-about-title">
           <div className="bp-shell">
-            <p className="mc-home-about-kicker">ABOUT US</p>
+            <p className="mc-home-about-kicker">About us</p>
             <div className="mc-home-about-grid">
               <div className="mc-home-about-heading">
                 <h2 id="mc-home-about-title">A Chamber built around business.</h2>
@@ -91,8 +90,8 @@ export default function HomePage() {
                   <span>Established by the Kingdom of Buganda to advance enterprise growth, trade development and investment opportunity.</span>
                 </div>
                 <div className="mc-home-about-actions">
-                  <Link href="/about">DISCOVER OUR CHAMBER <ArrowRight size={15} aria-hidden="true" /></Link>
-                  <Link href="/strategy">EXPLORE OUR STRATEGY <ArrowUpRight size={15} aria-hidden="true" /></Link>
+                  <Link href="/about">Discover our Chamber <ArrowRight size={15} aria-hidden="true" /></Link>
+                  <Link href="/strategy">Explore our strategy <ArrowUpRight size={15} aria-hidden="true" /></Link>
                 </div>
               </div>
             </div>
@@ -100,25 +99,19 @@ export default function HomePage() {
         </section>
 
         <section className="mc-nema-mandate" aria-labelledby="mandate-title">
-          <div className="mc-nema-mandate-photos" aria-hidden="true">
-            {[realPhotos.pewosaAgriculture, realPhotos.pewosaEnterprise, realPhotos.essuubiCommunity, realPhotos.chamberInauguration].map((photo) => (
-              <div key={photo.src} className="mc-nema-mandate-photo" style={{ backgroundImage: `url("${photo.src}")` }} />
-            ))}
-          </div>
           <div className="bp-shell">
             <div className="mc-nema-mandate-top">
               <div className="mc-nema-mandate-intro">
                 <p><Landmark size={25} /> Our work</p>
                 <h2 id="mandate-title">Five commitments to enterprise.</h2>
                 <span>Connect, Develop, Advocate, Promote and Transform define how MCCL creates meaningful value for businesses and communities.</span>
-                <Link href="/services">EXPLORE BUSINESS SUPPORT <ArrowRight size={15} /></Link>
+                <Link href="/services">Explore business support <ArrowRight size={15} /></Link>
               </div>
-              <Link href="/strategy" className="mc-nema-plan-summary"><div><small>OUR SHARED DIRECTION</small><strong>“Twezimbe”</strong><span>Building opportunity</span></div><p>A connected, competitive and sustainable business ecosystem.</p><em>READ THE PLAN <ArrowRight size={14} /></em></Link>
+              <Link href="/strategy" className="mc-nema-plan-summary"><div><small>Our shared direction</small><strong>“Twezimbe”</strong><span>Building opportunity</span></div><p>A connected, competitive and sustainable business ecosystem.</p><em>Read the plan <ArrowRight size={14} /></em></Link>
             </div>
             <div className="mc-nema-role-grid">
-              {strategicRoles.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={25} /><strong>{title}</strong><span>{text}</span><small>MORE <ArrowRight size={12} /></small></Link>)}
+              {strategicRoles.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={25} /><strong>{title}</strong><span>{text}</span><small>Learn more <ArrowRight size={12} /></small></Link>)}
             </div>
-            <p className="mc-nema-mandate-photo-credit">Photographs: CBS PEWOSA, Essuubi Lyo Zambogo and the Mengo Chamber inauguration collection.</p>
           </div>
         </section>
 
@@ -126,15 +119,15 @@ export default function HomePage() {
           <div className="bp-shell">
             <div className="mc-home-featured-heading">
               <div>
-                <p>NEWS &amp; OPPORTUNITIES</p>
+                <p>News &amp; opportunities</p>
                 <h2 id="mc-home-featured-title">What is happening across the Chamber.</h2>
               </div>
               <div>
                 <p>Follow Chamber activity, enterprise stories, trade opportunities and upcoming business events.</p>
                 <div className="mc-home-featured-links">
-                  <Link href="/insights">LATEST UPDATES <ArrowUpRight size={15} aria-hidden="true" /></Link>
-                  <Link href="/opportunities">OPPORTUNITIES <ArrowUpRight size={15} aria-hidden="true" /></Link>
-                  <Link href="/events-calendar">EVENTS <ArrowUpRight size={15} aria-hidden="true" /></Link>
+                  <Link href="/insights">Latest updates <ArrowUpRight size={15} aria-hidden="true" /></Link>
+                  <Link href="/opportunities">Opportunities <ArrowUpRight size={15} aria-hidden="true" /></Link>
+                  <Link href="/events-calendar">Events <ArrowUpRight size={15} aria-hidden="true" /></Link>
                 </div>
               </div>
             </div>
@@ -150,14 +143,14 @@ export default function HomePage() {
         <section className="mc-home-membership" aria-labelledby="mc-home-membership-title">
           <div className="bp-shell mc-home-membership-grid">
             <div>
-              <p>MEMBERSHIP</p>
+              <p>Membership</p>
               <h2 id="mc-home-membership-title">Build stronger business connections through MCCL.</h2>
             </div>
             <div className="mc-home-membership-copy">
               <p>Connect with enterprises, institutions, cooperatives, investors and partners working to expand opportunity across Buganda and beyond.</p>
               <div className="mc-home-membership-actions">
-                <Link href="/membership/apply">APPLY TO JOIN <ArrowRight size={16} aria-hidden="true" /></Link>
-                <Link href="/membership">EXPLORE MEMBERSHIP <ArrowUpRight size={16} aria-hidden="true" /></Link>
+                <Link href="/membership/apply">Apply to join <ArrowRight size={16} aria-hidden="true" /></Link>
+                <Link href="/membership">Explore membership <ArrowUpRight size={16} aria-hidden="true" /></Link>
               </div>
             </div>
           </div>

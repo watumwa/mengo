@@ -403,7 +403,7 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
 .mc-nema-home .mc-nema-hero-actions a {
   min-height: 49px;
   padding: 14px 21px;
-  border-radius: 6px;
+  border-radius: 3px;
   font-size: 11px;
   line-height: 1.2;
   letter-spacing: .025em;
@@ -467,7 +467,7 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
 /* A practical service gateway, not a second navigation bar. */
 .mc-nema-home .mc-nema-quick-actions {
   padding-block: clamp(64px,7vw,94px);
-  background: #f7f8f8;
+  background: #f8f7f3;
 }
 .mc-nema-home .mc-nema-quick-heading {
   margin-bottom: 32px;
@@ -489,26 +489,20 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
   position: relative;
   min-height: 254px;
   padding: 27px 24px 25px;
-  border: 1px solid #dce4e9;
-  border-radius: 9px;
+  border: 1px solid #dedbd2;
+  border-radius: 3px;
   background: #fff;
-  box-shadow: 0 9px 28px rgba(13,48,77,.045);
-  transition: border-color .2s ease,transform .2s ease,box-shadow .2s ease,background-color .2s ease;
+  box-shadow: none;
+  transition: border-color .2s ease,background-color .2s ease;
 }
 .mc-nema-home .mc-nema-quick-grid a::before {
-  position: absolute;
-  top: 0;
-  left: 24px;
-  width: 42px;
-  height: 3px;
-  background: #dab25b;
-  content: "";
+  display: none;
 }
 .mc-nema-home .mc-nema-quick-grid a:hover {
-  border: 1px solid #c3ac74;
-  background: #fffdf9;
-  box-shadow: 0 16px 35px rgba(13,48,77,.085);
-  transform: translateY(-3px);
+  border: 1px solid #b7a77e;
+  background: #fbf9f4;
+  box-shadow: none;
+  transform: none;
 }
 .mc-nema-home .mc-nema-quick-grid a>div svg {
   width: 25px;
@@ -557,14 +551,64 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
   margin-top: 29px;
   padding: 23px 24px;
   border: 1px solid #e6decc;
-  border-left: 4px solid #caa04a;
-  border-radius: 0 7px 7px 0;
-  background: #fbf8f1;
-  color: #1e4666;
+  border-left: 3px solid #b49550;
+  border-radius: 0;
+  background: #f9f7f1;
+  color: #33434a;
   font-size: 13px;
 }
 .mc-nema-home .mc-home-about-actions a:first-child {
   border-radius: 5px;
+}
+
+/* Warm, photo-free commitments section: the content is the visual anchor. */
+.mc-nema-home .mc-nema-mandate {
+  background: #f7f5ef;
+  background-image: none;
+  color: #293638;
+}
+.mc-nema-home .mc-nema-mandate::before {
+  display: none;
+}
+.mc-nema-home .mc-nema-mandate-intro > p {
+  color: #82652b;
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: none;
+}
+.mc-nema-home .mc-nema-mandate-intro h2 {
+  color: #273438;
+  text-shadow: none;
+}
+.mc-nema-home .mc-nema-mandate-intro > span {
+  color: #4a575a;
+}
+.mc-nema-home .mc-nema-mandate-intro > a {
+  color: #355052;
+}
+.mc-nema-home .mc-nema-plan-summary strong {
+  color: #323a3b;
+}
+.mc-nema-home .mc-nema-plan-summary small {
+  color: #795f30;
+  font-size: 10px;
+  letter-spacing: .05em;
+}
+.mc-nema-home .mc-nema-plan-summary p {
+  color: #526065;
+}
+.mc-nema-home .mc-nema-plan-summary span,
+.mc-nema-home .mc-nema-plan-summary em {
+  color: #806636;
+}
+.mc-nema-home .mc-nema-role-grid svg {
+  color: #916f32;
+}
+.mc-nema-home .mc-nema-role-grid small {
+  color: #725c31;
+}
+.mc-nema-home .mc-nema-role-grid a:hover small {
+  color: #594524;
 }
 
 /* Five commitments: more breathing room and consistent legibility. */
@@ -578,30 +622,42 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
   max-width: 610px;
 }
 .mc-nema-home .mc-nema-plan-summary {
-  border-radius: 8px;
-  box-shadow: 0 18px 42px rgba(0,12,28,.2);
+  border: 1px solid #d9d0be;
+  border-top: 3px solid #b9944b;
+  border-radius: 2px;
+  background: #fffefa;
+  box-shadow: none;
+  color: #303a3b;
 }
 .mc-nema-home .mc-nema-role-grid {
-  gap: 12px;
-  margin-top: 55px;
-  border: 0;
+  gap: 0;
+  margin-top: 50px;
+  border-top: 1px solid #d6d0c4;
+  border-left: 0;
 }
 .mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:nth-child(n) {
-  min-height: 236px;
-  padding: 27px 23px;
-  border: 1px solid rgba(242,222,175,.34);
-  border-radius: 7px;
-  background: rgba(3,26,51,.7);
+  min-height: 220px;
+  padding: 27px 21px;
+  border: 0;
+  border-right: 1px solid #d6d0c4;
+  border-bottom: 1px solid #d6d0c4;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #2c373b;
+  transform: none;
 }
 .mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:hover {
-  background: rgba(10,59,99,.86);
-  border-color: #e7c879;
+  background: #eeeae0;
+  border-color: #d6d0c4;
+  transform: none;
 }
 .mc-nema-home .mc-nema-role-grid strong {
-  font-size: 24px;
+  color: #303a3b;
+  font-size: 23px;
 }
 .mc-nema-home .mc-nema-role-grid span {
-  color: #e5edf5;
+  color: #4c585b;
   font-size: 13px;
   line-height: 1.64;
 }
@@ -609,7 +665,7 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
 /* Preserve the existing story carousel and published news feed. */
 .mc-nema-home .mc-home-featured {
   padding-block: clamp(72px,7.5vw,106px);
-  background: #f1f5f7;
+  background: #fff;
 }
 .mc-nema-home .mc-home-featured-heading h2 {
   font-size: clamp(39px,4.1vw,59px);
@@ -625,8 +681,9 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
 }
 .mc-nema-home .mc-home-featured-carousel {
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 21px 55px rgba(6,39,75,.12);
+  border: 1px solid #ddd9cf;
+  border-radius: 2px;
+  box-shadow: none;
 }
 .mc-nema-home .mc-home-featured .mc-hero-slider-detail {
   padding: clamp(32px,3.8vw,58px);
@@ -641,28 +698,36 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
 /* A high-contrast final invitation to participate. */
 .mc-nema-home .mc-home-membership {
   padding-block: clamp(80px,8vw,120px);
-  background: linear-gradient(112deg,#061f3b 0%,#0b3864 75%,#124977 100%);
+  background: #f0ece3;
+  color: #30383a;
 }
 .mc-nema-home .mc-home-membership h2 {
+  color: #2b3438;
   font-size: clamp(40px,4.4vw,61px);
   line-height: 1.07;
 }
 .mc-nema-home .mc-home-membership-copy > p {
-  color: #e2eaf1;
+  color: #46555d;
   font-size: 16px;
 }
 .mc-nema-home .mc-home-membership-actions a {
   min-height: 50px;
   padding: 14px 19px;
-  border-radius: 5px;
+  border: 1px solid #706955;
+  border-radius: 3px;
+  background: transparent;
+  color: #292f30;
   font-size: 11px;
 }
 .mc-nema-home .mc-home-membership-actions a:first-child {
-  background: #e9c16a;
-  color: #082c50;
+  border-color: #292f30;
+  background: #292f30;
+  color: #fffaf0;
 }
 .mc-nema-home .mc-home-membership-actions a:first-child:hover {
-  background: #f3d58e;
+  border-color: #444a48;
+  background: #444a48;
+  color: #fff;
 }
 
 /* Responsive layout: two-up credentials and services on tablets,
@@ -768,6 +833,78 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
   .mc-nema-home .mc-nema-quick-grid a,
   .mc-nema-home .mc-nema-hero-actions a {
     transition: none;
+    transform: none;
+  }
+}
+
+
+/* Homepage-specific finishing touches. The sitewide footer and interior
+   page layouts are deliberately unchanged. */
+.mc-nema-home .mc-home-membership::before,
+.mc-nema-home .mc-home-featured::before,
+.mc-nema-home .mc-home-about::after {
+  display: none;
+}
+.mc-nema-home .mc-home-membership-grid > div:first-child > p {
+  color: #806333;
+  letter-spacing: .075em;
+}
+.mc-nema-home .mc-home-membership-actions a:last-child:hover {
+  background: #e4dfd2;
+  color: #252c2e;
+}
+.mc-nema-home .mc-nema-plan-summary:hover {
+  background: #fffefa;
+  transform: none;
+}
+.mc-nema-home .mc-nema-role-grid a:hover svg {
+  color: #795b24;
+}
+.mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:nth-child(5) {
+  border-right: 0;
+}
+#main-content:has(.mc-nema-home) + .bp-footer {
+  background: #292e2e;
+  color: #f2eee4;
+}
+#main-content:has(.mc-nema-home) + .bp-footer h2 {
+  color: #e9d5a2;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: .015em;
+  text-transform: none;
+}
+#main-content:has(.mc-nema-home) + .bp-footer :is(p,a:not(.bp-brand)) {
+  color: #dddcd5;
+}
+#main-content:has(.mc-nema-home) + .bp-footer .bp-footer-note {
+  border-left-color: rgba(232,218,184,.28);
+}
+#main-content:has(.mc-nema-home) + .bp-footer .bp-footer-bottom {
+  border-top-color: rgba(232,218,184,.2);
+  color: #c2c4be;
+}
+@media (max-width: 800px) {
+  .mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:nth-child(n) {
+    border-right: 1px solid #d6d0c4;
+  }
+  .mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:nth-child(even) {
+    border-right: 0;
+  }
+}
+@media (max-width: 600px) {
+  .mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:nth-child(n) {
+    min-height: 154px;
+    padding: 25px 4px;
+    border-right: 0;
+  }
+  .mc-nema-home .mc-nema-role-grid {
+    margin-top: 35px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mc-nema-home .mc-nema-quick-grid a:hover,
+  .mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:hover {
     transform: none;
   }
 }
