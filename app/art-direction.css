@@ -330,3 +330,444 @@ main:not(.mc-nema-home):not(.business-directory-page) .connect-match-grid articl
   .bp-nav-trigger::after,
   .mc-nema-home a { transition: none; }
 }
+
+
+/* MCCL home refinement: one scoped, responsive quality pass.
+   All selectors remain inside the homepage; interior pages are unaffected. */
+.mc-nema-home {
+  --mccl-ink: #103355;
+  --mccl-navy: #092f58;
+  --mccl-gold: #e0bb63;
+  --mccl-edge: #dbe4eb;
+}
+.mc-nema-home :is(a,button):focus-visible {
+  outline: 3px solid #e5b54e;
+  outline-offset: 4px;
+}
+.mc-nema-home :is(.mc-nema-quick-heading,.mc-home-featured-heading,.mc-home-membership-grid) h2 {
+  text-wrap: balance;
+}
+
+/* Hero: retain the authentic Bulange photograph and make the Chamber's
+   purpose and the two primary pathways legible at first glance. */
+.mc-nema-home .mc-nema-hero {
+  background-color: #202831;
+}
+.mc-nema-home .mc-nema-hero::before {
+  background-image:
+    linear-gradient(90deg,rgba(5,17,29,.78) 0%,rgba(5,17,29,.61) 38%,rgba(5,17,29,.27) 77%,rgba(5,17,29,.15) 100%),
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Buganda_Court_Building1.jpg/1920px-Buganda_Court_Building1.jpg");
+  animation: none;
+  transform: none;
+}
+.mc-nema-home .mc-nema-hero-grid.bp-shell {
+  min-height: clamp(550px,46vw,650px);
+  padding-block: clamp(66px,6.7vw,94px);
+}
+.mc-nema-home .mc-nema-hero-copy {
+  max-width: 715px;
+}
+.mc-nema-home .mc-nema-hero-copy h1 {
+  max-width: 700px;
+  font-size: clamp(46px,5vw,73px);
+  line-height: 1.03;
+  letter-spacing: -.045em;
+}
+.mc-nema-home .mc-nema-hero-copy h1 .mc-nema-brand-description {
+  font-size: clamp(23px,2.45vw,35px);
+  line-height: 1.17;
+  letter-spacing: -.02em;
+}
+.mc-nema-home .mc-nema-hero .mc-nema-twezimbe {
+  margin-top: 25px;
+  color: #f4cf79;
+  font-size: clamp(32px,3.3vw,45px);
+}
+.mc-nema-home .mc-nema-hero-copy h2 {
+  max-width: 610px;
+  margin-bottom: 17px;
+  color: #fff;
+  font-size: clamp(19px,1.85vw,25px);
+  line-height: 1.35;
+}
+.mc-nema-home .mc-nema-hero-summary {
+  max-width: 570px;
+  margin-bottom: 25px;
+  color: #f3f6f9;
+  font-size: clamp(15px,1.2vw,17px);
+  line-height: 1.7;
+}
+.mc-nema-home .mc-nema-hero-actions {
+  gap: 12px;
+}
+.mc-nema-home .mc-nema-hero-actions a {
+  min-height: 49px;
+  padding: 14px 21px;
+  border-radius: 6px;
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: .025em;
+}
+.mc-nema-home .mc-nema-hero .mc-nema-primary-action {
+  background: #e7bd59;
+  border-color: #e7bd59;
+  color: #092b4f;
+}
+.mc-nema-home .mc-nema-hero .mc-nema-primary-action:hover {
+  background: #f5d37d;
+  border-color: #f5d37d;
+}
+.mc-nema-home .mc-nema-secondary-action {
+  border-color: rgba(255,255,255,.79);
+  background: rgba(12,35,55,.18);
+  color: #fff;
+}
+.mc-nema-home .mc-nema-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  max-width: 610px;
+  margin: 17px 0 0;
+  color: #e3e7ea;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  line-height: 1.55;
+}
+.mc-nema-home .mc-nema-hero-meta span {
+  color: #edcb74;
+}
+
+/* Compact, readable institutional credentials. */
+.mc-nema-home .mc-home-proof {
+  border-top: 3px solid #d6b35d;
+  background: #fff;
+}
+.mc-nema-home .mc-home-proof-grid {
+  grid-template-columns: 1.15fr 1.35fr .72fr .88fr;
+}
+.mc-nema-home .mc-home-proof article {
+  min-height: 108px;
+  padding: 23px clamp(16px,2.1vw,29px);
+  border-color: #e0e5e9;
+}
+.mc-nema-home .mc-home-proof span {
+  color: #866018;
+  font-size: 10px;
+  letter-spacing: .085em;
+}
+.mc-nema-home .mc-home-proof strong {
+  margin-top: 9px;
+  color: #123659;
+  font-size: clamp(15px,1.3vw,19px);
+  line-height: 1.37;
+}
+
+/* A practical service gateway, not a second navigation bar. */
+.mc-nema-home .mc-nema-quick-actions {
+  padding-block: clamp(64px,7vw,94px);
+  background: #f7f8f8;
+}
+.mc-nema-home .mc-nema-quick-heading {
+  margin-bottom: 32px;
+}
+.mc-nema-home .mc-nema-quick-heading h2 {
+  font-size: clamp(37px,3.8vw,53px);
+  letter-spacing: -.04em;
+}
+.mc-nema-home .mc-nema-quick-heading > p {
+  max-width: 480px;
+  font-size: 15px;
+}
+.mc-nema-home .mc-nema-quick-grid {
+  gap: 14px;
+  border: none;
+  background: transparent;
+}
+.mc-nema-home .mc-nema-quick-grid a {
+  position: relative;
+  min-height: 254px;
+  padding: 27px 24px 25px;
+  border: 1px solid #dce4e9;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 9px 28px rgba(13,48,77,.045);
+  transition: border-color .2s ease,transform .2s ease,box-shadow .2s ease,background-color .2s ease;
+}
+.mc-nema-home .mc-nema-quick-grid a::before {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  width: 42px;
+  height: 3px;
+  background: #dab25b;
+  content: "";
+}
+.mc-nema-home .mc-nema-quick-grid a:hover {
+  border: 1px solid #c3ac74;
+  background: #fffdf9;
+  box-shadow: 0 16px 35px rgba(13,48,77,.085);
+  transform: translateY(-3px);
+}
+.mc-nema-home .mc-nema-quick-grid a>div svg {
+  width: 25px;
+  height: 25px;
+  color: #a77318;
+}
+.mc-nema-home .mc-nema-quick-grid a>div small {
+  font-size: 10px;
+}
+.mc-nema-home .mc-nema-quick-grid strong {
+  margin-top: 31px;
+  color: #113b62;
+  font-size: clamp(21px,1.75vw,25px);
+}
+.mc-nema-home .mc-nema-quick-grid a>span {
+  margin-top: 12px;
+  color: #4b6277;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.mc-nema-home .mc-nema-quick-grid em {
+  color: #0c507d;
+  font-size: 10px;
+}
+
+/* Editorial introduction with one clear institutional note. */
+.mc-nema-home .mc-home-about {
+  padding-block: clamp(74px,8vw,110px);
+}
+.mc-nema-home .mc-home-about-grid {
+  gap: clamp(43px,7vw,116px);
+}
+.mc-nema-home .mc-home-about-heading h2 {
+  font-size: clamp(43px,4.6vw,65px);
+}
+.mc-nema-home .mc-home-about-heading > p {
+  color: #2e536f;
+  font-size: clamp(19px,1.75vw,24px);
+}
+.mc-nema-home .mc-home-about-copy > p {
+  color: #415e75;
+  font-size: 15px;
+  line-height: 1.85;
+}
+.mc-nema-home .mc-home-about-origin {
+  margin-top: 29px;
+  padding: 23px 24px;
+  border: 1px solid #e6decc;
+  border-left: 4px solid #caa04a;
+  border-radius: 0 7px 7px 0;
+  background: #fbf8f1;
+  color: #1e4666;
+  font-size: 13px;
+}
+.mc-nema-home .mc-home-about-actions a:first-child {
+  border-radius: 5px;
+}
+
+/* Five commitments: more breathing room and consistent legibility. */
+.mc-nema-home .mc-nema-mandate {
+  padding-block: clamp(75px,8vw,111px);
+}
+.mc-nema-home .mc-nema-mandate-intro h2 {
+  line-height: 1.09;
+}
+.mc-nema-home .mc-nema-mandate-intro > span {
+  max-width: 610px;
+}
+.mc-nema-home .mc-nema-plan-summary {
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(0,12,28,.2);
+}
+.mc-nema-home .mc-nema-role-grid {
+  gap: 12px;
+  margin-top: 55px;
+  border: 0;
+}
+.mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:nth-child(n) {
+  min-height: 236px;
+  padding: 27px 23px;
+  border: 1px solid rgba(242,222,175,.34);
+  border-radius: 7px;
+  background: rgba(3,26,51,.7);
+}
+.mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:hover {
+  background: rgba(10,59,99,.86);
+  border-color: #e7c879;
+}
+.mc-nema-home .mc-nema-role-grid strong {
+  font-size: 24px;
+}
+.mc-nema-home .mc-nema-role-grid span {
+  color: #e5edf5;
+  font-size: 13px;
+  line-height: 1.64;
+}
+
+/* Preserve the existing story carousel and published news feed. */
+.mc-nema-home .mc-home-featured {
+  padding-block: clamp(72px,7.5vw,106px);
+  background: #f1f5f7;
+}
+.mc-nema-home .mc-home-featured-heading h2 {
+  font-size: clamp(39px,4.1vw,59px);
+}
+.mc-nema-home .mc-home-featured-links {
+  gap: 6px 20px;
+}
+.mc-nema-home .mc-home-featured-links a {
+  min-height: 42px;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 11px;
+}
+.mc-nema-home .mc-home-featured-carousel {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 21px 55px rgba(6,39,75,.12);
+}
+.mc-nema-home .mc-home-featured .mc-hero-slider-detail {
+  padding: clamp(32px,3.8vw,58px);
+}
+.mc-nema-home .mc-home-featured .mc-hero-slider-description {
+  color: #485e71;
+}
+.mc-nema-home .mc-content-latest-home {
+  background: #fff;
+}
+
+/* A high-contrast final invitation to participate. */
+.mc-nema-home .mc-home-membership {
+  padding-block: clamp(80px,8vw,120px);
+  background: linear-gradient(112deg,#061f3b 0%,#0b3864 75%,#124977 100%);
+}
+.mc-nema-home .mc-home-membership h2 {
+  font-size: clamp(40px,4.4vw,61px);
+  line-height: 1.07;
+}
+.mc-nema-home .mc-home-membership-copy > p {
+  color: #e2eaf1;
+  font-size: 16px;
+}
+.mc-nema-home .mc-home-membership-actions a {
+  min-height: 50px;
+  padding: 14px 19px;
+  border-radius: 5px;
+  font-size: 11px;
+}
+.mc-nema-home .mc-home-membership-actions a:first-child {
+  background: #e9c16a;
+  color: #082c50;
+}
+.mc-nema-home .mc-home-membership-actions a:first-child:hover {
+  background: #f3d58e;
+}
+
+/* Responsive layout: two-up credentials and services on tablets,
+   one comfortable service column on phones. */
+@media (max-width: 1024px) {
+  .mc-nema-home .mc-nema-quick-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .mc-nema-home .mc-nema-quick-grid a {
+    min-height: 218px;
+  }
+  .mc-nema-home .mc-nema-role-grid {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+}
+@media (max-width: 800px) {
+  .mc-nema-home .mc-nema-hero-grid.bp-shell {
+    min-height: 0;
+    padding-block: 69px 74px;
+  }
+  .mc-nema-home .mc-nema-hero::before {
+    background-image:
+      linear-gradient(90deg,rgba(5,17,29,.78),rgba(5,17,29,.44)),
+      url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Buganda_Court_Building1.jpg/1920px-Buganda_Court_Building1.jpg");
+  }
+  .mc-nema-home .mc-home-proof-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .mc-nema-home .mc-nema-role-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .mc-nema-home .mc-home-about-grid {
+    gap: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .mc-nema-home .mc-nema-hero-grid.bp-shell {
+    padding-block: 57px 65px;
+  }
+  .mc-nema-home .mc-nema-hero-copy h1 {
+    font-size: clamp(38px,9vw,50px);
+  }
+  .mc-nema-home .mc-nema-hero-copy h1 .mc-nema-brand-description {
+    font-size: clamp(22px,5.6vw,29px);
+  }
+  .mc-nema-home .mc-nema-hero-meta {
+    font-size: 10px;
+  }
+  .mc-nema-home .mc-home-proof-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .mc-nema-home .mc-home-proof article,
+  .mc-nema-home .mc-home-proof article:first-child,
+  .mc-nema-home .mc-home-proof article:nth-child(n+3) {
+    min-height: 110px;
+    padding: 18px 14px;
+    border: 0;
+    border-right: 1px solid #e1e5e9;
+    border-bottom: 1px solid #e1e5e9;
+  }
+  .mc-nema-home .mc-home-proof article:nth-child(even) {
+    border-right: 0;
+  }
+  .mc-nema-home .mc-home-proof strong {
+    font-size: 15px;
+  }
+  .mc-nema-home .mc-nema-quick-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .mc-nema-home .mc-nema-quick-grid a {
+    min-height: 210px;
+    padding: 25px 23px;
+  }
+  .mc-nema-home .mc-nema-quick-grid strong {
+    margin-top: 19px;
+  }
+  .mc-nema-home .mc-nema-role-grid {
+    grid-template-columns: 1fr;
+  }
+  .mc-nema-home .mc-nema-mandate .mc-nema-role-grid a:nth-child(n) {
+    min-height: 177px;
+  }
+  .mc-nema-home .mc-home-featured-links a {
+    min-height: 40px;
+  }
+  .mc-nema-home .mc-home-membership-copy > p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 380px) {
+  .mc-nema-home .mc-home-proof-grid {
+    grid-template-columns: 1fr;
+  }
+  .mc-nema-home .mc-home-proof article,
+  .mc-nema-home .mc-home-proof article:first-child,
+  .mc-nema-home .mc-home-proof article:nth-child(n+3) {
+    min-height: 82px;
+    border-right: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mc-nema-home .mc-nema-quick-grid a,
+  .mc-nema-home .mc-nema-hero-actions a {
+    transition: none;
+    transform: none;
+  }
+}

@@ -16,10 +16,10 @@ import { LatestChamberUpdates } from "./LatestChamberUpdates";
 
 
 const quickActions = [
-  { eyebrow: "Membership", title: "Apply to join", text: "Submit your organisation for Chamber review.", href: "/membership/apply", icon: UsersRound },
-  { eyebrow: "Business directory", title: "Find a business", text: "Search approved profiles by sector and district.", href: "/businesses", icon: BriefcaseBusiness },
+  { eyebrow: "Membership", title: "Apply to join", text: "Submit your organisation for Chamber review and begin engaging with the business community.", href: "/membership/apply", icon: UsersRound },
+  { eyebrow: "Business directory", title: "Find a business", text: "Search approved profiles by sector and district across Buganda.", href: "/businesses", icon: BriefcaseBusiness },
   { eyebrow: "Trade & investment", title: "Explore opportunities", text: "Review published trade and partnership opportunities.", href: "/opportunities", icon: Handshake },
-  { eyebrow: "Business support", title: "Access business support", text: "Explore advisory, enterprise development and market-readiness pathways.", href: "/services", icon: BriefcaseBusiness },
+  { eyebrow: "Business support", title: "Access business support", text: "Explore advisory services, enterprise development and market-readiness pathways.", href: "/services", icon: BriefcaseBusiness },
 ];
 
 const strategicRoles = [
@@ -33,19 +33,20 @@ const strategicRoles = [
 export default function HomePage() {
   return (
     <Shell>
-      <main className="mc-nema-home">
+      <main id="main-content" className="mc-nema-home">
         <section className="mc-nema-hero" aria-labelledby="home-title">
           <div className="bp-shell mc-nema-hero-grid">
             <div className="mc-nema-hero-copy">
               <h1 id="home-title"><span className="mc-nema-brand-name">Mengo Chamber </span><span className="mc-nema-brand-description">of Commerce Limited</span></h1>
               <p className="mc-nema-twezimbe">Twezimbe</p>
-              <h2>Uplifting Livelihoods.</h2>
+              <h2>Uplifting livelihoods through enterprise.</h2>
               <div className="mc-nema-hero-rule" />
-              <p className="mc-nema-hero-summary">Connecting businesses to markets, investment and opportunities across Buganda.</p>
+              <p className="mc-nema-hero-summary">Connecting businesses to markets, investment and opportunity across Buganda and beyond.</p>
               <div className="mc-nema-hero-actions">
                 <Link href="/membership" className="mc-nema-primary-action">EXPLORE MEMBERSHIP <ArrowRight size={17} /></Link>
                 <Link href="/opportunities" className="mc-nema-secondary-action">EXPLORE OPPORTUNITIES <ArrowUpRight size={16} /></Link>
               </div>
+              <p className="mc-nema-hero-meta">Established by the Kingdom of Buganda <span aria-hidden="true">·</span> Company Limited by Guarantee</p>
             </div>
           </div>
           <p className="mc-nema-photo-credit">Bulange Mengo photo: <a href="https://commons.wikimedia.org/wiki/File:Buganda_Court_Building1.jpg" target="_blank" rel="noopener noreferrer">Dixon099</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · cropped and darkened</p>
@@ -63,7 +64,7 @@ export default function HomePage() {
         <section className="mc-nema-quick-actions" aria-labelledby="business-gateway-title"><div className="bp-shell">
           <div className="mc-nema-quick-heading">
             <div><p>BUSINESS GATEWAY</p><h2 id="business-gateway-title">Start with a business need.</h2></div>
-            <p>Join the Chamber, discover enterprises, explore opportunities or find support for business growth.</p>
+            <p>Join the Chamber, discover enterprises, explore opportunities or access support for business growth.</p>
           </div>
           <div className="mc-nema-quick-grid">
             {quickActions.map(({ eyebrow, title, text, href, icon: Icon }) => <Link href={href} key={title}>
@@ -109,7 +110,7 @@ export default function HomePage() {
               <div className="mc-nema-mandate-intro">
                 <p><Landmark size={25} /> Our work</p>
                 <h2 id="mandate-title">Five commitments to enterprise.</h2>
-                <span>Connect, Develop, Advocate, Promote and Transform define how MCCL intends to create meaningful value for businesses and communities.</span>
+                <span>Connect, Develop, Advocate, Promote and Transform define how MCCL creates meaningful value for businesses and communities.</span>
                 <Link href="/services">EXPLORE BUSINESS SUPPORT <ArrowRight size={15} /></Link>
               </div>
               <Link href="/strategy" className="mc-nema-plan-summary"><div><small>OUR SHARED DIRECTION</small><strong>“Twezimbe”</strong><span>Building opportunity</span></div><p>A connected, competitive and sustainable business ecosystem.</p><em>READ THE PLAN <ArrowRight size={14} /></em></Link>
