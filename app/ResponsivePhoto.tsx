@@ -27,7 +27,8 @@ export function ResponsivePhoto({
       sizes={sizes}
       loading={loading}
       decoding="async"
-      style={{ objectPosition: photo.position, ...style }}
+      data-photo-fit={photo.fit ?? "cover"}
+      style={{ objectPosition: photo.position, objectFit: photo.fit, ...style }}
       {...props}
     />
   );

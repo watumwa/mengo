@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, ChevronRight, Menu, Search, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { usePathname } from "next/navigation";
 
 type NavigationItem = {
@@ -70,10 +70,35 @@ export function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileGroups, setMobileGroups] = useState<string[]>([]);
-  const close = () => { setOpenMenu(null); setMobileOpen(false); };
+  const menuTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const clearMenuTimer = () => {
+    if (menuTimer.current) {
+      clearTimeout(menuTimer.current);
+      menuTimer.current = null;
+    }
+  };
+  const openMenuSoon = (label: string, delay = 140) => {
+    clearMenuTimer();
+    menuTimer.current = setTimeout(() => {
+      setOpenMenu(label);
+      menuTimer.current = null;
+    }, delay);
+  };
+  const closeMenuSoon = (delay = 500) => {
+    clearMenuTimer();
+    menuTimer.current = setTimeout(() => {
+      setOpenMenu(null);
+      menuTimer.current = null;
+    }, delay);
+  };
+  const close = () => { clearMenuTimer(); setOpenMenu(null); setMobileOpen(false); };
   const toggleMobileGroup = (label: string) => setMobileGroups((groups) => groups.includes(label) ? groups.filter((group) => group !== label) : [...groups, label]);
 
-  return <header className="bp-header" onKeyDown={(event) => { if (event.key === "Escape") { setOpenMenu(null); setMobileOpen(false); } }}>
+  useEffect(() => () => {
+    if (menuTimer.current) clearTimeout(menuTimer.current);
+  }, []);
+
+  return <header className="bp-header" onKeyDown={(event) => { if (event.key === "Escape") close(); }}>
     <a className="bp-skip-link" href="#main-content">Skip to content</a>
     <div className="bp-utility-bar"><div className="bp-shell bp-utility-content"><p>Obwakabaka bwa Buganda <span className="bp-utility-separator" aria-hidden="true">•</span> <span className="bp-utility-translation">Kingdom of Buganda</span></p><div className="bp-utility-socials" aria-label="Mengo Chamber social media">
       {socialPlatforms.map(({ name, icon }) => (
@@ -82,7 +107,7 @@ export function Header() {
         </span>
       ))}
     </div></div></div>
-    <div className="bp-nav-wrap"><div className="bp-shell bp-nav"><Brand onClick={close} compact/><nav className="bp-desktop-nav" aria-label="Primary navigation">{navigation.map((entry) => entry.items ? <div className="bp-nav-group" key={entry.label} onMouseLeave={() => setOpenMenu(null)}><button type="button" className="bp-nav-trigger" aria-current={isCurrent(entry.href) ? "page" : undefined} onClick={() => setOpenMenu(openMenu === entry.label ? null : entry.label)} aria-haspopup="true" aria-expanded={openMenu === entry.label}>{entry.label} <ChevronDown size={14} aria-hidden="true"/></button><div className={openMenu === entry.label ? "bp-mega-menu is-open" : "bp-mega-menu"}><Link href={entry.href} className="bp-mega-intro" onClick={close}><span>Explore</span><strong>{entry.label}</strong><small>Start with the overview <ArrowRight size={14}/></small></Link><div className="bp-mega-links">{entry.items.map((item) => <Link href={item.href} key={item.href} onClick={close}><strong>{item.label}</strong><small>{item.description}</small></Link>)}</div></div></div> : <Link href={entry.href} className="bp-nav-link" aria-current={isCurrent(entry.href) ? "page" : undefined} key={entry.label} onClick={close}>{entry.label}</Link>)}</nav><div className="bp-nav-actions"><Link className="bp-search-button" href="/search" aria-label="Search the website"><Search size={19}/></Link><Link className="bp-join-button" href="/membership">Join the Chamber <ArrowRight size={15}/></Link><button type="button" className="bp-menu-button" onClick={() => { setMobileOpen(!mobileOpen); setOpenMenu(null); }} aria-label={mobileOpen ? "Close menu" : "Open menu"} aria-expanded={mobileOpen}>{mobileOpen ? <X/> : <Menu/>}</button></div></div><nav className={mobileOpen ? "bp-mobile-nav is-open" : "bp-mobile-nav"} aria-label="Mobile navigation"><div className="bp-shell">{navigation.map((entry) => entry.items ? <div className="bp-mobile-group" key={entry.label}><div><Link href={entry.href} onClick={close}>{entry.label}</Link><button type="button" onClick={() => toggleMobileGroup(entry.label)} aria-label={`Show ${entry.label} pages`} aria-expanded={mobileGroups.includes(entry.label)}><ChevronDown size={18}/></button></div><div className={mobileGroups.includes(entry.label) ? "bp-mobile-subnav is-open" : "bp-mobile-subnav"}>{entry.items.map((item) => <Link href={item.href} key={item.href} onClick={close}><ChevronRight size={14}/>{item.label}</Link>)}</div></div> : <Link className="bp-mobile-direct" href={entry.href} key={entry.label} onClick={close}>{entry.label}</Link>)}<Link href="/membership" className="bp-mobile-join" onClick={close}>Join the Chamber <ArrowRight size={16}/></Link></div></nav></div>
+    <div className="bp-nav-wrap"><div className="bp-shell bp-nav"><Brand onClick={close} compact/><nav className="bp-desktop-nav" aria-label="Primary navigation">{navigation.map((entry) => entry.items ? <div className="bp-nav-group" key={entry.label} onMouseEnter={() => openMenuSoon(entry.label)} onMouseLeave={() => closeMenuSoon()} onFocus={() => { clearMenuTimer(); setOpenMenu(entry.label); }} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) closeMenuSoon(200); }}><button type="button" className="bp-nav-trigger" aria-current={isCurrent(entry.href) ? "page" : undefined} onClick={() => { clearMenuTimer(); setOpenMenu(openMenu === entry.label ? null : entry.label); }} aria-haspopup="true" aria-expanded={openMenu === entry.label}>{entry.label} <ChevronDown size={14} aria-hidden="true"/></button><div className={openMenu === entry.label ? "bp-mega-menu is-open" : "bp-mega-menu"}><Link href={entry.href} className="bp-mega-intro" onClick={close}><span>Explore</span><strong>{entry.label}</strong><small>Start with the overview <ArrowRight size={14}/></small></Link><div className="bp-mega-links">{entry.items.map((item) => <Link href={item.href} key={item.href} onClick={close}><strong>{item.label}</strong><small>{item.description}</small></Link>)}</div></div></div> : <Link href={entry.href} className="bp-nav-link" aria-current={isCurrent(entry.href) ? "page" : undefined} key={entry.label} onClick={close}>{entry.label}</Link>)}</nav><div className="bp-nav-actions"><Link className="bp-search-button" href="/search" aria-label="Search the website"><Search size={19}/></Link><Link className="bp-join-button" href="/membership">Join the Chamber <ArrowRight size={15}/></Link><button type="button" className="bp-menu-button" onClick={() => { clearMenuTimer(); setMobileOpen(!mobileOpen); setOpenMenu(null); }} aria-label={mobileOpen ? "Close menu" : "Open menu"} aria-expanded={mobileOpen}>{mobileOpen ? <X/> : <Menu/>}</button></div></div><nav className={mobileOpen ? "bp-mobile-nav is-open" : "bp-mobile-nav"} aria-label="Mobile navigation"><div className="bp-shell">{navigation.map((entry) => entry.items ? <div className="bp-mobile-group" key={entry.label}><div><Link href={entry.href} onClick={close}>{entry.label}</Link><button type="button" onClick={() => toggleMobileGroup(entry.label)} aria-label={`Show ${entry.label} pages`} aria-expanded={mobileGroups.includes(entry.label)}><ChevronDown size={18}/></button></div><div className={mobileGroups.includes(entry.label) ? "bp-mobile-subnav is-open" : "bp-mobile-subnav"}>{entry.items.map((item) => <Link href={item.href} key={item.href} onClick={close}><ChevronRight size={14}/>{item.label}</Link>)}</div></div> : <Link className="bp-mobile-direct" href={entry.href} key={entry.label} onClick={close}>{entry.label}</Link>)}<Link href="/membership" className="bp-mobile-join" onClick={close}>Join the Chamber <ArrowRight size={16}/></Link></div></nav></div>
   </header>;
 }
 
@@ -96,4 +121,11 @@ export function Footer() { return <footer className="bp-footer"><div className="
 
 export function Shell({ children }: { children: React.ReactNode }) { return <><Header/><div id="main-content">{children}</div><Footer/></>; }
 
-export function PageHero({ title, description, eyebrow = "Mengo Chamber of Commerce Limited" }: { title: string; description: string; eyebrow?: string }) { return <section className="bp-page-hero"><div className="bp-shell"><p className="bp-eyebrow">{eyebrow}</p><h1>{title}</h1><p>{description}</p></div></section>; }
+export function PageHero({ title, description, eyebrow = "Mengo Chamber of Commerce Limited", backgroundImage, backgroundPosition = "right center" }: { title: string; description: string; eyebrow?: string; backgroundImage?: string; backgroundPosition?: string }) {
+  const style = backgroundImage ? {
+    "--bp-page-hero-image": `url(${backgroundImage})`,
+    "--bp-page-hero-position": backgroundPosition,
+  } as CSSProperties : undefined;
+
+  return <section className={backgroundImage ? "bp-page-hero bp-page-hero--image" : "bp-page-hero"} style={style}><div className="bp-shell"><p className="bp-eyebrow">{eyebrow}</p><h1>{title}</h1><p>{description}</p></div></section>;
+}

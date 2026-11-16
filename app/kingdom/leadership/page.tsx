@@ -6,10 +6,16 @@ export default function KingdomLeadership() {
     eyebrow="Kingdom Leadership"
     title="Traditional Leadership & Institutions"
     description="An introduction to the institutions and traditional leadership structures of the Kingdom of Buganda."
-    image={realPhotos.lukiikoAssembly}
-    imageCaption="Members seated in the Buganda Lukiiko."
+    heroImage={realPhotos.kabakaPalaceHero}
+    image={realPhotos.kabakaPortrait}
+    imageCaption="The Kabaka in ceremonial attire."
     source={{"label":"Official Kingdom website","href":"https://buganda.or.ug/"}}
-    gallery={[{ photo: realPhotos.ceoRetreatSession, label: "Strategic dialogue at the Buganda CEOs Retreat" }, { photo: realPhotos.oluwaloCeremony, label: "An Oluwalo event presentation" }]} sections={[
+    gallery={[
+      { photo: realPhotos.katikkiroPortrait, label: "Owek. Charles Peter Mayiga, Katikkiro of Buganda" },
+      { photo: realPhotos.lukiikoAssembly, label: "Members seated in the Buganda Lukiiko" },
+      { photo: realPhotos.ceoRetreatGroup, label: "Kingdom leaders and participants at the Buganda CEOs Retreat" },
+      { photo: realPhotos.ceoRetreatSession, label: "Strategic dialogue at the Buganda CEOs Retreat" },
+    ]} sections={[
   {
     "eyebrow": "Traditional leadership",
     "title": "The institutions of the Kingdom",

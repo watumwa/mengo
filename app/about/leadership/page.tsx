@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Shell } from "../../components";
+import { ResponsivePhoto } from "../../ResponsivePhoto";
+import { realPhotos, type ChamberPhoto } from "../../realPhotos";
 import "./leadership.css";
 
-type Leader={name:string;role:string;photo?:string};
-const patron:Leader={name:"Owek. Charles Peter Mayiga",role:"Katikkiro of Buganda · Patron / Overseer",photo:"/images/leadership/charles-peter-mayiga.jpg"};
+type Leader={name:string;role:string;photo?:ChamberPhoto};
+const patron:Leader={name:"Owek. Charles Peter Mayiga",role:"Katikkiro of Buganda · Patron / Overseer",photo:realPhotos.katikkiroPortrait};
 const chair:Leader={name:"Chief John Fred Kiyimba Freeman",role:"Board Chair"};
 const vice:Leader={name:"Owek. Steven Kayiwa",role:"Vice Chair"};
 const members:Leader[]=[
@@ -13,8 +15,8 @@ const members:Leader[]=[
  {name:"Robert Nsereko",role:"Board Member"},
 ];
 function Portrait({leader}:{leader:Leader}){
- return <div className="mcl-portrait" aria-label={`Portrait pending for ${leader.name}`}>
-  {leader.photo?<img src={leader.photo} alt={`Portrait of ${leader.name}`} width={360} height={400}/>:<span aria-hidden="true" className="mcl-portrait-empty" />}
+ return <div className="mcl-portrait" aria-label={leader.photo ? undefined : `Portrait pending for ${leader.name}`}>
+  {leader.photo?<ResponsivePhoto photo={leader.photo} width={360} height={400} sizes="(max-width: 600px) 115px, 180px"/>:<span aria-hidden="true" className="mcl-portrait-empty" />}
  </div>;
 }
 function MainLeader({leader}:{leader:Leader}){

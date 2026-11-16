@@ -2,6 +2,7 @@ export type ChamberPhoto = {
   src: string;
   alt: string;
   position?: string;
+  fit?: "cover" | "contain";
 };
 
 /*
@@ -14,21 +15,6 @@ export const realPhotos = {
     alt: "Authentic photograph of Bulange, the administrative headquarters of Buganda Kingdom, by Alvinategyeka (2020), CC BY-SA 4.0",
     position: "center",
   },
-  coffee: {
-    src: "/images/buganda-gomesi.jpg",
-    alt: "A woman wearing traditional Buganda dress",
-    position: "center 30%",
-  },
-  market: {
-    src: "/images/kampala-market.jpg",
-    alt: "A Kampala market scene",
-    position: "center",
-  },
-  kampala: {
-    src: "/images/buganda-traditional-wear.jpg",
-    alt: "People in traditional Buganda attire",
-    position: "center",
-  },
   palace: {
     src: "https://upload.wikimedia.org/wikipedia/commons/0/07/The_Buganda_Kingdom_royal_Palace_in_Mengo%2C_Kampala.jpg",
     alt: "The royal palace building at Mengo, Kampala, photographed by Samson Ssemakadde (CC0)",
@@ -38,6 +24,23 @@ export const realPhotos = {
     src: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Buganda_kingdom_Clan_heads_meeting_in_Bulange_Mmengo%2C_Kampala.09.jpg?width=1600",
     alt: "Real photograph of a Buganda Kingdom clan heads meeting at Bulange, by Samson Ssemakadde (2025), CC0",
     position: "center",
+  },
+  kabakaPortrait: {
+    src: "/images/leadership/kabaka.jpg",
+    alt: "Portrait of the Kabaka in ceremonial attire",
+    position: "center 24%",
+    fit: "contain",
+  },
+  kabakaPalaceHero: {
+    src: "/images/leadership/kabakas-palace.jpeg",
+    alt: "The Kabaka's Palace in Mengo",
+    position: "right 50%",
+  },
+  katikkiroPortrait: {
+    src: "/images/leadership/katikkiro-of-buganda.jpg",
+    alt: "Portrait of Owek. Charles Peter Mayiga, Katikkiro of Buganda",
+    position: "center 22%",
+    fit: "contain",
   },
   budgetAssembly: {
     src: "/images/client/buganda-budget-assembly.jpg",

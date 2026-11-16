@@ -10,6 +10,10 @@ const carousel = read("app/HeroStoryCarousel.tsx");
 const knownPhotos = new Set(
   [...catalog.matchAll(/^\s{2}([A-Za-z]\w*):\s*\{/gm)].map((match) => match[1])
 );
+const cataloguedLocalPhotos = new Map(
+  [...catalog.matchAll(/^\s{2}([A-Za-z]\w*):\s*\{\n\s{4}src:\s*"(\/images\/[^"]+\.(?:jpe?g))"/gim)]
+    .map((match) => [match[2], match[1]])
+);
 const photoRefs = (source) =>
   [...source.matchAll(/\brealPhotos\.([A-Za-z]\w*)/g)].map((match) => match[1]);
 const assert = (condition, message) => {
@@ -19,6 +23,22 @@ const assert = (condition, message) => {
 // Every local photograph in the central catalogue must actually exist.
 for (const match of catalog.matchAll(/\bsrc:\s*"(\/images\/[^"]+)"/g)) {
   assert(existsSync(join(process.cwd(), "public", match[1])), "Missing asset " + match[1]);
+}
+
+// Every supplied raster photograph must be catalogued so it can be placed with
+// an accurate alt description and content context instead of becoming an orphan.
+const localPhotoFiles = [];
+const collectLocalPhotos = (directory) => {
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) collectLocalPhotos(path);
+    else if (entry.isFile() && /\.jpe?g$/i.test(entry.name)) localPhotoFiles.push(path);
+  }
+};
+collectLocalPhotos(join(process.cwd(), "public", "images"));
+for (const file of localPhotoFiles) {
+  const publicPath = "/" + relative(join(process.cwd(), "public"), file);
+  assert(cataloguedLocalPhotos.has(publicPath), "Uncatalogued local photo " + publicPath);
 }
 
 // Keep the wider site from falling back to the same small set of photographs.
@@ -47,6 +67,9 @@ for (const [key, references] of siteUsage) {
     references.length <= maximumSiteReferences,
     key + " is referenced " + references.length + " times across the site; use more context-specific photographs"
   );
+}
+for (const [src, key] of cataloguedLocalPhotos) {
+  assert(siteUsage.has(key), "Local photo " + src + " is catalogued but not rendered on a content page");
 }
 
 const gallery = homepage.match(/const communityStories\s*=\s*\[([\s\S]*?)\n\];/);
@@ -82,6 +105,7 @@ assert(heroPhoto(history) !== heroPhoto(culture), "Kingdom history and culture s
 
 console.log(
   "Photo audit passed: " + locations.size +
-  " distinct client photos across homepage carousel, mandate and gallery; all catalogue assets exist; no catalogued photo exceeds " +
+  " distinct client photos across homepage carousel, mandate and gallery; all " + localPhotoFiles.length +
+  " local photographs are catalogued and rendered; no catalogued photo exceeds " +
   maximumSiteReferences + " site references."
 );

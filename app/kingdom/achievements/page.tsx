@@ -6,7 +6,12 @@ export default function Achievements() {
     eyebrow="Kingdom Development"
     title="Community & Economic Development"
     description="Explore the themes connecting enterprise, institutions and community development across Buganda."
-    image={realPhotos.birthdayRunLaunch} imageCaption="The official launch of the Kabaka Birthday Run." gallery={[{ photo: realPhotos.educationCelebration, label: "Graduates celebrating an education milestone" }, { photo: realPhotos.youthInitiative, label: "Leaders and young people at a Buganda youth initiative" }]} sections={[
+    image={realPhotos.birthdayRunLaunch} imageCaption="The official launch of the Kabaka Birthday Run." gallery={[
+      { photo: realPhotos.birthdayRunGroup, label: "Community health advocates at the Kabaka Birthday Run" },
+      { photo: realPhotos.educationCelebration, label: "Graduates celebrating an education milestone" },
+      { photo: realPhotos.youthInitiative, label: "Leaders and young people at a Buganda youth initiative" },
+      { photo: realPhotos.oluwaloCeremony, label: "A community contribution recognised at an Oluwalo event" },
+    ]} sections={[
   {
     "eyebrow": "Areas of contribution",
     "title": "Development that matters to communities",

@@ -105,12 +105,10 @@ export default function HomePage() {
               <div className="mc-nema-hero-rule" />
               <p className="mc-nema-hero-summary">Connecting businesses to markets, investment and opportunities across Buganda.</p>
               <div className="mc-nema-hero-actions">
-                <Link href="/membership" className="mc-nema-primary-action">JOIN THE CHAMBER <ArrowRight size={17} /></Link>
-                <Link href="/opportunities" className="mc-nema-secondary-action">EXPLORE OPPORTUNITIES <ArrowUpRight size={16} /></Link>
+                <Link href="/about" className="mc-nema-primary-action">DISCOVER THE CHAMBER <ArrowRight size={17} /></Link>
+                <Link href="/membership" className="mc-nema-secondary-action">EXPLORE MEMBERSHIP <ArrowUpRight size={16} /></Link>
               </div>
             </div>
-
-            <aside className="mc-nema-service-panel mc-nema-news-panel" aria-label="Featured stories"><HeroStoryCarousel /></aside>
           </div>
           <p className="mc-nema-photo-credit">Bulange Mengo photo: <a href="https://commons.wikimedia.org/wiki/File:Buganda_Court_Building1.jpg" target="_blank" rel="noopener noreferrer">Dixon099</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · cropped and darkened</p>
         </section>
@@ -119,20 +117,47 @@ export default function HomePage() {
           <Link href="/membership">Membership</Link><Link href="/trade-investment">Trade &amp; Investment</Link><Link href="/services">Enterprise Growth</Link><Link href="/policy-advocacy">Advocacy &amp; Research</Link><Link href="/intelligence">Market Intelligence</Link><Link href="/economy">Buganda Economy</Link><Link href="/publications">Resources</Link><Link href="/contact">Contact</Link>
         </div></nav>
 
-        <section className="mc-nema-quick-actions" aria-labelledby="business-gateway-title"><div className="bp-shell">
-          <div className="mc-nema-quick-heading">
-            <div><p>BUSINESS GATEWAY</p><h2 id="business-gateway-title">Start with a business need.</h2></div>
-            <p>Join the Chamber, discover enterprises, explore opportunities and access information for better business decisions.</p>
+        <section className="mc-home-about" aria-labelledby="mc-home-about-title">
+          <div className="bp-shell">
+            <p className="mc-home-about-kicker">ABOUT US</p>
+            <div className="mc-home-about-grid">
+              <div className="mc-home-about-heading">
+                <h2 id="mc-home-about-title">A Chamber built around business.</h2>
+                <p>Mengo Chamber of Commerce Limited is a consortium of affiliated members working to create a competitive, connected and sustainable business ecosystem in Buganda.</p>
+              </div>
+              <div className="mc-home-about-copy">
+                <p>The Chamber brings together enterprises, institutions, cooperatives, investors and partners around market access, business development, trade and investment linkages, research and constructive policy dialogue.</p>
+                <p>Its role is to help business participation move from isolated effort to shared opportunity.</p>
+                <div className="mc-home-about-origin">
+                  <Landmark size={21} aria-hidden="true" />
+                  <span>Established by the Kingdom of Buganda to advance enterprise growth, trade development and investment opportunity.</span>
+                </div>
+                <div className="mc-home-about-actions">
+                  <Link href="/about">DISCOVER OUR CHAMBER <ArrowRight size={15} aria-hidden="true" /></Link>
+                  <Link href="/membership">EXPLORE MEMBERSHIP <ArrowUpRight size={15} aria-hidden="true" /></Link>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="mc-nema-quick-grid">
-            {quickActions.map(({ eyebrow, title, text, href, icon: Icon }) => <Link href={href} key={title}>
-              <div><Icon size={23} /><small>{eyebrow}</small></div>
-              <strong>{title}</strong>
-              <span>{text}</span>
-              <em>START HERE <ArrowRight size={13} /></em>
-            </Link>)}
+        </section>
+
+        <section className="mc-home-featured" aria-labelledby="mc-home-featured-title">
+          <div className="bp-shell">
+            <div className="mc-home-featured-heading">
+              <div>
+                <p>FEATURED FROM THE CHAMBER</p>
+                <h2 id="mc-home-featured-title">Enterprise stories and opportunities.</h2>
+              </div>
+              <div>
+                <p>Follow Chamber activity, business conversations and examples of enterprise development across Buganda.</p>
+                <Link href="/insights">VIEW ALL UPDATES <ArrowUpRight size={15} aria-hidden="true" /></Link>
+              </div>
+            </div>
+            <div className="mc-home-featured-carousel">
+              <HeroStoryCarousel />
+            </div>
           </div>
-        </div></section>
+        </section>
 
 
         <LatestChamberUpdates />
@@ -158,6 +183,29 @@ export default function HomePage() {
           </div>
           <p className="mc-nema-mandate-photo-credit">Photographs: CBS PEWOSA, Essuubi Lyo Zambogo and the Mengo Chamber inauguration collection.</p>
         </div></section>
+
+        <section className="mc-home-direction" aria-labelledby="mc-home-direction-title">
+          <div className="bp-shell">
+            <div className="mc-home-direction-heading">
+              <div><p>OUR DIRECTION</p><h2 id="mc-home-direction-title">Vision and mission.</h2></div>
+              <span>The ambition we are building toward and the work that guides how the Chamber serves business.</span>
+            </div>
+            <div className="mc-home-direction-grid">
+              <article className="mc-home-direction-vision">
+                <div className="mc-home-direction-label"><span>01</span> OUR VISION</div>
+                <p>A vibrant, competitive chamber of commerce that creates business opportunities, jobs and improves livelihoods for the communities.</p>
+              </article>
+              <article className="mc-home-direction-mission">
+                <div className="mc-home-direction-label"><span>02</span> OUR MISSION</div>
+                <p>To facilitate trade, investment, enterprise growth, agricultural transformation, and industrial development by providing quality business services, strategic linkages, and effective advocacy for a competitive business environment in Uganda.</p>
+              </article>
+            </div>
+            <div className="mc-home-direction-actions">
+              <Link href="/strategy">EXPLORE OUR STRATEGY <ArrowRight size={16} aria-hidden="true" /></Link>
+              <Link href="/contact">START A CONVERSATION <ArrowUpRight size={16} aria-hidden="true" /></Link>
+            </div>
+          </div>
+        </section>
 
         <section className="mc-client-gallery" aria-labelledby="community-gallery-title">
           <div className="bp-shell">
@@ -187,6 +235,21 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="mc-nema-quick-actions" aria-labelledby="business-gateway-title"><div className="bp-shell">
+          <div className="mc-nema-quick-heading">
+            <div><p>BUSINESS GATEWAY</p><h2 id="business-gateway-title">Start with a business need.</h2></div>
+            <p>Join the Chamber, discover enterprises, explore opportunities and access information for better business decisions.</p>
+          </div>
+          <div className="mc-nema-quick-grid">
+            {quickActions.map(({ eyebrow, title, text, href, icon: Icon }) => <Link href={href} key={title}>
+              <div><Icon size={23} /><small>{eyebrow}</small></div>
+              <strong>{title}</strong>
+              <span>{text}</span>
+              <em>START HERE <ArrowRight size={13} /></em>
+            </Link>)}
+          </div>
+        </div></section>
+
         <section className="mc-nema-priorities" aria-labelledby="priorities-title"><div className="bp-shell">
           <div className="mc-nema-section-title"><FileText size={29} /><div><h2 id="priorities-title">MCCL Strategic Priorities</h2><p>Turning the Chamber’s priorities into meaningful value for business.</p></div></div>
           <div className="mc-nema-priority-grid">
@@ -200,8 +263,6 @@ export default function HomePage() {
             {exploreLinks.map(({ title, text, href, icon: Icon }) => <Link href={href} key={title}><Icon size={23} /><div><strong>{title}</strong><p>{text}</p></div><ArrowRight size={18} /></Link>)}
           </div>
         </div></section>
-
-        <section className="mc-nema-closing"><div className="bp-shell"><div><p>OUR VISION</p><h2>A vibrant, competitive chamber of commerce that creates business opportunities, jobs and improves livelihoods for the communities.</h2></div><Link href="/contact">START A CONVERSATION <ArrowRight size={17} /></Link></div></section>
       </main>
     </Shell>
   );

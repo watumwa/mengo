@@ -1,6 +1,6 @@
 /* MCCL visual coherence: focused, goal-oriented content and purposeful imagery. */
 :root{--mcc-forest:#103e2c;--mcc-gold:#c4a35b;--mcc-ivory:#f9faf6}
-.editorial-home .editorial-hero{background-image:linear-gradient(90deg,rgba(8,42,31,.98) 0%,rgba(9,48,35,.95) 44%,rgba(10,54,38,.74) 68%,rgba(10,54,38,.28) 100%),url('/images/kampala-market.jpg')!important;background-position:center 47%}
+.editorial-home .editorial-hero{background-image:linear-gradient(90deg,rgba(8,42,31,.98) 0%,rgba(9,48,35,.95) 44%,rgba(10,54,38,.74) 68%,rgba(10,54,38,.28) 100%),url('/images/client/rexba-market.jpg')!important;background-position:center 47%}
 .editorial-home .editorial-hero .content{max-width:660px}
 .editorial-home .editorial-hero .kicker{color:#e4c982}
 .editorial-home .editorial-hero h1{font-size:clamp(40px,5vw,74px);line-height:1.06;letter-spacing:-.04em}
@@ -19,7 +19,7 @@
 .mcc-journey-grid span{font-size:12px;line-height:1.7;color:#61786a}
 .mcc-journey-grid>a>svg:last-child{margin-top:auto}
 .editorial-feature-heritage{background-image:linear-gradient(125deg,#103e2c,#0c3025)!important}
-.editorial-feature-invest{background-image:linear-gradient(115deg,rgba(11,51,38,.91),rgba(11,51,38,.70)),url('/images/kampala-market.jpg')!important}
+.editorial-feature-invest{background-image:linear-gradient(115deg,rgba(11,51,38,.91),rgba(11,51,38,.70)),url('/images/client/rexba-market.jpg')!important}
 .editorial-feature-heritage:after{content:"MCCL";position:absolute;right:7%;bottom:-25px;font:700 clamp(100px,12vw,200px) Georgia,serif;color:#ffffff0d;pointer-events:none}
 .editorial-feature-heritage>div{position:relative;z-index:1}
 .editorial-area-card a:focus-visible,.ecosystem-shortcuts-grid a:focus-visible{outline:3px solid #c4a35b;outline-offset:2px}
@@ -44,8 +44,8 @@
 @media(max-width:1050px){.navlinks .mcc-home-link{display:flex;width:100%;padding:13px 10px;font-size:14px}}
 
 /* Documentary photography for commercial page headers; imagery is contextual, not evidence of MCCL programmes. */
-.directoryhero{background-image:linear-gradient(90deg,rgba(8,48,34,.95),rgba(8,48,34,.64)),url('/images/kampala-market.jpg')!important;background-size:cover;background-position:center}
-.editorial-feature-invest{background-image:linear-gradient(110deg,rgba(9,53,37,.94),rgba(9,53,37,.57)),url('/images/kampala-market.jpg')!important;background-size:cover;background-position:center}
+.directoryhero{background-image:linear-gradient(90deg,rgba(8,48,34,.95),rgba(8,48,34,.64)),url('/images/client/rexba-market.jpg')!important;background-size:cover;background-position:center}
+.editorial-feature-invest{background-image:linear-gradient(110deg,rgba(9,53,37,.94),rgba(9,53,37,.57)),url('/images/client/rexba-market.jpg')!important;background-size:cover;background-position:center}
 @media(max-width:650px){.editorial-area-card>img{height:210px}}
 
 /* Verified documentary photograph of Bulange, the Buganda Kingdom parliament building.

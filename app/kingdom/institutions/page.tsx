@@ -8,7 +8,12 @@ export default function Institutions() {
     description="Education, media, culture, enterprise and community organisations contribute in different ways to life across Buganda."
     image={realPhotos.budgetAssembly}
     imageCaption="Members assembled in the Buganda Lukiiko during a budget reading."
-    gallery={[{ photo: realPhotos.educationCelebration, label: "Celebration at an education ceremony" }, { photo: realPhotos.essuubiCommunity, label: "An Essuubi Lyo Zambogo community initiative" }]} sections={[
+    gallery={[
+      { photo: realPhotos.budgetAddress, label: "The Buganda budget address presented in the Lukiiko" },
+      { photo: realPhotos.educationCelebration, label: "Celebration at an education ceremony" },
+      { photo: realPhotos.essuubiCommunity, label: "An Essuubi Lyo Zambogo community initiative" },
+      { photo: realPhotos.ekisaakaate, label: "The Nnaabagereka presenting the Ekisaakaate programme identity" },
+    ]} sections={[
   {
     "eyebrow": "Institutional landscape",
     "title": "Different organisations, different roles",

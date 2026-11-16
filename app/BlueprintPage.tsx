@@ -12,6 +12,7 @@ export type BlueprintPageProps = {
   eyebrow: string;
   title: string;
   description: string;
+  heroImage?: ChamberPhoto;
   image?: ChamberPhoto;
   feature?: ReactNode;
   presentation?: EditorialPresentation;
@@ -22,15 +23,21 @@ export type BlueprintPageProps = {
   action?: { label: string; href: string };
 };
 
-export function BlueprintPage({ eyebrow, title, description, image, feature, presentation = "classic", imageCaption, gallery, source, sections, action }: BlueprintPageProps) {
+export function BlueprintPage({ eyebrow, title, description, heroImage, image, feature, presentation = "classic", imageCaption, gallery, source, sections, action }: BlueprintPageProps) {
   const splitIntro = presentation === "split" && Boolean(image) && sections.length > 0;
   return <Shell>
     <main className={`bp-editorial-page bp-editorial--${presentation}`}>
-      <PageHero eyebrow={eyebrow} title={title} description={description} />
+      <PageHero eyebrow={eyebrow} title={title} description={description} backgroundImage={heroImage?.src} backgroundPosition={heroImage?.position} />
       {feature}
       {!splitIntro && (image || source) && <section className="bp-editorial-media"><div className="bp-shell">
-        {image && <figure><ResponsivePhoto photo={image} width={1200} height={630} sizes="(max-width:800px) 100vw, 1100px" /><figcaption>{imageCaption ?? image.alt}</figcaption></figure>}
-        {source && <a href={source.href} target="_blank" rel="noopener noreferrer" className="bp-source-link">{source.label} <ExternalLink size={15} aria-hidden="true" /></a>}
+        {image && <figure className="bp-editorial-media-card">
+          <ResponsivePhoto photo={image} width={1200} height={630} sizes="(max-width:800px) 100vw, 1100px" />
+          <div className="bp-editorial-media-meta">
+            <figcaption>{imageCaption ?? image.alt}</figcaption>
+            {source && <a href={source.href} target="_blank" rel="noopener noreferrer" className="bp-source-link">{source.label} <ExternalLink size={14} aria-hidden="true" /></a>}
+          </div>
+        </figure>}
+        {!image && source && <a href={source.href} target="_blank" rel="noopener noreferrer" className="bp-source-link">{source.label} <ExternalLink size={14} aria-hidden="true" /></a>}
       </div></section>}
       <div className="bp-editorial-sections">{sections.map((section, index) =>
         <Fragment key={section.title}><section className={index % 2 ? "bp-editorial-section bp-editorial-section-soft" : "bp-editorial-section"} key={section.title}>
@@ -42,8 +49,14 @@ export function BlueprintPage({ eyebrow, title, description, image, feature, pre
                 <p className="bp-editorial-lead">{section.text}</p>
               </div>
               <div className="bp-editorial-intro-split-media">
-                {image && <figure><ResponsivePhoto photo={image} width={1200} height={630} sizes="(max-width:760px) 100vw, 50vw" /><figcaption>{imageCaption ?? image.alt}</figcaption></figure>}
-                {source && <a href={source.href} target="_blank" rel="noopener noreferrer" className="bp-source-link">{source.label} <ExternalLink size={15} aria-hidden="true" /></a>}
+                {image && <figure className="bp-editorial-media-card">
+                  <ResponsivePhoto photo={image} width={1200} height={630} sizes="(max-width:760px) 100vw, 50vw" />
+                  <div className="bp-editorial-media-meta">
+                    <figcaption>{imageCaption ?? image.alt}</figcaption>
+                    {source && <a href={source.href} target="_blank" rel="noopener noreferrer" className="bp-source-link">{source.label} <ExternalLink size={14} aria-hidden="true" /></a>}
+                  </div>
+                </figure>}
+                {!image && source && <a href={source.href} target="_blank" rel="noopener noreferrer" className="bp-source-link">{source.label} <ExternalLink size={14} aria-hidden="true" /></a>}
               </div>
             </div> : <div className="bp-editorial-heading">
               <p className="bp-eyebrow">{section.eyebrow}</p>
@@ -61,7 +74,7 @@ export function BlueprintPage({ eyebrow, title, description, image, feature, pre
           </div>
         </section>
         {index === 0 && gallery && gallery.length > 0 && <section className="bp-related-photo-section" aria-label={`Photographs related to ${title}`}>
-          <div className="bp-shell bp-related-photo-grid">
+          <div className={`bp-shell bp-related-photo-grid bp-related-photo-grid--${Math.min(gallery.length, 4)}`}>
             {gallery.map(({ photo, label }) => <figure key={photo.src}>
               <ResponsivePhoto photo={photo} width={750} height={470} sizes="(max-width:700px) 100vw, 50vw" />
               <figcaption>{label}</figcaption>

@@ -9,7 +9,11 @@ export default function CultureTourism() {
     image={realPhotos.culturalPerformance}
     imageCaption="Performers in traditional dress at a cultural gathering."
     source={{"label":"Visit the official Kingdom website","href":"https://buganda.or.ug/"}}
-    gallery={[{ photo: realPhotos.muslimDinner, label: "Guests gathered at a Buganda Muslim community dinner" }, { photo: realPhotos.royalCeremony, label: "A ceremonial procession at a Buganda Royal event" }]} sections={[
+    gallery={[
+      { photo: realPhotos.muslimDinner, label: "Guests gathered at a Buganda Muslim community dinner" },
+      { photo: realPhotos.royalCeremony, label: "A ceremonial procession at a Buganda Royal event" },
+      { photo: realPhotos.enkuuka, label: "A community gathering at CBS Enkuuka" },
+    ]} sections={[
   {
     "eyebrow": "Places and traditions",
     "title": "A heritage worth exploring",

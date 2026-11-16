@@ -4,8 +4,8 @@ The site uses **authentic documentary photographs** with accurate, subject-speci
 
 ## Source distinctions
 
-- **Client-supplied photographs:** the business, cultural and community images under `public/images/client/` and the Chamber inauguration image. These illustrate the depicted organisation or activity; they do **not** imply that the depicted people are Chamber members or that the Chamber organised the activity.
-- **Wikimedia Commons photographs:** `buganda-royal-palace.jpg` (Samson Ssemakadde, CC0), `kampala-market.jpg` (Kevin Gabbert, public domain), `buganda-traditional-wear.jpg` (CC0), and `buganda-gomesi.jpg` (CC0). Keep creator and licence credits when displayed.
+- **Client-supplied photographs:** the business, cultural and community images under `public/images/client/`, the leadership portraits, the Kabaka's Palace hero photograph, and the Chamber inauguration image. These illustrate the depicted organisation or activity; they do **not** imply that the depicted people are Chamber members or that the Chamber organised the activity.
+- **Wikimedia Commons photograph:** `buganda-royal-palace.jpg` (Samson Ssemakadde, CC0). Keep the creator and licence credit when displayed.
 - **Externally hosted credited documentary images:** the Bulange heritage imagery and the source news photograph have their own attribution and should be retained only when the credited source remains accessible.
 - Confirm publication permission for all client-provided photos before final client launch; having the files does not itself demonstrate licensing or subject consent.
 

@@ -21,7 +21,7 @@
 .navactions .btn{min-height:38px;padding:10px 17px;border-radius:7px;background:linear-gradient(135deg,#b98a24,#d2af59);color:#fff;font-size:11px;box-shadow:0 4px 10px #a77a2730}
 
 /* Hero */
-.editorial-hero{min-height:560px;background-image:linear-gradient(90deg,rgba(5,30,57,.98) 0%,rgba(7,34,63,.92) 29%,rgba(8,34,61,.48) 51%,rgba(8,34,61,.03) 72%),url("/images/mengo-hero-v2.png")!important;background-position:center;background-size:cover}
+.editorial-hero{min-height:560px;background-image:linear-gradient(90deg,rgba(5,30,57,.98) 0%,rgba(7,34,63,.92) 29%,rgba(8,34,61,.48) 51%,rgba(8,34,61,.03) 72%),url("/images/mengo-board-inauguration.jpeg")!important;background-position:center;background-size:cover}
 .editorial-hero .content{max-width:585px;padding:82px 0 80px}
 .editorial-hero .kicker{font-size:11px;color:#e8bd62;letter-spacing:.15em}
 .editorial-hero h1{font-size:clamp(43px,4.7vw,69px);line-height:1.01;margin:18px 0 17px;color:#fff}
@@ -68,7 +68,7 @@
 .editorial-feature:before{content:"";position:absolute;inset:0;z-index:-1}
 .editorial-feature-invest{background-image:url("/images/buganda-royal-palace.jpg")}
 .editorial-feature-invest:before{background:linear-gradient(90deg,rgba(6,36,66,.94),rgba(6,36,66,.45))}
-.editorial-feature-heritage{background-image:url("/images/buganda-gomesi.jpg");background-position:center 38%}
+.editorial-feature-heritage{background-image:url("/images/client/royal-cultural-performance.jpg");background-position:center 38%}
 .editorial-feature-heritage:before{background:linear-gradient(90deg,rgba(3,49,44,.96),rgba(3,49,44,.66))}
 .editorial-feature>div{max-width:420px}
 .editorial-feature span{color:#e9bd5b;text-transform:uppercase;letter-spacing:.15em;font-size:10px;font-weight:800}
@@ -105,7 +105,7 @@
 }
 @media(max-width:640px){
   .brand strong{font-size:15px}.brand small{font-size:7px}.brandmark{width:34px;height:45px;font-size:18px}
-  .editorial-hero{min-height:600px;background-image:linear-gradient(90deg,rgba(5,30,57,.96),rgba(7,34,63,.82) 54%,rgba(7,34,63,.31)),url("/images/mengo-hero-v2.png")!important;background-position:61% center}
+  .editorial-hero{min-height:600px;background-image:linear-gradient(90deg,rgba(5,30,57,.96),rgba(7,34,63,.82) 54%,rgba(7,34,63,.31)),url("/images/mengo-board-inauguration.jpeg")!important;background-position:61% center}
   .editorial-hero .content{padding:61px 0 70px}
   .editorial-hero h1{font-size:clamp(39px,12vw,52px);line-height:1.02}
   .editorial-hero p{font-size:13px;line-height:1.6;max-width:95%}
