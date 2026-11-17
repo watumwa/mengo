@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight, ArrowUpRight, BriefcaseBusiness, Landmark, MapPinned,
   ShieldCheck, UsersRound
@@ -92,13 +93,14 @@ export default function About() {
                 </p>
               </div>
               <figure className="mc-about-v2-hero-image">
-                <ResponsivePhoto
-                  photo={realPhotos.chamberInauguration}
+                <Image
+                  src={realPhotos.chamberInauguration.src}
+                  alt={realPhotos.chamberInauguration.alt}
                   width={1024}
                   height={683}
                   sizes="(max-width: 950px) 100vw, 51vw"
-                  loading="eager"
-                  fetchPriority="high"
+                  quality={85}
+                  priority
                 />
                 <figcaption>Mengo Chamber of Commerce inauguration group photograph.</figcaption>
               </figure>
@@ -110,10 +112,13 @@ export default function About() {
           <div className="bp-shell mc-about-v2-section-nav-inner">
             <span>Explore MCCL</span>
             <Link href="#mc-about-v2-who">Who we are</Link>
-            <Link href="#mc-about-v2-priorities">Our commitments</Link>
             <Link href="#mc-about-v2-direction">Vision &amp; mission</Link>
+            <Link href="#mc-about-v2-priorities">Our commitments</Link>
             <Link href="#mc-about-v2-community">Who we serve</Link>
+            <Link href="#mc-about-v2-network">Regional representation</Link>
+            <Link href="#mc-about-v2-photos-title">In photographs</Link>
             <Link href="#mc-about-v2-leadership">Leadership</Link>
+            <Link href="#mc-about-v2-story">From the Chamber</Link>
           </div>
         </nav>
 
@@ -123,32 +128,6 @@ export default function About() {
             <div><span>Established by</span><strong>The Kingdom of Buganda</strong></div>
             <div><span>Regional framework</span><strong>18 counties (Massaza)</strong></div>
             <div><span>Enterprise reach</span><strong>Buganda, Uganda and beyond</strong></div>
-          </div>
-        </section>
-
-        <section className="mc-about-v2-photo-stories" aria-labelledby="mc-about-v2-photos-title">
-          <div className="bp-shell">
-            <div className="mc-about-v2-photo-stories-heading">
-              <div>
-                <p className="mc-about-v2-kicker">In photographs</p>
-                <h2 id="mc-about-v2-photos-title">People, enterprise and community.</h2>
-              </div>
-              <p>Authentic photographs documenting the Chamber and the wider business community. Each image is identified by the event or organisation it depicts.</p>
-            </div>
-            <div className="mc-about-v2-photo-stories-grid">
-              <figure className="mc-about-v2-photo-feature">
-                <ResponsivePhoto photo={realPhotos.chamberInauguration} width={1024} height={683} sizes="(max-width: 820px) 100vw, 56vw" loading="eager" />
-                <figcaption><strong>MCCL inauguration</strong><span>Leadership and attendees at the Mengo Chamber inauguration.</span></figcaption>
-              </figure>
-              <figure>
-                <ResponsivePhoto photo={realPhotos.businessForum} width={960} height={640} sizes="(max-width: 650px) 100vw, (max-width: 820px) 45vw, 30vw" />
-                <figcaption><strong>Business dialogue</strong><span>Participants at the BBS Business Forum (contextual business photograph).</span></figcaption>
-              </figure>
-              <figure>
-                <ResponsivePhoto photo={realPhotos.enterpriseGroup} width={960} height={640} sizes="(max-width: 650px) 100vw, (max-width: 820px) 45vw, 30vw" />
-                <figcaption><strong>Enterprise community</strong><span>Business team outside Rexba Ltd (contextual enterprise photograph).</span></figcaption>
-              </figure>
-            </div>
           </div>
         </section>
 
@@ -180,6 +159,30 @@ export default function About() {
           </div>
         </section>
 
+        <section className="mc-about-v2-section mc-about-v2-direction" aria-labelledby="mc-about-v2-direction">
+          <div className="bp-shell">
+            <div className="mc-about-v2-section-title">
+              <p className="mc-about-v2-kicker">Our institutional direction</p>
+              <h2 id="mc-about-v2-direction">What guides the Chamber.</h2>
+            </div>
+            <div className="mc-about-v2-direction-grid">
+              <article>
+                <h3>Our vision</h3>
+                <p>A vibrant, competitive chamber of commerce that creates business opportunities, jobs and improves livelihoods for the communities.</p>
+              </article>
+              <article>
+                <h3>Our mission</h3>
+                <p>To facilitate trade, investment, enterprise growth, agricultural transformation, and industrial development by providing quality business services, strategic linkages, and effective advocacy for a competitive business environment in Uganda.</p>
+              </article>
+            </div>
+            <div className="mc-about-v2-values">
+              <strong>Our values</strong>
+              <div>{values.map(value => <span key={value}>{value}</span>)}</div>
+              <Link href="/strategy">View our strategy <ArrowRight size={15} aria-hidden="true" /></Link>
+            </div>
+          </div>
+        </section>
+
         <section className="mc-about-v2-section mc-about-v2-priorities" aria-labelledby="mc-about-v2-priorities">
           <div className="bp-shell">
             <div className="mc-about-v2-section-bar">
@@ -190,30 +193,6 @@ export default function About() {
               <p>MCCL's five strategic propositions describe how the Chamber intends to connect, develop, advocate for, promote and transform enterprise opportunities. They express strategic direction, not a claim that every programme is already operational.</p>
             </div>
             <AboutCommitments priorities={priorities} />
-          </div>
-        </section>
-
-        <section className="mc-about-v2-section mc-about-v2-direction" aria-labelledby="mc-about-v2-direction">
-          <div className="bp-shell">
-            <div className="mc-about-v2-section-title">
-              <p className="mc-about-v2-kicker">Our institutional direction</p>
-              <h2 id="mc-about-v2-direction">What guides the Chamber.</h2>
-            </div>
-            <div className="mc-about-v2-direction-grid">
-              <article>
-                <span>Our vision</span>
-                <p>A vibrant, competitive chamber of commerce that creates business opportunities, jobs and improves livelihoods for the communities.</p>
-              </article>
-              <article>
-                <span>Our mission</span>
-                <p>To facilitate trade, investment, enterprise growth, agricultural transformation, and industrial development by providing quality business services, strategic linkages, and effective advocacy for a competitive business environment in Uganda.</p>
-              </article>
-            </div>
-            <div className="mc-about-v2-values">
-              <strong>Our values</strong>
-              <div>{values.map(value => <span key={value}>{value}</span>)}</div>
-              <Link href="/strategy">View our strategy <ArrowRight size={15} aria-hidden="true" /></Link>
-            </div>
           </div>
         </section>
 
@@ -241,11 +220,13 @@ export default function About() {
         <section className="mc-about-v2-section mc-about-v2-network" aria-labelledby="mc-about-v2-network">
           <div className="bp-shell mc-about-v2-network-grid">
             <figure className="mc-about-v2-network-map">
-              <ResponsivePhoto
-                photo={realPhotos.masazaMap}
+              <Image
+                src={realPhotos.masazaMap.src}
+                alt={realPhotos.masazaMap.alt}
                 width={980}
                 height={820}
                 sizes="(max-width: 900px) 100vw, 48vw"
+                quality={82}
               />
               <figcaption>Reference map showing the traditional counties of Buganda.</figcaption>
             </figure>
@@ -266,6 +247,28 @@ export default function About() {
                 </ol>
               </div>
               <Link href="/centres">Explore the regional framework <MapPinned size={17} aria-hidden="true" /></Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="mc-about-v2-photo-stories" aria-labelledby="mc-about-v2-photos-title">
+          <div className="bp-shell">
+            <div className="mc-about-v2-photo-stories-heading">
+              <div>
+                <p className="mc-about-v2-kicker">In photographs</p>
+                <h2 id="mc-about-v2-photos-title">People, enterprise and community.</h2>
+              </div>
+              <p>These genuine photographs show the wider business community. They are contextual examples, not MCCL-hosted events; verified Chamber activity photographs can be included when supplied.</p>
+            </div>
+            <div className="mc-about-v2-photo-stories-grid">
+              <figure>
+                <Image src={realPhotos.businessForum.src} alt={realPhotos.businessForum.alt} width={960} height={640} sizes="(max-width: 680px) 100vw, 46vw" quality={82} />
+                <figcaption><strong>Business dialogue</strong><span>Participants at the BBS Business Forum (contextual business photograph).</span></figcaption>
+              </figure>
+              <figure>
+                <Image src={realPhotos.enterpriseGroup.src} alt={realPhotos.enterpriseGroup.alt} width={960} height={640} sizes="(max-width: 680px) 100vw, 46vw" quality={82} />
+                <figcaption><strong>Enterprise community</strong><span>Business team outside Rexba Ltd (contextual enterprise photograph).</span></figcaption>
+              </figure>
             </div>
           </div>
         </section>
