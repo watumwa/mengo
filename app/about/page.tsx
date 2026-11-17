@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  ArrowRight, ArrowUpRight, BriefcaseBusiness, Landmark, MapPinned,
+  ArrowRight, ArrowUpRight, BriefcaseBusiness, Landmark,
   ShieldCheck, UsersRound
 } from "lucide-react";
 import { ResponsivePhoto } from "../ResponsivePhoto";
@@ -115,7 +115,7 @@ export default function About() {
             <Link href="#mc-about-v2-direction">Vision &amp; mission</Link>
             <Link href="#mc-about-v2-priorities">Our commitments</Link>
             <Link href="#mc-about-v2-community">Who we serve</Link>
-            <Link href="#mc-about-v2-network">Regional representation</Link>
+            <Link href="#mc-about-v2-outlook">International outlook</Link>
             <Link href="#mc-about-v2-photos-title">In photographs</Link>
             <Link href="#mc-about-v2-leadership">Leadership</Link>
             <Link href="#mc-about-v2-story">From the Chamber</Link>
@@ -126,8 +126,8 @@ export default function About() {
           <div className="bp-shell mc-about-v2-facts-grid">
             <div><span>Institutional form</span><strong>Company Limited by Guarantee</strong></div>
             <div><span>Established by</span><strong>The Kingdom of Buganda</strong></div>
-            <div><span>Regional framework</span><strong>18 counties (Massaza)</strong></div>
-            <div><span>Enterprise reach</span><strong>Buganda, Uganda and beyond</strong></div>
+            <div><span>Trade outlook</span><strong>National &amp; international</strong></div>
+            <div><span>Enterprise focus</span><strong>Trade, investment &amp; partnerships</strong></div>
           </div>
         </section>
 
@@ -217,36 +217,41 @@ export default function About() {
           </div>
         </section>
 
-        <section className="mc-about-v2-section mc-about-v2-network" aria-labelledby="mc-about-v2-network">
-          <div className="bp-shell mc-about-v2-network-grid">
-            <figure className="mc-about-v2-network-map">
-              <Image
-                src={realPhotos.masazaMap.src}
-                alt={realPhotos.masazaMap.alt}
-                width={980}
-                height={820}
-                sizes="(max-width: 900px) 100vw, 48vw"
-                quality={82}
-              />
-              <figcaption>Reference map showing the traditional counties of Buganda.</figcaption>
-            </figure>
-            <div className="mc-about-v2-network-copy">
-              <p className="mc-about-v2-kicker">Regional representation</p>
-              <h2 id="mc-about-v2-network">Local connections. A wider Chamber network.</h2>
-              <p>The regional framework describes six proposed clusters and representation across 18 counties (Massaza), with county and sub-county participation.</p>
-              <div className="mc-about-v2-network-stats">
-                <div><strong>06</strong><span>Proposed regional clusters</span></div>
-                <div><strong>18</strong><span>Counties (Massaza)</span></div>
+        <section className="mc-about-v2-section mc-about-v2-outlook" aria-labelledby="mc-about-v2-outlook">
+          <div className="bp-shell mc-about-v2-outlook-grid">
+            <div className="mc-about-v2-section-title">
+              <p className="mc-about-v2-kicker">International outlook</p>
+              <h2 id="mc-about-v2-outlook">Rooted in Buganda. Open to the world.</h2>
+              <p className="mc-about-v2-outlook-lead">
+                MCCL's roots are in Buganda, while its enterprise outlook extends across Uganda
+                and to international markets and business relationships.
+              </p>
+            </div>
+            <div className="mc-about-v2-outlook-copy">
+              <p>
+                The Chamber seeks to connect businesses, institutions, investors and partners with
+                opportunities in trade, investment and enterprise development beyond geographical
+                boundaries. Its focus is on useful commercial relationships rather than a limited
+                county-based footprint.
+              </p>
+              <div className="mc-about-v2-outlook-topics">
+                <div>
+                  <strong>Trade &amp; market access</strong>
+                  <p>Helping enterprises explore customers, suppliers and markets within Uganda and internationally.</p>
+                </div>
+                <div>
+                  <strong>Investment &amp; partnerships</strong>
+                  <p>Encouraging dialogue and connections between businesses, institutions and potential partners.</p>
+                </div>
+                <div>
+                  <strong>Enterprise collaboration</strong>
+                  <p>Supporting opportunities for knowledge exchange, competitiveness and sustainable business growth.</p>
+                </div>
               </div>
-              <div className="mc-about-v2-network-levels">
-                <h3>Proposed levels of representation</h3>
-                <ol>
-                  <li><span>01</span> Regional Chamber Cluster Committees</li>
-                  <li><span>02</span> City and County Chamber Committees</li>
-                  <li><span>03</span> Sub-County representation and enrolled members</li>
-                </ol>
+              <div className="mc-about-v2-outlook-actions">
+                <Link href="/invest">Explore trade &amp; investment <ArrowUpRight size={16} aria-hidden="true" /></Link>
+                <Link href="/contact?subject=partnership">Discuss partnerships <ArrowRight size={16} aria-hidden="true" /></Link>
               </div>
-              <Link href="/centres">Explore the regional framework <MapPinned size={17} aria-hidden="true" /></Link>
             </div>
           </div>
         </section>
