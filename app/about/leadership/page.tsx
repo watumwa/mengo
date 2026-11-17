@@ -16,7 +16,7 @@ const members:Leader[]=[
 ];
 function Portrait({leader}:{leader:Leader}){
  return <div className="mcl-portrait" aria-label={leader.photo ? undefined : `Portrait pending for ${leader.name}`}>
-  {leader.photo?<ResponsivePhoto photo={leader.photo} width={360} height={400} sizes="(max-width: 600px) 115px, 180px"/>:<span aria-hidden="true" className="mcl-portrait-empty" />}
+  {leader.photo?<ResponsivePhoto photo={leader.photo} width={360} height={400} sizes="(max-width: 600px) 50vw, (max-width: 980px) 45vw, 340px" style={{ objectFit: "contain", objectPosition: "center" }}/>:<span aria-hidden="true" className="mcl-portrait-empty" />}
  </div>;
 }
 function MainLeader({leader}:{leader:Leader}){

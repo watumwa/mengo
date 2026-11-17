@@ -15,3 +15,71 @@
 @media(max-width:980px){.mcl-member{flex-basis:calc((100% - 22px)/2)}}
 @media(max-width:600px){.mcl-member{flex-basis:calc((100% - 12px)/2)}.mcl-person-affiliation{font-size:11px}}
 @media(max-width:380px){.mcl-member{flex-basis:100%}}
+
+
+/* Leadership portraits: respect the original photograph instead of
+   cropping faces to fill short landscape frames. Only this page is affected. */
+.mcl-page .mcl-portrait {
+  background: #efede8;
+}
+.mcl-page .mcl-portrait > img {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.mcl-page .mcl-main-person {
+  width: min(100%, 750px);
+  min-height: 235px;
+  grid-template-columns: 205px minmax(0, 1fr);
+  border-radius: 8px;
+}
+.mcl-page .mcl-main-person > .mcl-portrait {
+  height: 100%;
+  min-height: 235px;
+}
+.mcl-page .mcl-member {
+  flex: 0 1 calc((100% - 44px) / 3);
+  max-width: 350px;
+  border-radius: 8px;
+}
+.mcl-page .mcl-member .mcl-portrait {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+}
+@media (max-width: 980px) {
+  .mcl-page .mcl-member {
+    flex-basis: calc((100% - 22px) / 2);
+  }
+}
+@media (max-width: 600px) {
+  .mcl-page .mcl-main-person {
+    grid-template-columns: minmax(120px, 36%) minmax(0, 1fr);
+    min-height: 180px;
+  }
+  .mcl-page .mcl-main-person > .mcl-portrait {
+    min-height: 180px;
+  }
+  .mcl-page .mcl-main-person > div:last-child {
+    min-width: 0;
+    padding: 18px 16px;
+    overflow-wrap: anywhere;
+  }
+  .mcl-page .mcl-member {
+    flex-basis: calc((100% - 12px) / 2);
+    min-width: 0;
+  }
+}
+@media (max-width: 380px) {
+  .mcl-page .mcl-main-person {
+    grid-template-columns: 115px minmax(0, 1fr);
+  }
+  .mcl-page .mcl-member {
+    flex-basis: 100%;
+    max-width: 350px;
+  }
+}
