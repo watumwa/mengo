@@ -51,7 +51,7 @@
 .mc-about-hero-media figcaption{padding:16px 20px 18px;color:#d8e5f3;font-size:12px;line-height:1.55}
 .mc-about-hero-media figcaption span{display:block;margin-bottom:3px;color:var(--about-gold-soft);font-size:9px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
 .mc-about-profile{position:relative;z-index:4;margin-top:-43px}
-.mc-about-profile-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--about-line);border-top:3px solid var(--about-gold);border-radius:12px;background:#fff;box-shadow:0 19px 48px rgba(5,39,75,.13)}
+.mc-about-profile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--about-line);border-top:3px solid var(--about-gold);border-radius:12px;background:#fff;box-shadow:0 19px 48px rgba(5,39,75,.13)}
 .mc-about-profile article{min-width:0;padding:22px 24px;border-right:1px solid var(--about-line)}
 .mc-about-profile article:last-child{border-right:0}
 .mc-about-profile span{display:block;color:#8a6a22;font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
@@ -177,6 +177,7 @@
   .mc-about-profile-grid{grid-template-columns:1fr 1fr}
   .mc-about-profile article:nth-child(2){border-right:0}
   .mc-about-profile article:nth-child(-n+2){border-bottom:1px solid var(--about-line)}
+  .mc-about-profile article:last-child{grid-column:1 / -1;border-bottom:0}
   .mc-about-intro-grid,.mc-about-audiences-grid,.mc-about-reach-grid,.mc-about-cta-grid{grid-template-columns:1fr}
   .mc-about-section-heading,.mc-about-audiences-intro{position:static}
   .mc-about-propositions-heading,.mc-about-governance-heading{grid-template-columns:1fr;align-items:start}

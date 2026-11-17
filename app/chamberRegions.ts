@@ -1,4 +1,4 @@
-/** Regional cluster composition transcribed from MCCL Strategic Plan 2026–2029, printed page 35.
+/** Regional cluster composition transcribed from MCCL Strategic Plan, printed page 35.
  * mapPlace is a familiar reference town for navigating Google Maps, NOT an official county boundary.
  */
 export type ChamberRegion = { id: string; name: string; counties: string[]; city?: string; note: string; mapPlace: string };

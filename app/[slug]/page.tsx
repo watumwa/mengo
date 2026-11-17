@@ -384,7 +384,7 @@ export default async function DetailPage({ params }: { params: Promise<{ slug: s
     </div></section>
     <section className="detail-priorities section cream"><div className="container">
       <div className="sectionhead"><div><div className="eyebrow">Explore in detail</div><h2>{strategyPage ? "Our strategic priorities" : membershipPage ? "Membership information" : "Key areas and opportunities"}</h2></div>
-        <p>{strategyPage ? "These priorities are drawn from the Chamber's strategic framework." : "Explore the main themes and information related to this subject."}</p></div>
+        <p>{strategyPage ? "These priorities reflect the Chamber's strategic direction." : "Explore the main themes and information related to this subject."}</p></div>
       <div className="detail-feature-grid">{data.items.map((item,index)=><article className="detail-feature" key={item.title}>
         <span className="detail-feature-number">{String(index+1).padStart(2,"0")}</span>
         <h3>{item.title}</h3><p>{item.text}</p>

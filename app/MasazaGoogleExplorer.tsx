@@ -59,7 +59,7 @@ export function MasazaGoogleExplorer() {
           </aside>
           <div className={styles.googleMap}>
             <GoogleMapsPanel place={query} heading={heading} context={focus === "region" ? "Google Maps centred on a reference town, not a historical polygon" : "Google Maps place-name search, not a verified Ssaza boundary"} zoom={focus === "region" ? 9 : 11} />
-            <p className={styles.boundaries}>The Chamber's 2026–2029 strategic plan defines the six cluster groupings. Google Maps does not automatically provide the official historical Ssaza boundaries; their accurate outlines would require a verified geographic boundary dataset.</p>
+            <p className={styles.boundaries}>The Chamber's strategic plan describes the six cluster groupings. Google Maps does not automatically provide the official historical Ssaza boundaries; their accurate outlines would require a verified geographic boundary dataset.</p>
           </div>
         </div>
       </div>

@@ -165,10 +165,6 @@ export default function About() {
               <span>Enterprise reach</span>
               <strong>Buganda, Uganda and beyond</strong>
             </article>
-            <article>
-              <span>Strategic framework</span>
-              <strong>2026–2029</strong>
-            </article>
           </div>
         </section>
 
@@ -221,7 +217,7 @@ export default function About() {
               ))}
             </div>
             <p className="mc-about-source-note">
-              Strategic propositions are drawn from the MCCL 3 Year Strategic Plan 2026–2029. They describe the Chamber’s strategic direction and do not imply that every proposed programme is already operational.
+              These strategic propositions reflect the Chamber’s planning priorities. They describe its direction and do not imply that every proposed programme is already operational.
             </p>
           </div>
         </section>
@@ -291,7 +287,7 @@ export default function About() {
               <p>Regional Chamber network</p>
               <h2 id="mc-about-reach-title">Local representation. One connected Chamber.</h2>
               <span>
-                The strategic framework connects institutional coordination with regional, county and sub-county business representation.
+                The Chamber connects institutional coordination with regional, county and sub-county business representation.
               </span>
               <div className="mc-about-reach-metrics" aria-label="Regional Chamber framework overview">
                 <div><strong>06</strong><span>Regional clusters</span></div>

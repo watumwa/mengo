@@ -31,7 +31,7 @@ export function RegionalClusterExplorer() {
         <div className={styles.heading}>
           <p className={styles.eyebrow}><MapPinned size={17} aria-hidden="true"/> STRATEGIC PLAN · PAGE 35</p>
           <h2 id="cluster-heading">Six regions. One connected Chamber.</h2>
-          <p>Explore the Regional Chamber Clusters (Amabendobendo) in the 2026–2029 strategic framework. Search for a Ssaza or select a cluster to see its proposed representation structure.</p>
+          <p>Explore the Regional Chamber Clusters (Amabendobendo). Search for a Ssaza or select a cluster to see its proposed representation structure.</p>
         </div>
         <div className={styles.metrics} aria-label="Regional framework overview">
           <div><strong>06</strong><span>Regional clusters</span></div>
@@ -102,7 +102,7 @@ export function RegionalClusterExplorer() {
           </div>
           <GoogleMapsPanel place={mapPlace} heading={mapHeading} context="Approximate location reference, not a verified historical boundary" zoom={mapScope === "region" ? 9 : 11} />
         </div>
-        <p className={styles.note}>Source: MCCL Strategic Plan 2026–2029, printed pages 34–35. These are strategic organisational arrangements, not a live member registry. Committee members, officeholders and verified geographical boundaries can be connected when official data is supplied.</p>
+        <p className={styles.note}>Source: MCCL Strategic Plan, printed pages 34–35. These are strategic organisational arrangements, not a live member registry. Committee members, officeholders and verified geographical boundaries can be connected when official data is supplied.</p>
       </div>
     </section>
   );

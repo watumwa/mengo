@@ -123,7 +123,7 @@ export function InteractiveOrganogram() {
             {selected==="clusters"&&<Link href="/centres">Open interactive cluster explorer <ArrowRight size={15} aria-hidden="true"/></Link>}
           </div>
         </aside>
-        <p className={styles.note}>Based on the MCCL 2026–2029 Strategic Plan, printed page 32. This is an interactive representation of the plan, not a verified directory of current officeholders, staff appointments or operational committees.</p>
+        <p className={styles.note}>Based on the MCCL Strategic Plan, printed page 32. This is an interactive representation of the plan, not a verified directory of current officeholders, staff appointments or operational committees.</p>
       </div>
     </section>
   );
