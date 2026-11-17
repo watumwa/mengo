@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Shell } from "../../components";
-import { ResponsivePhoto } from "../../ResponsivePhoto";
+import Image from "next/image";
 import { realPhotos, type ChamberPhoto } from "../../realPhotos";
 import "./leadership.css";
 
@@ -32,17 +32,27 @@ const members: Leader[] = [
   { name: "Francis Asisi Kimbowa", role: "Secretary", affiliation: "Buganda Royal Law Chambers" },
 ];
 
-function Portrait({ leader, sizes }: { leader: Leader; sizes: string }) {
+function Portrait({
+  leader,
+  sizes,
+  featured = false,
+}: {
+  leader: Leader;
+  sizes: string;
+  featured?: boolean;
+}) {
   if (!leader.photo) return null;
 
   return (
-    <figure className="mcl-portrait">
-      <ResponsivePhoto
-        photo={leader.photo}
-        width={600}
-        height={900}
+    <figure className={"mcl-portrait" + (featured ? " mcl-portrait--leader" : " mcl-portrait--member")}>
+      <Image
+        src={leader.photo.src}
+        alt={leader.photo.alt}
+        fill
         sizes={sizes}
-        style={{ objectFit: "contain", objectPosition: "center" }}
+        quality={90}
+        priority={featured && leader.role === "Chairman"}
+        style={{ objectFit: "cover", objectPosition: "center 6%" }}
       />
     </figure>
   );
@@ -51,7 +61,7 @@ function Portrait({ leader, sizes }: { leader: Leader; sizes: string }) {
 function LeadershipProfile({ leader, rank }: { leader: Leader; rank: "chair" | "vice" }) {
   return (
     <article className={"mcl-leader mcl-leader--" + rank}>
-      <Portrait leader={leader} sizes="(max-width: 620px) 36vw, 210px" />
+      <Portrait leader={leader} featured sizes="(max-width: 520px) 38vw, (max-width: 700px) 36vw, 205px" />
       <div className="mcl-leader-copy">
         <p className="mcl-position">{leader.role}</p>
         <h3>{leader.name}</h3>
@@ -65,7 +75,7 @@ function BoardProfile({ leader }: { leader: Leader }) {
   return (
     <article className={"mcl-member" + (leader.photo ? " mcl-member--photo" : " mcl-member--text")}>
       {leader.photo ? (
-        <Portrait leader={leader} sizes="(max-width: 650px) 40vw, (max-width: 1020px) 42vw, 340px" />
+        <Portrait leader={leader} sizes="(max-width: 520px) 38vw, (max-width: 980px) 46vw, 380px" />
       ) : (
         <div className="mcl-member-type" aria-hidden="true">MCCL</div>
       )}
