@@ -5,7 +5,6 @@ import { realPhotos, type ChamberPhoto } from "../../realPhotos";
 import "./leadership.css";
 
 type Leader={name:string;role:string;photo?:ChamberPhoto;affiliation?:string};
-const patron:Leader={name:"Owek. Charles Peter Mayiga",role:"Katikkiro of Buganda · Patron / Overseer",photo:realPhotos.katikkiroPortrait};
 const chair:Leader={name:"Omuk. John Fred Freeman Kiyimba",role:"Chairman",photo:realPhotos.chamberChairKiyimba};
 const vice:Leader={name:"Owek. Steven Kayiwa",role:"Vice Chairman",photo:realPhotos.chamberViceChairKayiwa};
 const members:Leader[]=[
@@ -28,8 +27,6 @@ export default function Leadership(){
  return <Shell><main className="mcl-page">
   <header className="mcl-heading"><div className="bp-shell"><p>ABOUT THE CHAMBER</p><h1>Governance & Key Leadership</h1><span>Institutional oversight, board leadership and representation.</span></div></header>
   <section className="mcl-chart" aria-label="Mengo Chamber leadership hierarchy"><div className="bp-shell">
-    <div className="mcl-tier"><MainLeader leader={patron}/></div>
-    <div className="mcl-connector" aria-hidden="true"/>
     <div className="mcl-tier"><MainLeader leader={chair}/></div>
     <div className="mcl-connector" aria-hidden="true"/>
     <div className="mcl-tier"><MainLeader leader={vice}/></div>
