@@ -44,12 +44,12 @@ const priorities = [
 ];
 
 const audiences = [
-  { title: "Entrepreneurs & SMEs", text: "Businesses working to grow, connect and find new markets." },
-  { title: "Traders & manufacturers", text: "Enterprises involved in commerce, production and value addition." },
-  { title: "Cooperatives & SACCOs", text: "Member-led organisations building collective commercial opportunity." },
-  { title: "Agribusinesses", text: "Producers, processors and businesses across the agriculture value chain." },
-  { title: "Investors & diaspora", text: "Individuals and organisations seeking credible connections in Uganda." },
-  { title: "Institutions & partners", text: "Organisations supporting enterprise development and collaboration." },
+  { title: "Entrepreneurs & SMEs", text: "Growing enterprises seeking connections, knowledge, visibility and market pathways." },
+  { title: "Traders & manufacturers", text: "Businesses moving goods, adding value, creating jobs and serving local and wider markets." },
+  { title: "Cooperatives & SACCOs", text: "Member-led organisations building collective participation, finance and enterprise opportunity." },
+  { title: "Agribusinesses", text: "Producers and value-chain businesses working across agriculture, processing and distribution." },
+  { title: "Investors & diaspora", text: "People and organisations looking for credible commercial connections within Buganda and Uganda." },
+  { title: "Institutions & partners", text: "Public, private and development partners interested in sustainable enterprise collaboration." },
 ];
 
 const values = ["Co-operation", "Innovation", "Integrity", "Service Excellence", "Loyalty"];
@@ -86,8 +86,22 @@ export default function About() {
                     Meet our leadership <ArrowUpRight size={16} aria-hidden="true" />
                   </Link>
                 </div>
+                <p className="mc-about-v2-origin">
+                  <Landmark size={19} aria-hidden="true" />
+                  <span>Established by the Kingdom of Buganda to advance enterprise growth, trade development and investment opportunity.</span>
+                </p>
               </div>
-              <span className="mc-about-v2-hero-photo-caption">MCCL inauguration photograph</span>
+              <figure className="mc-about-v2-hero-image">
+                <ResponsivePhoto
+                  photo={realPhotos.chamberInauguration}
+                  width={1024}
+                  height={683}
+                  sizes="(max-width: 950px) 100vw, 51vw"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+                <figcaption>Mengo Chamber of Commerce inauguration group photograph.</figcaption>
+              </figure>
             </div>
           </div>
         </header>
@@ -108,6 +122,7 @@ export default function About() {
             <div><span>Institutional form</span><strong>Company Limited by Guarantee</strong></div>
             <div><span>Established by</span><strong>The Kingdom of Buganda</strong></div>
             <div><span>Regional framework</span><strong>18 counties (Massaza)</strong></div>
+            <div><span>Enterprise reach</span><strong>Buganda, Uganda and beyond</strong></div>
           </div>
         </section>
 
@@ -151,7 +166,8 @@ export default function About() {
               <p>
                 The Chamber brings together enterprises, institutions, cooperatives, investors
                 and partners around market access, business development, trade and investment
-                linkages, research and constructive policy dialogue.
+                linkages, research and constructive policy dialogue. Its role is to help business
+                participation move from isolated effort to shared opportunity.
               </p>
               <div className="mc-about-v2-mandate">
                 <Landmark size={21} aria-hidden="true" />
@@ -171,7 +187,7 @@ export default function About() {
                 <p className="mc-about-v2-kicker">Our strategic role</p>
                 <h2 id="mc-about-v2-priorities">Five commitments to enterprise.</h2>
               </div>
-              <p>These priorities describe the Chamber's strategic direction, not a claim that every programme is already operational.</p>
+              <p>MCCL's five strategic propositions describe how the Chamber intends to connect, develop, advocate for, promote and transform enterprise opportunities. They express strategic direction, not a claim that every programme is already operational.</p>
             </div>
             <AboutCommitments priorities={priorities} />
           </div>
@@ -208,7 +224,7 @@ export default function About() {
                 <p className="mc-about-v2-kicker">Who we serve</p>
                 <h2 id="mc-about-v2-community">A wider community of enterprise.</h2>
               </div>
-              <p>Our membership approach aims to connect established organisations and emerging businesses around practical commercial opportunity.</p>
+              <p>The Chamber's membership approach aims to connect established institutions and emerging businesses within one wider commercial community, supporting participation, shared knowledge and practical market opportunities.</p>
               <Link href="/membership">Explore membership <ArrowRight size={16} aria-hidden="true" /></Link>
             </div>
             <div className="mc-about-v2-audience-grid">
@@ -241,6 +257,14 @@ export default function About() {
                 <div><strong>06</strong><span>Proposed regional clusters</span></div>
                 <div><strong>18</strong><span>Counties (Massaza)</span></div>
               </div>
+              <div className="mc-about-v2-network-levels">
+                <h3>Proposed levels of representation</h3>
+                <ol>
+                  <li><span>01</span> Regional Chamber Cluster Committees</li>
+                  <li><span>02</span> City and County Chamber Committees</li>
+                  <li><span>03</span> Sub-County representation and enrolled members</li>
+                </ol>
+              </div>
               <Link href="/centres">Explore the regional framework <MapPinned size={17} aria-hidden="true" /></Link>
             </div>
           </div>
@@ -251,6 +275,7 @@ export default function About() {
             <div className="mc-about-v2-section-title">
               <p className="mc-about-v2-kicker">Leadership & accountability</p>
               <h2 id="mc-about-v2-leadership">Get to know the institution.</h2>
+              <p className="mc-about-v2-leadership-summary">Explore the Chamber's published Board leadership, governance principles, strategic priorities and business support areas. Formal responsibilities and operational details are described in the relevant sections.</p>
             </div>
             <div className="mc-about-v2-link-grid">
               <Link href="/about/leadership">
@@ -271,6 +296,12 @@ export default function About() {
                 <p>Discover the Chamber's strategic service areas and enterprise priorities.</p>
                 <span>Explore services <ArrowUpRight size={16} aria-hidden="true" /></span>
               </Link>
+              <Link href="/strategy">
+                <Landmark size={24} aria-hidden="true" />
+                <h3>Our strategy</h3>
+                <p>Review the vision, mission and five commitments shaping MCCL's intended direction.</p>
+                <span>View strategy <ArrowUpRight size={16} aria-hidden="true" /></span>
+              </Link>
             </div>
           </div>
         </section>
@@ -289,8 +320,11 @@ export default function About() {
             <div>
               <p className="mc-about-v2-kicker">From the Chamber</p>
               <h2 id="mc-about-v2-story">Trade exhibitions can unlock business growth.</h2>
-              <p>The Chamber encourages enterprises to use trade exhibitions to improve visibility, build relationships and discover market opportunities.</p>
-              <Link href="/insights/trade-exhibitions-business-growth">Read the Chamber story <ArrowRight size={16} aria-hidden="true" /></Link>
+              <p>The Chamber encourages enterprises to use trade exhibitions to improve visibility, build relationships and discover market opportunities. Forums, partnerships and market intelligence can help turn shared commercial challenges into practical conversations.</p>
+              <div className="mc-about-v2-story-links">
+                <Link href="/insights/trade-exhibitions-business-growth">Read the Chamber story <ArrowRight size={16} aria-hidden="true" /></Link>
+                <Link href="/services">Explore business services <ArrowUpRight size={16} aria-hidden="true" /></Link>
+              </div>
             </div>
           </div>
         </section>
@@ -304,6 +338,7 @@ export default function About() {
             </div>
             <div className="mc-about-v2-cta-links">
               <Link href="/membership/apply">Apply for membership <ArrowRight size={17} aria-hidden="true" /></Link>
+              <Link href="/contact?subject=partnership">Partner with MCCL <ArrowUpRight size={17} aria-hidden="true" /></Link>
               <Link href="/contact">Contact the Chamber <ArrowUpRight size={17} aria-hidden="true" /></Link>
             </div>
           </div>
