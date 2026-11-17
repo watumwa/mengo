@@ -7,3 +7,11 @@
  .mcl-main-person > .mcl-portrait{min-height:160px}
  .mcl-portrait > img{object-position:center 22%}
 }
+
+/* Keep the five-member board row balanced: three cards, then two centred. */
+.mcl-member-grid{display:flex;flex-wrap:wrap;justify-content:center}
+.mcl-member{flex:0 1 calc((100% - 44px)/3);min-width:0}
+.mcl-person-affiliation{margin:9px 0 0;color:#667b90;font-size:12px;line-height:1.45}
+@media(max-width:980px){.mcl-member{flex-basis:calc((100% - 22px)/2)}}
+@media(max-width:600px){.mcl-member{flex-basis:calc((100% - 12px)/2)}.mcl-person-affiliation{font-size:11px}}
+@media(max-width:380px){.mcl-member{flex-basis:100%}}

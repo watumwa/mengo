@@ -4,7 +4,6 @@ import { join, relative } from "node:path";
 
 const read = (file) => readFileSync(join(process.cwd(), file), "utf8");
 const catalog = read("app/realPhotos.ts");
-const homepage = read("app/page.tsx");
 const carousel = read("app/HeroStoryCarousel.tsx");
 
 const knownPhotos = new Set(
@@ -72,15 +71,10 @@ for (const [src, key] of cataloguedLocalPhotos) {
   assert(siteUsage.has(key), "Local photo " + src + " is catalogued but not rendered on a content page");
 }
 
-const mandate = homepage.match(/\{\[([^\]]+)\]\.map\(\(photo\)\s*=>/);
-assert(mandate, "Could not locate the homepage mandate photo strip");
-
 const groups = {
   "featured carousel": [...carousel.matchAll(/\bphoto:\s*realPhotos\.([A-Za-z]\w*)/g)].map((m) => m[1]),
-  "mandate strip": photoRefs(mandate[1]),
 };
 assert(groups["featured carousel"].length >= 2, "Featured carousel images were not found");
-assert(groups["mandate strip"].length >= 4, "Expected four mandate photos");
 
 const locations = new Map();
 for (const [section, photos] of Object.entries(groups)) {
@@ -101,7 +95,7 @@ assert(heroPhoto(history) !== heroPhoto(culture), "Kingdom history and culture s
 
 console.log(
   "Photo audit passed: " + locations.size +
-  " distinct client photos across the streamlined homepage carousel and mandate; all " + localPhotoFiles.length +
+  " distinct client photos in the streamlined homepage carousel; all " + localPhotoFiles.length +
   " local photographs are catalogued and rendered; no catalogued photo exceeds " +
   maximumSiteReferences + " site references."
 );

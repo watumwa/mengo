@@ -42,6 +42,26 @@ export const realPhotos = {
     position: "center 22%",
     fit: "contain",
   },
+  chamberChairKiyimba: {
+    src: "/images/leadership/chamber/john-fred-freeman-kiyimba.jpg",
+    alt: "Portrait of Omuk. John Fred Freeman Kiyimba, Chairman of Mengo Chamber of Commerce",
+    position: "center 22%",
+  },
+  chamberViceChairKayiwa: {
+    src: "/images/leadership/chamber/steven-kayiwa.jpg",
+    alt: "Portrait of Owek. Steven Kayiwa, Vice Chairman of Mengo Chamber of Commerce",
+    position: "center 22%",
+  },
+  chamberMemberSarahSsemanda: {
+    src: "/images/leadership/chamber/sarah-kironde-ssemanda.jpg",
+    alt: "Portrait of Omuk. Sarah Kironde Ssemanda, Mengo Chamber of Commerce board member",
+    position: "center 20%",
+  },
+  chamberMemberMusaMugere: {
+    src: "/images/leadership/chamber/musa-mugere.jpg",
+    alt: "Portrait of Hajji Musa Mugere, Mengo Chamber of Commerce board member",
+    position: "center 22%",
+  },
   budgetAssembly: {
     src: "/images/client/buganda-budget-assembly.jpg",
     alt: "Buganda Lukiiko members seated during a budget reading",
