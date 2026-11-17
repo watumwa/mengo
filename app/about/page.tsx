@@ -281,8 +281,8 @@ export default function About() {
             </div>
             <div className="mc-about-v2-photo-stories-grid">
               <figure>
-                <Image src={realPhotos.businessForum.src} alt={realPhotos.businessForum.alt} width={960} height={640} sizes="(max-width: 680px) 100vw, 46vw" quality={82} />
-                <figcaption><strong>Business dialogue</strong><span>Participants at the BBS Business Forum (contextual business photograph).</span></figcaption>
+                <Image src={realPhotos.ceoRetreatSession.src} alt={realPhotos.ceoRetreatSession.alt} width={960} height={640} sizes="(max-width: 680px) 100vw, 46vw" quality={82} />
+                <figcaption><strong>Business dialogue</strong><span>Speaker addressing participants at the Buganda CEOs Retreat (contextual business photograph).</span></figcaption>
               </figure>
               <figure>
                 <Image src={realPhotos.enterpriseGroup.src} alt={realPhotos.enterpriseGroup.alt} width={960} height={640} sizes="(max-width: 680px) 100vw, 46vw" quality={82} />
