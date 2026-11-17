@@ -675,9 +675,9 @@
   display: block;
   min-height: 0;
   padding: 32px 0 clamp(56px, 6vw, 84px);
-  background: #1e382f;
+  background: #f8f6f1;
   background-image: none;
-  color: #fff;
+  color: #193954;
 }
 .mc-about-v2 .mc-about-v2-hero::before { display: none; }
 .mc-about-v2 .mc-about-v2-hero > .bp-shell { z-index: 1; }
@@ -693,27 +693,29 @@
 }
 .mc-about-v2 .mc-about-v2-hero h1 {
   max-width: 700px;
-  color: #fff;
+  color: #17375b;
   font-size: clamp(47px, 5.35vw, 74px);
   line-height: 1.065;
   text-wrap: balance;
 }
 .mc-about-v2 .mc-about-v2-hero .mc-about-v2-kicker {
-  color: #f1d18c;
+  color: #826125;
+  border-left-color: #b18e4c;
+  text-shadow: none;
   font-size: clamp(15px, 1.25vw, 18px);
   font-weight: 800;
 }
 .mc-about-v2 .mc-about-v2-hero-lead {
   max-width: 620px;
-  color: #e5eee7;
+  color: #435669;
   line-height: 1.7;
 }
 .mc-about-v2 .mc-about-v2-breadcrumb,
-.mc-about-v2 .mc-about-v2-breadcrumb a { color: #e4ebe4; }
-.mc-about-v2 .mc-about-v2-primary { background: #e2bc76; color: #26382e; }
-.mc-about-v2 .mc-about-v2-primary:hover { background: #f1d69f; color: #26382e; }
-.mc-about-v2 .mc-about-v2-quiet { color: #fff; border-bottom-color: #d1af75; }
-.mc-about-v2 .mc-about-v2-quiet:hover { color: #ffdf9c; }
+.mc-about-v2 .mc-about-v2-breadcrumb a { color: #566779; }
+.mc-about-v2 .mc-about-v2-primary { background: #183f6a; color: #fff; }
+.mc-about-v2 .mc-about-v2-primary:hover { background: #255784; color: #fff; }
+.mc-about-v2 .mc-about-v2-quiet { color: #193f65; border-bottom-color: #b18e4c; }
+.mc-about-v2 .mc-about-v2-quiet:hover { color: #86632c; }
 .mc-about-v2 .mc-about-v2-origin {
   display: flex;
   align-items: flex-start;
@@ -721,25 +723,25 @@
   max-width: 625px;
   margin-top: 30px;
   padding: 16px 17px;
-  border-left: 3px solid #d8b775;
-  background: rgba(255,255,255,.075);
-  color: #eaf0e7;
+  border-left: 3px solid #b18e4c;
+  background: #f0ece2;
+  color: #3b4d5c;
   font-size: 13px;
   line-height: 1.65;
 }
 .mc-about-v2 .mc-about-v2-origin svg {
   flex: none;
   margin-top: 1px;
-  color: #f1d18c;
+  color: #896829;
 }
 .mc-about-v2 .mc-about-v2-hero-image {
   display: block;
   min-width: 0;
   margin: 0;
   padding: 0;
-  background: #e2e2d9;
-  border: 1px solid rgba(232,224,208,.28);
-  box-shadow: 0 18px 46px rgba(5, 18, 15, .17);
+  background: #fff;
+  border: 1px solid #dedad1;
+  box-shadow: 0 16px 42px rgba(34, 48, 60, .10);
 }
 .mc-about-v2 .mc-about-v2-hero-image img {
   display: block;
@@ -752,8 +754,8 @@
 }
 .mc-about-v2 .mc-about-v2-hero-image figcaption {
   padding: 13px 17px 15px;
-  color: #314238;
-  background: #f3f0e9;
+  color: #43566b;
+  background: #fff;
   font-size: 12px;
   line-height: 1.55;
 }
@@ -872,7 +874,7 @@
   .mc-about-v2 .mc-about-v2-hero {
     min-height: 0;
     padding: 24px 0 48px;
-    background: #1e382f;
+    background: #f8f6f1;
     background-image: none;
   }
   .mc-about-v2 .mc-about-v2-hero-grid { gap: 22px; }
