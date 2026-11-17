@@ -65,15 +65,6 @@ export default function About() {
     <Shell>
       <main className="mc-about-v2">
         <header className="mc-about-v2-hero">
-          <ResponsivePhoto
-            photo={realPhotos.chamberInauguration}
-            width={1600}
-            height={1067}
-            sizes="100vw"
-            loading="eager"
-            fetchPriority="high"
-            className="mc-about-v2-hero-background"
-          />
           <div className="bp-shell">
             <nav className="mc-about-v2-breadcrumb" aria-label="Breadcrumb">
               <Link href="/">Home</Link><span aria-hidden="true">/</span>
@@ -117,6 +108,32 @@ export default function About() {
             <div><span>Institutional form</span><strong>Company Limited by Guarantee</strong></div>
             <div><span>Established by</span><strong>The Kingdom of Buganda</strong></div>
             <div><span>Regional framework</span><strong>18 counties (Massaza)</strong></div>
+          </div>
+        </section>
+
+        <section className="mc-about-v2-photo-stories" aria-labelledby="mc-about-v2-photos-title">
+          <div className="bp-shell">
+            <div className="mc-about-v2-photo-stories-heading">
+              <div>
+                <p className="mc-about-v2-kicker">In photographs</p>
+                <h2 id="mc-about-v2-photos-title">People, enterprise and community.</h2>
+              </div>
+              <p>Authentic photographs documenting the Chamber and the wider business community. Each image is identified by the event or organisation it depicts.</p>
+            </div>
+            <div className="mc-about-v2-photo-stories-grid">
+              <figure className="mc-about-v2-photo-feature">
+                <ResponsivePhoto photo={realPhotos.chamberInauguration} width={1024} height={683} sizes="(max-width: 820px) 100vw, 56vw" loading="eager" />
+                <figcaption><strong>MCCL inauguration</strong><span>Leadership and attendees at the Mengo Chamber inauguration.</span></figcaption>
+              </figure>
+              <figure>
+                <ResponsivePhoto photo={realPhotos.businessForum} width={960} height={640} sizes="(max-width: 650px) 100vw, (max-width: 820px) 45vw, 30vw" />
+                <figcaption><strong>Business dialogue</strong><span>Participants at the BBS Business Forum (contextual business photograph).</span></figcaption>
+              </figure>
+              <figure>
+                <ResponsivePhoto photo={realPhotos.enterpriseGroup} width={960} height={640} sizes="(max-width: 650px) 100vw, (max-width: 820px) 45vw, 30vw" />
+                <figcaption><strong>Enterprise community</strong><span>Business team outside Rexba Ltd (contextual enterprise photograph).</span></figcaption>
+              </figure>
+            </div>
           </div>
         </section>
 

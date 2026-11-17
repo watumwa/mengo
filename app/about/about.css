@@ -378,3 +378,119 @@
 @media (prefers-reduced-motion: reduce) {
   .mc-about-v2 .mc-about-v2-section-nav-inner { scroll-behavior: auto; }
 }
+
+
+/* About page photographic visibility repair.
+   The real MCCL inauguration image is a direct CSS background, not a negative
+   z-index <img> behind an opaque overlay. Existing institutional copy is intact. */
+.mc-about-v2 .mc-about-v2-hero {
+  background-color: #19352e;
+  background-image:
+    linear-gradient(90deg,
+      rgba(14, 35, 31, .98) 0%,
+      rgba(14, 35, 31, .94) 30%,
+      rgba(14, 35, 31, .70) 53%,
+      rgba(14, 35, 31, .12) 89%,
+      rgba(14, 35, 31, .06) 100%),
+    url("/images/mengo-board-inauguration.jpeg");
+  background-size: cover;
+  background-position: center center, center 37%;
+  background-repeat: no-repeat;
+}
+.mc-about-v2 .mc-about-v2-hero::before { display: none; }
+.mc-about-v2 .mc-about-v2-hero > .bp-shell { position: relative; z-index: 1; }
+.mc-about-v2 .mc-about-v2-hero-photo-caption {
+  right: 10px;
+  bottom: -47px;
+  font-size: 10px;
+  letter-spacing: .01em;
+}
+
+/* Three locally hosted, plainly visible documentary photographs. */
+.mc-about-v2 .mc-about-v2-photo-stories {
+  background: #fff;
+  padding: clamp(66px, 7vw, 94px) 0 clamp(65px, 7vw, 96px);
+}
+.mc-about-v2 .mc-about-v2-photo-stories-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 390px);
+  align-items: end;
+  gap: 27px;
+  margin-bottom: 29px;
+}
+.mc-about-v2 .mc-about-v2-photo-stories-heading h2 {
+  max-width: 680px;
+  font-size: clamp(37px, 4.15vw, 58px);
+  line-height: 1.09;
+}
+.mc-about-v2 .mc-about-v2-photo-stories-heading > p {
+  color: #57655e;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.mc-about-v2 .mc-about-v2-photo-stories-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(0, .81fr) minmax(0, .81fr);
+  gap: 16px;
+  align-items: stretch;
+}
+.mc-about-v2 .mc-about-v2-photo-stories-grid figure {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f7f5ef;
+  min-width: 0;
+  border: 1px solid #e3e0d7;
+}
+.mc-about-v2 .mc-about-v2-photo-stories-grid figure img {
+  display: block;
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  object-position: center 43%;
+}
+.mc-about-v2 .mc-about-v2-photo-stories-grid .mc-about-v2-photo-feature img {
+  height: 325px;
+  object-position: center 45%;
+}
+.mc-about-v2 .mc-about-v2-photo-stories-grid figcaption {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 7px;
+  padding: 18px 20px 20px;
+  color: #57645e;
+}
+.mc-about-v2 .mc-about-v2-photo-stories-grid figcaption strong {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2c3d33;
+  font-size: 20px;
+  font-weight: 650;
+}
+.mc-about-v2 .mc-about-v2-photo-stories-grid figcaption span {
+  font-size: 12px;
+  line-height: 1.65;
+}
+@media (max-width: 1020px) {
+  .mc-about-v2 .mc-about-v2-photo-stories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mc-about-v2 .mc-about-v2-photo-feature { grid-column: 1 / -1; }
+  .mc-about-v2 .mc-about-v2-photo-stories-grid .mc-about-v2-photo-feature img { height: 390px; }
+  .mc-about-v2 .mc-about-v2-photo-stories-grid figure img { height: 280px; }
+}
+@media (max-width: 740px) {
+  .mc-about-v2 .mc-about-v2-hero {
+    background-image:
+      linear-gradient(180deg, rgba(14, 35, 31, .71) 0%, rgba(14, 35, 31, .90) 77%, rgba(14, 35, 31, .94) 100%),
+      url("/images/mengo-board-inauguration.jpeg");
+    background-position: center center, 56% 34%;
+  }
+  .mc-about-v2 .mc-about-v2-photo-stories-heading { grid-template-columns: 1fr; gap: 12px; }
+  .mc-about-v2 .mc-about-v2-photo-stories-grid { grid-template-columns: 1fr; gap: 15px; }
+  .mc-about-v2 .mc-about-v2-photo-feature { grid-column: auto; }
+  .mc-about-v2 .mc-about-v2-photo-stories-grid .mc-about-v2-photo-feature img { height: 275px; }
+  .mc-about-v2 .mc-about-v2-photo-stories-grid figure img { height: 238px; }
+  .mc-about-v2 .mc-about-v2-photo-stories-grid figcaption { padding: 15px 17px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mc-about-v2 .mc-about-v2-photo-stories-grid img { transition: none; }
+}
