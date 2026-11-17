@@ -8,7 +8,7 @@ export default function Masaza() {
     title="The Traditional Counties of Buganda"
     description="Explore the traditional Masaza and the regional identity they represent within the Kingdom of Buganda."
     feature={<MasazaGoogleExplorer />}
-    gallery={[{ photo: realPhotos.bikaTournament, label: "Communities and teams gathered for a Buganda Bika tournament" }, { photo: realPhotos.masazaCup, label: "Team jersey presentation at the Buganda Masaza Cup launch" }]} sections={[
+    gallery={[{ photo: realPhotos.masazaMap, label: "Reference map showing the traditional counties of Buganda; not present-day administrative districts" }, { photo: realPhotos.bikaTournament, label: "Communities and teams gathered for a Buganda Bika tournament" }, { photo: realPhotos.masazaCup, label: "Team jersey presentation at the Buganda Masaza Cup launch" }]} sections={[
   {
     "eyebrow": "Traditional geography",
     "title": "Understanding the Masaza",

@@ -1,10 +1,13 @@
 from django.test import TestCase
+from django.core.cache import cache
 from django.urls import reverse
 from rest_framework.test import APIClient
 from .models import CommercialCentre,MembershipApplication,Business
 
 class PublicAPITests(TestCase):
- def setUp(self): self.client=APIClient()
+ def setUp(self):
+  cache.clear()  # Reset anonymous API throttle counters between tests.
+  self.client=APIClient()
  def test_unpublished_centre_hidden(self):
   CommercialCentre.objects.create(name="Hidden",slug="hidden",district="Kampala",published=False)
   response=self.client.get("/api/v1/centres/")
@@ -29,6 +32,7 @@ from rest_framework.authtoken.models import Token
 
 class AccessControlTests(TestCase):
  def setUp(self):
+  cache.clear()  # Login requests use the same throttle scope.
   self.client=APIClient()
   self.member=get_user_model().objects.create_user(username="member1",password="test-secure-pass-123")
   self.staff=get_user_model().objects.create_superuser(username="staff1",email="staff@example.org",password="test-secure-pass-123")
@@ -78,6 +82,7 @@ class AccessControlTests(TestCase):
 
 class ApplicationTrackingTests(TestCase):
  def setUp(self):
+  cache.clear()  # Isolate tracking requests from other tests.
   self.client=APIClient()
   self.application=MembershipApplication.objects.create(organisation="Example",organisation_type="Business",district="Kampala",sector="Trade",contact_name="A Person",email="applicant@example.org",phone="0700000000")
  def test_correct_email_and_reference(self):
