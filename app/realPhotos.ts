@@ -59,7 +59,7 @@ export const realPhotos = {
   },
   chamberMemberMusaMugere: {
     src: "/images/leadership/chamber/musa-mugere.jpg",
-    alt: "Portrait of Hajji Musa Mugere, Mengo Chamber of Commerce board member",
+    alt: "Portrait of Muk. Mugere Musa, Mengo Chamber of Commerce board member",
     position: "center 22%",
   },
   budgetAssembly: {

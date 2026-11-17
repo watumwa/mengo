@@ -26,9 +26,9 @@ const vice: Leader = {
 
 const members: Leader[] = [
   { name: "Omuk. Sarah Kironde Ssemanda", role: "Member", photo: realPhotos.chamberMemberSarahSsemanda },
-  { name: "Owek. Ritah Namyalo", role: "Member" },
+  { name: "Owek. Ritah Namyalo Waggwa", role: "Member" },
   { name: "Omuk. Robert Nsereko", role: "Member" },
-  { name: "Hajji Musa Mugere", role: "Member", photo: realPhotos.chamberMemberMusaMugere },
+  { name: "Muk. Mugere Musa", role: "Member", photo: realPhotos.chamberMemberMusaMugere },
   { name: "Francis Asisi Kimbowa", role: "Secretary", affiliation: "Buganda Royal Law Chambers" },
 ];
 
