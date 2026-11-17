@@ -43,7 +43,7 @@ export const realPhotos = {
     fit: "contain",
   },
   chamberChairKiyimba: {
-    src: "/images/leadership/chamber/john-fred-freeman-kiyimba.jpg",
+    src: "/images/leadership/chamber/john-fred-freeman-kiyimba.webp",
     alt: "Portrait of Omuk. John Fred Freeman Kiyimba, Chairman of Mengo Chamber of Commerce",
     position: "center 22%",
   },
