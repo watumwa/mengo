@@ -55,7 +55,7 @@ export default function HomePage() {
           <div className="bp-shell mc-home-proof-grid">
             <article><span>Institutional form</span><strong>Company Limited by Guarantee</strong></article>
             <article><span>Institutional origin</span><strong>Established by the Kingdom of Buganda</strong></article>
-            <article><span>Regional reach</span><strong>Six clusters · 18 Ssaza</strong></article>
+            <article><span>Regional reach</span><strong>Massaza (18 counties)</strong></article>
           </div>
         </section>
 
