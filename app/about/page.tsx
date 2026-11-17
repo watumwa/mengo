@@ -175,11 +175,25 @@ export default function About() {
                 <p>To facilitate trade, investment, enterprise growth, agricultural transformation, and industrial development by providing quality business services, strategic linkages, and effective advocacy for a competitive business environment in Uganda.</p>
               </article>
             </div>
-            <div className="mc-about-v2-values">
-              <strong>Our values</strong>
-              <div>{values.map(value => <span key={value}>{value}</span>)}</div>
-              <Link href="/strategy">View our strategy <ArrowRight size={15} aria-hidden="true" /></Link>
-            </div>
+            <section className="mc-about-v2-values" aria-labelledby="mc-about-v2-values-heading">
+              <div className="mc-about-v2-values-heading">
+                <div>
+                  <h3 id="mc-about-v2-values-heading">Our values</h3>
+                  <p>Five principles guiding how MCCL works with businesses, members and partners.</p>
+                </div>
+                <Link href="/strategy">
+                  View our strategy <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              </div>
+              <ol className="mc-about-v2-values-list">
+                {values.map((value, index) => (
+                  <li key={value}>
+                    <span className="mc-about-v2-values-number" aria-hidden="true">0{index + 1}</span>
+                    <strong>{value}</strong>
+                  </li>
+                ))}
+              </ol>
+            </section>
           </div>
         </section>
 

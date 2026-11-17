@@ -258,17 +258,103 @@
   color: #30485f;
   font: 500 clamp(18px, 1.7vw, 23px)/1.55 Georgia, "Times New Roman", serif;
 }
-.mc-about-v2 .mc-about-v2-values { display: flex; flex-wrap: wrap; align-items: center; gap: 13px 25px; padding-top: 25px; }
-.mc-about-v2 .mc-about-v2-values > strong { color: #73582a; font-size: 14px; font-weight: 800; }
-.mc-about-v2 .mc-about-v2-values > div { display: flex; flex: 1; flex-wrap: wrap; gap: 8px; }
-.mc-about-v2 .mc-about-v2-values > div span {
-  padding: 9px 11px;
-  border: 1px solid var(--about-line);
-  background: #fff;
-  color: #42556a;
-  font-size: 12px;
+/* Distinct, readable and semantic display for the five approved Chamber values. */
+.mc-about-v2 .mc-about-v2-values {
+  margin-top: clamp(30px, 4vw, 48px);
+  padding-top: clamp(27px, 3vw, 39px);
+  border-top: 1px solid #ddd7cb;
 }
-.mc-about-v2 .mc-about-v2-values > a { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; color: #21496d; font-size: 13px; font-weight: 750; }
+.mc-about-v2 .mc-about-v2-values-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px 30px;
+}
+.mc-about-v2 .mc-about-v2-values-heading h3 {
+  color: #17375b;
+  font-size: clamp(25px, 2.5vw, 33px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.mc-about-v2 .mc-about-v2-values-heading p {
+  max-width: 610px;
+  margin-top: 9px;
+  color: #526273;
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.65;
+}
+.mc-about-v2 .mc-about-v2-values-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  min-height: 42px;
+  color: #21496d;
+  border-bottom: 1px solid #b49453;
+  font-size: 13px;
+  font-weight: 750;
+}
+.mc-about-v2 .mc-about-v2-values-heading > a:hover { color: #89672f; }
+.mc-about-v2 .mc-about-v2-values-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 13px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.mc-about-v2 .mc-about-v2-values-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 0;
+  min-height: 139px;
+  padding: 20px 18px 22px;
+  background: #fff;
+  border: 1px solid #ddd9cf;
+  border-top: 3px solid #b18e4c;
+}
+.mc-about-v2 .mc-about-v2-values-number {
+  color: #86672d;
+  font: 800 12px/1.2 Arial, sans-serif;
+  letter-spacing: .06em;
+}
+.mc-about-v2 .mc-about-v2-values-list li strong {
+  color: #193b60;
+  font: 700 clamp(18px, 1.62vw, 22px)/1.32 Georgia, "Times New Roman", serif;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+@media (max-width: 1100px) {
+  .mc-about-v2 .mc-about-v2-values-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 680px) {
+  .mc-about-v2 .mc-about-v2-values-heading { align-items: flex-start; }
+  .mc-about-v2 .mc-about-v2-values-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+    margin-top: 20px;
+  }
+  .mc-about-v2 .mc-about-v2-values-list li {
+    min-height: 124px;
+    padding: 16px;
+  }
+}
+@media (max-width: 390px) {
+  .mc-about-v2 .mc-about-v2-values-list {
+    grid-template-columns: 1fr;
+  }
+  .mc-about-v2 .mc-about-v2-values-list li {
+    min-height: 82px;
+    flex-direction: row;
+    align-items: center;
+  }
+}
 
 /* The five working commitment tabs now use a light institutional palette. */
 .mc-about-v2 .mc-about-v2-priorities {
