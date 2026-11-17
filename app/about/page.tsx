@@ -5,6 +5,7 @@ import {
   ShieldCheck, UsersRound
 } from "lucide-react";
 import { ResponsivePhoto } from "../ResponsivePhoto";
+import { AboutCommitments } from "./AboutCommitments";
 import { Shell } from "../components";
 import { realPhotos, type ChamberPhoto } from "../realPhotos";
 import "./about.css";
@@ -64,6 +65,15 @@ export default function About() {
     <Shell>
       <main className="mc-about-v2">
         <header className="mc-about-v2-hero">
+          <ResponsivePhoto
+            photo={realPhotos.chamberInauguration}
+            width={1600}
+            height={1067}
+            sizes="100vw"
+            loading="eager"
+            fetchPriority="high"
+            className="mc-about-v2-hero-background"
+          />
           <div className="bp-shell">
             <nav className="mc-about-v2-breadcrumb" aria-label="Breadcrumb">
               <Link href="/">Home</Link><span aria-hidden="true">/</span>
@@ -86,19 +96,21 @@ export default function About() {
                   </Link>
                 </div>
               </div>
-              <figure className="mc-about-v2-hero-image">
-                <ResponsivePhoto
-                  photo={realPhotos.chamberInauguration}
-                  width={1050}
-                  height={760}
-                  sizes="(max-width: 900px) 100vw, 48vw"
-                  loading="eager"
-                />
-                <figcaption>Photograph from the Mengo Chamber of Commerce inauguration.</figcaption>
-              </figure>
+              <span className="mc-about-v2-hero-photo-caption">MCCL inauguration photograph</span>
             </div>
           </div>
         </header>
+
+        <nav className="mc-about-v2-section-nav" aria-label="On this page">
+          <div className="bp-shell mc-about-v2-section-nav-inner">
+            <span>Explore MCCL</span>
+            <Link href="#mc-about-v2-who">Who we are</Link>
+            <Link href="#mc-about-v2-priorities">Our commitments</Link>
+            <Link href="#mc-about-v2-direction">Vision &amp; mission</Link>
+            <Link href="#mc-about-v2-community">Who we serve</Link>
+            <Link href="#mc-about-v2-leadership">Leadership</Link>
+          </div>
+        </nav>
 
         <section className="mc-about-v2-facts" aria-label="Chamber at a glance">
           <div className="bp-shell mc-about-v2-facts-grid">
@@ -144,16 +156,7 @@ export default function About() {
               </div>
               <p>These priorities describe the Chamber's strategic direction, not a claim that every programme is already operational.</p>
             </div>
-            <div className="mc-about-v2-priority-list">
-              {priorities.map((priority, index) => (
-                <Link href={priority.href} className="mc-about-v2-priority" key={priority.name}>
-                  <span className="mc-about-v2-number">0{index + 1}</span>
-                  <h3>{priority.name}</h3>
-                  <p>{priority.text}</p>
-                  <ArrowUpRight size={19} aria-hidden="true" />
-                </Link>
-              ))}
-            </div>
+            <AboutCommitments priorities={priorities} />
           </div>
         </section>
 
